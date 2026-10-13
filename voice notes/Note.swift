@@ -345,7 +345,11 @@ final class Note {
         }
     }
 
+    static let dailyTaskCaptureAnnotation = "EEON daily task capture"
+    var isDailyTaskCapture: Bool { annotation == Self.dailyTaskCaptureAnnotation }
+
     var shouldPreserveExplicitCommandIntent: Bool {
+        if isDailyTaskCapture { return true }
         switch intent {
         case .order, .orderDone, .reminder:
             return true

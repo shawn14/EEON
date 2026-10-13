@@ -1,0 +1,17 @@
+project: eeon
+source: https://github.com/shawn14/voice-notes-ios
+surfaces:
+  app: iOS voice capture, daily tasks and project memory
+  connector: https://www.eeon.com/api/mcp
+data_sources:
+  - SwiftData with private CloudKit sync
+  - Existing opt-in encrypted note mirror
+mcp:
+  protocol: Streamable HTTP with OAuth and phone approval
+  runbook: CLAUDE.md
+operations:
+  release: ../fastlane-configs/fastlane/Fastfile (release app:voice-notes)
+  release_runbook: CLAUDE.md
+  backend_owner: ../v0-eeon-app-design
+capabilities: ../CAPABILITIES.md
+status: STATUS.md

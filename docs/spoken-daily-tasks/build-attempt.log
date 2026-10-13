@@ -1,0 +1,17 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project "voice notes.xcodeproj" -scheme "voice notes" -destination generic/platform=iOS -derivedDataPath .build/talk-today -disableAutomaticPackageResolution -skipPackageUpdates CODE_SIGNING_ALLOWED=NO build
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+
+2026-10-13 08:29:05.722 xcodebuild[35713:19828413] not able to deal with ivar '_storeKitConfigurationFileReference' of type '@"_TtC13IDEFoundation24IDESchemeOptionReference"' at offset 520
+2026-10-13 08:29:06.075 xcodebuild[35713:19828413] Writing error result bundle to /var/folders/dd/2mfn814j6wl2pywnhmn3rphm0000gn/T/ResultBundle_2026-13-10_08-29-0006.xcresult
+xcodebuild: error: Unable to find a destination matching the provided destination specifier:
+		{ generic:1, platform:iOS }
+
+	Available destinations for the "voice notes" scheme:
+		{ platform:macOS, variant:Mac Catalyst, name:Any Mac }
+
+	Ineligible destinations for the "voice notes" scheme:
+		{ platform:macOS, arch:arm64e, variant:Mac Catalyst, id:00008132-000950C63CA1801C, name:My Mac, error:Xcode doesn’t support My Mac’s macOS 15.6 (24G84).  }
+		{ platform:iOS, id:dvtdevice-DVTiPhonePlaceholder-iphoneos:placeholder, name:Any iOS Device, error:iOS 26.2 is not installed. Please download and install the platform from Xcode > Settings > Components. }

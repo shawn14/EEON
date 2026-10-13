@@ -58,6 +58,8 @@ struct AIHomeView: View {
     /// True while capturing an Order (an instruction for an agent) rather than
     /// a note. Set by the Order button before recording starts.
     @State private var capturingOrder = false
+    @State private var capturingDailyTasks = false
+    @State private var processingDailyTasks = false
     @State private var isTranscribing = false
     @State private var currentAudioFileName: String?
     @State private var errorMessage: String?
@@ -689,33 +691,71 @@ struct AIHomeView: View {
         return open == 1 ? "1 open task" : "\(open) open tasks"
     }
 
-    /// Low-key on purpose: one line, no card, no rows. Disappears when
-    /// there is nothing open. Tap → Tasks.
-    @ViewBuilder
-    private var tasksLine: some View {
-        if !homeOpenActions.isEmpty {
-            NavigationLink {
-                TasksView()
-            } label: {
-                HStack(spacing: EEONLayout.tight) {
-                    Image(systemName: "checklist")
-                        .font(EEONType.badge)
-                        .foregroundStyle(.eeonTextSecondary)
-                    Text(tasksLineText)
-                        .font(EEONType.meta)
-                        .foregroundStyle(.eeonTextSecondary)
-                    Image(systemName: "chevron.right")
-                        .font(EEONType.badge)
-                        .foregroundStyle(.eeonTextTertiary)
-                    Spacer()
-                }
-                .frame(minHeight: EEONLayout.minTarget)
-                .contentShape(Rectangle())
+    private var todayActions: [ExtractedAction] {
+        let dailySourceIDs = Set(notes.filter { $0.isDailyTaskCapture && Calendar.current.isDateInToday($0.createdAt) }.map(\.id))
+        return homeOpenActions.filter { action in
+            if let due = EventKitSyncService.parseDate(from: action.deadline) {
+                return Calendar.current.isDateInToday(due) || due < Date()
             }
-            .buttonStyle(.plain)
-            .accessibilityLabel("All tasks")
-            .padding(.horizontal)
+            return action.sourceNoteId.map { dailySourceIDs.contains($0) } ?? false
+        }.sorted { $0.createdAt < $1.createdAt }
+    }
+
+    private var tasksLine: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Text("Today's tasks").font(.headline)
+                Spacer()
+                NavigationLink { TasksView() } label: {
+                    Text("All tasks").font(.subheadline)
+                }
+                .accessibilityLabel("All tasks")
+            }
+            ForEach(todayActions.prefix(5)) { action in
+                HStack(alignment: .top, spacing: 12) {
+                    Button {
+                        action.markComplete()
+                        do { try modelContext.save() }
+                        catch {
+                            action.markIncomplete()
+                            errorMessage = "Couldn't save task completion: " + error.localizedDescription
+                            showingError = true
+                            return
+                        }
+                        Task { await EventKitSyncService.shared.updateCompletion(for: action) }
+                    } label: { Image(systemName: "circle").font(.title3) }
+                    .accessibilityLabel("Complete task: " + action.content)
+                    if let source = notes.first(where: { $0.id == action.sourceNoteId }) {
+                        Button { navigateToNote = source } label: {
+                            Text(action.content).multilineTextAlignment(.leading).foregroundStyle(.eeonTextPrimary)
+                        }
+                        .buttonStyle(.plain)
+                    } else {
+                        Text(action.content)
+                    }
+                    Spacer(minLength: 0)
+                }
+                .accessibilityIdentifier("homeTodayTask")
+            }
+            if todayActions.count > 5 {
+                Text("\(todayActions.count - 5) more in All tasks").font(.footnote).foregroundStyle(.secondary)
+            }
+            if processingDailyTasks {
+                ProgressView("Finding your tasks…")
+            } else if todayActions.isEmpty {
+                Text("Talk through what you need to do today.").font(.subheadline).foregroundStyle(.secondary)
+            }
+            Button {
+                guard UsageService.shared.canCreateNote else { showPaywall = true; return }
+                capturingOrder = false
+                capturingDailyTasks = true
+                startRecording()
+            } label: { Label("Talk through today", systemImage: "mic") }
+            .buttonStyle(.borderedProminent)
+            .disabled(isRecording || isTranscribing || processingDailyTasks || BackgroundCaptureService.shared.isCapturing)
+            .accessibilityIdentifier("talkThroughToday")
         }
+        .padding(.horizontal)
     }
 
     // MARK: Notes
@@ -1115,6 +1155,7 @@ struct AIHomeView: View {
             // shows it's running (and offers a stop button).
             Task { await BackgroundCaptureService.shared.showActivity(for: audioRecorder) }
         } catch {
+            capturingDailyTasks = false
             errorMessage = "Could not start recording: \(error.localizedDescription)"
             showingError = true
         }
@@ -1123,6 +1164,7 @@ struct AIHomeView: View {
     private func stopRecording() {
         Task { await BackgroundCaptureService.shared.hideActivity() }
         guard let url = audioRecorder.stopRecording() else {
+            capturingDailyTasks = false
             errorMessage = "Could not save recording"
             showingError = true
             isRecording = false
@@ -1143,6 +1185,7 @@ struct AIHomeView: View {
         currentAudioFileName = nil
         isRecording = false
         capturingOrder = false
+        capturingDailyTasks = false
     }
 
     private func transcribeAndSave(url: URL, isImport: Bool = false) {
@@ -1172,13 +1215,14 @@ struct AIHomeView: View {
                 // it is a note (the capture is kept) plus a confirmation sheet.
                 // Imports are exempt — an old recording is not a command.
                 let isOrder = capturingOrder
-                let reminderCommand = (isImport || isOrder) ? nil : ReminderCommandParser.parse(transcript)
+                let isDailyTaskCapture = capturingDailyTasks
+                let reminderCommand = (isImport || isOrder || isDailyTaskCapture) ? nil : ReminderCommandParser.parse(transcript)
 
                 // Classify intent: question routes to AnswerSheet, note saves as usual.
                 // On classifier failure we fall back to .newNote — the safer default is
                 // "your speech became a note" rather than swallowing it into a Q&A.
                 let intent: IntentType
-                if isOrder || reminderCommand != nil {
+                if isOrder || isDailyTaskCapture || reminderCommand != nil {
                     // Orders are always saved, never answered as a question.
                     intent = .newNote
                 } else {
@@ -1213,7 +1257,7 @@ struct AIHomeView: View {
                     }
                 }
             } catch TranscriptionService.TranscriptionError.noSpeechDetected {
-                await MainActor.run { capturingOrder = false }
+                await MainActor.run { capturingOrder = false; capturingDailyTasks = false }
                 // Silent / near-silent audio. Never fabricate a note from it
                 // (that is where "Welcome everyone to the video" came from).
                 await MainActor.run {
@@ -1287,6 +1331,14 @@ struct AIHomeView: View {
             transcript: transcript,
             audioFileName: currentAudioFileName
         )
+        if capturingDailyTasks && !isImport {
+            note.annotation = Note.dailyTaskCaptureAnnotation
+            note.intentType = NoteIntent.action.rawValue
+            note.intentConfidence = 1.0
+            note.title = "Tasks for today"
+            capturingDailyTasks = false
+            processingDailyTasks = transcript != nil
+        }
         if let forcedIntent {
             note.intentType = forcedIntent.rawValue
             note.intentConfidence = 1.0
@@ -1307,7 +1359,16 @@ struct AIHomeView: View {
             trackRecordingUsage(fileName: fileName, for: note)
         }
         UsageService.shared.incrementNoteCount()
-        try? modelContext.save()
+        if note.isDailyTaskCapture {
+            do { try modelContext.save() }
+            catch {
+                processingDailyTasks = false
+                isTranscribing = false
+                errorMessage = "Couldn't save your spoken task note: " + error.localizedDescription
+                showingError = true
+                return note
+            }
+        } else { try? modelContext.save() }
         if note.intentType == NoteIntent.order.rawValue {
             mirrorAIOrder(note)
         }
@@ -1330,6 +1391,25 @@ struct AIHomeView: View {
             let allProjects = projects
 
             Task {
+                if note.isDailyTaskCapture {
+                    let prepared = await intelligenceService.processNoteSave(
+                        note: note, transcript: transcript, projects: allProjects,
+                        tags: existingTags, context: context
+                    )
+                    await MainActor.run {
+                        processingDailyTasks = false
+                        isTranscribing = false
+                        currentAudioFileName = nil
+                        if !prepared {
+                            errorMessage = "Your recording was saved, but its tasks could not be prepared. Open Tasks for today to retry."
+                            showingError = true
+                        } else if !((try? context.fetch(FetchDescriptor<ExtractedAction>())) ?? []).contains(where: { $0.sourceNoteId == note.id }) {
+                            errorMessage = "No tasks were identified. Your spoken note is saved as Tasks for today."
+                            showingError = true
+                        }
+                    }
+                    return
+                }
                 do {
                     // Calendar context first so the title can name the meeting.
                     await CalendarContextService.shared.attachIfNeeded(to: note)
@@ -1342,7 +1422,7 @@ struct AIHomeView: View {
                     let tagNames = try await extractor.extractTags(from: transcript)
 
                     await MainActor.run {
-                        note.title = title
+                        if !note.isDailyTaskCapture { note.title = title }
 
                         for tagName in tagNames {
                             if let existingTag = existingTags.first(where: { $0.name.lowercased() == tagName.lowercased() }) {
@@ -1356,7 +1436,7 @@ struct AIHomeView: View {
 
                         isTranscribing = false
                         currentAudioFileName = nil
-                        navigateToNote = note
+                        if !note.isDailyTaskCapture { navigateToNote = note }
 
                         SharedDefaults.updateLastNote(
                             preview: note.displayTitle,
@@ -1382,6 +1462,7 @@ struct AIHomeView: View {
                         }
                     }
 
+                    await MainActor.run { if note.isDailyTaskCapture { processingDailyTasks = false } }
                     Task {
                         await EmbeddingService.shared.generateAndStoreEmbedding(for: note)
                     }
@@ -1389,12 +1470,22 @@ struct AIHomeView: View {
                     await MainActor.run {
                         isTranscribing = false
                         currentAudioFileName = nil
+                        if note.isDailyTaskCapture {
+                            processingDailyTasks = false
+                            errorMessage = "Your recording was saved, but its tasks could not be prepared. Open Tasks for today to retry."
+                            showingError = true
+                        }
                     }
                 }
             }
         } else {
             isTranscribing = false
             currentAudioFileName = nil
+            if note.isDailyTaskCapture {
+                processingDailyTasks = false
+                errorMessage = "Your recording is saved. Tasks will appear after transcription and task extraction are available."
+                showingError = true
+            }
             StatusCounters.shared.incrementNotesToday()
             StatusCounters.shared.markSessionStale()
         }
