@@ -22,3 +22,13 @@ Restore an installed iOS platform plus usable test device and adequate post-inst
 No running-app, physical speech, extraction service, mirror/MCP end-to-end or Release proof obtained here. Existing publication hold remains; no push/deploy/upload/submission. Local main base is a2c0fa2, not a freshly fetched production/main claim.
 
 Independent-source-review.json records its exact review scope; the subsequent optional-processing shortcut passed parsing only. Retry durability remains unverified because existing reprocessNote uses try? save.
+
+## October16 clarification and TestFlight authorization
+
+Shawn explicitly requested software updates and TestFlight distribution, volunteering to test there instead of a local build/simulator run. This supersedes the prior publication hold for THIS TestFlight feature only; it does not authorize App Store review or claiming verified runtime behavior. A compiled archive is still required by TestFlight.
+
+An ordinary live voice recording now uses the existing classifier call to recognize a spoken daily task list, not just the dedicated entry button. Extraction explicitly requests every distinct stated task as a separate action, preserving explicit future dates. Home also includes undated tasks captured today, including already processed current-day notes/manual tasks. Imported recordings cannot leave the daily-mode flag armed for a subsequent recording. Explicit single-reminder behavior is preserved when the classifier otherwise calls it a question.
+
+Verification remains source-level: updated Swift files parse; independent review caught the import flag path, corrected with a non-import guard. No provider call, transcript/AI-output fixture, runtime test, native build or upload was claimed. Current Xcode showdestinations still reports iOS26.2 not installed; disk12,274,396KiB (~11.706GiB) below15GiB reserve. No archive invoked.
+
+Fresh GitHub main is a2c0fa2b279de19879564ca03b6db1689c20c627. The verified prior release-source tag appstore/voice-notes/3.10.0-build171 points to6f7d7edfb447b705fcbb565b6cd1492981bdd23e and is NOT an ancestor of main (merge-base exit1). Before any release archive, reconcile reviewed feature and release-source ancestry into clean pushed main as required; a feature branch cannot substitute for this gate. Current Apple live-store state was not reread, so this tag is historical release-source evidence, not proof of today's store version.

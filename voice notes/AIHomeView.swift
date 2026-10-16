@@ -692,12 +692,12 @@ struct AIHomeView: View {
     }
 
     private var todayActions: [ExtractedAction] {
-        let dailySourceIDs = Set(notes.filter { $0.isDailyTaskCapture && Calendar.current.isDateInToday($0.createdAt) }.map(\.id))
+        let todaySourceIDs = Set(visibleLibraryNotes.filter { Calendar.current.isDateInToday($0.createdAt) }.map(\.id))
         return homeOpenActions.filter { action in
             if let due = EventKitSyncService.parseDate(from: action.deadline) {
                 return Calendar.current.isDateInToday(due) || due < Date()
             }
-            return action.sourceNoteId.map { dailySourceIDs.contains($0) } ?? false
+            return action.sourceNoteId.map { todaySourceIDs.contains($0) } ?? Calendar.current.isDateInToday(action.createdAt)
         }.sorted { $0.createdAt < $1.createdAt }
     }
 
@@ -1222,12 +1222,15 @@ struct AIHomeView: View {
                 // On classifier failure we fall back to .newNote — the safer default is
                 // "your speech became a note" rather than swallowing it into a Q&A.
                 let intent: IntentType
-                if isOrder || isDailyTaskCapture || reminderCommand != nil {
+                if isOrder || isDailyTaskCapture {
                     // Orders are always saved, never answered as a question.
                     intent = .newNote
                 } else {
                     do {
-                        intent = try await IntentClassifier.shared.classify(transcript: transcript)
+                        let classified = try await IntentClassifier.shared.classify(transcript: transcript)
+                        // Preserve the existing explicit reminder command path unless
+                        // the recording is a multi-task daily list.
+                        intent = reminderCommand != nil && classified == .question ? .newNote : classified
                     } catch {
                         print("[IntentClassifier] classification failed, defaulting to newNote: \(error)")
                         intent = .newNote
@@ -1244,11 +1247,12 @@ struct AIHomeView: View {
                         currentAudioFileName = nil
                         isTranscribing = false
                         pendingAnswerQuery = AnswerQuery(query: transcript)
-                    case .newNote:
-                        let forcedIntent: NoteIntent? = isOrder ? .order : (reminderCommand != nil ? .reminder : nil)
+                    case .newNote, .dailyTasks:
+                        if intent == .dailyTasks && !isImport { capturingDailyTasks = true }
+                        let forcedIntent: NoteIntent? = isOrder ? .order : (reminderCommand != nil && intent != .dailyTasks ? .reminder : nil)
                         let note = saveNote(transcript: transcript, isImport: isImport, forcedIntent: forcedIntent)
                         if isOrder { capturingOrder = false }
-                        if let reminderCommand {
+                        if let reminderCommand, intent != .dailyTasks {
                             // Whatever the user decides in the sheet, the
                             // extraction pass must not push a second copy.
                             EventKitSyncService.shared.markHandledByCommand(note.id)

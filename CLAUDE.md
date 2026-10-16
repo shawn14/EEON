@@ -357,3 +357,6 @@ Complete-deletion proof: `scripts/prove-account-deletion.py` drives the disposab
 
 ## Spoken daily tasks — Shawn, 2026-10-13
 Home should show spoken daily tasks, not only the old quiet task-count line. Local candidate: docs/spoken-daily-tasks/README.md. Reuse existing recorder/extraction, preserve speech/source IDs, show honest failure/empty state; AI reads are through opted-in MCP get_note when requested, never automatic task execution. No runtime/release proof yet; missing installed iOS26.2 platform is the current compile prerequisite. Earlier speculative unsaved-report investigation was canceled by Shawn; do not treat it as a reported bug or queued task.
+
+### October16 spoken-task clarification
+Ordinary voice messages listing today's tasks must autoextract individual Today rows; dedicated Talk through today is optional. Shawn approved TestFlight distribution and will test there; local simulator proof waived for this candidate, not binary compilation or clean-main/release ancestry. No App Store submit implied. Current SDK/platform/disk blockers and ancestry evidence: docs/spoken-daily-tasks/README.md. Do not call source-only changes working or shipped.
