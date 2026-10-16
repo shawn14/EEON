@@ -1,0 +1,37 @@
+{
+  "name": {
+    "characters": 23,
+    "limit": 30,
+    "pass": true
+  },
+  "subtitle": {
+    "characters": 27,
+    "limit": 30,
+    "pass": true
+  },
+  "keywords": {
+    "characters": 92,
+    "limit": 100,
+    "pass": true
+  },
+  "promotional_text": {
+    "characters": 130,
+    "limit": 170,
+    "pass": true
+  },
+  "description": {
+    "characters": 2373,
+    "limit": 4000,
+    "pass": true
+  },
+  "release_notes": {
+    "characters": 317,
+    "limit": 4000,
+    "pass": true
+  },
+  "scope": {
+    "status": "DRAFT \u2014 not uploaded",
+    "release_notes": "3.11.0 candidate; publish only after the actual TestFlight feature walk passes",
+    "price": "Retained from the public US listing, not changed; verify storefront products before upload"
+  }
+}

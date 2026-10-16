@@ -1,0 +1,39 @@
+Building with AI starts with knowing what you want to build.
+
+EEON helps founders capture ideas, product decisions, bugs, and next steps by voice. Turn a thought into a readable note, keep the actions attached, and let your connected AI workspace read the context when you ask.
+
+THINK OUT LOUD
+
+Capture a feature idea on a walk, a bug after testing, or what you learned from a customer conversation. EEON transcribes and organizes your words while keeping the original transcript.
+
+KEEP THE DECISIONS AND NEXT STEPS
+
+Find the actions, commitments, people, and projects in your notes. Complete tasks from a note, or enable Apple Reminders to keep follow-ups in your existing task list.
+
+Ask your memory:
+- What did I decide about onboarding?
+- Which bugs did I mention after testing?
+- What follow-ups came out of that customer call?
+
+BRING YOUR CONTEXT TO YOUR AI
+
+With optional AI agent access, compatible tools such as Claude Code, Codex, and Cursor can search and read your EEON notes after you connect and authorize them.
+
+Use Send to an Agent on a note to copy a prompt, then paste it into your connected workspace. Ask your agent to turn the note into a plan or use it as context for the next task. Your coding tool handles the build and its own permissions; EEON gives it the notes you captured.
+
+CAPTURE WHERE YOU ARE
+
+Record from the app or supported iPhone shortcuts, widgets, and recording controls. Import a recording, type a note, or save links and text through the Share Extension. Calendar context can help connect notes to your meetings.
+
+YOUR NOTES, YOUR CHOICE
+
+Notes are stored on your device and sync through your private iCloud account. Audio and text may be sent to AI services for transcription and enhancement. Optional AI agent access creates an encrypted copy of note content on EEON's servers so authorized tools can read it. You can turn that access off in Settings.
+
+FREE TO START
+
+EEON is free to download. EEON Pro unlocks additional AI and memory features.
+
+- EEON Pro: $9.99 per month or $79.99 per year, auto-renewing.
+- Payment is charged to your Apple ID account at confirmation of purchase. The subscription renews automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel in your App Store account settings.
+- Terms of Use: https://eeon.com/terms
+- Privacy Policy: https://eeon.com/privacy

@@ -6,6 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 EEON is a voice-first AI memory app (SwiftUI + SwiftData) for iOS. Users talk into a single button — the AI classifies whether it's a note or a question, transcribes via OpenAI Whisper, extracts structured intelligence (decisions, actions, commitments, people, topics, emotional tone), generates an enhanced version of what the user said, embeds the note for vector search, and lets users query their entire memory via natural language. Features CloudKit sync, Sign in with Apple, StoreKit 2 subscriptions, a Home Screen / Lock Screen widget, and a Share Extension for ingesting URLs and text from other apps.
 
+## Founder audience (Shawn, 2026-10-16)
+
+EEON is for founders building with AI. Focus messaging on capturing ideas, tasks and decisions, then letting an explicitly connected coding agent read the context. Current Send to an Agent copies a prompt; it does not launch, manage or prove completion of coding jobs. Why: the founder handoff fits existing capture/memory/MCP behavior; an AI coding management claim implies execution features not shipped. Market evidence and metadata candidate: [founder ASO pass](docs/aso/2026-10-16-founders/README.md). No price/category change.
+
 ## Locked Product Direction — Privacy-First Integrations
 
 EEON's default integration posture is privacy-first: Sign in with Apple, SwiftData/CloudKit private sync, Calendar read context through iOS Calendar, direct read-only Google Calendar OAuth when configured, Reminders sync, Share Extension ingest, and a read-only EEON CloudKit MCP connector that each AI workspace authorizes with Apple. Do not present iPhone Files picking, exported folders, same-Wi-Fi receivers, or "AI Access Ready" as the primary setup. Folder/markdown export is only an "Export My Data" fallback. A management CloudKit token proves schema/admin access only; private-note reads require explicit user CloudKit auth for the Apple ID that owns the notes. Direct Gmail/Drive/task-app write-back is allowed only as a deliberate product/auth build with scoped consent, token storage, and App Review/privacy disclosure.

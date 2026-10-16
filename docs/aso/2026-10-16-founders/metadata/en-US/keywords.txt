@@ -1,0 +1,1 @@
+tasks,dictation,transcribe,reminders,ideas,projects,decisions,brain dump,prompts,founder,mcp

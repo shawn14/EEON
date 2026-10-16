@@ -1,0 +1,1 @@
+Building with AI? Talk through ideas, bugs, and next steps. Keep the decisions, then let your connected AI agent read the context.

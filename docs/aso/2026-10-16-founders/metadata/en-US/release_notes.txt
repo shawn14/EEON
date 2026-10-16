@@ -1,0 +1,5 @@
+3.11.0 — Talk through your tasks
+
+- Record an ordinary voice message listing your tasks. EEON can turn it into separate tasks for today.
+- See today's tasks on Home and keep explicit future dates with the appropriate task.
+- With AI agent access enabled, connected agents can read the saved task details in your note.

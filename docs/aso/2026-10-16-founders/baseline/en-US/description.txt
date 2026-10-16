@@ -1,0 +1,67 @@
+EEON is not a transcription app. It's your AI memory.
+
+Press Record and talk. EEON turns rambling voice into clean notes, tasks synced to Apple Reminders, and meeting context pulled from your calendar. Ask EEON anything later: "What did I decide about pricing?" It remembers so you don't have to.
+
+SAY IT ONCE
+
+"Remind me to send Lena the pricing deck by Friday at five. Marco said the onboarding copy is done. We decided blue, not coral, for the icon."
+
+EEON turns that into a clean note, a decision filed under the right context, and "Send Lena the pricing deck" in Apple Reminders. Nothing falls through the cracks.
+
+ONE SCREEN, ONE BUTTON
+
+- Today's meetings from your calendar, your open tasks, your latest notes, and Record
+- Record from the Action Button, Control Center, Lock Screen, Siri, widgets, or the app
+- Import a recording, type a note, or add a link or document
+- Every note shows the tasks EEON pulled from it, with one-tap completion
+
+NOT JUST TRANSCRIPTION
+
+Most voice note tools stop at a transcript or summary. EEON builds a working memory from what you said:
+
+- Decisions
+- Action items
+- Commitments
+- People
+- Projects
+- Topics
+- Questions and follow-ups
+
+Then ask it in plain language:
+
+- "What did I decide about pricing?"
+- "What follow-ups do I owe Lena?"
+- "What came up in last week's product meetings?"
+- "What bugs did I mention while walking?"
+- "Summarize what I said about the launch."
+
+MADE FOR PEOPLE WHO THINK OUT LOUD
+
+- Quick thoughts while walking or driving
+- Meeting notes and standups
+- Product decisions and launch context
+- Customer calls and follow-ups
+- Journal entries, brain dumps, and personal reflection
+- Tasks you do not want to forget
+
+BUILT FOR THE APPLE SYSTEM
+
+- Sign in with Apple; notes sync through your private iCloud
+- Meeting notes get the event title and attendees from iPhone Calendar or Google Calendar
+- Action items land in an EEON list in Apple Reminders
+- Optional: connect Claude, ChatGPT, or Cursor to read your EEON memory, read-only, only after you authorize it
+
+PRIVATE BY DEFAULT
+
+Your notes are stored on your device and sync through your private iCloud account. Audio and text may be sent to AI services for transcription and note enhancement. EEON does not use your notes to train models.
+
+FREE TO START
+
+Record and transcribe for free. EEON Pro unlocks unlimited AI notes, formats, and the full memory.
+
+- EEON Pro: $9.99 per month or $79.99 per year, auto-renewing
+- Payment is charged to your Apple ID account at confirmation of purchase. The subscription renews automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel in your App Store account settings.
+- Terms of Use: https://eeon.com/terms
+- Privacy Policy: https://eeon.com/privacy
+
+Say it once. EEON remembers.
