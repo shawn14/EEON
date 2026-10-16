@@ -1,0 +1,19 @@
+{
+  "localSourceMain": "fa9182a5ecb0f640c19e2959952262712588c59d",
+  "fastlaneUploadAuthorized": true,
+  "fastlaneInvoked": false,
+  "reason": "Xcode iOS destination unavailable",
+  "sdkInventory": "iOS26.2 SDK listed",
+  "firstLaunchCheckExit": 0,
+  "supportedComponentCheck": "xcodebuild -runFirstLaunch -checkForNewerComponents",
+  "supportedComponentCheckExit": 0,
+  "supportedComponentCheckOutput": "Install Succeeded",
+  "destinationAfterComponentCheck": "iOS26.2 is not installed; no eligible iOS destination",
+  "platformInstaller": "xcodebuild -downloadPlatform iOS -buildVersion26.2 -architectureVariant arm64",
+  "platformInstallerExit": 70,
+  "platformInstallerOutput": "iOS26.2 (arm64Only) is already downloaded.",
+  "diskGuardTriggered": false,
+  "nativeArchive": "not attempted",
+  "upload": "not attempted",
+  "action": "Stopped after first platform-install infrastructure failure; no retry or deletion of preexisting platform assets"
+}
