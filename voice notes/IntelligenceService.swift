@@ -43,19 +43,20 @@ final class IntelligenceService {
 
     /// Process a note immediately after save
     /// Updates counters and marks session as needing refresh
+    @discardableResult
     func processNoteSave(
         note: Note,
         transcript: String?,
         projects: [Project],
         tags: [Tag],
         context: ModelContext
-    ) async {
+    ) async -> Bool {
         guard let transcript = transcript, !transcript.isEmpty,
               let apiKey = APIKeys.openAI, !apiKey.isEmpty else {
             // Just update counters
             StatusCounters.shared.incrementNotesToday()
             StatusCounters.shared.markSessionStale()
-            return
+            return false
         }
 
         // Seed notes (profile / purpose) bypass intent extraction entirely.
@@ -66,9 +67,11 @@ final class IntelligenceService {
                 KnowledgeCompiler.shared.markAffectedArticles(note: note, context: context)
             }
             await KnowledgeCompiler.shared.recompileDirtyArticles(context: context)
-            return
+            return true
         }
 
+        var extractionSaved = false
+        var remindersToSync: [ExtractedAction] = []
         // Extract intent — branch on source type
         do {
             let result: IntentAnalysis
@@ -76,12 +79,12 @@ final class IntelligenceService {
             if isSpokenCapture {
                 // Calendar context (no-op unless enabled; idempotent) — the
                 // event this recording overlapped, for names and subject.
-                if note.sourceType == .voice {
+                if note.sourceType == .voice && !note.isDailyTaskCapture {
                     await CalendarContextService.shared.attachIfNeeded(to: note)
                 }
                 result = try await SummaryService.extractIntent(
                     text: transcript,
-                    context: note.calendarContext?.promptLine,
+                    context: note.isDailyTaskCapture ? "The user explicitly chose to capture tasks for today. Identify only tasks they actually stated. Preserve explicit other dates, people, and project names; do not invent tasks." : note.calendarContext?.promptLine,
                     apiKey: apiKey
                 )
             } else {
@@ -143,7 +146,7 @@ final class IntelligenceService {
                         let extractedAction = ExtractedAction(
                             content: action.content,
                             owner: action.owner,
-                            deadline: action.deadline,
+                            deadline: note.isDailyTaskCapture ? Self.dailyTaskDeadline(action.deadline, capturedAt: note.createdAt) : action.deadline,
                             sourceNoteId: note.id
                         )
                         context.insert(extractedAction)
@@ -158,7 +161,7 @@ final class IntelligenceService {
                             projectId: note.projectId
                         )
                         kanbanItem.owner = action.owner
-                        kanbanItem.deadline = action.deadline
+                        kanbanItem.deadline = extractedAction.deadline
                         context.insert(kanbanItem)
                     }
 
@@ -171,7 +174,7 @@ final class IntelligenceService {
                             !EventKitSyncService.shared.isHandledByCommand($0.sourceNoteId)
                         }
                         if !actionsToSync.isEmpty {
-                            Task { await EventKitSyncService.shared.sync(actions: actionsToSync) }
+                            remindersToSync = actionsToSync
                         }
                     }
 
@@ -218,6 +221,21 @@ final class IntelligenceService {
                     }
                 }
             }
+
+        try await MainActor.run { try context.save() }
+        extractionSaved = true
+        if !remindersToSync.isEmpty {
+            let savedActions = remindersToSync
+            Task { await EventKitSyncService.shared.sync(actions: savedActions) }
+        }
+
+        // Daily planning finishes after its core task write, without waiting for
+        // optional rewrites, persona extraction or knowledge-article compilation.
+        if note.isDailyTaskCapture {
+            StatusCounters.shared.incrementNotesToday()
+            StatusCounters.shared.markSessionStale()
+            return true
+        }
 
         // Auto-summary: rewrite the enhanced text in the style the user's
         // profession preset implies (School Notes, Case Note, Clinical
@@ -272,6 +290,25 @@ final class IntelligenceService {
 
         // Compile immediately after marking (don't wait for foreground)
         await KnowledgeCompiler.shared.recompileDirtyArticles(context: context)
+        return extractionSaved
+    }
+
+    /// Daily-task entry defaults only undated items to the chosen capture day.
+    /// Store resolved dates, so "today" does not move as Home is reopened.
+    private static func dailyTaskDeadline(_ deadline: String, capturedAt: Date) -> String {
+        let raw = deadline.trimmingCharacters(in: .whitespacesAndNewlines)
+        let date: Date?
+        switch raw.lowercased() {
+        case "", "tbd", "today": date = capturedAt
+        case "tomorrow": date = Calendar.current.date(byAdding: .day, value: 1, to: capturedAt)
+        case "yesterday": date = Calendar.current.date(byAdding: .day, value: -1, to: capturedAt)
+        default: date = EventKitSyncService.parseDate(from: raw)
+        }
+        guard let date else { return deadline }
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return formatter.string(from: date)
     }
 
     // MARK: - Re-run (re-process from corrected text)
@@ -413,7 +450,7 @@ final class IntelligenceService {
                 context.insert(ExtractedAction(
                     content: action.content,
                     owner: action.owner,
-                    deadline: action.deadline,
+                    deadline: note.isDailyTaskCapture ? Self.dailyTaskDeadline(action.deadline, capturedAt: note.createdAt) : action.deadline,
                     sourceNoteId: note.id
                 ))
             }

@@ -10,6 +10,7 @@ import Foundation
 enum IntentType: String {
     case newNote = "note"
     case question = "question"
+    case dailyTasks = "daily_tasks"
 }
 
 /// Sub-route classification for question types. Picked by `classifyQuestionRoute(query:)`
@@ -87,12 +88,17 @@ class IntentClassifier {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
         let systemPrompt = """
-        Classify if this is a new thought/note to record OR a question about past notes.
+        Classify this as a new note, a question about past notes, or a spoken daily task list.
+        Return 'daily_tasks' when the speaker tells you their own tasks/to-dos for today,
+        including multiple distinct tasks in one message or an instruction to put them on today's list.
+        These are tasks to record, NOT instructions for an AI agent to execute.
+        A question asking what tasks are already saved remains 'question'.
+        Preserve explicit future dates within a daily list; do not make those tasks due today.
         Questions include: queries starting with 'what', 'show me', 'summarize', 'remind me', \
         'how many', 'when did I', 'who did I', 'list my', 'draft a', 'prepare me', 'connect the dots'.
         New notes include: stream of consciousness, meeting recaps, ideas, decisions, updates.
         If ambiguous, classify as newNote.
-        Respond with ONLY 'question' or 'note'.
+        Respond with ONLY 'daily_tasks', 'question' or 'note'.
         """
 
         let apiMessages: [[String: String]] = [
@@ -131,6 +137,7 @@ class IntentClassifier {
         let decoded = try JSONDecoder().decode(Response.self, from: data)
         let raw = decoded.choices.first?.message.content.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
 
+        if raw == "daily_tasks" { return .dailyTasks }
         if raw.contains("question") {
             return .question
         }

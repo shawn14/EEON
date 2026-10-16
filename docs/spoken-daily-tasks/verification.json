@@ -1,0 +1,10 @@
+{
+  "swiftFrontendParse": "passed",
+  "diffCheck": "passed",
+  "nativeBuildExit": 70,
+  "nativeBuildCompiled": false,
+  "blocker": "Xcode iOS26.2 platform not installed; no simulator runtimes",
+  "realSpeechExtraction": "not exercised",
+  "actualMCPChecklistRead": "not exercised",
+  "publication": "held"
+}

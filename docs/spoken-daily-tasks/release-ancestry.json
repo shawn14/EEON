@@ -1,0 +1,20 @@
+{
+  "merge": "5d93b9fb378990d993dc80813faf615b469c0703",
+  "parents": [
+    "ce906eb30307758a68c1fe57580858e5e290df05",
+    "6f7d7edfb447b705fcbb565b6cd1492981bdd23e"
+  ],
+  "tree": "f53c638de0d5bf390d2c8495237220a6fd4fcb73",
+  "previousTree": "f53c638de0d5bf390d2c8495237220a6fd4fcb73",
+  "releasedSource": "225e472d198eb247c90e31ae15eea663745277ed",
+  "claim": "Release history reconciled on candidate only, exact prior source tree preserved; not merged main or runtime verified",
+  "independentAudit": {
+    "agent": "/root/review_spoken_today",
+    "observed": "actual local Git and source reads",
+    "passed": true,
+    "tree": "f53c638de0d5bf390d2c8495237220a6fd4fcb73",
+    "releaseAncestorExit": 0,
+    "productDiff": "empty",
+    "limits": "No native/runtime/network/publication verification"
+  }
+}
