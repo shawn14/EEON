@@ -1,0 +1,444 @@
+{
+  "retrievedAt": "2026-10-16T16:57:07.286981+00:00",
+  "appId": "6758273499",
+  "bundleId": "voice.notes.voice-notes",
+  "versions": [
+    {
+      "id": "594711ef-943a-4c4b-b04d-c8e473ab011a",
+      "attributes": {
+        "platform": "MAC_OS",
+        "versionString": "3.11.0",
+        "appStoreState": "PREPARE_FOR_SUBMISSION",
+        "appVersionState": "PREPARE_FOR_SUBMISSION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-10-16T09:54:46-07:00"
+      },
+      "localizations": [
+        {
+          "type": "appStoreVersionLocalizations",
+          "id": "c4c45856-5557-42b4-a8a1-0cd195758142",
+          "attributes": {
+            "description": "Building with AI starts with knowing what you want to build.\n\nEEON helps founders capture ideas, product decisions, bugs, and next steps by voice. Turn a thought into a readable note, keep the actions attached, and let your connected AI workspace read the context when you ask.\n\nTHINK OUT LOUD\n\nCapture a feature idea on a walk, a bug after testing, or what you learned from a customer conversation. EEON transcribes and organizes your words while keeping the original transcript.\n\nKEEP THE DECISIONS AND NEXT STEPS\n\nFind the actions, commitments, people, and projects in your notes. Complete tasks from a note, or enable Apple Reminders to keep follow-ups in your existing task list.\n\nAsk your memory:\n- What did I decide about onboarding?\n- Which bugs did I mention after testing?\n- What follow-ups came out of that customer call?\n\nBRING YOUR CONTEXT TO YOUR AI\n\nWith optional AI agent access, compatible tools such as Claude Code, Codex, and Cursor can search and read your EEON notes after you connect and authorize them.\n\nUse Send to an Agent on a note to copy a prompt, then paste it into your connected workspace. Ask your agent to turn the note into a plan or use it as context for the next task. Your coding tool handles the build and its own permissions; EEON gives it the notes you captured.\n\nCAPTURE WHERE YOU ARE\n\nRecord from the app or supported iPhone shortcuts, widgets, and recording controls. Import a recording, type a note, or save links and text through the Share Extension. Calendar context can help connect notes to your meetings.\n\nYOUR NOTES, YOUR CHOICE\n\nNotes are stored on your device and sync through your private iCloud account. Audio and text may be sent to AI services for transcription and enhancement. Optional AI agent access creates an encrypted copy of note content on EEON's servers so authorized tools can read it. You can turn that access off in Settings.\n\nFREE TO START\n\nEEON is free to download. EEON Pro unlocks additional AI and memory features.\n\n- EEON Pro: $9.99 per month or $79.99 per year, auto-renewing.\n- Payment is charged to your Apple ID account at confirmation of purchase. The subscription renews automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel in your App Store account settings.\n- Terms of Use: https://eeon.com/terms\n- Privacy Policy: https://eeon.com/privacy",
+            "locale": "en-US",
+            "keywords": "tasks,dictation,transcribe,reminders,ideas,projects,decisions,brain dump,prompts,founder,mcp",
+            "marketingUrl": "https://www.eeon.com",
+            "promotionalText": "Building with AI? Talk through ideas, bugs, and next steps. Keep the decisions, then let your connected AI agent read the context.",
+            "supportUrl": "https://www.eeon.com/support",
+            "whatsNew": "3.11.0 \u2014 Talk through your tasks\n\n- Record an ordinary voice message listing your tasks. EEON can turn it into separate tasks for today.\n- See today's tasks on Home and keep explicit future dates with the appropriate task.\n- With AI agent access enabled, connected agents can read the saved task details in your note."
+          },
+          "relationships": {
+            "appScreenshotSets": {
+              "links": {
+                "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c4c45856-5557-42b4-a8a1-0cd195758142/relationships/appScreenshotSets",
+                "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c4c45856-5557-42b4-a8a1-0cd195758142/appScreenshotSets"
+              }
+            },
+            "appPreviewSets": {
+              "links": {
+                "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c4c45856-5557-42b4-a8a1-0cd195758142/relationships/appPreviewSets",
+                "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c4c45856-5557-42b4-a8a1-0cd195758142/appPreviewSets"
+              }
+            },
+            "searchKeywords": {
+              "links": {
+                "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c4c45856-5557-42b4-a8a1-0cd195758142/relationships/searchKeywords",
+                "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c4c45856-5557-42b4-a8a1-0cd195758142/searchKeywords"
+              }
+            },
+            "placements": {
+              "links": {
+                "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c4c45856-5557-42b4-a8a1-0cd195758142/relationships/placements",
+                "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c4c45856-5557-42b4-a8a1-0cd195758142/placements"
+              }
+            }
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/c4c45856-5557-42b4-a8a1-0cd195758142"
+          }
+        }
+      ],
+      "build": null
+    },
+    {
+      "id": "ea1a455a-be29-43e3-a2f5-1b56b4ebef00",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "3.11.0",
+        "appStoreState": "PREPARE_FOR_SUBMISSION",
+        "appVersionState": "PREPARE_FOR_SUBMISSION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "MANUAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-10-16T09:43:23-07:00"
+      },
+      "localizations": [
+        {
+          "type": "appStoreVersionLocalizations",
+          "id": "b39fd1dd-133f-4ba0-965a-9535992af2a7",
+          "attributes": {
+            "description": "EEON is not a transcription app. It's your AI memory.\n\nPress Record and talk. EEON turns rambling voice into clean notes, tasks synced to Apple Reminders, and meeting context pulled from your calendar. Ask EEON anything later: \"What did I decide about pricing?\" It remembers so you don't have to.\n\nSAY IT ONCE\n\n\"Remind me to send Lena the pricing deck by Friday at five. Marco said the onboarding copy is done. We decided blue, not coral, for the icon.\"\n\nEEON turns that into a clean note, a decision filed under the right context, and \"Send Lena the pricing deck\" in Apple Reminders. Nothing falls through the cracks.\n\nONE SCREEN, ONE BUTTON\n\n- Today's meetings from your calendar, your open tasks, your latest notes, and Record\n- Record from the Action Button, Control Center, Lock Screen, Siri, widgets, or the app\n- Import a recording, type a note, or add a link or document\n- Every note shows the tasks EEON pulled from it, with one-tap completion\n\nNOT JUST TRANSCRIPTION\n\nMost voice note tools stop at a transcript or summary. EEON builds a working memory from what you said:\n\n- Decisions\n- Action items\n- Commitments\n- People\n- Projects\n- Topics\n- Questions and follow-ups\n\nThen ask it in plain language:\n\n- \"What did I decide about pricing?\"\n- \"What follow-ups do I owe Lena?\"\n- \"What came up in last week's product meetings?\"\n- \"What bugs did I mention while walking?\"\n- \"Summarize what I said about the launch.\"\n\nMADE FOR PEOPLE WHO THINK OUT LOUD\n\n- Quick thoughts while walking or driving\n- Meeting notes and standups\n- Product decisions and launch context\n- Customer calls and follow-ups\n- Journal entries, brain dumps, and personal reflection\n- Tasks you do not want to forget\n\nBUILT FOR THE APPLE SYSTEM\n\n- Sign in with Apple; notes sync through your private iCloud\n- Meeting notes get the event title and attendees from iPhone Calendar or Google Calendar\n- Action items land in an EEON list in Apple Reminders\n- Optional: connect Claude, ChatGPT, or Cursor to read your EEON memory, read-only, only after you authorize it\n\nPRIVATE BY DEFAULT\n\nYour notes are stored on your device and sync through your private iCloud account. Audio and text may be sent to AI services for transcription and note enhancement. EEON does not use your notes to train models.\n\nFREE TO START\n\nRecord and transcribe for free. EEON Pro unlocks unlimited AI notes, formats, and the full memory.\n\n- EEON Pro: $9.99 per month or $79.99 per year, auto-renewing\n- Payment is charged to your Apple ID account at confirmation of purchase. The subscription renews automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel in your App Store account settings.\n- Terms of Use: https://eeon.com/terms\n- Privacy Policy: https://eeon.com/privacy\n\nSay it once. EEON remembers.",
+            "locale": "en-US",
+            "keywords": "second brain,journal,dictation,transcribe,meeting,reminders,decisions,commitments,brain dump,ask",
+            "marketingUrl": "https://www.eeon.com",
+            "promotionalText": null,
+            "supportUrl": "https://www.eeon.com/support",
+            "whatsNew": "Automatically figures out tasks from a voice note "
+          },
+          "relationships": {
+            "appScreenshotSets": {
+              "links": {
+                "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7/relationships/appScreenshotSets",
+                "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7/appScreenshotSets"
+              }
+            },
+            "appPreviewSets": {
+              "links": {
+                "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7/relationships/appPreviewSets",
+                "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7/appPreviewSets"
+              }
+            },
+            "searchKeywords": {
+              "links": {
+                "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7/relationships/searchKeywords",
+                "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7/searchKeywords"
+              }
+            },
+            "placements": {
+              "links": {
+                "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7/relationships/placements",
+                "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7/placements"
+              }
+            }
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7"
+          }
+        }
+      ],
+      "build": {
+        "type": "builds",
+        "id": "26f26007-ba7a-49db-b7cd-51c8d83822f9",
+        "attributes": {
+          "version": "172",
+          "uploadedDate": "2026-10-16T09:31:44-07:00",
+          "expirationDate": "2027-01-14T08:31:44-08:00",
+          "expired": false,
+          "minOsVersion": "26.2",
+          "lsMinimumSystemVersion": null,
+          "computedMinMacOsVersion": "26.2",
+          "computedMinVisionOsVersion": "26.2",
+          "iconAssetToken": {
+            "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/23/37/56/233756b4-17f2-1451-57d9-78cd0f8db656/AppIcon76x76@2x_U007eipad.png/{w}x{h}bb.{f}",
+            "width": 152,
+            "height": 152
+          },
+          "processingState": "VALID",
+          "buildAudienceType": "APP_STORE_ELIGIBLE",
+          "usesNonExemptEncryption": false
+        },
+        "relationships": {
+          "preReleaseVersion": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/preReleaseVersion",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/preReleaseVersion"
+            }
+          },
+          "individualTesters": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/individualTesters",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/individualTesters"
+            }
+          },
+          "betaGroups": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/betaGroups"
+            }
+          },
+          "betaBuildLocalizations": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/betaBuildLocalizations",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/betaBuildLocalizations"
+            }
+          },
+          "appEncryptionDeclaration": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/appEncryptionDeclaration",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/appEncryptionDeclaration"
+            }
+          },
+          "betaAppReviewSubmission": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/betaAppReviewSubmission",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/betaAppReviewSubmission"
+            }
+          },
+          "app": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/app",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/app"
+            }
+          },
+          "buildBetaDetail": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/buildBetaDetail",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/buildBetaDetail"
+            }
+          },
+          "appStoreVersion": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/appStoreVersion",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/appStoreVersion"
+            }
+          },
+          "icons": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/icons",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/icons"
+            }
+          },
+          "perfPowerMetrics": {
+            "links": {
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/perfPowerMetrics"
+            }
+          },
+          "diagnosticSignatures": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/diagnosticSignatures",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/diagnosticSignatures"
+            }
+          }
+        },
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9"
+        }
+      }
+    },
+    {
+      "id": "739e0eb1-fbce-43c1-996c-4d86b8d7125b",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "3.10.0",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "MANUAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-09-30T06:53:18-07:00"
+      },
+      "localizations": [
+        {
+          "type": "appStoreVersionLocalizations",
+          "id": "0e83d20c-2562-4bde-8628-f38d76f457a9",
+          "attributes": {
+            "description": "EEON is not a transcription app. It's your AI memory.\n\nPress Record and talk. EEON turns rambling voice into clean notes, tasks synced to Apple Reminders, and meeting context pulled from your calendar. Ask EEON anything later: \"What did I decide about pricing?\" It remembers so you don't have to.\n\nSAY IT ONCE\n\n\"Remind me to send Lena the pricing deck by Friday at five. Marco said the onboarding copy is done. We decided blue, not coral, for the icon.\"\n\nEEON turns that into a clean note, a decision filed under the right context, and \"Send Lena the pricing deck\" in Apple Reminders. Nothing falls through the cracks.\n\nONE SCREEN, ONE BUTTON\n\n- Today's meetings from your calendar, your open tasks, your latest notes, and Record\n- Record from the Action Button, Control Center, Lock Screen, Siri, widgets, or the app\n- Import a recording, type a note, or add a link or document\n- Every note shows the tasks EEON pulled from it, with one-tap completion\n\nNOT JUST TRANSCRIPTION\n\nMost voice note tools stop at a transcript or summary. EEON builds a working memory from what you said:\n\n- Decisions\n- Action items\n- Commitments\n- People\n- Projects\n- Topics\n- Questions and follow-ups\n\nThen ask it in plain language:\n\n- \"What did I decide about pricing?\"\n- \"What follow-ups do I owe Lena?\"\n- \"What came up in last week's product meetings?\"\n- \"What bugs did I mention while walking?\"\n- \"Summarize what I said about the launch.\"\n\nMADE FOR PEOPLE WHO THINK OUT LOUD\n\n- Quick thoughts while walking or driving\n- Meeting notes and standups\n- Product decisions and launch context\n- Customer calls and follow-ups\n- Journal entries, brain dumps, and personal reflection\n- Tasks you do not want to forget\n\nBUILT FOR THE APPLE SYSTEM\n\n- Sign in with Apple; notes sync through your private iCloud\n- Meeting notes get the event title and attendees from iPhone Calendar or Google Calendar\n- Action items land in an EEON list in Apple Reminders\n- Optional: connect Claude, ChatGPT, or Cursor to read your EEON memory, read-only, only after you authorize it\n\nPRIVATE BY DEFAULT\n\nYour notes are stored on your device and sync through your private iCloud account. Audio and text may be sent to AI services for transcription and note enhancement. EEON does not use your notes to train models.\n\nFREE TO START\n\nRecord and transcribe for free. EEON Pro unlocks unlimited AI notes, formats, and the full memory.\n\n- EEON Pro: $9.99 per month or $79.99 per year, auto-renewing\n- Payment is charged to your Apple ID account at confirmation of purchase. The subscription renews automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel in your App Store account settings.\n- Terms of Use: https://eeon.com/terms\n- Privacy Policy: https://eeon.com/privacy\n\nSay it once. EEON remembers.",
+            "locale": "en-US",
+            "keywords": "second brain,journal,dictation,transcribe,meeting,reminders,decisions,commitments,brain dump,ask",
+            "marketingUrl": "https://www.eeon.com",
+            "promotionalText": "Press Record and talk. EEON turns your voice into clean notes, tasks in Apple Reminders, and a memory you can ask later. Nothing falls through the cracks.",
+            "supportUrl": "https://www.eeon.com/support",
+            "whatsNew": "3.10.0 \u2014 Your notes, in your AI agents\n\u2022 New: Settings \u2192 AI agents. Turn it on and Claude Code, Codex, Cursor, or Claude can read your notes, read-only\n\u2022 Connect a computer in seconds: scan its QR code with EEON and tap Allow. No passwords or keys to copy\n\u2022 Send to an Agent: one tap on any note copies a ready prompt for your AI tool\n\u2022 Calendar: tapping an event no longer starts the video call. Join from the call button instead"
+          },
+          "relationships": {
+            "appScreenshotSets": {
+              "links": {
+                "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/0e83d20c-2562-4bde-8628-f38d76f457a9/relationships/appScreenshotSets",
+                "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/0e83d20c-2562-4bde-8628-f38d76f457a9/appScreenshotSets"
+              }
+            },
+            "appPreviewSets": {
+              "links": {
+                "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/0e83d20c-2562-4bde-8628-f38d76f457a9/relationships/appPreviewSets",
+                "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/0e83d20c-2562-4bde-8628-f38d76f457a9/appPreviewSets"
+              }
+            },
+            "searchKeywords": {
+              "links": {
+                "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/0e83d20c-2562-4bde-8628-f38d76f457a9/relationships/searchKeywords",
+                "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/0e83d20c-2562-4bde-8628-f38d76f457a9/searchKeywords"
+              }
+            },
+            "placements": {
+              "links": {
+                "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/0e83d20c-2562-4bde-8628-f38d76f457a9/relationships/placements",
+                "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/0e83d20c-2562-4bde-8628-f38d76f457a9/placements"
+              }
+            }
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/0e83d20c-2562-4bde-8628-f38d76f457a9"
+          }
+        }
+      ],
+      "build": {
+        "type": "builds",
+        "id": "fb183b0e-cb47-49bc-8481-b7bd6429a74d",
+        "attributes": {
+          "version": "171",
+          "uploadedDate": "2026-10-08T07:16:19-07:00",
+          "expirationDate": "2027-01-06T06:16:19-08:00",
+          "expired": false,
+          "minOsVersion": "26.2",
+          "lsMinimumSystemVersion": null,
+          "computedMinMacOsVersion": "26.2",
+          "computedMinVisionOsVersion": "26.2",
+          "iconAssetToken": {
+            "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e2/e3/83/e2e383bf-fd4e-5a14-9bdf-8b8553c4cf62/AppIcon76x76@2x_U007eipad.png/{w}x{h}bb.{f}",
+            "width": 152,
+            "height": 152
+          },
+          "processingState": "VALID",
+          "buildAudienceType": "APP_STORE_ELIGIBLE",
+          "usesNonExemptEncryption": false
+        },
+        "relationships": {
+          "preReleaseVersion": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/preReleaseVersion",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/preReleaseVersion"
+            }
+          },
+          "individualTesters": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/individualTesters",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/individualTesters"
+            }
+          },
+          "betaGroups": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/betaGroups"
+            }
+          },
+          "betaBuildLocalizations": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/betaBuildLocalizations",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/betaBuildLocalizations"
+            }
+          },
+          "appEncryptionDeclaration": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/appEncryptionDeclaration",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/appEncryptionDeclaration"
+            }
+          },
+          "betaAppReviewSubmission": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/betaAppReviewSubmission",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/betaAppReviewSubmission"
+            }
+          },
+          "app": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/app",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/app"
+            }
+          },
+          "buildBetaDetail": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/buildBetaDetail",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/buildBetaDetail"
+            }
+          },
+          "appStoreVersion": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/appStoreVersion",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/appStoreVersion"
+            }
+          },
+          "icons": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/icons",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/icons"
+            }
+          },
+          "perfPowerMetrics": {
+            "links": {
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/perfPowerMetrics"
+            }
+          },
+          "diagnosticSignatures": {
+            "links": {
+              "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/diagnosticSignatures",
+              "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/diagnosticSignatures"
+            }
+          }
+        },
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d"
+        }
+      }
+    }
+  ],
+  "appInfos": [
+    {
+      "id": "3a35fe21-67b3-4744-93a8-efec012524c5",
+      "attributes": {
+        "appStoreState": "READY_FOR_SALE",
+        "state": "READY_FOR_DISTRIBUTION",
+        "appStoreAgeRating": "FOUR_PLUS",
+        "australiaAgeRating": null,
+        "brazilAgeRating": "L",
+        "brazilAgeRatingV2": "SELF_RATED_L",
+        "franceAgeRating": null,
+        "koreaAgeRating": null
+      },
+      "localizations": [
+        {
+          "type": "appInfoLocalizations",
+          "id": "37a889bc-70b1-483b-8a18-f2896b07bc0d",
+          "attributes": {
+            "locale": "en-US",
+            "name": "EEON: AI Memory & Notes",
+            "subtitle": "Voice notes, tasks & recall",
+            "privacyPolicyUrl": "https://www.eeon.com/privacy",
+            "privacyChoicesUrl": null,
+            "privacyPolicyText": null
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/appInfoLocalizations/37a889bc-70b1-483b-8a18-f2896b07bc0d"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e0e5dbc9-9200-4de8-b7e7-543c3b7a05fc",
+      "attributes": {
+        "appStoreState": "PREPARE_FOR_SUBMISSION",
+        "state": "PREPARE_FOR_SUBMISSION",
+        "appStoreAgeRating": "FOUR_PLUS",
+        "australiaAgeRating": null,
+        "brazilAgeRating": "L",
+        "brazilAgeRatingV2": "SELF_RATED_L",
+        "franceAgeRating": null,
+        "koreaAgeRating": null
+      },
+      "localizations": [
+        {
+          "type": "appInfoLocalizations",
+          "id": "1ad55558-b7a8-4170-a714-1cb71b6e0825",
+          "attributes": {
+            "locale": "en-US",
+            "name": "EEON: AI Memory & Notes",
+            "subtitle": "Voice notes for AI builders",
+            "privacyPolicyUrl": "https://www.eeon.com/privacy",
+            "privacyChoicesUrl": null,
+            "privacyPolicyText": null
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/appInfoLocalizations/1ad55558-b7a8-4170-a714-1cb71b6e0825"
+          }
+        }
+      ]
+    }
+  ]
+}

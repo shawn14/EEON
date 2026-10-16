@@ -70,7 +70,7 @@ Reuse the existing SwiftData notes/actions/projects, extraction pipeline, CloudK
 
 The current public description opens with generic AI memory, then spans journaling, meetings and personal reflection. Agent access is buried near the bottom. The website also leads with a general personal assistant promise. Promote the founder's use case and make the agent handoff understandable near the top.
 
-| Field | Proposed | Limit |
+| Field | Uploaded draft | Limit |
 |---|---|---|
 | Name | EEON: AI Memory & Notes | 23 / 30 |
 | Subtitle | Voice notes for AI builders | 27 / 30 |
@@ -104,7 +104,7 @@ First three screenshots should carry the story. Calendar and general journaling 
 ## Measurement and next work
 
 1. Complete the real TestFlight founder flow and capture its outputs. This is the immediate product proof, using existing work rather than a new feature batch.
-2. Upload the authorized metadata through central Fastlane, read every field back, and accurately distinguish an Apple draft from an approved public listing. Preserve current screenshots unless real replacement captures are ready. Build172 device proof and any release prerequisites remain explicit before review submission.
+2. Metadata is uploaded to the editable iOS draft with exact readback. After the real TestFlight flow passes, use its captures for the screenshot plan and the established review submission path. Existing screenshots remain until real replacements are ready. No App Review submission occurred in this ASO pass.
 3. Test the proposition with5–10 actual founders already building with AI, using the same capture→agent-read→next-step example. This is a proposed validation sample, not a claim of statistical significance. Measure first usable note, successful agent read, repeated use in the following week and willingness to pay. No outreach was sent or authorized by the research request.
 
 For store measurement, obtain the previous28 complete days of US iPhone Search impressions, first-time downloads and conversion, separately from Browse/referrals and paid acquisition where possible. Then compare the same sources after publication while keeping price/paywall stable. The earlier October8 reporting-key403 remains an unresolved historical access limitation; this session has no download or conversion baseline and does not claim an ASO lift. Small samples require absolute counts, not impressive percentages. Existing user reviews cannot estimate keyword volume.
@@ -114,3 +114,17 @@ For store measurement, obtain the previous28 complete days of US iPhone Search i
 Use the central clean-source Fastlane metadata lane, `fastlane metadata app:voice-notes version:3.11.0`, after observing Apple's actual editable state. The lane uploads metadata only, skips screenshots/binary upload, and does not submit review. The repo's `scripts/asc_push.py --version 3.11.0 --skip-screenshots` is the established recovery if deliver reports success but exact field readback differs; use no repeated blind retries. Confirm source against the reviewed candidate and read back all six fields independently.
 
 Research base mainf9a9dbf contains both uploaded172 sourceabfdd41 and previous App Store171 source6f7d7ed. Nothing in this task rebuilds or changes that binary. Latest Apple upload/readback status is recorded below as work completes.
+
+## Upload result and recovered tooling incident
+
+**October16,17:04:10Z: corrected Fastlane upload completed.** iOS3.11.0 remains PREPARE_FOR_SUBMISSION with VALID build172 attached, release typeMANUAL. The six ASO fields plus marketing, support and privacy URLs match local source exactly. All15 existing iOS screenshots are retained; this pass did not upload new graphics. PubliciOS3.10.0/build171 remains live. This is an Apple draft upload, not public publication, App Review submission, or runtime proof of the task feature.
+
+The initial canonical lane incorrectly inferred macOS from the repo's tracked `voice notes.pkg` and resolved `./apps/.../metadata` against the wrong working directory, creating an empty metadata folder. It reported success and created a new MAC_OS3.11.0 draft at16:54:46Z. The existing recovery script selected the first same-version result without a platform filter, so it populated that Mac draft while iOS remained unchanged. Exact Apple readback and an independent refuter caught both errors before any submission.
+
+Fixed the central lane to pass explicitiOS and an absolute metadata path, validate the six required EEON files, and call the read-only exact-match verifier. Fixed recovery to select IOS+version, reject ambiguity, never create during verify-only, and fail on mismatched local metadata fields. The new guard failed against actual old iOS copy, then passed against the corrected upload. Ruby/Python syntax and diff checks also pass. Do not retry a successful-looking deliver operation blindly; inspect platform and exact values.
+
+Apple rejected deletion of the unintended Mac draft with409STATE_ERROR: only the first platform version may be deleted, and no version can be deleted once a build has been uploaded for that platform. Its version-localized copy was therefore restored from freshly read liveMac3.5.1. It remains an unused PREPARE_FOR_SUBMISSION draft with no build. The shared editable appInfo intentionally keeps the approved iOS subtitle; live appInfo remains unchanged. **The unused Mac draft was not deleted.** Receipts: `evidence/mac-draft-cleanup.json`, `mac-draft-restoration.json`, `asc-final.json`, and `independent-final.json`.
+
+The evidence proves Apple's stored fields, selected build and assets. Founder conversion lift, retention, willingness to pay, on-device task behavior and agent runtime execution remain unproven.
+
+Independent Apple reads at17:07:07–17:07:18Z confirm all nine fields, build172VALID, all15unchanged screenshots, liveiOS3.10/build171 and public appInfo unchanged, and absent submission relationships on both drafts. Current liveMac3.5.1/build138 matches the saved restoration source; no original pre-operation Mac snapshot existed, so this does not assert a broader historical Mac comparison. The unusedMacdraft remains without a build.

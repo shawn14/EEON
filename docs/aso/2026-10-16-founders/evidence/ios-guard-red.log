@@ -1,0 +1,7 @@
+IOS version 3.11.0: PREPARE_FOR_SUBMISSION (ea1a455a-be29-43e3-a2f5-1b56b4ebef00)
+Traceback (most recent call last):
+  File "/private/tmp/eeon-founder-fastlane/scripts/asc_push.py", line 271, in <module>
+    raise SystemExit(main())
+  File "/private/tmp/eeon-founder-fastlane/scripts/asc_push.py", line 253, in main
+    raise ASCError("exact Apple metadata readback differs: " + ", ".join(mismatches))
+__main__.ASCError: exact Apple metadata readback differs: description, keywords, promotional_text, release_notes

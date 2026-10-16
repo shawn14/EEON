@@ -30,8 +30,8 @@
     "pass": true
   },
   "scope": {
-    "status": "DRAFT \u2014 not uploaded",
-    "release_notes": "3.11.0 candidate; publish only after the actual TestFlight feature walk passes",
-    "price": "Retained from the public US listing, not changed; verify storefront products before upload"
+    "status": "Uploaded to App Store Connect iOS3.11.0 draft; not public",
+    "release_notes": "Build172 task changes; physical TestFlight flow remains for Shawn before review submission",
+    "price": "Existing prices retained; no pricing write"
   }
 }

@@ -1,0 +1,32 @@
+{
+  "name": {
+    "match": true,
+    "expectedLength": 23,
+    "actualLength": 23
+  },
+  "subtitle": {
+    "match": false,
+    "expectedLength": 27,
+    "actualLength": 27
+  },
+  "description": {
+    "match": false,
+    "expectedLength": 2373,
+    "actualLength": 2798
+  },
+  "keywords": {
+    "match": false,
+    "expectedLength": 92,
+    "actualLength": 96
+  },
+  "promotional_text": {
+    "match": false,
+    "expectedLength": 130,
+    "actualLength": 0
+  },
+  "release_notes": {
+    "match": false,
+    "expectedLength": 317,
+    "actualLength": 50
+  }
+}
