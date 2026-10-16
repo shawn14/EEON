@@ -1,0 +1,54 @@
+{
+  "ipaSha256": "1dcc0b210b1d9891651fb2bec7641dc7e0f7124ffa9f5fd557a0c3b308fdceef",
+  "bundles": [
+    {
+      "bundle": "voice notes.app",
+      "identifier": "voice.notes.voice-notes",
+      "version": "3.11.0",
+      "build": "172",
+      "backgroundModes": [
+        "audio",
+        "remote-notification",
+        "fetch"
+      ],
+      "getTaskAllow": false,
+      "applicationIdentifier": "BYRK5RUS4U.voice.notes.voice-notes",
+      "icloudEnvironment": "Production"
+    },
+    {
+      "bundle": "EEONWatch.app",
+      "identifier": "voice.notes.voice-notes.watchkitapp",
+      "version": "3.11.0",
+      "build": "172",
+      "backgroundModes": [
+        "audio"
+      ],
+      "getTaskAllow": false,
+      "applicationIdentifier": "BYRK5RUS4U.voice.notes.voice-notes.watchkitapp",
+      "icloudEnvironment": null
+    },
+    {
+      "bundle": "EEONShareExtension.appex",
+      "identifier": "voice.notes.voice-notes.EEONShareExtension",
+      "version": "3.11.0",
+      "build": "172",
+      "backgroundModes": null,
+      "getTaskAllow": false,
+      "applicationIdentifier": "BYRK5RUS4U.voice.notes.voice-notes.EEONShareExtension",
+      "icloudEnvironment": null
+    },
+    {
+      "bundle": "VoiceNotesWidgetExtension.appex",
+      "identifier": "voice.notes.voice-notes.widget",
+      "version": "3.11.0",
+      "build": "172",
+      "backgroundModes": null,
+      "getTaskAllow": false,
+      "applicationIdentifier": "BYRK5RUS4U.voice.notes.voice-notes.widget",
+      "icloudEnvironment": null
+    }
+  ],
+  "cloudKitTokenResolved": true,
+  "dailyTasksClassifierInBinary": true,
+  "sourceSha": "abfdd41a425acf668ef6c3417a472bd1a625a69e"
+}

@@ -1,0 +1,11 @@
+{
+  "candidateVersion": "3.11.0",
+  "candidateBuild": "172",
+  "fastlaneExit": 0,
+  "uploadCompletedAt": "2026-10-16T16:30:38Z",
+  "sourceSha": "abfdd41a425acf668ef6c3417a472bd1a625a69e",
+  "ipaSha256": "1dcc0b210b1d9891651fb2bec7641dc7e0f7124ffa9f5fd557a0c3b308fdceef",
+  "fastlaneSourceSha": "77e0572",
+  "appleProcessing": "VALID",
+  "internalBuildState": "IN_BETA_TESTING"
+}

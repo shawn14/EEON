@@ -272,7 +272,7 @@ Direct URLSession calls (no SDK) in `SummaryService.swift` and sibling services:
 
 **Built, not verified on a watch** (as of 2026-10-06): it compiles and links for watchOS, and the phone's file-claiming and ledger code pass a harness, but recording, wrist-down recording (`UIBackgroundModes: audio` in `EEONWatch/Info.plist`), the transfer, and the built Info.plist have never run. Check those on Shawn's watch before describing the watch app as working.
 
-**Release gate (not done):** the next `fastlane beta`/`release app:voice-notes` will fail at signing until (1) bundle id `voice.notes.voice-notes.watchkitapp` is registered, (2) `~/projects/fastlane-configs/fastlane/Fastfile` fetches a distribution profile for it (today only `golf` and `cal` are in the watch-profile branch) and lists the watch bundle in its artifact requirements, and (3) App Store Connect has Apple Watch screenshots. `MARKETING_VERSION` now also lives in the watch target and must be bumped with the app's. The Wi-Fi device install below may also need a development profile for the watch app. Every iOS build now needs Xcode's watchOS platform.
+**Release signing completed (2026-10-16):** central Fastlane beta registers/reuses the EEON Watch bundle and distribution profile; signed3.11.0/build172 was verified with the Watch payload, audio background mode and matching app/extension versions before Apple accepted it. watchOS26.2 must remain installed for archives. App Store Watch screenshots and physical wrist-down/transfer behavior remain unverified; TestFlight readiness does not prove those behaviors.
 
 ## Testing
 

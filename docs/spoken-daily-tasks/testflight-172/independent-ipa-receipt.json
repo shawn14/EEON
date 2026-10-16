@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-10-16T16:31:40.830260+00:00",
+  "ipaSHA256": "1dcc0b210b1d9891651fb2bec7641dc7e0f7124ffa9f5fd557a0c3b308fdceef",
+  "bundles": [
+    {
+      "path": "Payload/voice notes.app",
+      "bundleId": "voice.notes.voice-notes",
+      "version": "3.11.0",
+      "build": "172",
+      "strictSignature": "PASS",
+      "getTaskAllow": false,
+      "profileName": "voice.notes.voice-notes AppStore",
+      "profileExpires": "2027-05-05T19:35:33",
+      "icloudEnvironment": "Production",
+      "backgroundModes": [
+        "audio",
+        "remote-notification",
+        "fetch"
+      ]
+    },
+    {
+      "path": "Payload/voice notes.app/PlugIns/EEONShareExtension.appex",
+      "bundleId": "voice.notes.voice-notes.EEONShareExtension",
+      "version": "3.11.0",
+      "build": "172",
+      "strictSignature": "PASS",
+      "getTaskAllow": false,
+      "profileName": "voice.notes.voice-notes.EEONShareExtension AppStore",
+      "profileExpires": "2027-05-05T19:35:33",
+      "icloudEnvironment": null,
+      "backgroundModes": []
+    },
+    {
+      "path": "Payload/voice notes.app/PlugIns/VoiceNotesWidgetExtension.appex",
+      "bundleId": "voice.notes.voice-notes.widget",
+      "version": "3.11.0",
+      "build": "172",
+      "strictSignature": "PASS",
+      "getTaskAllow": false,
+      "profileName": "voice.notes.voice-notes.widget AppStore",
+      "profileExpires": "2027-05-05T19:35:33",
+      "icloudEnvironment": null,
+      "backgroundModes": []
+    },
+    {
+      "path": "Payload/voice notes.app/Watch/EEONWatch.app",
+      "bundleId": "voice.notes.voice-notes.watchkitapp",
+      "version": "3.11.0",
+      "build": "172",
+      "strictSignature": "PASS",
+      "getTaskAllow": false,
+      "profileName": "voice.notes.voice-notes.watchkitapp AppStore",
+      "profileExpires": "2027-05-05T19:35:33",
+      "icloudEnvironment": null,
+      "backgroundModes": [
+        "audio"
+      ]
+    }
+  ],
+  "dailyTasksMarkerInSignedMainBinary": true
+}

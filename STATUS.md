@@ -334,3 +334,7 @@
 - Preflight complete: iOS+Watch destinations independently verified, production CloudKit schema matches, real signed-IPA extension guard red→green plus independent pass. Automatic approval review blocked shared Fastlane main push; question now requests both repo main pushes. All edits remain local/uncommitted, no archive/provisioning/upload. Resume evidence: docs/spoken-daily-tasks/testflight-172/README.md. Preserve /private/tmp/eeon-testflight and /private/tmp/eeon-fastlane pending approval; unrelated Nori edits untouched.
 
 - Shawn explicitly approved both main pushes and continuing the TestFlight upload. Approval block cleared; proceeding with prepared3.11.0/172 through the canonical beta lane.
+
+## 2026-10-16 — EEON3.11.0(172) TestFlight upload completed
+- Explicit approval cleared both main pushes. Sourceabfdd41 (clean pushedmain, includes prior171source6f7d7ed) built via canonical Fastlane77e0572; lane exit0/upload16:30:38Z. Apple build26f26007-ba7a-49db-b7cd-51c8d83822f9 is VALID,3.11.0IOS,IN_BETA_TESTING; internal Beta group accesses all builds. Live3.10.0 remains; no AppStore review/externalbeta submission.
+- Four signed bundles3.11.0/172 pass strict signatures, production signing/CloudKit, Watch backgroundaudio and binary daily_tasks marker; independent artifact audit also passed. IPA SHA1dcc0b210b1d9891651fb2bec7641dc7e0f7124ffa9f5fd557a0c3b308fdceef. Runtime feature behavior remains for Shawn to test in TestFlight, as approved. Evidence: docs/spoken-daily-tasks/testflight-172/README.md.
