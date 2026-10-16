@@ -1,0 +1,21 @@
+APP: EEON: AI Memory & Notes (6758273499)  slug=voice-notes  subs=pro_monthly, pro_annual
+
+=== PHASE submit (APPLY=false) version=3.11.0 build=172 ===
+build 172 processingState=VALID
+
+pro_monthly state=APPROVED
+  subscriptionSubmission: dry-run
+
+pro_annual state=APPROVED
+  subscriptionSubmission: dry-run
+
+version 3.11.0 state=PREPARE_FOR_SUBMISSION (ea1a455a-be29-43e3-a2f5-1b56b4ebef00)
+canceled active review submissions: 
+app review submission: dry-run
+
+-- readback --
+version 3.11.0: PREPARE_FOR_SUBMISSION
+pro_monthly: APPROVED
+pro_annual: APPROVED
+
+DONE (APPLY=false, PHASE=submit)

@@ -1,0 +1,303 @@
+{
+  "checkedAt": "2026-10-16T17:38:31.289609+00:00",
+  "independent": true,
+  "httpMethods": [
+    "GET"
+  ],
+  "checks": {
+    "sameApp": true,
+    "sameIOSVersionId": true,
+    "IOSWaitingForReview": true,
+    "manualRelease": true,
+    "attached172VALID": true,
+    "sameUploadedBuildId": true,
+    "buildUnexpiredEncryptionCleared": true,
+    "buildIsIOS311": true,
+    "metadata_name": true,
+    "metadata_subtitle": true,
+    "metadata_privacy_url": true,
+    "metadata_description": true,
+    "metadata_keywords": true,
+    "metadata_promotional_text": true,
+    "metadata_release_notes": true,
+    "metadata_support_url": true,
+    "metadata_marketing_url": true,
+    "unchanged_ids_order_checksums_APP_IPAD_PRO_3GEN_129": true,
+    "unchanged_ids_order_checksums_APP_IPHONE_65": true,
+    "unchanged_ids_order_checksums_APP_IPHONE_67": true,
+    "watchScreenshotExactAndComplete": true,
+    "watchNative368x448": true,
+    "exactly16CompleteScreenshots": true,
+    "exactlyOneIOSReviewInQueue": true,
+    "reviewItemLinksExactVersion": true,
+    "unusedMacDraftNoBuildUnsubmitted": true,
+    "bothConfiguredSubscriptionsApproved": true,
+    "public310UnchangedFree": true,
+    "watchBundle311Build172": true,
+    "watchSourceMatchesUploadedRelease": true
+  },
+  "version": {
+    "id": "ea1a455a-be29-43e3-a2f5-1b56b4ebef00",
+    "platform": "IOS",
+    "versionString": "3.11.0",
+    "appStoreState": "WAITING_FOR_REVIEW",
+    "appVersionState": "WAITING_FOR_REVIEW",
+    "releaseType": "MANUAL"
+  },
+  "build": {
+    "id": "26f26007-ba7a-49db-b7cd-51c8d83822f9",
+    "version": "172",
+    "processingState": "VALID",
+    "expired": false,
+    "usesNonExemptEncryption": false
+  },
+  "buildTrain": {
+    "id": "1b2f3eea-42e0-41de-b300-aafade323eff",
+    "version": "3.11.0",
+    "platform": "IOS"
+  },
+  "metadata": {
+    "name": {
+      "matches": true,
+      "value": "EEON: AI Memory & Notes",
+      "localSHA256": "89fe27ccc0d464bcee8b96bd68c898d2c084a8c315d970c77999454276eab8a1"
+    },
+    "subtitle": {
+      "matches": true,
+      "value": "Voice notes for AI builders",
+      "localSHA256": "b07cc6a191bc4168b3b50020d0c9fd00f4478119f073800815ec52fb2b11423d"
+    },
+    "privacy_url": {
+      "matches": true,
+      "value": "https://www.eeon.com/privacy",
+      "localSHA256": "15dc1b406df8ac9c65306f0f9b2b6099b25fff0f839772af56bbebbab99fcfa4"
+    },
+    "description": {
+      "matches": true,
+      "value": "Building with AI starts with knowing what you want to build.\n\nEEON helps founders capture ideas, product decisions, bugs, and next steps by voice. Turn a thought into a readable note, keep the actions attached, and let your connected AI workspace read the context when you ask.\n\nTHINK OUT LOUD\n\nCapture a feature idea on a walk, a bug after testing, or what you learned from a customer conversation. EEON transcribes and organizes your words while keeping the original transcript.\n\nKEEP THE DECISIONS AND NEXT STEPS\n\nFind the actions, commitments, people, and projects in your notes. Complete tasks from a note, or enable Apple Reminders to keep follow-ups in your existing task list.\n\nAsk your memory:\n- What did I decide about onboarding?\n- Which bugs did I mention after testing?\n- What follow-ups came out of that customer call?\n\nBRING YOUR CONTEXT TO YOUR AI\n\nWith optional AI agent access, compatible tools such as Claude Code, Codex, and Cursor can search and read your EEON notes after you connect and authorize them.\n\nUse Send to an Agent on a note to copy a prompt, then paste it into your connected workspace. Ask your agent to turn the note into a plan or use it as context for the next task. Your coding tool handles the build and its own permissions; EEON gives it the notes you captured.\n\nCAPTURE WHERE YOU ARE\n\nRecord from the app or supported iPhone shortcuts, widgets, and recording controls. Import a recording, type a note, or save links and text through the Share Extension. Calendar context can help connect notes to your meetings.\n\nYOUR NOTES, YOUR CHOICE\n\nNotes are stored on your device and sync through your private iCloud account. Audio and text may be sent to AI services for transcription and enhancement. Optional AI agent access creates an encrypted copy of note content on EEON's servers so authorized tools can read it. You can turn that access off in Settings.\n\nFREE TO START\n\nEEON is free to download. EEON Pro unlocks additional AI and memory features.\n\n- EEON Pro: $9.99 per month or $79.99 per year, auto-renewing.\n- Payment is charged to your Apple ID account at confirmation of purchase. The subscription renews automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel in your App Store account settings.\n- Terms of Use: https://eeon.com/terms\n- Privacy Policy: https://eeon.com/privacy",
+      "localSHA256": "6eb8a813dbaf075d34bfefafe6e9ed8fba90588441f423c01f96f57aee40448a"
+    },
+    "keywords": {
+      "matches": true,
+      "value": "tasks,dictation,transcribe,reminders,ideas,projects,decisions,brain dump,prompts,founder,mcp",
+      "localSHA256": "34a575f9b587ebd3152489f11e473282366facdcdcfdb4f8dda9ec1c56f1f6d2"
+    },
+    "promotional_text": {
+      "matches": true,
+      "value": "Building with AI? Talk through ideas, bugs, and next steps. Keep the decisions, then let your connected AI agent read the context.",
+      "localSHA256": "f38b6418fff91eb4d4e9443e0dab8f35168bbc3dff39c4b641bb51359d9bb616"
+    },
+    "release_notes": {
+      "matches": true,
+      "value": "3.11.0 \u2014 Talk through your tasks\n\n- Record an ordinary voice message listing your tasks. EEON can turn it into separate tasks for today.\n- See today's tasks on Home and keep explicit future dates with the appropriate task.\n- With AI agent access enabled, connected agents can read the saved task details in your note.",
+      "localSHA256": "085bede5c23e1adb63ead3aad68d7144897ef2419550483f5f38ac9c0c15f9e1"
+    },
+    "support_url": {
+      "matches": true,
+      "value": "https://www.eeon.com/support",
+      "localSHA256": "cc1829bc588f0951aa68b5fdb54b1a9d59532aed553f156b8879faa16e03be3e"
+    },
+    "marketing_url": {
+      "matches": true,
+      "value": "https://www.eeon.com",
+      "localSHA256": "a8ed650b22f3329c3ff9ee937a60371addbb6a3c0ff8419b29002117d5653d67"
+    }
+  },
+  "screenshots": [
+    {
+      "id": "ae2a627d-2ad7-40d7-8882-6d9b9eda84cd",
+      "displayType": "APP_WATCH_SERIES_4",
+      "screenshots": [
+        {
+          "id": "97c00019-2d31-81db-8016-a3b7a8e5fc84",
+          "fileName": "Watch44-01-Record.png",
+          "checksum": "ff511ecc371735ea98d74e5d920d607e",
+          "state": "COMPLETE"
+        }
+      ]
+    },
+    {
+      "id": "70c2412b-5aa6-4b9b-9808-88ce0f9eb49a",
+      "displayType": "APP_IPAD_PRO_3GEN_129",
+      "screenshots": [
+        {
+          "id": "582bcab4-030c-49cd-b07a-f9c2a6ee39e4",
+          "fileName": "iPad129-01-Home.png",
+          "checksum": "ad9901dd524786384758787d5955e555",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "e4aca429-d151-4507-bb5f-8582350d3add",
+          "fileName": "iPad129-02-Calendar.png",
+          "checksum": "4549852d6bdd3eb30f2116b196b3d2bb",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "33f20553-4acf-49cc-808a-6d9a51aca947",
+          "fileName": "iPad129-03-AskEEON.png",
+          "checksum": "f3bdfd41adc05cdc6a8e5f6f160f2a49",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "0bf729c2-73da-43de-8239-ea3221d7d980",
+          "fileName": "iPad129-04-NoteDetail.png",
+          "checksum": "174c1f9bcf7969d73c48e00f50ac8ad1",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "237d2252-d0db-4c17-b362-391ee9d17877",
+          "fileName": "iPad129-05-Tasks.png",
+          "checksum": "485e203f3e2a03e06c75c1e34921000a",
+          "state": "COMPLETE"
+        }
+      ]
+    },
+    {
+      "id": "c7926f37-abcb-4865-8c90-a028d78b275e",
+      "displayType": "APP_IPHONE_65",
+      "screenshots": [
+        {
+          "id": "69ea7755-c57f-4351-819e-bcbcefa4bd29",
+          "fileName": "iPhone65-01-Home.png",
+          "checksum": "de6b1e20091998df88346fdd1238c5d2",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "7d4e13f9-0538-4e0a-b944-380a46e7802f",
+          "fileName": "iPhone65-02-Calendar.png",
+          "checksum": "d5b12fb3bdb64cd23a8a6972730ff7aa",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "83477b0e-2978-4230-848a-7fc998eafe85",
+          "fileName": "iPhone65-03-AskEEON.png",
+          "checksum": "663af4a24eca44611a08094834540826",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "a73a59f5-3a73-4d26-ad6e-e13f89852b33",
+          "fileName": "iPhone65-04-NoteDetail.png",
+          "checksum": "15835ebc0a0aca6b16cb47a81fb98069",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "e5ced0a4-f576-468f-8732-0a6b6b7dd9a4",
+          "fileName": "iPhone65-05-Tasks.png",
+          "checksum": "d1209ef4fa00c8641c1bc83d378b5eeb",
+          "state": "COMPLETE"
+        }
+      ]
+    },
+    {
+      "id": "e0ecdb79-07e9-4ea0-ab9e-abd12b8d85f7",
+      "displayType": "APP_IPHONE_67",
+      "screenshots": [
+        {
+          "id": "5b1a6984-1caa-42b1-a32e-ff0052c56d7c",
+          "fileName": "iPhone67-01-Home.png",
+          "checksum": "244a2ca09c08ecbef4aa21457ebc5152",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "128b2cdb-28f2-48ea-a69b-c26085044f3e",
+          "fileName": "iPhone67-02-Calendar.png",
+          "checksum": "677301e10a51343c92cb085283e7c41e",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "8de8a79b-56d7-4d89-a78d-ae03b3b0cf9e",
+          "fileName": "iPhone67-03-AskEEON.png",
+          "checksum": "b702a46f2f28506148fb9b127043a4dc",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "f8b81f87-408d-4fc5-adeb-f047d86ba17c",
+          "fileName": "iPhone67-04-NoteDetail.png",
+          "checksum": "dec88d1920c9537873d6a86cbcfc0726",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "796b1a3a-f866-4197-8630-96929c760e5d",
+          "fileName": "iPhone67-05-Tasks.png",
+          "checksum": "5ae9d54ddc89d3f91756dc350dd7f96f",
+          "state": "COMPLETE"
+        }
+      ]
+    }
+  ],
+  "watchAsset": {
+    "dimensions": [
+      368,
+      448
+    ],
+    "md5": "ff511ecc371735ea98d74e5d920d607e",
+    "sha256": "c09b9cfe883f2eb1be45ca74df91a90b173d58d192e7c0c562660c806112eef4",
+    "visualReview": "Native idle EEON UI, red microphone button and Tap to record a note; matches unchanged RecordView. No recording or lifecycle claim."
+  },
+  "activeReviews": [
+    {
+      "id": "4bcb6217-7749-4caf-9209-e6f4479cbc4d",
+      "attributes": {
+        "platform": "IOS",
+        "submittedDate": "2026-10-16T17:37:02.685Z",
+        "state": "WAITING_FOR_REVIEW"
+      },
+      "items": [
+        {
+          "id": "NGJjYjYyMTctNzc0OS00Y2FmLTkyMDktZTZmNDQ3OWNiYzRkfDZ8ODkzMzAyMTY0",
+          "attributes": {
+            "state": "READY_FOR_REVIEW"
+          },
+          "appStoreVersionId": "ea1a455a-be29-43e3-a2f5-1b56b4ebef00"
+        }
+      ]
+    }
+  ],
+  "unusedMac311": {
+    "id": "594711ef-943a-4c4b-b04d-c8e473ab011a",
+    "platform": "MAC_OS",
+    "versionString": "3.11.0",
+    "appStoreState": "PREPARE_FOR_SUBMISSION",
+    "appVersionState": "PREPARE_FOR_SUBMISSION",
+    "build": null
+  },
+  "subscriptions": [
+    {
+      "id": "6758279451",
+      "productId": "pro_annual",
+      "state": "APPROVED"
+    },
+    {
+      "id": "6758279481",
+      "productId": "pro_monthly",
+      "state": "APPROVED"
+    }
+  ],
+  "public": {
+    "version": "3.10.0",
+    "price": 0.0,
+    "currency": "USD",
+    "trackViewUrl": "https://apps.apple.com/us/app/eeon-ai-memory-notes/id6758273499?uo=4"
+  },
+  "passed": true,
+  "watchBuild": {
+    "CFBundleIdentifier": "voice.notes.voice-notes.watchkitapp",
+    "CFBundleShortVersionString": "3.11.0",
+    "CFBundleVersion": "172",
+    "DTPlatformName": "watchsimulator",
+    "DTSDKName": "watchsimulator26.2",
+    "WKCompanionAppBundleIdentifier": "voice.notes.voice-notes",
+    "executableSHA256": "9a7c5430e78fad1972856dad71ec7e3578b64439d21ed13ad788fc32083b8ece"
+  },
+  "source": {
+    "uploadedReleaseSHA": "abfdd41a425acf668ef6c3417a472bd1a625a69e",
+    "currentSHA": "1d50e6bb650dada5e39ef1da5b32121b77ddc06d",
+    "releaseSourceIsAncestor": true,
+    "watchTreeUnchangedSinceUploadedRelease": true,
+    "watchWorkingTreeClean": true
+  },
+  "limits": [
+    "Watch screenshot proves current idle UI only; physical recording, transfer and lifecycle behavior were not exercised.",
+    "No Apple state was mutated by this independent reviewer."
+  ]
+}

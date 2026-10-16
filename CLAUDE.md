@@ -367,3 +367,6 @@ Ordinary voice messages listing today's tasks must autoextract individual Today 
 
 ### EEON release source and embedded Watch signing candidate (2026-10-16)
 Prepared central beta lane requires committed version/build for EEON on clean pushed main; no in-build increment. Candidate verifies fresh main/build171 ancestry before and after archive, registers/reuses the Watch bundle/profile, and checks signed app/Watch/extension versions plus Watch background audio. Source changes require push before use. App Store Watch screenshots and physical Watch behavior remain separate. Inspect Xcode platforms/destinations outside the sandbox; SDK presence alone is insufficient.
+
+### October16 App Review submission
+Shawn explicitly authorized3.11/build172 AppStore review after the ASO pass; this supersedes earlier no-submission status for this release. Actual state WAITING_FOR_REVIEW, releaseMANUAL; proof `docs/aso/2026-10-16-founders/submission-311/README.md`. Any embeddedWatch release needs a realWatch screenshot before submit; use an unchanged release-sourceWatch target and verify COMPLETE/checksum. Capturing idle simulatorUI does not prove physicalrecording/transfer. Do not rerun submit against an active review; legacy recovery cancels active submissions.

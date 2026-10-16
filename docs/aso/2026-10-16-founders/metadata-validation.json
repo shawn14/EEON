@@ -30,8 +30,8 @@
     "pass": true
   },
   "scope": {
-    "status": "Uploaded to App Store Connect iOS3.11.0 draft; not public",
-    "release_notes": "Build172 task changes; physical TestFlight flow remains for Shawn before review submission",
+    "status": "Submitted to App Review, iOS3.11.0/build172 WAITING_FOR_REVIEW; not publicly released",
+    "release_notes": "Submitted with explicit Shawn authorization; runtime task flow still unverified here",
     "price": "Existing prices retained; no pricing write"
   }
 }

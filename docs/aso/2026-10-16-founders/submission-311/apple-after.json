@@ -1,0 +1,896 @@
+{
+  "checkedAt": "2026-10-16T17:39:53.543254+00:00",
+  "mode": "after",
+  "appId": "6758273499",
+  "version": {
+    "type": "appStoreVersions",
+    "id": "ea1a455a-be29-43e3-a2f5-1b56b4ebef00",
+    "attributes": {
+      "platform": "IOS",
+      "versionString": "3.11.0",
+      "appStoreState": "WAITING_FOR_REVIEW",
+      "appVersionState": "WAITING_FOR_REVIEW",
+      "copyright": "2026 Shawn Carpenter",
+      "reviewType": "APP_STORE",
+      "releaseType": "MANUAL",
+      "earliestReleaseDate": null,
+      "usesIdfa": null,
+      "downloadable": true,
+      "createdDate": "2026-10-16T09:43:23-07:00"
+    },
+    "relationships": {
+      "appStoreVersionLocalizations": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/relationships/appStoreVersionLocalizations",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/appStoreVersionLocalizations"
+        }
+      },
+      "build": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/relationships/build",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/build"
+        }
+      },
+      "appStoreVersionPhasedRelease": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/relationships/appStoreVersionPhasedRelease",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/appStoreVersionPhasedRelease"
+        }
+      },
+      "gameCenterAppVersion": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/relationships/gameCenterAppVersion",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/gameCenterAppVersion"
+        }
+      },
+      "routingAppCoverage": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/relationships/routingAppCoverage",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/routingAppCoverage"
+        }
+      },
+      "appStoreReviewDetail": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/relationships/appStoreReviewDetail",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/appStoreReviewDetail"
+        }
+      },
+      "appStoreVersionSubmission": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/relationships/appStoreVersionSubmission",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/appStoreVersionSubmission"
+        }
+      },
+      "appClipDefaultExperience": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/relationships/appClipDefaultExperience",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/appClipDefaultExperience"
+        }
+      },
+      "appStoreVersionExperiments": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/relationships/appStoreVersionExperiments",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/appStoreVersionExperiments"
+        }
+      },
+      "appStoreVersionExperimentsV2": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/relationships/appStoreVersionExperimentsV2",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/appStoreVersionExperimentsV2"
+        }
+      },
+      "customerReviews": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/relationships/customerReviews",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/customerReviews"
+        }
+      },
+      "alternativeDistributionPackage": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/relationships/alternativeDistributionPackage",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/alternativeDistributionPackage"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00"
+    }
+  },
+  "build": {
+    "type": "builds",
+    "id": "26f26007-ba7a-49db-b7cd-51c8d83822f9",
+    "attributes": {
+      "version": "172",
+      "uploadedDate": "2026-10-16T09:31:44-07:00",
+      "expirationDate": "2027-01-14T08:31:44-08:00",
+      "expired": false,
+      "minOsVersion": "26.2",
+      "lsMinimumSystemVersion": null,
+      "computedMinMacOsVersion": "26.2",
+      "computedMinVisionOsVersion": "26.2",
+      "iconAssetToken": {
+        "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/23/37/56/233756b4-17f2-1451-57d9-78cd0f8db656/AppIcon76x76@2x_U007eipad.png/{w}x{h}bb.{f}",
+        "width": 152,
+        "height": 152
+      },
+      "processingState": "VALID",
+      "buildAudienceType": "APP_STORE_ELIGIBLE",
+      "usesNonExemptEncryption": false
+    },
+    "relationships": {
+      "preReleaseVersion": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/preReleaseVersion",
+          "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/preReleaseVersion"
+        }
+      },
+      "individualTesters": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/individualTesters",
+          "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/individualTesters"
+        }
+      },
+      "betaGroups": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/betaGroups"
+        }
+      },
+      "betaBuildLocalizations": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/betaBuildLocalizations",
+          "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/betaBuildLocalizations"
+        }
+      },
+      "appEncryptionDeclaration": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/appEncryptionDeclaration",
+          "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/appEncryptionDeclaration"
+        }
+      },
+      "betaAppReviewSubmission": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/betaAppReviewSubmission",
+          "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/betaAppReviewSubmission"
+        }
+      },
+      "app": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/app",
+          "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/app"
+        }
+      },
+      "buildBetaDetail": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/buildBetaDetail",
+          "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/buildBetaDetail"
+        }
+      },
+      "appStoreVersion": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/appStoreVersion",
+          "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/appStoreVersion"
+        }
+      },
+      "icons": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/icons",
+          "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/icons"
+        }
+      },
+      "perfPowerMetrics": {
+        "links": {
+          "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/perfPowerMetrics"
+        }
+      },
+      "diagnosticSignatures": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/diagnosticSignatures",
+          "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/diagnosticSignatures"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9"
+    }
+  },
+  "train": {
+    "type": "preReleaseVersions",
+    "id": "1b2f3eea-42e0-41de-b300-aafade323eff",
+    "attributes": {
+      "version": "3.11.0",
+      "platform": "IOS"
+    },
+    "relationships": {
+      "builds": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/1b2f3eea-42e0-41de-b300-aafade323eff/relationships/builds",
+          "related": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/1b2f3eea-42e0-41de-b300-aafade323eff/builds"
+        }
+      },
+      "app": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/1b2f3eea-42e0-41de-b300-aafade323eff/relationships/app",
+          "related": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/1b2f3eea-42e0-41de-b300-aafade323eff/app"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/1b2f3eea-42e0-41de-b300-aafade323eff"
+    }
+  },
+  "metadataMatches": {
+    "name": true,
+    "subtitle": true,
+    "privacy_url": true,
+    "description": true,
+    "keywords": true,
+    "promotional_text": true,
+    "release_notes": true,
+    "support_url": true,
+    "marketing_url": true
+  },
+  "localization": {
+    "type": "appStoreVersionLocalizations",
+    "id": "b39fd1dd-133f-4ba0-965a-9535992af2a7",
+    "attributes": {
+      "description": "Building with AI starts with knowing what you want to build.\n\nEEON helps founders capture ideas, product decisions, bugs, and next steps by voice. Turn a thought into a readable note, keep the actions attached, and let your connected AI workspace read the context when you ask.\n\nTHINK OUT LOUD\n\nCapture a feature idea on a walk, a bug after testing, or what you learned from a customer conversation. EEON transcribes and organizes your words while keeping the original transcript.\n\nKEEP THE DECISIONS AND NEXT STEPS\n\nFind the actions, commitments, people, and projects in your notes. Complete tasks from a note, or enable Apple Reminders to keep follow-ups in your existing task list.\n\nAsk your memory:\n- What did I decide about onboarding?\n- Which bugs did I mention after testing?\n- What follow-ups came out of that customer call?\n\nBRING YOUR CONTEXT TO YOUR AI\n\nWith optional AI agent access, compatible tools such as Claude Code, Codex, and Cursor can search and read your EEON notes after you connect and authorize them.\n\nUse Send to an Agent on a note to copy a prompt, then paste it into your connected workspace. Ask your agent to turn the note into a plan or use it as context for the next task. Your coding tool handles the build and its own permissions; EEON gives it the notes you captured.\n\nCAPTURE WHERE YOU ARE\n\nRecord from the app or supported iPhone shortcuts, widgets, and recording controls. Import a recording, type a note, or save links and text through the Share Extension. Calendar context can help connect notes to your meetings.\n\nYOUR NOTES, YOUR CHOICE\n\nNotes are stored on your device and sync through your private iCloud account. Audio and text may be sent to AI services for transcription and enhancement. Optional AI agent access creates an encrypted copy of note content on EEON's servers so authorized tools can read it. You can turn that access off in Settings.\n\nFREE TO START\n\nEEON is free to download. EEON Pro unlocks additional AI and memory features.\n\n- EEON Pro: $9.99 per month or $79.99 per year, auto-renewing.\n- Payment is charged to your Apple ID account at confirmation of purchase. The subscription renews automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel in your App Store account settings.\n- Terms of Use: https://eeon.com/terms\n- Privacy Policy: https://eeon.com/privacy",
+      "locale": "en-US",
+      "keywords": "tasks,dictation,transcribe,reminders,ideas,projects,decisions,brain dump,prompts,founder,mcp",
+      "marketingUrl": "https://www.eeon.com",
+      "promotionalText": "Building with AI? Talk through ideas, bugs, and next steps. Keep the decisions, then let your connected AI agent read the context.",
+      "supportUrl": "https://www.eeon.com/support",
+      "whatsNew": "3.11.0 \u2014 Talk through your tasks\n\n- Record an ordinary voice message listing your tasks. EEON can turn it into separate tasks for today.\n- See today's tasks on Home and keep explicit future dates with the appropriate task.\n- With AI agent access enabled, connected agents can read the saved task details in your note."
+    },
+    "relationships": {
+      "appScreenshotSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7/relationships/appScreenshotSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7/appScreenshotSets"
+        }
+      },
+      "appPreviewSets": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7/relationships/appPreviewSets",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7/appPreviewSets"
+        }
+      },
+      "searchKeywords": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7/relationships/searchKeywords",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7/searchKeywords"
+        }
+      },
+      "placements": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7/relationships/placements",
+          "related": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7/placements"
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/b39fd1dd-133f-4ba0-965a-9535992af2a7"
+    }
+  },
+  "appInfos": [
+    {
+      "id": "3a35fe21-67b3-4744-93a8-efec012524c5",
+      "attributes": {
+        "appStoreState": "READY_FOR_SALE",
+        "state": "READY_FOR_DISTRIBUTION",
+        "appStoreAgeRating": "FOUR_PLUS",
+        "australiaAgeRating": null,
+        "brazilAgeRating": "L",
+        "brazilAgeRatingV2": "SELF_RATED_L",
+        "franceAgeRating": null,
+        "koreaAgeRating": null
+      },
+      "localizations": [
+        {
+          "type": "appInfoLocalizations",
+          "id": "37a889bc-70b1-483b-8a18-f2896b07bc0d",
+          "attributes": {
+            "locale": "en-US",
+            "name": "EEON: AI Memory & Notes",
+            "subtitle": "Voice notes, tasks & recall",
+            "privacyPolicyUrl": "https://www.eeon.com/privacy",
+            "privacyChoicesUrl": null,
+            "privacyPolicyText": null
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/appInfoLocalizations/37a889bc-70b1-483b-8a18-f2896b07bc0d"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e0e5dbc9-9200-4de8-b7e7-543c3b7a05fc",
+      "attributes": {
+        "appStoreState": "WAITING_FOR_REVIEW",
+        "state": "WAITING_FOR_REVIEW",
+        "appStoreAgeRating": "FOUR_PLUS",
+        "australiaAgeRating": null,
+        "brazilAgeRating": "L",
+        "brazilAgeRatingV2": "SELF_RATED_L",
+        "franceAgeRating": null,
+        "koreaAgeRating": null
+      },
+      "localizations": [
+        {
+          "type": "appInfoLocalizations",
+          "id": "1ad55558-b7a8-4170-a714-1cb71b6e0825",
+          "attributes": {
+            "locale": "en-US",
+            "name": "EEON: AI Memory & Notes",
+            "subtitle": "Voice notes for AI builders",
+            "privacyPolicyUrl": "https://www.eeon.com/privacy",
+            "privacyChoicesUrl": null,
+            "privacyPolicyText": null
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/appInfoLocalizations/1ad55558-b7a8-4170-a714-1cb71b6e0825"
+          }
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "id": "ae2a627d-2ad7-40d7-8882-6d9b9eda84cd",
+      "displayType": "APP_WATCH_SERIES_4",
+      "screenshots": [
+        {
+          "id": "97c00019-2d31-81db-8016-a3b7a8e5fc84",
+          "fileName": "Watch44-01-Record.png",
+          "checksum": "ff511ecc371735ea98d74e5d920d607e",
+          "state": "COMPLETE"
+        }
+      ]
+    },
+    {
+      "id": "70c2412b-5aa6-4b9b-9808-88ce0f9eb49a",
+      "displayType": "APP_IPAD_PRO_3GEN_129",
+      "screenshots": [
+        {
+          "id": "582bcab4-030c-49cd-b07a-f9c2a6ee39e4",
+          "fileName": "iPad129-01-Home.png",
+          "checksum": "ad9901dd524786384758787d5955e555",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "e4aca429-d151-4507-bb5f-8582350d3add",
+          "fileName": "iPad129-02-Calendar.png",
+          "checksum": "4549852d6bdd3eb30f2116b196b3d2bb",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "33f20553-4acf-49cc-808a-6d9a51aca947",
+          "fileName": "iPad129-03-AskEEON.png",
+          "checksum": "f3bdfd41adc05cdc6a8e5f6f160f2a49",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "0bf729c2-73da-43de-8239-ea3221d7d980",
+          "fileName": "iPad129-04-NoteDetail.png",
+          "checksum": "174c1f9bcf7969d73c48e00f50ac8ad1",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "237d2252-d0db-4c17-b362-391ee9d17877",
+          "fileName": "iPad129-05-Tasks.png",
+          "checksum": "485e203f3e2a03e06c75c1e34921000a",
+          "state": "COMPLETE"
+        }
+      ]
+    },
+    {
+      "id": "c7926f37-abcb-4865-8c90-a028d78b275e",
+      "displayType": "APP_IPHONE_65",
+      "screenshots": [
+        {
+          "id": "69ea7755-c57f-4351-819e-bcbcefa4bd29",
+          "fileName": "iPhone65-01-Home.png",
+          "checksum": "de6b1e20091998df88346fdd1238c5d2",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "7d4e13f9-0538-4e0a-b944-380a46e7802f",
+          "fileName": "iPhone65-02-Calendar.png",
+          "checksum": "d5b12fb3bdb64cd23a8a6972730ff7aa",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "83477b0e-2978-4230-848a-7fc998eafe85",
+          "fileName": "iPhone65-03-AskEEON.png",
+          "checksum": "663af4a24eca44611a08094834540826",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "a73a59f5-3a73-4d26-ad6e-e13f89852b33",
+          "fileName": "iPhone65-04-NoteDetail.png",
+          "checksum": "15835ebc0a0aca6b16cb47a81fb98069",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "e5ced0a4-f576-468f-8732-0a6b6b7dd9a4",
+          "fileName": "iPhone65-05-Tasks.png",
+          "checksum": "d1209ef4fa00c8641c1bc83d378b5eeb",
+          "state": "COMPLETE"
+        }
+      ]
+    },
+    {
+      "id": "e0ecdb79-07e9-4ea0-ab9e-abd12b8d85f7",
+      "displayType": "APP_IPHONE_67",
+      "screenshots": [
+        {
+          "id": "5b1a6984-1caa-42b1-a32e-ff0052c56d7c",
+          "fileName": "iPhone67-01-Home.png",
+          "checksum": "244a2ca09c08ecbef4aa21457ebc5152",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "128b2cdb-28f2-48ea-a69b-c26085044f3e",
+          "fileName": "iPhone67-02-Calendar.png",
+          "checksum": "677301e10a51343c92cb085283e7c41e",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "8de8a79b-56d7-4d89-a78d-ae03b3b0cf9e",
+          "fileName": "iPhone67-03-AskEEON.png",
+          "checksum": "b702a46f2f28506148fb9b127043a4dc",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "f8b81f87-408d-4fc5-adeb-f047d86ba17c",
+          "fileName": "iPhone67-04-NoteDetail.png",
+          "checksum": "dec88d1920c9537873d6a86cbcfc0726",
+          "state": "COMPLETE"
+        },
+        {
+          "id": "796b1a3a-f866-4197-8630-96929c760e5d",
+          "fileName": "iPhone67-05-Tasks.png",
+          "checksum": "5ae9d54ddc89d3f91756dc350dd7f96f",
+          "state": "COMPLETE"
+        }
+      ]
+    }
+  ],
+  "activeReviews": [
+    {
+      "id": "4bcb6217-7749-4caf-9209-e6f4479cbc4d",
+      "attributes": {
+        "platform": "IOS",
+        "submittedDate": "2026-10-16T17:37:02.685Z",
+        "state": "WAITING_FOR_REVIEW"
+      },
+      "items": [
+        {
+          "type": "reviewSubmissionItems",
+          "id": "NGJjYjYyMTctNzc0OS00Y2FmLTkyMDktZTZmNDQ3OWNiYzRkfDZ8ODkzMzAyMTY0",
+          "attributes": {
+            "state": "READY_FOR_REVIEW"
+          },
+          "relationships": {
+            "appStoreVersion": {
+              "data": {
+                "type": "appStoreVersions",
+                "id": "ea1a455a-be29-43e3-a2f5-1b56b4ebef00"
+              }
+            }
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/reviewSubmissionItems/NGJjYjYyMTctNzc0OS00Y2FmLTkyMDktZTZmNDQ3OWNiYzRkfDZ8ODkzMzAyMTY0"
+          }
+        }
+      ]
+    }
+  ],
+  "versionInventory": [
+    {
+      "id": "594711ef-943a-4c4b-b04d-c8e473ab011a",
+      "attributes": {
+        "platform": "MAC_OS",
+        "versionString": "3.11.0",
+        "appStoreState": "PREPARE_FOR_SUBMISSION",
+        "appVersionState": "PREPARE_FOR_SUBMISSION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-10-16T09:54:46-07:00"
+      }
+    },
+    {
+      "id": "ea1a455a-be29-43e3-a2f5-1b56b4ebef00",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "3.11.0",
+        "appStoreState": "WAITING_FOR_REVIEW",
+        "appVersionState": "WAITING_FOR_REVIEW",
+        "copyright": "2026 Shawn Carpenter",
+        "reviewType": "APP_STORE",
+        "releaseType": "MANUAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-10-16T09:43:23-07:00"
+      }
+    },
+    {
+      "id": "1b1b31dd-a075-4862-b40f-a51226d0e67b",
+      "attributes": {
+        "platform": "MAC_OS",
+        "versionString": "3.5.1",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-05-09T16:29:41-07:00"
+      }
+    },
+    {
+      "id": "739e0eb1-fbce-43c1-996c-4d86b8d7125b",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "3.10.0",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "MANUAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-09-30T06:53:18-07:00"
+      }
+    },
+    {
+      "id": "e4df3de6-7524-48f0-b224-4cc7274ecfe4",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "3.9.0",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "MANUAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-09-10T11:00:24-07:00"
+      }
+    },
+    {
+      "id": "9f3f240c-9eb6-4672-b891-fce171274e4a",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "3.8.3",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "MANUAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-09-08T14:24:11-07:00"
+      }
+    },
+    {
+      "id": "d34988ac-124e-4bb3-bff0-41752da625f0",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "3.8.2",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "MANUAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-09-04T11:20:26-07:00"
+      }
+    },
+    {
+      "id": "fbae8af6-3531-46d0-9fba-0c479d14585b",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "3.8.0",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "MANUAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-08-26T05:21:39-07:00"
+      }
+    },
+    {
+      "id": "ca311f38-894f-4bca-89f8-dbc09c71ab5c",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "1.5.2",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-05-16T14:49:39-07:00"
+      }
+    },
+    {
+      "id": "65485d7f-a570-4611-8359-158d297e0054",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "1.5.1",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-05-08T18:43:20-07:00"
+      }
+    },
+    {
+      "id": "874670e0-01bb-4e5d-8393-4fb931d9db31",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "1.5.0",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-05-08T04:27:32-07:00"
+      }
+    },
+    {
+      "id": "a6a1066b-17f7-4b70-9fa5-4bee73dfa3ff",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "1.4.9",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-05-01T08:33:53-07:00"
+      }
+    },
+    {
+      "id": "aa15d3c0-b364-4fca-9af5-d77ee34d779b",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "1.4.8",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-04-30T15:49:56-07:00"
+      }
+    },
+    {
+      "id": "c336216c-df55-4975-b97d-801e94eab42c",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "1.4.7",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-04-27T21:05:36-07:00"
+      }
+    },
+    {
+      "id": "453ad239-8265-4685-b915-a9754a31d896",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "1.4.6",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-04-17T07:30:09-07:00"
+      }
+    },
+    {
+      "id": "4bccccec-dd9f-4ac5-95bf-486f8adcceeb",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "1.4.5",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-04-16T15:47:36-07:00"
+      }
+    },
+    {
+      "id": "f04b4278-1566-41b7-8cd1-0e066d94a70d",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "1.4.4",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-04-13T10:57:30-07:00"
+      }
+    },
+    {
+      "id": "5deff474-55b1-4c1f-a985-7f25bab6da98",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "1.4.3",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-04-08T13:40:56-07:00"
+      }
+    },
+    {
+      "id": "4c6aebb0-8922-410c-928f-6d37f5059c55",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "1.4.2",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-04-07T09:31:33-07:00"
+      }
+    },
+    {
+      "id": "b46c71d1-f753-4457-9344-c4bf2fb5df1a",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "1.4.1",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-04-03T05:01:07-07:00"
+      }
+    },
+    {
+      "id": "7b797c01-9ab7-409a-a265-585dbda87d20",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "1.4",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-03-30T12:03:44-07:00"
+      }
+    },
+    {
+      "id": "ecea63c3-d086-4b78-b8fc-3c86818268a7",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "1.3",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-03-28T18:17:05-07:00"
+      }
+    },
+    {
+      "id": "e1e60aca-f6aa-40ed-a816-24a7897b5f9e",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "1.2",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-03-27T15:28:17-07:00"
+      }
+    },
+    {
+      "id": "701c08c2-b8a3-499e-9d83-57fd4f24d019",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "1.1",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-03-26T08:54:28-07:00"
+      }
+    },
+    {
+      "id": "7bce8756-aecc-4d3d-b6b5-a9e6867ec96d",
+      "attributes": {
+        "platform": "IOS",
+        "versionString": "1.0",
+        "appStoreState": "READY_FOR_SALE",
+        "appVersionState": "READY_FOR_DISTRIBUTION",
+        "copyright": "Center Mark Capital, LLC",
+        "reviewType": "APP_STORE",
+        "releaseType": "AFTER_APPROVAL",
+        "earliestReleaseDate": null,
+        "usesIdfa": null,
+        "downloadable": true,
+        "createdDate": "2026-01-25T10:34:29-08:00"
+      }
+    }
+  ],
+  "public": {
+    "version": "3.10.0",
+    "price": 0.0,
+    "currency": "USD",
+    "trackViewUrl": "https://apps.apple.com/us/app/eeon-ai-memory-notes/id6758273499?uo=4"
+  }
+}

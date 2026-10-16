@@ -128,3 +128,6 @@ Apple rejected deletion of the unintended Mac draft with409STATE_ERROR: only the
 The evidence proves Apple's stored fields, selected build and assets. Founder conversion lift, retention, willingness to pay, on-device task behavior and agent runtime execution remain unproven.
 
 Independent Apple reads at17:07:07–17:07:18Z confirm all nine fields, build172VALID, all15unchanged screenshots, liveiOS3.10/build171 and public appInfo unchanged, and absent submission relationships on both drafts. Current liveMac3.5.1/build138 matches the saved restoration source; no original pre-operation Mac snapshot existed, so this does not assert a broader historical Mac comparison. The unusedMacdraft remains without a build.
+
+## Subsequent authorized review submission
+Shawn then explicitly requested AppReview.3.11/build172 is now WAITING_FOR_REVIEW, with the newASO and a realWatchscreenshot added to resolve Apple's required-slot error;16assetscomplete, original15unchanged. Manualreleaseafterapproval remains. [Full submission receipts and command](submission-311/README.md). Earlier draft-only statements above describe the ASO upload phase.

@@ -1,0 +1,21 @@
+{
+  "capturedAt": "2026-10-16T17:34:04.327423+00:00",
+  "image": "fastlane/apps/voice-notes/screenshots/en-US/Watch44-01-Record.png",
+  "dimensions": [
+    368,
+    448
+  ],
+  "md5": "ff511ecc371735ea98d74e5d920d607e",
+  "sha256": "c09b9cfe883f2eb1be45ca74df91a90b173d58d192e7c0c562660c806112eef4",
+  "builtVersion": "3.11.0",
+  "builtNumber": "172",
+  "builtBundle": "voice.notes.voice-notes.watchkitapp",
+  "builtExecutableSha256": "9a7c5430e78fad1972856dad71ec7e3578b64439d21ed13ad788fc32083b8ece",
+  "sourceTree": "c1985bc046beffbaca5c18313aa0aabea04776e3",
+  "releaseTree": "c1985bc046beffbaca5c18313aa0aabea04776e3",
+  "releaseSource": "abfdd41a425acf668ef6c3417a472bd1a625a69e",
+  "runtime": "watchOS26.2",
+  "device": "isolated Watch SE3 44mm simulator",
+  "build": "unchanged EEONWatch target only, Release-watchsimulator, no new phone build",
+  "proofLimit": "Actual idle UI only; physical recording, wrist-down and WatchConnectivity remain unproven"
+}
