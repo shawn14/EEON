@@ -1,0 +1,22 @@
+{
+  "artifact": "/Users/shawncarpenter/projects/fastlane-configs/Cairn.ipa",
+  "requirement": [
+    {
+      "bundle": "extension:SOSWidget",
+      "plist_key": "CFBundleIdentifier",
+      "contains": "com.stockalarm.avasnarwhal.SOSWidget"
+    }
+  ],
+  "checks": [
+    {
+      "script": "eeon-original-verify-ipa.rb",
+      "exit": 1,
+      "output": "\nBUILT-ARTIFACT VERIFY FAILED \u2014 the binary does not prove what the ship claims:\n  \u2717 extension:SOSWidget bundle: bundle not found in ipa (requirement: {\"bundle\":\"extension:SOSWidget\",\"plist_key\":\"CFBundleIdentifier\",\"contains\":\"com.stockalarm.avasnarwhal.SOSWidget\"})\nFix the target plist/entitlements and rebuild. Do NOT ship and report the capability as on.\n"
+    },
+    {
+      "script": "verify_ipa.rb",
+      "exit": 0,
+      "output": "\u2713 extension:SOSWidget bundle Info.plist CFBundleIdentifier contains \"com.stockalarm.avasnarwhal.SOSWidget\" (= \"com.stockalarm.avasnarwhal.SOSWidget\")\nverify_ipa: all artifact requirements proven in the built binary.\n"
+    }
+  ]
+}

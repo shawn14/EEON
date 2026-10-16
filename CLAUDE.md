@@ -360,3 +360,6 @@ Home should show spoken daily tasks, not only the old quiet task-count line. Loc
 
 ### October16 spoken-task clarification
 Ordinary voice messages listing today's tasks must autoextract individual Today rows; dedicated Talk through today is optional. Shawn approved TestFlight distribution and will test there; local simulator proof waived for this candidate, not binary compilation or clean-main/release ancestry. No App Store submit implied. Current SDK/platform/disk blockers and ancestry evidence: docs/spoken-daily-tasks/README.md. Do not call source-only changes working or shipped.
+
+### EEON release source and embedded Watch signing candidate (2026-10-16)
+Prepared central beta lane requires committed version/build for EEON on clean pushed main; no in-build increment. Candidate verifies fresh main/build171 ancestry before and after archive, registers/reuses the Watch bundle/profile, and checks signed app/Watch/extension versions plus Watch background audio. Source changes require push before use. App Store Watch screenshots and physical Watch behavior remain separate. Inspect Xcode platforms/destinations outside the sandbox; SDK presence alone is insufficient.
