@@ -553,7 +553,14 @@ struct NoteDetailView: View {
         }
         .sheet(isPresented: $showingProjectPicker) {
             ProjectPickerSheet(
-                selectedProjectId: $note.projectId,
+                selectedProjectId: Binding(
+                    get: { note.projectId },
+                    set: { projectId in
+                        note.projectId = projectId
+                        // Commit the menu action before the user leaves the app.
+                        try? modelContext.save()
+                    }
+                ),
                 projects: libraryVisibleProjects(allProjects),
                 noteContent: note.transcript ?? note.content
             )

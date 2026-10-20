@@ -521,10 +521,10 @@ final class ScreenshotTests: XCTestCase {
     }
 
     /// Read the actual clipboard by pasting through the foreground app's UI.
-    /// The background XCTest runner stalled when reading UIPasteboard directly.
+    /// The previous test stalled after Copy Note with a background clipboard read.
     private func pasteCopiedTextIntoQuestion() -> String {
         selectNoteAction("Ask About This Note")
-        let input = app.textFields["Ask about this note"]
+        let input = app.textFields.firstMatch // Placeholder disappears after Paste.
         XCTAssertTrue(input.waitForExistence(timeout: 5), app.debugDescription)
         input.tap()
         input.press(forDuration: 1.1)
@@ -628,11 +628,21 @@ final class ScreenshotTests: XCTestCase {
         continueAfterFailure = false
         openSeededAudioNote()
         selectNoteAction("Delete Note")
-        XCTAssertTrue(app.buttons["Cancel"].waitForExistence(timeout: 5))
-        app.buttons["Cancel"].tap()
+        let confirmation = app.sheets["Delete Note?"]
+        XCTAssertTrue(confirmation.waitForExistence(timeout: 5), app.debugDescription)
+        if app.buttons["Cancel"].exists {
+            app.buttons["Cancel"].tap()
+        } else {
+            // iOS 26 presents this as a popover with outside-tap cancellation.
+            let dismissRegion = app.otherElements["PopoverDismissRegion"]
+            XCTAssertTrue(dismissRegion.exists, app.debugDescription)
+            dismissRegion.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.75)).tap()
+        }
+        XCTAssertTrue(confirmation.waitForNonExistence(timeout: 5))
         XCTAssertTrue(app.buttons["Note options"].waitForExistence(timeout: 5))
         selectNoteAction("Delete Note")
-        app.buttons["Delete"].tap()
+        XCTAssertTrue(confirmation.waitForExistence(timeout: 5))
+        confirmation.buttons["Delete"].tap()
         let row = app.buttons.matching(NSPredicate(format: "label BEGINSWITH[c] 'Paywall launch call'")).firstMatch
         XCTAssertFalse(row.waitForExistence(timeout: 2), "Deleted note remains on Home")
         let settings = app.buttons["Settings"]

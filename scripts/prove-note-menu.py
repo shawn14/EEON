@@ -220,10 +220,17 @@ def proof(mode):
             print('Result attachments unavailable: '+str(attachment_error), flush=True)
         assert run('git', '-C', str(ROOT), 'rev-parse', 'HEAD') == build_sha, 'Source changed during native proof; rerun after code settles'
         assert not run('git', '-C', str(ROOT), 'status', '--porcelain', '--untracked-files=no'), 'Source changed during native proof'
-        file_proof = verify_saved_photo(target, result_dir) if mode == 'photo' and code == 0 else None
-        if mode in ('all', 'menu') and code == 0:
-            container = run('xcrun', 'simctl', 'get_app_container', target, BUNDLE, 'data')
-            file_proof = json.loads(run('xcrun', 'swift', str(ROOT/'scripts/verify-note-menu-files.swift'), container, str(ROOT/'voice notes UITests/Fixtures/two-speakers.m4a'), timeout=120))
+        file_proof = None
+        try:
+            if mode == 'photo' and code == 0:
+                file_proof = verify_saved_photo(target, result_dir)
+            if mode in ('all', 'menu') and test_results.get('testPasteAndExport') == 'passed':
+                container = run('xcrun', 'simctl', 'get_app_container', target, BUNDLE, 'data')
+                shutil.copytree(Path(container)/'tmp/note-exports', result_dir/'exported-files')
+                file_proof = json.loads(run('xcrun', 'swift', str(ROOT/'scripts/verify-note-menu-files.swift'), container, str(ROOT/'voice notes UITests/Fixtures/two-speakers.m4a'), timeout=120))
+        except Exception as error:
+            file_proof = {'error': str(error)}
+            code = code or 1
         report = {'test_results': test_results, 'file_proof': file_proof, 'passed': code == 0, 'exit_code': code, 'tests': tests, 'source_sha': build_sha, 'result': str(result_dir), 'excluded_tests': ['testAddPhotoFromNoteMenu'] if mode == 'menu' else [], 'unproven': ['Successful CloudKit share requires a real Apple test account', 'Physical-device Photos and playback behavior require device proof']}
         (result_dir/'summary.json').write_text(json.dumps(report, indent=2)+'\n')
         print(json.dumps(report, indent=2), flush=True)

@@ -1,6 +1,6 @@
 # Note overflow menu proof
 
-**Incomplete.** The original no-open failure was reproduced, and the minimal presenter change passed the same presentation test. The actual screenshot shows a loading sheet, so this proves modal presentation only. Photo selection/persistence and the other menu journeys are not yet verified. Nothing has been released.
+**Incomplete.** The original no-open failure was reproduced, and the minimal presenter change passed the same presentation test. The actual screenshot shows a loading sheet, so this proves modal presentation only. Photo selection/persistence remains unverified. The first complete remaining-menu run passed8of12tests;4failures are being corrected. [Receipt](menu-first-complete-run.json). Nothing has been released.
 
 The owner's private note was read through the connected EEON MCP; its contents and identifier are absent from the disposable fixtures and this public repository.
 
