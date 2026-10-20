@@ -27,6 +27,14 @@ enum ScreenshotSeed {
         // Before the idempotency guard: an earlier run's founder notes must
         // not stop the audio note from being seeded.
         seedSpeakerAudioNote(in: context)
+        if ProcessInfo.processInfo.arguments.contains("-SeedMenuProject") {
+            let name = "Menu proof project"
+            let projects = (try? context.fetch(FetchDescriptor<Project>(predicate: #Predicate { $0.name == name }))) ?? []
+            if projects.isEmpty {
+                context.insert(Project(name: name))
+                try? context.save()
+            }
+        }
 
         // Idempotency: skip if any non-seed notes exist
         let descriptor = FetchDescriptor<Note>()

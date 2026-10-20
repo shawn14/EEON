@@ -431,9 +431,9 @@ final class ScreenshotTests: XCTestCase {
             .appendingPathComponent("Fixtures/two-speakers.m4a").path
     }
 
-    private func openSeededAudioNote() {
+    private func openSeededAudioNote(extraArguments: [String] = []) {
         app.terminate()
-        launchApp(extraArguments: ["-UITestPro", "-SeedSpeakerAudio", speakerFixture])
+        launchApp(extraArguments: ["-UITestPro", "-SeedSpeakerAudio", speakerFixture] + extraArguments)
         sleep(3)
         dismissGatesIfNeeded()
         let row = app.buttons.matching(NSPredicate(format: "label BEGINSWITH[c] 'Paywall launch call'")).firstMatch
@@ -523,9 +523,16 @@ final class ScreenshotTests: XCTestCase {
 
     func testNoteMenuProjectAndTags() throws {
         continueAfterFailure = false
-        openSeededAudioNote()
+        openSeededAudioNote(extraArguments: ["-SeedMenuProject"])
         selectNoteAction("Assign Project")
         XCTAssertTrue(app.navigationBars["Select Project"].waitForExistence(timeout: 5))
+        let project = app.buttons.matching(NSPredicate(format: "label CONTAINS %@", "Menu proof project")).firstMatch
+        XCTAssertTrue(project.waitForExistence(timeout: 5), app.debugDescription)
+        project.tap()
+        reopenProofNote()
+        selectNoteAction("Assign Project")
+        XCTAssertTrue(project.waitForExistence(timeout: 5), app.debugDescription)
+        XCTAssertTrue(project.images["checkmark"].exists, "Assigned project did not persist. " + app.debugDescription)
         let noProject = app.buttons["No Project"]
         XCTAssertTrue(noProject.exists)
         noProject.tap()
