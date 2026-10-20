@@ -618,14 +618,35 @@ final class ScreenshotTests: XCTestCase {
     func testNoteMenuPlaybackSpeeds() throws {
         continueAfterFailure = false
         openSeededAudioNote()
-        for rate in ["0.5x", "0.75x", "1x", "1.2x", "1.5x", "2x"] {
+        for (label, rate) in [("0.5x", 0.5), ("0.75x", 0.75), ("1x", 1.0), ("1.2x", 1.25), ("1.5x", 1.5), ("2x", 2.0)] {
+            reopenProofNote() // Fresh real player, starting at zero.
             selectNoteAction("Playback Speed")
-            let speed = app.buttons[rate]
-            XCTAssertTrue(speed.waitForExistence(timeout: 5), "Missing playback rate " + rate + "\n" + app.debugDescription)
+            let speed = app.buttons[label]
+            XCTAssertTrue(speed.waitForExistence(timeout: 5), "Missing playback rate " + label + "\n" + app.debugDescription)
             speed.tap()
-            XCTAssertTrue(app.buttons["Note options"].waitForExistence(timeout: 5))
+            let pill = app.buttons.matching(NSPredicate(format: "label MATCHES %@", ".*[0-9]+:[0-9]{2}.*")).firstMatch
+            XCTAssertTrue(pill.waitForExistence(timeout: 5), app.debugDescription)
+            pill.tap()
+            sleep(1)
+            let startMedia = try playbackSeconds(pill.label)
+            let startWall = Date()
+            sleep(4)
+            let endMedia = try playbackSeconds(pill.label)
+            let wallSeconds = Date().timeIntervalSince(startWall)
+            let measuredRate = Double(endMedia - startMedia) / wallSeconds
+            XCTAssertEqual(measuredRate, rate, accuracy: 0.3,
+                           "Actual playback clock disagrees with " + label)
+            pill.tap()
         }
         keep("NoteMenu-PlaybackSpeeds")
+    }
+
+    private func playbackSeconds(_ label: String) throws -> Int {
+        let regex = try NSRegularExpression(pattern: "([0-9]+):([0-9]{2})")
+        let match = try XCTUnwrap(regex.firstMatch(in: label, range: NSRange(label.startIndex..., in: label)), label)
+        let minutes = try XCTUnwrap(Range(match.range(at: 1), in: label))
+        let seconds = try XCTUnwrap(Range(match.range(at: 2), in: label))
+        return try XCTUnwrap(Int(label[minutes])) * 60 + XCTUnwrap(Int(label[seconds]))
     }
 
     func testNoteMenuCleanUpRecording() throws {
