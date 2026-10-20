@@ -78,7 +78,10 @@ def proof(mode):
 if __name__ == '__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('mode',choices=['preflight','photo','all'])
-    mode=parser.parse_args().mode
+    parser.add_argument('--simulator', action='store_true', help='Explicit simulator run; makes the Mac runner apply its heavy-job resource gate')
+    args=parser.parse_args()
+    mode=args.mode
+    assert mode == 'preflight' or args.simulator, 'UI runs require explicit --simulator'
     if mode == 'preflight':
         preflight()
     else:
