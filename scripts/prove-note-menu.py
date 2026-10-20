@@ -6,6 +6,8 @@ actual SwiftData store and real files. Never touches an existing simulator.
 import argparse
 import json
 import plistlib
+import re
+import struct
 import shutil
 import subprocess
 import time
@@ -33,7 +35,24 @@ def inspect_built_entitlements():
         entitlements = plistlib.loads(xml.encode()) if xml.strip() else {}
     except Exception:
         entitlements = {}
-    return {'app_exists': True, 'codesign_exit': result.returncode, 'codesign_message': result.stderr.strip(), 'entitlements': entitlements}
+    # Simulator entitlements can be linked into __TEXT instead of the signature.
+    info = plistlib.loads((app/'Info.plist').read_bytes())
+    binary = (app/info['CFBundleExecutable']).read_bytes()
+    simulated = {}
+    assert struct.unpack_from('<I', binary)[0] == 0xfeedfacf, 'Expected native arm64 Mach-O artifact'
+    position = 32
+    for _ in range(struct.unpack_from('<I', binary, 16)[0]):
+        command, size = struct.unpack_from('<II', binary, position)
+        if command == 0x19:
+            for index in range(struct.unpack_from('<I', binary, position+64)[0]):
+                section = position+72+index*80
+                name = binary[section:section+16].split(b'\0')[0]
+                if name == b'__entitlements':
+                    length = struct.unpack_from('<Q', binary, section+40)[0]
+                    offset = struct.unpack_from('<I', binary, section+48)[0]
+                    simulated = plistlib.loads(binary[offset:offset+length].rstrip(b'\0'))
+        position += size
+    return {'app_exists': True, 'bundle_id': info['CFBundleIdentifier'], 'codesign_exit': result.returncode, 'codesign_message': result.stderr.strip(), 'signed_entitlements': entitlements, 'simulator_entitlements': simulated, 'entitlements': {**entitlements, **simulated}}
 
 
 def preflight():
@@ -106,7 +125,7 @@ def proof(mode):
                 except Exception as diagnostic_error:
                     print('Photos log collection failed: '+str(diagnostic_error), flush=True)
                 raise
-        command = ['xcodebuild', '-project', str(ROOT/'voice notes.xcodeproj'), '-scheme', 'voice notes UITests', '-destination', 'id='+target, '-derivedDataPath', str(OUT/'DerivedData'), '-parallel-testing-enabled', 'NO', 'CODE_SIGNING_ALLOWED=NO', '-resultBundlePath', str(result_dir/'test.xcresult')]
+        command = ['xcodebuild', '-project', str(ROOT/'voice notes.xcodeproj'), '-scheme', 'voice notes UITests', '-destination', 'id='+target, '-derivedDataPath', str(OUT/'DerivedData'), '-parallel-testing-enabled', 'NO', 'CODE_SIGNING_ALLOWED=YES', 'CODE_SIGN_IDENTITY=-']
         tests = ['testAddPhotoPresentsPicker'] if mode == 'picker' else ['testAddPhotoFromNoteMenu'] if mode == 'photo' else [
             'testAddPhotoFromNoteMenu', 'testNoteMenuCopyAndAgentBrief',
             'testNoteMenuProjectAndTags', 'testNoteMenuFavoritePersists',
@@ -116,12 +135,28 @@ def proof(mode):
             'testPasteAndExport', 'testNoteMindMap', 'testIdentifySpeakers',
         ]
         command += ['-only-testing:voice notes UITests/ScreenshotTests/'+name for name in tests]
-        command += ['test']
         assert not run('git', '-C', str(ROOT), 'status', '--porcelain', '--untracked-files=no'), 'Commit source before native proof'
         build_sha = run('git', '-C', str(ROOT), 'rev-parse', 'HEAD')
+        with (result_dir/'build.log').open('w') as log:
+            print('Building with simulator signing and real entitlements', flush=True)
+            build_code = subprocess.run(command+['-resultBundlePath', str(result_dir/'build.xcresult'), 'build-for-testing'], cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, timeout=1200).returncode
+        if build_code:
+            print('\n'.join((result_dir/'build.log').read_text(errors='replace').splitlines()[-40:]), flush=True)
+            raise SystemExit(build_code)
+        artifact = inspect_built_entitlements()
+        (result_dir/'built-entitlements.json').write_text(json.dumps(artifact, indent=2)+'\n')
+        expected = plistlib.loads((ROOT/'voice notes/voice notes.entitlements').read_bytes())
+        assert artifact['codesign_exit'] == 0 and artifact['bundle_id'] == BUNDLE, 'Built app signature/identity check failed'
+        for key in ['com.apple.developer.icloud-container-identifiers', 'com.apple.developer.icloud-services', 'com.apple.security.application-groups']:
+            assert artifact['entitlements'].get(key) == expected[key], 'Built app is missing required entitlement: '+key
+        print('Built artifact CloudKit and app-group entitlements verified', flush=True)
         with (result_dir/'test.log').open('w') as log:
             print('Running '+', '.join(tests)+' on disposable '+phone['name'], flush=True)
-            code = subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, timeout=1200).returncode
+            code = subprocess.run(command+['-resultBundlePath', str(result_dir/'test.xcresult'), 'test-without-building'], cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, timeout=1200).returncode
+        test_log = (result_dir/'test.log').read_text(errors='replace')
+        test_results = {name: ('passed' if re.search(re.escape(name)+r"\]' passed", test_log) else 'failed' if re.search(re.escape(name)+r"\]' failed", test_log) else 'not-run') for name in tests}
+        if not all(result == 'passed' for result in test_results.values()):
+            code = code or 1
         try:
             run('xcrun', 'xcresulttool', 'export', 'attachments', '--path', str(result_dir/'test.xcresult'), '--output-path', str(result_dir/'attachments'), timeout=60)
         except Exception as attachment_error:
@@ -132,7 +167,7 @@ def proof(mode):
         if mode == 'all' and code == 0:
             container = run('xcrun', 'simctl', 'get_app_container', target, BUNDLE, 'data')
             file_proof = json.loads(run('xcrun', 'swift', str(ROOT/'scripts/verify-note-menu-files.swift'), container, str(ROOT/'voice notes UITests/Fixtures/two-speakers.m4a'), timeout=120))
-        report = {'file_proof': file_proof, 'passed': code == 0, 'exit_code': code, 'tests': tests, 'source_sha': build_sha, 'result': str(result_dir), 'unproven': ['Successful CloudKit share requires a real Apple test account', 'Physical-device Photos and playback behavior require device proof']}
+        report = {'test_results': test_results, 'file_proof': file_proof, 'passed': code == 0, 'exit_code': code, 'tests': tests, 'source_sha': build_sha, 'result': str(result_dir), 'unproven': ['Successful CloudKit share requires a real Apple test account', 'Physical-device Photos and playback behavior require device proof']}
         (result_dir/'summary.json').write_text(json.dumps(report, indent=2)+'\n')
         print(json.dumps(report, indent=2), flush=True)
         if code:
