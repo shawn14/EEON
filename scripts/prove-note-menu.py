@@ -23,6 +23,19 @@ def run(*args, timeout=60):
     return result.stdout.strip()
 
 
+def inspect_built_entitlements():
+    app = OUT/'DerivedData/Build/Products/Debug-iphonesimulator/voice notes.app'
+    if not app.exists():
+        return {'app_exists': False}
+    result = subprocess.run(['/usr/bin/codesign', '-d', '--entitlements', ':-', str(app)], capture_output=True, text=True, timeout=30)
+    xml = result.stdout
+    try:
+        entitlements = plistlib.loads(xml.encode()) if xml.strip() else {}
+    except Exception:
+        entitlements = {}
+    return {'app_exists': True, 'codesign_exit': result.returncode, 'codesign_message': result.stderr.strip(), 'entitlements': entitlements}
+
+
 def preflight():
     OUT.mkdir(parents=True, exist_ok=True)
     inventory = json.loads(run('xcrun', 'simctl', 'list', '--json'))
@@ -33,6 +46,7 @@ def preflight():
         'runtimes': [{k: r.get(k) for k in ['name', 'identifier', 'version', 'isAvailable', 'availabilityError']} for r in inventory['runtimes']],
         'api_key_file_present': (ROOT / 'voice notes' / 'APIKeys.swift').exists(),
         'head': run('git', '-C', str(ROOT), 'rev-parse', 'HEAD'),
+        'built_artifact': inspect_built_entitlements(),
     }
     (OUT / 'preflight.json').write_text(json.dumps(result, indent=2)+'\n')
     print(json.dumps(result, indent=2), flush=True)

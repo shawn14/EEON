@@ -370,3 +370,5 @@
 - Shawn explicitly approved diagnosing the simulator failure and resuming the full menu tests. Added a focused picker-presentation action independent of fixture import, to reproduce the reported no-open symptom first; attachment proof remains separate. DraftPR3 preserves the checkpoint.
 
 - Focused picker job reached the real Xcode build, which failed at the embedded EEONWatch asset catalog: no watchOS simulator runtime installed. No app UI test ran. The previously verified release used watchOS26.2; preparing that pinned prerequisite via the Mac runner under Shawn's approved diagnosis/resume. Native proof now preflights both runtime families and guards against source changes during a run.
+
+- Required watchOS26.2 runtime installed successfully;34.2GiB free afterward. Focused job voice_notes-e2e_note_menu_picker-20261020-104757-zvwi then completed a native build and ran one UI test, which failed before reaching the menu: the app crashed twice during PFCloudKitContainerProvider setup (actual crash reports at10:56:56/59). Investigating actual built signing/entitlements next; Add Photo remains unreproduced.
