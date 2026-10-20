@@ -1,6 +1,6 @@
 # Note overflow menu proof
 
-Status: **draft tests; blocked at test-app CloudKit startup, not a fixed photo-picker bug.**
+Status: **photo-picker failure reproduced; minimal fix applied, verification pending the Mac runner cooldown.**
 
 Owner report (October20,2026): Add Photo from the note menu never opens Photos. The actual note was found through the connected EEON MCP. Its private contents and identifier are deliberately absent from the test fixtures and this public repository.
 
@@ -21,12 +21,13 @@ The script creates one disposable, signed-out simulator, imports the existing wh
 - Live Mac runner preflight passed: Xcode26.2, available iOS26.3.1 runtime,39.3GiB free at latest UI attempt.
 - First run rejected an incompatible iPod model: simulator metadata's iPhone productFamily also includes iPod touch. The selection now checks actual model name and runtime compatibility.
 - Second run created/booted an iPhone17e, then Photos fixture import timed out after60seconds. **No EEON build or UI test ran.** Stopped on the infrastructure failure under Shawn's rule3. See [sanitized receipt](2026-10-20.json).
-- After owner approval to diagnose/resume, a native build exposed a missing watchOS runtime. Installed the previously verified watchOS26.2 runtime through the Mac runner. The subsequent native build completed and one UI test ran, but the app crashed twice during CloudKit initialization before reaching the menu. Actual signed-artifact inspection is next.
-- The app's Add Photo implementation is unchanged. There is no red app reproduction or green app result yet.
+- After owner approval to diagnose/resume, a native build exposed a missing watchOS runtime. Installed the previously verified watchOS26.2 runtime through the Mac runner. The subsequent native build completed and one UI test ran, but the app crashed twice during CloudKit initialization before reaching the menu. Built artifact inspection proved missing entitlements. Corrected test signing; the next built-artifact check passed and the app reached the real note/menu.
+- Signed source `efdec38` reproduced the owner failure: tapping Add Photo closed the menu and left the note visible, with no system picker. [Exact red receipt](picker-red.json).
+- Candidate `839bfa9` changes only the photo presenter: a menu button toggles state and the stable note view hosts `.photosPicker`. The same verification action was refused by the runner after three failures; next eligible time is approximately12:16PM Chicago. No green result yet; do not rename this a verified fix.
 
 ## Intended menu coverage
 
-All menu paths below remain **unverified drafts**, not passing coverage. The focused picker test has executed once but failed during app startup before any menu action.
+All menu paths below remain **unverified drafts**, not passing coverage. The focused picker test reached the real menu after signing was corrected and reproduced the reported failure. The candidate fix has not run yet.
 
 | Menu action | Prepared journey / remaining assertion |
 |---|---|
@@ -47,4 +48,4 @@ All menu paths below remain **unverified drafts**, not passing coverage. The foc
 
 ## Resume
 
-Resolve the observed CloudKit startup crash using built-artifact evidence before another UI run; do not blindly retry. The Photos import failure also remains to be diagnosed; the next import initializes the real Photos app and records system logs on failure. Then run the photo regression against unchanged app code, retain the exact red failure, make only the demonstrated fix, rerun green, finish the semantic assertion gaps and run every menu journey. A fresh context must verify the actual result. Successful CloudKit sharing and physical iPhone behavior cannot be claimed from a signed-out simulator. Nothing here ships a build or changes App Store state.
+Honor the runner cooldown: do not reset its counters, rename the action to bypass it, or weaken its limits. After approximately12:16PM Chicago on October20, run `mac-run 'voice notes' e2e_note_menu_picker` against the committed candidate. Keep the source unchanged until it finishes. If green, run attachment persistence with `e2e_note_menu_photo`, then every menu journey with `e2e_note_menu`. The next Photos import initializes the real Photos app and records system logs on failure. Fix only observed failures, preserve all receipts, and obtain independent runtime verification before claiming the owner bug fixed. Successful CloudKit sharing and physical iPhone behavior cannot be claimed from a signed-out simulator. Nothing here ships a build or changes App Store state.
