@@ -79,7 +79,11 @@ def proof(mode):
         with (result_dir/'test.log').open('w') as log:
             print('Running '+', '.join(tests)+' on disposable '+phone['name'], flush=True)
             code = subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, timeout=1200).returncode
-        report = {'passed': code == 0, 'exit_code': code, 'tests': tests, 'source_sha': state['head'], 'result': str(result_dir), 'unproven': ['Successful CloudKit share requires a real Apple test account', 'Physical-device Photos and playback behavior require device proof']}
+        file_proof = None
+        if mode == 'all' and code == 0:
+            container = run('xcrun', 'simctl', 'get_app_container', target, BUNDLE, 'data')
+            file_proof = json.loads(run('xcrun', 'swift', str(ROOT/'scripts/verify-note-menu-files.swift'), container, str(ROOT/'voice notes UITests/Fixtures/two-speakers.m4a'), timeout=120))
+        report = {'file_proof': file_proof, 'passed': code == 0, 'exit_code': code, 'tests': tests, 'source_sha': state['head'], 'result': str(result_dir), 'unproven': ['Successful CloudKit share requires a real Apple test account', 'Physical-device Photos and playback behavior require device proof']}
         (result_dir/'summary.json').write_text(json.dumps(report, indent=2)+'\n')
         print(json.dumps(report, indent=2), flush=True)
         if code:
