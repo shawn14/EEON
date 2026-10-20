@@ -3,6 +3,7 @@ name: EEON
 profile: ios-native
 canonical_scripts:
   note_menu_diagnostics: python3 scripts/prove-note-menu.py preflight
+  e2e_note_menu_picker: python3 scripts/prove-note-menu.py picker --simulator
   e2e_note_menu_photo: python3 scripts/prove-note-menu.py photo --simulator
   e2e_note_menu: python3 scripts/prove-note-menu.py all --simulator
   build_voice_notes: xcodebuild -project 'voice notes.xcodeproj' -scheme 'voice notes' -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO -quiet build

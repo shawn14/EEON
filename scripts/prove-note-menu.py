@@ -55,15 +55,18 @@ def proof(mode):
     phone = next((d for d in phones if 'Pro' not in d['name']), phones[0])
     stamp = str(int(time.time()))
     target = run('xcrun', 'simctl', 'create', 'EEON-menu-proof-'+stamp, phone['identifier'], runtime['identifier'])
-    result_dir = OUT / ('photo-'+stamp if mode == 'photo' else 'all-'+stamp)
+    result_dir = OUT / (mode+'-'+stamp)
     result_dir.mkdir()
     (result_dir / 'device.json').write_text(json.dumps({'udid': target, 'type': phone, 'runtime': runtime, 'disposable': True}, indent=2)+'\n')
     try:
+        print('Booting disposable '+phone['name'], flush=True)
         run('xcrun', 'simctl', 'boot', target)
         run('xcrun', 'simctl', 'bootstatus', target, '-b', timeout=120)
-        run('xcrun', 'simctl', 'addmedia', target, str(ROOT / 'voice notes UITests' / 'Fixtures' / 'whiteboard.png'))
+        if mode != 'picker':
+            print('Importing real photo fixture', flush=True)
+            run('xcrun', 'simctl', 'addmedia', target, str(ROOT / 'voice notes UITests' / 'Fixtures' / 'whiteboard.png'))
         command = ['xcodebuild', '-project', str(ROOT/'voice notes.xcodeproj'), '-scheme', 'voice notes UITests', '-destination', 'id='+target, '-derivedDataPath', str(OUT/'DerivedData'), '-parallel-testing-enabled', 'NO', 'CODE_SIGNING_ALLOWED=NO', '-resultBundlePath', str(result_dir/'test.xcresult')]
-        tests = ['testAddPhotoFromNoteMenu'] if mode == 'photo' else [
+        tests = ['testAddPhotoPresentsPicker'] if mode == 'picker' else ['testAddPhotoFromNoteMenu'] if mode == 'photo' else [
             'testAddPhotoFromNoteMenu', 'testNoteMenuCopyAndAgentBrief',
             'testNoteMenuProjectAndTags', 'testNoteMenuFavoritePersists',
             'testNoteMenuArchiveRoundTrip', 'testNoteMenuDeleteCancelAndRestore',
@@ -89,7 +92,7 @@ def proof(mode):
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('mode',choices=['preflight','photo','all'])
+    parser.add_argument('mode',choices=['preflight','picker','photo','all'])
     parser.add_argument('--simulator', action='store_true', help='Explicit simulator run; makes the Mac runner apply its heavy-job resource gate')
     args=parser.parse_args()
     mode=args.mode

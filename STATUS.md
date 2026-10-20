@@ -366,3 +366,5 @@
 - **Stopped at a real infrastructure failure:** job voice_notes-e2e_note_menu_photo-20261020-103055-nqux booted disposable iPhone17e, but Photos `addmedia` timed out after60s. Zero app builds/UI tests executed; no product fix. No retry. Sanitized receipt and exact assertion gaps: docs/note-menu-proof/README.md. Resume requires diagnosing Photos import before another native run, then red→green actual photo-menu proof.
 
 - Independent runtime/receipt inspection confirms zero .xcresult/test logs/build output, unchanged app implementation, and disposable simulator absent from disk/registry with no owned native processes. Test draft preserved on codex/eeon-note-menu-proof; canonical main remains the verified rename checkpoint bb814e0341888f6a5e93a4d17b8a3d9642940a50. No App Store/TestFlight changes.
+
+- Shawn explicitly approved diagnosing the simulator failure and resuming the full menu tests. Added a focused picker-presentation action independent of fixture import, to reproduce the reported no-open symptom first; attachment proof remains separate. DraftPR3 preserves the checkpoint.

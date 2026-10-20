@@ -441,6 +441,19 @@ final class ScreenshotTests: XCTestCase {
         row.tap()
     }
 
+    /// Exact owner symptom, independent of Photos fixture import.
+    func testAddPhotoPresentsPicker() throws {
+        continueAfterFailure = false
+        openSeededAudioNote()
+        selectNoteAction("Add Photo")
+        let cancel = app.buttons["Cancel"]
+        XCTAssertTrue(cancel.waitForExistence(timeout: 8),
+                      "Add Photo must present the real system Photos picker. " + app.debugDescription)
+        keep("NoteMenu-PhotosPickerPresentation")
+        cancel.tap()
+        XCTAssertTrue(app.buttons["Note options"].waitForExistence(timeout: 5))
+    }
+
     /// Owner regression, 2026-10-20: tapping Add Photo did not open Photos.
     /// The runner imports a real PNG into the disposable simulator's Photos library.
     func testAddPhotoFromNoteMenu() throws {
