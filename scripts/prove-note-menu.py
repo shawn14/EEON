@@ -150,16 +150,32 @@ def proof(mode):
             print('Initializing the real Photos app before fixture import', flush=True)
             photos_info = Path(runtime['runtimeRoot'])/'Applications/Photos.app/Info.plist'
             photos_bundle = plistlib.loads(photos_info.read_bytes())['CFBundleIdentifier']
-            run('xcrun', 'simctl', 'launch', target, photos_bundle)
-            print('Importing real photo fixture (one attempt, 180s limit)', flush=True)
+            stage = 'Photos launch'
             try:
+                run('xcrun', 'simctl', 'launch', target, photos_bundle)
+                stage = 'Photos fixture import'
+                print('Importing real photo fixture (one attempt, 180s limit)', flush=True)
                 run('xcrun', 'simctl', 'addmedia', target, str(ROOT / 'voice notes UITests' / 'Fixtures' / 'whiteboard.png'), timeout=180)
-            except Exception:
-                try:
-                    diagnostic = run('xcrun', 'simctl', 'spawn', target, 'log', 'show', '--last', '3m', '--style', 'compact', '--predicate', 'process == "photolibraryd" OR process == "assetsd" OR process == "MobileSlideShow"', timeout=30)
-                    (result_dir/'photos-system.log').write_text(diagnostic)
-                except Exception as diagnostic_error:
-                    print('Photos log collection failed: '+str(diagnostic_error), flush=True)
+            except Exception as error:
+                # Launch failed before the old import-only catch. Preserve runtime
+                # evidence before finally removes this disposable device.
+                (result_dir/'photos-failure.json').write_text(json.dumps({
+                    'stage': stage, 'error': str(error), 'source_sha': state['head'],
+                    'device': target, 'app_tests_ran': False,
+                }, indent=2)+'\n')
+                diagnostics = {
+                    'photos-system.log': ['xcrun', 'simctl', 'spawn', target, 'log', 'show', '--last', '5m', '--style', 'compact', '--predicate', 'process CONTAINS[c] "photo" OR process CONTAINS[c] "asset" OR process == "SpringBoard" OR process == "runningboardd"'],
+                    'simulator-services.log': ['xcrun', 'simctl', 'spawn', target, 'launchctl', 'list'],
+                }
+                for filename, diagnostic_command in diagnostics.items():
+                    try:
+                        diagnostic = run(*diagnostic_command, timeout=30)
+                        (result_dir/filename).write_text(diagnostic)
+                    except Exception as diagnostic_error:
+                        (result_dir/filename).write_text('Diagnostic failed: '+str(diagnostic_error)+'\n')
+                simulator_logs = Path.home()/'Library/Logs/CoreSimulator'/target
+                if simulator_logs.exists():
+                    shutil.copytree(simulator_logs, result_dir/'simulator-logs')
                 raise
         command = ['xcodebuild', '-project', str(ROOT/'voice notes.xcodeproj'), '-scheme', 'voice notes UITests', '-destination', 'id='+target, '-derivedDataPath', str(OUT/'DerivedData'), '-parallel-testing-enabled', 'NO', 'CODE_SIGNING_ALLOWED=YES', 'CODE_SIGN_IDENTITY=-']
         tests = ['testAddPhotoPresentsPicker'] if mode == 'picker' else ['testAddPhotoFromNoteMenu'] if mode == 'photo' else [
