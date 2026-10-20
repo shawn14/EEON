@@ -1,6 +1,6 @@
 # Note overflow menu proof
 
-**Photo attachment passed in Simulator.** The original no-open failure was reproduced. The presenter fix now passes open→cancel→reopen→actual photo selection→attachment→relaunch, plus actual SwiftData and decoded-image checks. [Photo receipt](photo-green.json). The first complete remaining-menu run passed8of12tests; fixes for its4failures await the final approved run. [Earlier menu receipt](menu-first-complete-run.json). Nothing has been released.
+**Photo attachment passed in Simulator.** The original no-open failure was reproduced. The presenter fix now passes open→cancel→reopen→actual photo selection→attachment→relaunch, plus actual SwiftData and decoded-image checks. [Photo receipt](photo-green.json). The latest remaining-menu run passed10of12tests. Independent runtime inspection verified project and tag persistence; the two failures are exact-label test lookups. Corrections are prepared, but tag removal and restore completion still require a run. [Latest receipt](menu-second-complete-run.json) · [Independent review](menu-independent-review.json). Nothing has been released.
 
 The owner's private note was read through the connected EEON MCP; its contents and identifier are absent from the disposable fixtures and this public repository.
 
@@ -12,7 +12,7 @@ The owner's private note was read through the connected EEON MCP; its contents a
 - **Historical menu interruption:** job `voice_notes-e2e_note_menu_remaining-20261020-123805-ptpn`: build setup was terminated by SIGTERM after163.2s. Zero UI tests ran; signal sender unknown. This was not the configured30-minute runner timeout. [Receipt](menu-interrupted.json).
 - **Cleanup:** job `voice_notes-cleanup_note_menu-20261020-124652-wcrf` removed the interrupted run's recorded disposable simulator. No native proof process was left running.
 
-The runner's cooldown was honored. Shawn authorized automatic continuation; it resumed in this chat when he said "fix it", and the redundant scheduled wake-up was removed. A later complete remaining-menu run executed12journeys:8passed/4failed. Independent review checked raw runtime evidence and exported files. The fixes for those observed failures await verification.
+The runner's cooldown was honored. Shawn authorized automatic continuation; it resumed in this chat when he said "fix it", and the redundant scheduled wake-up was removed. The second complete remaining-menu run executed12journeys:10passed/2failed. Independent review checked raw runtime evidence, the built artifact, live disposable SQLite and exported files. The remaining failures are documented below.
 
 ## Standing suite
 
@@ -24,32 +24,33 @@ mac-run 'voice notes' e2e_note_menu_picker
 mac-run 'voice notes' e2e_note_menu_photo
 mac-run 'voice notes' e2e_note_menu
 mac-run 'voice notes' e2e_note_menu_remaining
+mac-run 'voice notes' e2e_note_menu_organize
 mac-run 'voice notes' cleanup_note_menu
 ```
 
-`e2e_note_menu_remaining` explicitly excludes Add Photo and does not import a fixture into Photos. Its result cannot be called full-menu proof. `cleanup_note_menu` removes only recorded disposable device IDs whose names carry this proof's prefix.
+`e2e_note_menu_remaining` explicitly excludes Add Photo and does not import a fixture into Photos. Its result cannot be called full-menu proof. `e2e_note_menu_organize` is the focused two-journey subset for project/tags and delete/restore; it explicitly lists all excluded tests. The currently prepared run requires fresh authorization because the approved three attempts are exhausted. `cleanup_note_menu` removes only recorded disposable device IDs whose names carry this proof's prefix.
 
 The suite uses real UI, SwiftData, Photos, files and API services, without mocked services. Real AI calls may incur their normal API cost. It refuses another booted simulator or less than15GiB free, verifies actual built CloudKit/app-group entitlements, preserves the cached build, freezes source during a run, rejects missing test cases, and deletes its own simulator in `finally`. Interrupted processes need the scoped cleanup action. Never use screenshot fixtures against a personal device/account.
 
 | Menu action | Prepared proof; runtime status |
 |---|---|
 | Add Photo | Passed loaded picker/cancel/reopen/selection/relaunch; actual DB contains1attachment and saved JPEG decodes1800×800 |
-| Copy Note / Send to an Agent | Actual Copy/Paste observed; placeholder lookup failed after paste. Selector corrected; agent brief not yet reached |
+| Copy Note / Send to an Agent | Passed actual UI paste of note text and agent brief with note identifier |
 | Share as Link | Signed-out iCloud error passed. Successful sharing requires a real Apple test account |
 | Export As: Markdown/PDF/Recording | All3share sheets passed; independent actual-file inspection confirms readable PDF/Markdown and exact original audio bytes |
-| Assign Project | Reproduced selection lost on immediate relaunch. Explicit save prepared, unverified |
-| Manage Tags | Create, persist and remove; unrun |
-| Clean Up Recording | Real service returned and persisted cleaned text/deadline; clipboard assertion selector failed after actual paste. Corrected check pending |
+| Assign Project | Reproduced lost selection; explicit save now passed selection/removal across relaunch, independently observed in live SQLite |
+| Manage Tags | Created and persisted as Menu Proof Tag; test expected different capitalization. Lookup corrected; removal not yet exercised |
+| Clean Up Recording | Passed real service cleanup, persisted text and actual pasted deadline content |
 | Ask About This Note | Passed; actual scoped answer preserves Thursday-night deadline |
 | Mind Map | Passed with actual API generation |
 | Identify Speakers | Passed with real audio/API and two speakers |
 | Favorite / Unfavorite | Passed both directions across relaunch |
 | Archive / Unarchive | Passed archive/filter/unarchive round trip |
 | Playback Speed | Passed all six choices against actual playback-clock timing |
-| Delete Note | Actual confirmation observed; iOS26uses outside-tap cancellation. Corrected check pending, delete/restore not reached |
+| Delete Note | Cancellation and deletion passed. Test missed the compound Recently Deleted button label; lookup corrected, restore completion not yet exercised |
 
 ## Resume
 
-The owner approved up to3additional native verification runs. Preserve the current load8/idle0 setting from the separately authorized removal of the blanket heavy-job restriction. Only raise the failure cap temporarily if needed for an approved EEON run; restore it immediately after that run starts. Keep resource safeguards and the single-job lock. Local allowance receipt: `build/note-menu/approved-extra-runs.json`.
+All three explicitly approved extra native verification attempts are consumed. The failure-cap setting is back to its normal default3; a fresh idle runner heartbeat followed completion. Preserve load8/idle0 from the separately authorized removal of the blanket heavy-job restriction. The disposable simulator was cleaned up.
 
-Photo verification passed on the second approved attempt. Run the remaining12menu journeys with the observed project-save and test-selector fixes using the final approved attempt. Preserve receipts and obtain independent runtime review before claiming complete. Physical iPhone behavior and signed-in CloudKit sharing are separate proof requirements. Main pushes, TestFlight and App Store release remain unapproved for this change.
+The concrete next verification is one `e2e_note_menu_organize` run with the two observed label corrections. It uses the same build cache, real UI/database and resource safeguards, and does not repeat the ten passing service/export journeys. Do not run it under the exhausted allowance or silently use it to bypass a cap; obtain a new bounded approval first. Physical iPhone behavior and successful signed-in CloudKit sharing remain separate proof requirements. Main pushes, TestFlight and App Store release remain unapproved for this change.

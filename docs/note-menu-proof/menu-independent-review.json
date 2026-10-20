@@ -1,0 +1,74 @@
+{
+  "inspector": "independent runtime refuter",
+  "reviewed_at": "2026-10-20T14:40:01.514385",
+  "source_sha": "3e9336bd08075b8c4f48c525815eaa3c845df444",
+  "test_results_from_raw_log": {
+    "testIdentifySpeakers": "passed",
+    "testNoteMenuArchiveRoundTrip": "passed",
+    "testNoteMenuAskAboutThisNote": "passed",
+    "testNoteMenuCleanUpRecording": "passed",
+    "testNoteMenuCopyAndAgentBrief": "passed",
+    "testNoteMenuDeleteCancelAndRestore": "failed",
+    "testNoteMenuFavoritePersists": "passed",
+    "testNoteMenuPlaybackSpeeds": "passed",
+    "testNoteMenuProjectAndTags": "failed",
+    "testNoteMenuShareLinkRequiresRealICloud": "passed",
+    "testNoteMindMap": "passed",
+    "testPasteAndExport": "passed"
+  },
+  "passed_count": 10,
+  "failed_count": 2,
+  "project_persistence": {
+    "evidence": "independent-project-persistence.json",
+    "read_only_live_sqlite_observations": 24,
+    "observed": "Same disposable note UUID retained Menu proof project across terminate, launch, reopening note and assignment menu; choosing No Project cleared persisted relation through subsequent relaunch."
+  },
+  "failed_test_evidence": {
+    "testNoteMenuDeleteCancelAndRestore": {
+      "observed_button_label": "Recently Deleted, Restore notes for 30 days",
+      "expected_exact_label": "Recently Deleted",
+      "ax": "attachments/4DDCD87C-5075-4BAC-8369-DED9E23E78E5.txt:178",
+      "video": "attachments/17CCE44E-89FE-4A74-B6A7-712C088C7052.mp4",
+      "observed": "Actual row visible. Prior runtime actions dismissed popover, reopened it, confirmed Delete and reached Settings. Restore action not reached."
+    },
+    "testNoteMenuProjectAndTags": {
+      "observed_tag_label": "Menu Proof Tag",
+      "expected_exact_label": "Menu proof tag",
+      "video": "attachments/79CAFA86-D216-4E40-9E09-F9F93A4952FD.mp4",
+      "inspected_video_time_seconds": 68.476667,
+      "observed": "After relaunch the tag is visible under CURRENT TAGS and checked under ALL TAGS. Tag removal step not reached."
+    }
+  },
+  "exports": {
+    "Paywall launch call.pdf": {
+      "bytes": 13404,
+      "sha256": "b2efc4979108560aa7f261aa061c8e72e6ff7ceba760b610f71511af51ca2ce0"
+    },
+    "Paywall launch call.m4a": {
+      "bytes": 58531,
+      "sha256": "6dda20026ab6e029c34aec1b6b6d82753ba4bae76aa9b9c24b21ce6610975836"
+    },
+    "Paywall launch call.md": {
+      "bytes": 321,
+      "sha256": "d8e20cde652f1ed2ad813475641103093e68abf71e4ac02e470af99b87bcf69c"
+    }
+  },
+  "export_checks": {
+    "pdf_has_title_and_deadline": true,
+    "markdown_has_title_and_deadline": true,
+    "audio_matches_original_fixture": true,
+    "audio_full_decode": "ffmpeg decoded to null without errors"
+  },
+  "built_artifact": {
+    "path": "build/note-menu/DerivedData/Build/Products/Debug-iphonesimulator/voice notes.app/voice notes",
+    "sha256": "cfbc241d4bbfd557b5a4048cd9d07790ede8792fdd7c07ca0f646190f00dfd1b",
+    "observed_mtime": "2026-10-20T14:18:43.931967",
+    "inspection": "Parsed Mach-O __TEXT/__entitlements directly; expected iCloud.aivoiceeeon CloudKit and group.com.eeon.voicenotes entries present."
+  },
+  "limits": [
+    "Run is not fully green: 10 of 12 journeys passed.",
+    "Restore completion and tag removal remain unexercised beyond selector failures.",
+    "Successful signed-in CloudKit sharing and physical iPhone behavior remain unproven.",
+    "Photo attachment was independently verified in separate photo-1792523119 artifacts."
+  ]
+}

@@ -590,8 +590,8 @@ final class ScreenshotTests: XCTestCase {
         reopenProofNote()
         selectNoteAction("Manage Tags")
         XCTAssertTrue(app.staticTexts["CURRENT TAGS"].waitForExistence(timeout: 5), "Assigned tag did not persist")
-        XCTAssertTrue(app.staticTexts["Menu proof tag"].firstMatch.exists)
-        let tag = app.buttons["Menu proof tag"]
+        XCTAssertTrue(app.staticTexts["Menu Proof Tag"].firstMatch.exists, app.debugDescription)
+        let tag = app.buttons["Menu Proof Tag"]
         XCTAssertTrue(tag.waitForExistence(timeout: 5))
         tag.tap()
         XCTAssertFalse(app.staticTexts["CURRENT TAGS"].exists, "Removing the assigned tag did not update the note")
@@ -654,7 +654,7 @@ final class ScreenshotTests: XCTestCase {
         let settings = app.buttons["Settings"]
         XCTAssertTrue(settings.waitForExistence(timeout: 5))
         settings.tap()
-        let trash = app.buttons["Recently Deleted"]
+        let trash = app.buttons.matching(NSPredicate(format: "label BEGINSWITH %@", "Recently Deleted")).firstMatch
         for _ in 0..<8 where !trash.isHittable { app.swipeUp() }
         XCTAssertTrue(trash.waitForExistence(timeout: 5), app.debugDescription)
         trash.tap()

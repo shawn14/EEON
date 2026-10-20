@@ -181,7 +181,7 @@ def proof(mode):
                     shutil.copytree(simulator_logs, result_dir/'simulator-logs')
                 raise
         command = ['xcodebuild', '-project', str(ROOT/'voice notes.xcodeproj'), '-scheme', 'voice notes UITests', '-destination', 'id='+target, '-derivedDataPath', str(OUT/'DerivedData'), '-parallel-testing-enabled', 'NO', 'CODE_SIGNING_ALLOWED=YES', 'CODE_SIGN_IDENTITY=-']
-        tests = ['testAddPhotoPresentsPicker'] if mode == 'picker' else ['testAddPhotoFromNoteMenu'] if mode == 'photo' else [
+        menu_tests = [
             'testAddPhotoFromNoteMenu', 'testNoteMenuCopyAndAgentBrief',
             'testNoteMenuProjectAndTags', 'testNoteMenuFavoritePersists',
             'testNoteMenuArchiveRoundTrip', 'testNoteMenuDeleteCancelAndRestore',
@@ -189,6 +189,10 @@ def proof(mode):
             'testNoteMenuAskAboutThisNote', 'testNoteMenuShareLinkRequiresRealICloud',
             'testPasteAndExport', 'testNoteMindMap', 'testIdentifySpeakers',
         ]
+        tests = (['testAddPhotoPresentsPicker'] if mode == 'picker' else
+                 ['testAddPhotoFromNoteMenu'] if mode == 'photo' else
+                 ['testNoteMenuProjectAndTags', 'testNoteMenuDeleteCancelAndRestore'] if mode == 'organize' else
+                 list(menu_tests))
         if mode == 'menu':
             tests.remove('testAddPhotoFromNoteMenu')
         command += ['-only-testing:voice notes UITests/ScreenshotTests/'+name for name in tests]
@@ -231,7 +235,7 @@ def proof(mode):
         except Exception as error:
             file_proof = {'error': str(error)}
             code = code or 1
-        report = {'test_results': test_results, 'file_proof': file_proof, 'passed': code == 0, 'exit_code': code, 'tests': tests, 'source_sha': build_sha, 'result': str(result_dir), 'excluded_tests': ['testAddPhotoFromNoteMenu'] if mode == 'menu' else [], 'unproven': ['Successful CloudKit share requires a real Apple test account', 'Physical-device Photos and playback behavior require device proof']}
+        report = {'test_results': test_results, 'file_proof': file_proof, 'passed': code == 0, 'exit_code': code, 'tests': tests, 'source_sha': build_sha, 'result': str(result_dir), 'excluded_tests': [name for name in menu_tests if name not in tests], 'unproven': ['Successful CloudKit share requires a real Apple test account', 'Physical-device Photos and playback behavior require device proof']}
         (result_dir/'summary.json').write_text(json.dumps(report, indent=2)+'\n')
         print(json.dumps(report, indent=2), flush=True)
         if code:
@@ -244,7 +248,7 @@ def proof(mode):
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('mode',choices=['preflight','watch-runtime','picker','photo','all','menu','cleanup'])
+    parser.add_argument('mode',choices=['preflight','watch-runtime','picker','photo','all','menu','organize','cleanup'])
     parser.add_argument('--simulator', action='store_true', help='Explicit simulator run; makes the Mac runner apply its heavy-job resource gate')
     args=parser.parse_args()
     mode=args.mode

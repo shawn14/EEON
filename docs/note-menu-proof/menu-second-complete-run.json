@@ -1,0 +1,55 @@
+{
+  "test_results": {
+    "testNoteMenuCopyAndAgentBrief": "passed",
+    "testNoteMenuProjectAndTags": "failed",
+    "testNoteMenuFavoritePersists": "passed",
+    "testNoteMenuArchiveRoundTrip": "passed",
+    "testNoteMenuDeleteCancelAndRestore": "failed",
+    "testNoteMenuPlaybackSpeeds": "passed",
+    "testNoteMenuCleanUpRecording": "passed",
+    "testNoteMenuAskAboutThisNote": "passed",
+    "testNoteMenuShareLinkRequiresRealICloud": "passed",
+    "testPasteAndExport": "passed",
+    "testNoteMindMap": "passed",
+    "testIdentifySpeakers": "passed"
+  },
+  "file_proof": {
+    "markdown_note_text": true,
+    "pdf_note_text": true,
+    "pdf_pages": 1,
+    "recording_bytes": 58531,
+    "recording_matches_original": true
+  },
+  "passed": false,
+  "exit_code": 65,
+  "tests": [
+    "testNoteMenuCopyAndAgentBrief",
+    "testNoteMenuProjectAndTags",
+    "testNoteMenuFavoritePersists",
+    "testNoteMenuArchiveRoundTrip",
+    "testNoteMenuDeleteCancelAndRestore",
+    "testNoteMenuPlaybackSpeeds",
+    "testNoteMenuCleanUpRecording",
+    "testNoteMenuAskAboutThisNote",
+    "testNoteMenuShareLinkRequiresRealICloud",
+    "testPasteAndExport",
+    "testNoteMindMap",
+    "testIdentifySpeakers"
+  ],
+  "source_sha": "3e9336bd08075b8c4f48c525815eaa3c845df444",
+  "result": "build/note-menu/menu-1792523806",
+  "excluded_tests": [
+    "testAddPhotoFromNoteMenu"
+  ],
+  "unproven": [
+    "Successful CloudKit share requires a real Apple test account",
+    "Physical-device Photos and playback behavior require device proof"
+  ],
+  "job": "voice_notes-e2e_note_menu_remaining-20261020-141634-yplj",
+  "finished_at": "2026-10-20T14:38:51-05:00",
+  "approved_attempt": "3 of 3; exhausted",
+  "prepared_corrections": {
+    "testNoteMenuProjectAndTags": "Assert observed capitalized Menu Proof Tag",
+    "testNoteMenuDeleteCancelAndRestore": "Match observed compound Settings button label by Recently Deleted prefix"
+  }
+}
