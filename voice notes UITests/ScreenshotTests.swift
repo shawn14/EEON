@@ -520,14 +520,35 @@ final class ScreenshotTests: XCTestCase {
         row.tap()
     }
 
+    /// Read the actual clipboard by pasting through the foreground app's UI.
+    /// The background XCTest runner stalled when reading UIPasteboard directly.
+    private func pasteCopiedTextIntoQuestion() -> String {
+        selectNoteAction("Ask About This Note")
+        let input = app.textFields["Ask about this note"]
+        XCTAssertTrue(input.waitForExistence(timeout: 5), app.debugDescription)
+        input.tap()
+        input.press(forDuration: 1.1)
+        let menuPaste = app.menuItems["Paste"]
+        let buttonPaste = app.buttons["Paste"]
+        XCTAssertTrue(menuPaste.waitForExistence(timeout: 3) || buttonPaste.waitForExistence(timeout: 3),
+                      "System Paste command is missing. " + app.debugDescription)
+        if menuPaste.exists { menuPaste.tap() } else { buttonPaste.tap() }
+        let allow = XCUIApplication(bundleIdentifier: "com.apple.springboard").buttons["Allow Paste"]
+        if allow.waitForExistence(timeout: 1) { allow.tap() }
+        let copied = input.value as? String ?? ""
+        XCTAssertFalse(copied.isEmpty || copied == "Ask about this note", "Paste produced no note text")
+        app.buttons["Done"].tap()
+        return copied
+    }
+
     func testNoteMenuCopyAndAgentBrief() throws {
         continueAfterFailure = false
         openSeededAudioNote()
         UIPasteboard.general.string = "EEON test sentinel"
         selectNoteAction("Copy Note")
-        XCTAssertTrue((UIPasteboard.general.string ?? "").contains("thanks for joining"), "Copy must place the actual note text on the clipboard")
+        XCTAssertTrue(pasteCopiedTextIntoQuestion().contains("thanks for joining"), "Copy must place the actual note text on the clipboard")
         selectNoteAction("Send to an Agent")
-        let prompt = UIPasteboard.general.string ?? ""
+        let prompt = pasteCopiedTextIntoQuestion()
         XCTAssertTrue(prompt.contains("get_note"))
         XCTAssertTrue(prompt.contains("Paywall launch call"))
         XCTAssertNotNil(prompt.range(of: "[A-Fa-f0-9]{8}-[A-Fa-f0-9-]{27,}", options: .regularExpression), "Agent brief must identify the actual note")
@@ -676,7 +697,7 @@ final class ScreenshotTests: XCTestCase {
         XCTAssertTrue(anyElement(labelContaining: "Thursday").waitForExistence(timeout: 10), "Cleanup lost the screenshot deadline")
         reopenProofNote()
         selectNoteAction("Copy Note")
-        let cleaned = UIPasteboard.general.string ?? ""
+        let cleaned = pasteCopiedTextIntoQuestion()
         XCTAssertTrue(cleaned.contains("Thursday"), "Cleaned note did not persist")
         XCTAssertFalse(cleaned.hasPrefix("Hi Mark, thanks for joining,"), "The original transcript was copied instead of a cleaned note")
         keep("NoteMenu-CleanedExcerpt")

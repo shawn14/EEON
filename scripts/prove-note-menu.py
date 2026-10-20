@@ -87,17 +87,20 @@ def prepare_watch_runtime():
 
 
 
-def verify_saved_photo(target):
+def verify_saved_photo(target, result_dir):
     container = Path(run('xcrun', 'simctl', 'get_app_container', target, BUNDLE, 'data'))
     group = Path(run('xcrun', 'simctl', 'get_app_container', target, BUNDLE, 'group.com.eeon.voicenotes'))
     store = group/'Library/Application Support/default.store'
     with sqlite3.connect(store.as_uri()+'?mode=ro', uri=True) as db:
         rows = db.execute('SELECT ZIMAGEFILENAMESJSON FROM ZNOTE WHERE ZTITLE = ?', ('Paywall launch call',)).fetchall()
+        with sqlite3.connect(result_dir/'saved-photo.store') as snapshot:
+            db.backup(snapshot)
     assert len(rows) == 1, 'Expected exactly one persisted photo-test note'
     names = json.loads(rows[0][0] or '[]')
     assert len(names) == 1 and Path(names[0]).name == names[0], 'Expected one persisted attachment filename'
     photo = container/'Documents'/names[0]
     assert photo.is_file() and photo.stat().st_size > 0, 'Saved photo file is missing or empty'
+    shutil.copy2(photo, result_dir/'saved-attachment.jpg')
     result = json.loads(run('xcrun', 'swift', str(ROOT/'scripts/verify-note-menu-photo.swift'), str(photo), str(ROOT/'voice notes UITests/Fixtures/whiteboard.png'), timeout=120))
     return {'persisted_note_attachments': len(names), 'saved_image_bytes': photo.stat().st_size, **result}
 
@@ -217,7 +220,7 @@ def proof(mode):
             print('Result attachments unavailable: '+str(attachment_error), flush=True)
         assert run('git', '-C', str(ROOT), 'rev-parse', 'HEAD') == build_sha, 'Source changed during native proof; rerun after code settles'
         assert not run('git', '-C', str(ROOT), 'status', '--porcelain', '--untracked-files=no'), 'Source changed during native proof'
-        file_proof = verify_saved_photo(target) if mode == 'photo' and code == 0 else None
+        file_proof = verify_saved_photo(target, result_dir) if mode == 'photo' and code == 0 else None
         if mode in ('all', 'menu') and code == 0:
             container = run('xcrun', 'simctl', 'get_app_container', target, BUNDLE, 'data')
             file_proof = json.loads(run('xcrun', 'swift', str(ROOT/'scripts/verify-note-menu-files.swift'), container, str(ROOT/'voice notes UITests/Fixtures/two-speakers.m4a'), timeout=120))
