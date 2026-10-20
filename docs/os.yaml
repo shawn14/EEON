@@ -1,0 +1,13 @@
+# Mac runner actions. Project identity and data sources remain in ../os.yaml.
+name: EEON
+profile: ios-native
+canonical_scripts:
+  note_menu_diagnostics: python3 scripts/prove-note-menu.py preflight
+  e2e_note_menu_photo: python3 scripts/prove-note-menu.py photo
+  e2e_note_menu: python3 scripts/prove-note-menu.py all
+  build_voice_notes: xcodebuild -project 'voice notes.xcodeproj' -scheme 'voice notes' -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO -quiet build
+  beta: cd ../fastlane-configs && fastlane beta app:voice-notes
+  release: cd ../fastlane-configs && fastlane release app:voice-notes
+mac_runner:
+  ask_first: [beta, release]
+  timeout_minutes: 30

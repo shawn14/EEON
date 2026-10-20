@@ -441,6 +441,42 @@ final class ScreenshotTests: XCTestCase {
         row.tap()
     }
 
+    /// Owner regression, 2026-10-20: tapping Add Photo did not open Photos.
+    /// The runner imports a real PNG into the disposable simulator's Photos library.
+    func testAddPhotoFromNoteMenu() throws {
+        continueAfterFailure = false
+        openSeededAudioNote()
+        let options = app.buttons["Note options"]
+        XCTAssertTrue(options.waitForExistence(timeout: 5))
+        options.tap()
+        let addPhoto = app.buttons["Add Photo"]
+        XCTAssertTrue(addPhoto.waitForExistence(timeout: 5), app.debugDescription)
+        addPhoto.tap()
+        let cancel = app.buttons["Cancel"]
+        XCTAssertTrue(cancel.waitForExistence(timeout: 8),
+                      "Add Photo must present the real system Photos picker. " + app.debugDescription)
+        keep("NoteMenu-PhotosPicker")
+        let photos = app.images.matching(NSPredicate(format: "label BEGINSWITH[c] 'Photo'"))
+        let thumbnail = photos.firstMatch
+        XCTAssertTrue(thumbnail.waitForExistence(timeout: 5),
+                      "Imported proof photo missing from system picker. " + app.debugDescription)
+        thumbnail.tap()
+        let add = app.buttons["Add"]
+        if add.waitForExistence(timeout: 1) { add.tap() }
+        let attachment = anyElement(labelContaining: "1 image")
+        XCTAssertTrue(attachment.waitForExistence(timeout: 10), "Selected photo was not attached")
+        keep("NoteMenu-PhotoAttached")
+        // Relaunch without replacing the app's real on-disk store.
+        app.terminate()
+        launchApp(extraArguments: ["-UITestPro"])
+        dismissGatesIfNeeded()
+        let row = app.buttons.matching(NSPredicate(format: "label BEGINSWITH[c] 'Paywall launch call'")).firstMatch
+        XCTAssertTrue(row.waitForExistence(timeout: 10))
+        row.tap()
+        XCTAssertTrue(anyElement(labelContaining: "1 image").waitForExistence(timeout: 5),
+                      "Photo attachment did not persist across relaunch")
+    }
+
     /// Text inside a SwiftUI Button surfaces as the button's label, not as a
     /// static text, so look for the label on any kind of element.
     private func anyElement(labelContaining text: String) -> XCUIElement {
