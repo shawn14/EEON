@@ -376,3 +376,7 @@ Prepared central beta lane requires committed version/build for EEON on clean pu
 
 ### October16 App Review submission
 Shawn explicitly authorized3.11/build172 AppStore review after the ASO pass; this supersedes earlier no-submission status for this release. Actual state WAITING_FOR_REVIEW, releaseMANUAL; proof `docs/aso/2026-10-16-founders/submission-311/README.md`. Any embeddedWatch release needs a realWatch screenshot before submit; use an unchanged release-sourceWatch target and verify COMPLETE/checksum. Capturing idle simulatorUI does not prove physicalrecording/transfer. Do not rerun submit against an active review; legacy recovery cancels active submissions.
+
+## Real note-menu regression suite (2026-10-20)
+
+Canonical entrypoints are `mac-run 'voice notes' e2e_note_menu_photo` and `mac-run 'voice notes' e2e_note_menu`, committed in `docs/os.yaml`. Use the disposable simulator proof script; do not run screenshot fixtures against a personal device/account. Current suite is unexecuted after a real Photos-import timeout before app launch, not passing coverage or a fixed bug. See [proof status, gaps and resume](docs/note-menu-proof/README.md). Keep a red real-app reproduction before changing Add Photo; signed-out iCloud error handling never proves successful sharing.

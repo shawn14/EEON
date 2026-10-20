@@ -1,0 +1,22 @@
+{
+  "status": "blocked-before-app-launch",
+  "source_sha": "99852b7ae08a4ebd6af5189d8f12a64709b4bda1",
+  "runs": [
+    {
+      "job": "voice_notes-e2e_note_menu_photo-20261020-102334-xhne",
+      "stage": "simulator creation",
+      "observed_failure": "Harness selected iPod touch because simctl groups it in iPhone productFamily; incompatible with iOS26.3. Corrected before next run.",
+      "log_sha256": "caf7ff60b130e323a82445b3da86e6fdc13acf93b046d2dc1936198dd0ae6601",
+      "app_tests_executed": 0
+    },
+    {
+      "job": "voice_notes-e2e_note_menu_photo-20261020-103055-nqux",
+      "stage": "Photos fixture import",
+      "observed_failure": "Simulator booted, but simctl addmedia of whiteboard.png timed out after60seconds before xcodebuild/app launch. Native execution stopped; no retry.",
+      "log_sha256": "4c191f4947cd5fa501f090f2dad770b2d5e91c29beb935418908eb66f6235f50",
+      "app_tests_executed": 0
+    }
+  ],
+  "app_implementation_changed": false,
+  "real_user_note_modified": false
+}
