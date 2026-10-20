@@ -93,6 +93,7 @@ struct NoteDetailView: View {
 
     // Image attachment state
     @State private var selectedPhotoItem: PhotosPickerItem?
+    @State private var showingPhotoPicker = false
     @State private var isProcessingImage = false
     @State private var selectedImageForFullscreen: String?
     @State private var showingFullscreenImage = false
@@ -390,7 +391,9 @@ struct NoteDetailView: View {
                         }
 
                         // Photo picker
-                        PhotosPicker(selection: $selectedPhotoItem, matching: .images) {
+                        Button {
+                            showingPhotoPicker = true
+                        } label: {
                             Label(isProcessingImage ? "Processing..." : "Add Photo", systemImage: "photo.badge.plus")
                         }
                         .disabled(isProcessingImage)
@@ -508,6 +511,8 @@ struct NoteDetailView: View {
                 }
             }
         }
+        // Keep the presenter on the note view after the overflow menu dismisses.
+        .photosPicker(isPresented: $showingPhotoPicker, selection: $selectedPhotoItem, matching: .images)
         .onChange(of: selectedPhotoItem) { _, newItem in
             guard let newItem = newItem else { return }
             processPhoto(newItem)
