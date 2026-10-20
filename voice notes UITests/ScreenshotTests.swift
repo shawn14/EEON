@@ -451,7 +451,13 @@ final class ScreenshotTests: XCTestCase {
                       "Add Photo must present the real system Photos picker. " + app.debugDescription)
         keep("NoteMenu-PhotosPickerPresentation")
         cancel.tap()
-        XCTAssertTrue(app.buttons["Note options"].waitForExistence(timeout: 5))
+        XCTAssertTrue(cancel.waitForNonExistence(timeout: 5), "Picker remained after Cancel")
+        let options = app.buttons["Note options"]
+        XCTAssertTrue(options.waitForExistence(timeout: 5) && options.isHittable,
+                      "Note menu is not usable after cancelling the picker")
+        options.tap()
+        XCTAssertTrue(app.buttons["Add Photo"].waitForExistence(timeout: 5))
+        keep("NoteMenu-UsableAfterPickerCancel")
     }
 
     /// Owner regression, 2026-10-20: tapping Add Photo did not open Photos.

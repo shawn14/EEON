@@ -1,59 +1,53 @@
 # Note overflow menu proof
 
-Status: **picker presentation passed; actual photo attachment is blocked by simulator Photos launch. Remaining menu tests were interrupted before UI execution.**
+**Incomplete.** The original no-open failure was reproduced, and the minimal presenter change passed the same presentation test. The actual screenshot shows a loading sheet, so this proves modal presentation only. Photo selection/persistence and the other menu journeys are not yet verified. Nothing has been released.
 
-Owner report (October20,2026): Add Photo from the note menu never opens Photos. The actual note was found through the connected EEON MCP. Its private contents and identifier are deliberately absent from the test fixtures and this public repository.
+The owner's private note was read through the connected EEON MCP; its contents and identifier are absent from the disposable fixtures and this public repository.
 
-## Run
+## Observed results
 
-Use the committed Mac runner actions:
+- **Red:** source `efdec38`, job `voice_notes-e2e_note_menu_picker-20261020-111018-pbpc`: Add Photo closed the menu, no picker appeared, one UI test failed. [Receipt](picker-red.json).
+- **Presentation green:** source `5d6e0b9`, job `voice_notes-e2e_note_menu_picker-20261020-121522-cshp`: Add Photo opened a loading modal with Cancel. The test tapped Cancel and found Note options. [Receipt](picker-green.json). Independent review confirmed these facts, but the original assertion did not prove dismissal/hittability. The current test additionally checks disappearance and reopens the menu; those stronger assertions have not run yet.
+- **Attachment blocked:** job `voice_notes-e2e_note_menu_photo-20261020-122537-aedn`: simulator Photos launch itself timed out after60s, before photo import or EEON build/test. Stopped without retry. [Receipt](photos-launch-blocker.json).
+- **Other menu tests blocked:** job `voice_notes-e2e_note_menu_remaining-20261020-123805-ptpn`: build setup was terminated by SIGTERM after163.2s. Zero UI tests ran; signal sender unknown. This was not the configured30-minute runner timeout. [Receipt](menu-interrupted.json).
+- **Cleanup:** job `voice_notes-cleanup_note_menu-20261020-124652-wcrf` removed the interrupted run's recorded disposable simulator. No native proof process was left running.
+
+The runner's cooldown was honored. Shawn authorized automatic continuation; it resumed in this chat when he said "fix it", and the redundant scheduled wake-up was removed. Photos failures and the interrupted build have not been retried.
+
+## Standing suite
+
+Run only through the committed Mac runner actions in `docs/os.yaml`:
 
 ```sh
 mac-run 'voice notes' note_menu_diagnostics
+mac-run 'voice notes' e2e_note_menu_picker
 mac-run 'voice notes' e2e_note_menu_photo
 mac-run 'voice notes' e2e_note_menu
+mac-run 'voice notes' e2e_note_menu_remaining
+mac-run 'voice notes' cleanup_note_menu
 ```
 
-The script creates one disposable, signed-out simulator, imports the existing whiteboard image, and uses actual Photos UI, SwiftData persistence, files and API services. It refuses another running simulator or less than15GiB free. It shuts down/deletes its own simulator in `finally`. No existing account or personal note is edited. No mock services. The full suite uses real AI calls and may incur their normal API cost. No retry loop is configured.
+`e2e_note_menu_remaining` explicitly excludes Add Photo and does not import a fixture into Photos. Its result cannot be called full-menu proof. `cleanup_note_menu` removes only recorded disposable device IDs whose names carry this proof's prefix.
 
-## Current evidence
+The suite uses real UI, SwiftData, Photos, files and API services, without mocked services. Real AI calls may incur their normal API cost. It refuses another booted simulator or less than15GiB free, verifies actual built CloudKit/app-group entitlements, preserves the cached build, freezes source during a run, rejects missing test cases, and deletes its own simulator in `finally`. Interrupted processes need the scoped cleanup action. Never use screenshot fixtures against a personal device/account.
 
-- Live Mac runner preflight passed: Xcode26.2, available iOS26.3.1 runtime,39.3GiB free at latest UI attempt.
-- First run rejected an incompatible iPod model: simulator metadata's iPhone productFamily also includes iPod touch. The selection now checks actual model name and runtime compatibility.
-- Second run created/booted an iPhone17e, then Photos fixture import timed out after60seconds. **No EEON build or UI test ran.** Stopped on the infrastructure failure under Shawn's rule3. See [sanitized receipt](2026-10-20.json).
-- After owner approval to diagnose/resume, a native build exposed a missing watchOS runtime. Installed the previously verified watchOS26.2 runtime through the Mac runner. The subsequent native build completed and one UI test ran, but the app crashed twice during CloudKit initialization before reaching the menu. Built artifact inspection proved missing entitlements. Corrected test signing; the next built-artifact check passed and the app reached the real note/menu.
-- Signed source `efdec38` reproduced the owner failure: tapping Add Photo closed the menu and left the note visible, with no system picker. [Exact red receipt](picker-red.json).
-- Candidate `839bfa9` changes only the photo presenter: a menu button toggles state and the stable note view hosts `.photosPicker`. The same verification action was refused by the runner after three failures; next eligible time is approximately12:16PM Chicago. No green result yet; do not rename this a verified fix.
-
-## Intended menu coverage
-
-All menu paths below remain **unverified drafts**, not passing coverage. The focused picker test reached the real menu after signing was corrected and reproduced the reported failure. The candidate fix has not run yet.
-
-| Menu action | Prepared journey / remaining assertion |
+| Menu action | Prepared proof; runtime status |
 |---|---|
-| Add Photo | Real picker, select image, attachment visible after relaunch |
-| Copy Note / Send to an Agent | Actual clipboard text and note identifier |
-| Share as Link | Real signed-out iCloud error only; successful share still needs an Apple test account |
-| Export As: Markdown/PDF/Recording | Actual share sheets plus Markdown/PDF text and original audio byte comparison |
-| Assign Project | Real project fixture, assignment/relaunch/checkmark and No Project path |
-| Manage Tags | Create, persist, remove tag |
-| Clean Up Recording | Cancel and actual service completion with known deadline |
-| Ask About This Note | Actual scoped response preserving the note's deadline |
-| Mind Map | Existing actual API generation journey |
-| Identify Speakers | Existing real audio/API journey, two speakers |
-| Favorite / Unfavorite | Relaunch persistence round trip |
-| Archive / Unarchive | Archived filter visibility and return to Home |
-| Playback Speed | Six menu choices plus actual playback-clock timing |
-| Delete Note | Cancel, delete to Recently Deleted, restore |
+| Add Photo | Presentation passed; loaded picker, selection, persisted DB row, decoded image file and relaunch remain blocked |
+| Copy Note / Send to an Agent | Actual clipboard text and note identifier; unrun |
+| Share as Link | Actual signed-out iCloud error; unrun. Successful sharing requires a real Apple test account |
+| Export As: Markdown/PDF/Recording | Actual share sheets, readable PDF/Markdown and original audio byte comparison; unrun |
+| Assign Project | Real project assignment/relaunch/checkmark and removal; unrun |
+| Manage Tags | Create, persist and remove; unrun |
+| Clean Up Recording | Cancel and actual service completion preserving the known deadline; unrun |
+| Ask About This Note | Actual scoped answer preserving the deadline; unrun |
+| Mind Map | Real API generation; unrun |
+| Identify Speakers | Real audio/API, two speakers; unrun |
+| Favorite / Unfavorite | Relaunch persistence round trip; unrun |
+| Archive / Unarchive | Archived filter and return to Home; unrun |
+| Playback Speed | All six choices against actual playback-clock timing; unrun |
+| Delete Note | Cancel, Recently Deleted and restore; unrun |
 
 ## Resume
 
-Honor the runner cooldown: do not reset its counters, rename the action to bypass it, or weaken its limits. After approximately12:16PM Chicago on October20, run `mac-run 'voice notes' e2e_note_menu_picker` against the committed candidate. Keep the source unchanged until it finishes. If green, run attachment persistence with `e2e_note_menu_photo`, then every menu journey with `e2e_note_menu`. The next Photos import initializes the real Photos app and records system logs on failure. Fix only observed failures, preserve all receipts, and obtain independent runtime verification before claiming the owner bug fixed. Successful CloudKit sharing and physical iPhone behavior cannot be claimed from a signed-out simulator. Nothing here ships a build or changes App Store state.
-
-Shawn authorized automatic resumption after the cooldown. Work resumed directly in this chat at12:11PM America/Chicago after Shawn said "fix it"; the redundant12:20PM follow-up was removed. The runner cooldown still applies until12:15:08PM. Independent checkpoint review confirmed the failing runtime trace and cleanup; the candidate remains unverified until the scheduled tests pass.
-
-## October20 continuation
-
-Picker presentation passed on5d6e0b9 ([receipt](picker-green.json)). Independent visual review shows the system loading sheet, not a loaded photo library; cancellation needs a disappearance/hittability assertion. The subsequent attachment run timed out launching Photos before any EEON build/test ([receipt](photos-launch-blocker.json)). No photo retry. `mac-run 'voice notes' e2e_note_menu_remaining` runs the12 other menu journeys and explicitly records the excluded Add Photo test. It cannot report full-menu success.
-
-The independent menu batch was terminated with SIGTERM during build setup before UI execution ([receipt](menu-interrupted.json)). Sender unknown; no retry and no passing menu claim. Use `mac-run 'voice notes' cleanup_note_menu` to remove only recorded disposable proof simulators after an interrupted process.
+First resolve the observed Photos launch failure and unexplained native build termination; do not blindly retry or bypass runner guards. Keep the existing cached build for this unfinished task. Then run the strengthened picker check, actual photo attachment proof, and remaining menu journeys, fixing only observed failures. Preserve receipts and obtain independent runtime review before claiming complete. Physical iPhone behavior and signed-in CloudKit sharing are separate proof requirements. Main pushes, TestFlight and App Store release remain unapproved for this change.
