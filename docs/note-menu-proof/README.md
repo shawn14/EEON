@@ -12,7 +12,7 @@ The owner's private note was read through the connected EEON MCP; its contents a
 - **Other menu tests blocked:** job `voice_notes-e2e_note_menu_remaining-20261020-123805-ptpn`: build setup was terminated by SIGTERM after163.2s. Zero UI tests ran; signal sender unknown. This was not the configured30-minute runner timeout. [Receipt](menu-interrupted.json).
 - **Cleanup:** job `voice_notes-cleanup_note_menu-20261020-124652-wcrf` removed the interrupted run's recorded disposable simulator. No native proof process was left running.
 
-The runner's cooldown was honored. Shawn authorized automatic continuation; it resumed in this chat when he said "fix it", and the redundant scheduled wake-up was removed. Photos failures and the interrupted build have not been retried.
+The runner's cooldown was honored. Shawn authorized automatic continuation; it resumed in this chat when he said "fix it", and the redundant scheduled wake-up was removed. A later complete remaining-menu run executed12journeys:8passed/4failed. Independent review checked raw runtime evidence and exported files. The fixes for those observed failures await verification.
 
 ## Standing suite
 
@@ -34,22 +34,22 @@ The suite uses real UI, SwiftData, Photos, files and API services, without mocke
 | Menu action | Prepared proof; runtime status |
 |---|---|
 | Add Photo | Presentation passed; loaded picker, selection, persisted DB row, decoded image file and relaunch remain blocked |
-| Copy Note / Send to an Agent | Actual clipboard text and note identifier; unrun |
-| Share as Link | Actual signed-out iCloud error; unrun. Successful sharing requires a real Apple test account |
-| Export As: Markdown/PDF/Recording | Actual share sheets, readable PDF/Markdown and original audio byte comparison; unrun |
-| Assign Project | Real project assignment/relaunch/checkmark and removal; unrun |
+| Copy Note / Send to an Agent | Actual Copy/Paste observed; placeholder lookup failed after paste. Selector corrected; agent brief not yet reached |
+| Share as Link | Signed-out iCloud error passed. Successful sharing requires a real Apple test account |
+| Export As: Markdown/PDF/Recording | All3share sheets passed; independent actual-file inspection confirms readable PDF/Markdown and exact original audio bytes |
+| Assign Project | Reproduced selection lost on immediate relaunch. Explicit save prepared, unverified |
 | Manage Tags | Create, persist and remove; unrun |
-| Clean Up Recording | Cancel and actual service completion preserving the known deadline; unrun |
-| Ask About This Note | Actual scoped answer preserving the deadline; unrun |
-| Mind Map | Real API generation; unrun |
-| Identify Speakers | Real audio/API, two speakers; unrun |
-| Favorite / Unfavorite | Relaunch persistence round trip; unrun |
-| Archive / Unarchive | Archived filter and return to Home; unrun |
-| Playback Speed | All six choices against actual playback-clock timing; unrun |
-| Delete Note | Cancel, Recently Deleted and restore; unrun |
+| Clean Up Recording | Real service returned and persisted cleaned text/deadline; clipboard assertion selector failed after actual paste. Corrected check pending |
+| Ask About This Note | Passed; actual scoped answer preserves Thursday-night deadline |
+| Mind Map | Passed with actual API generation |
+| Identify Speakers | Passed with real audio/API and two speakers |
+| Favorite / Unfavorite | Passed both directions across relaunch |
+| Archive / Unarchive | Passed archive/filter/unarchive round trip |
+| Playback Speed | Passed all six choices against actual playback-clock timing |
+| Delete Note | Actual confirmation observed; iOS26uses outside-tap cancellation. Corrected check pending, delete/restore not reached |
 
 ## Resume
 
-The current Air runner blocks heavy jobs (`heavy_max_load=0`); Shawn has explicitly approved a temporary normal load limit of8 for EEON after the other app releases the single runner slot, followed by restoring the block. Do not start a second simultaneous simulator or alter other guards. The harness now preserves launch-failure runtime logs before cleanup.
+The owner approved up to3additional native verification runs. Preserve the current load8/idle0 setting from the separately authorized removal of the blanket heavy-job restriction. Only raise the failure cap temporarily if needed for an approved EEON run; restore it immediately after that run starts. Keep resource safeguards and the single-job lock. Local allowance receipt: `build/note-menu/approved-extra-runs.json`.
 
-First resolve the observed Photos launch failure and unexplained native build termination; do not blindly retry or bypass runner guards. Keep the existing cached build for this unfinished task. Then run the strengthened picker check, actual photo attachment proof, and remaining menu journeys, fixing only observed failures. Preserve receipts and obtain independent runtime review before claiming complete. Physical iPhone behavior and signed-in CloudKit sharing are separate proof requirements. Main pushes, TestFlight and App Store release remain unapproved for this change.
+Run actual photo attachment (with captured Photos launch diagnostics), then the remaining-menu suite with the observed project-save and test-selector fixes. Preserve receipts and obtain independent runtime review before claiming complete. Physical iPhone behavior and signed-in CloudKit sharing are separate proof requirements. Main pushes, TestFlight and App Store release remain unapproved for this change.
