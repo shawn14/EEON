@@ -54,3 +54,9 @@ The suite uses real UI, SwiftData, Photos, files and API services, without mocke
 All three explicitly approved extra native verification attempts are consumed. The failure-cap setting is back to its normal default3; a fresh idle runner heartbeat followed completion. Preserve load8/idle0 from the separately authorized removal of the blanket heavy-job restriction. The disposable simulator was cleaned up.
 
 The concrete next verification is one `e2e_note_menu_organize` run with the two observed label corrections. It uses the same build cache, real UI/database and resource safeguards, and does not repeat the ten passing service/export journeys. Do not run it under the exhausted allowance or silently use it to bypass a cap; obtain a new bounded approval first. Physical iPhone behavior and successful signed-in CloudKit sharing remain separate proof requirements. Main pushes, TestFlight and App Store release remain unapproved for this change.
+
+## Latest infrastructure stop — 15:00 Chicago
+
+Shawn authorized one focused run after the three-run allowance. Job145923-agan failed in2.7seconds before creating a device, building or executing UI tests: the required watchOS runtime was no longer installed. Actual inventory contained only iOS26.3.1; the cached app/DerivedData and previous ignored result directories were also absent. Removal actor is unknown. Committed sanitized evidence remains. [Failure receipt](organize-preflight-blocker.json) · [Independent inspection](organize-preflight-independent.json).
+
+This supersedes the earlier cache-retained/pending-focused-approval checkpoint. No native retry or download occurred; normal safeguards remain. The concrete recovery is the committed `prepare_note_menu_runtime` action (watchOS26.2,25GiB minimum;44.8GiB observed), then one `e2e_note_menu_organize` run after a new bounded authorization. Tag removal and restore completion remain unverified.

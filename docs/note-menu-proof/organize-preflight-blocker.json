@@ -1,0 +1,26 @@
+{
+  "job": "voice_notes-e2e_note_menu_organize-20261020-145923-agan",
+  "source_sha": "52b8dda2c8e621ef9667df70154bce604809fbbd",
+  "started_at": "2026-10-20T15:00:31-05:00",
+  "finished_at": "2026-10-20T15:00:34-05:00",
+  "seconds": 2.7,
+  "exit_code": 1,
+  "tests_run": 0,
+  "reason": "Required watchOS simulator runtime missing",
+  "runtime_inventory": [
+    {
+      "name": "iOS 26.3",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-3",
+      "version": "26.3.1",
+      "isAvailable": true,
+      "availabilityError": null
+    }
+  ],
+  "free_gib": 44.8,
+  "booted": [],
+  "built_app_exists": false,
+  "settings_changed": false,
+  "independent_review": "Confirmed missing runtime and DerivedData from actual filesystem; removal actor not established",
+  "prior_ignored_artifacts": "Prior build/note-menu result directories are now absent; committed sanitized receipts remain",
+  "recovery_action": "mac-run voice notes prepare_note_menu_runtime, then one e2e_note_menu_organize after new bounded authorization"
+}
