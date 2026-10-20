@@ -102,6 +102,25 @@ def verify_saved_photo(target):
     return {'persisted_note_attachments': len(names), 'saved_image_bytes': photo.stat().st_size, **result}
 
 
+
+def cleanup_owned_simulators():
+    inventory = json.loads(run('xcrun', 'simctl', 'list', 'devices', '--json'))
+    devices = {device['udid']: device for group in inventory['devices'].values() for device in group}
+    removed = []
+    for receipt in OUT.glob('*/device.json'):
+        owned = json.loads(receipt.read_text())
+        target = owned['udid']
+        device = devices.get(target)
+        if device is None:
+            continue
+        assert owned.get('disposable') and device['name'].startswith('EEON-menu-proof-'), 'Refusing unowned simulator cleanup'
+        if device['state'] == 'Booted':
+            run('xcrun', 'simctl', 'shutdown', target)
+        run('xcrun', 'simctl', 'delete', target)
+        removed.append(target)
+    print(json.dumps({'removed_owned_devices': removed}), flush=True)
+
+
 def proof(mode):
     inventory, state = preflight()
     assert state['free_gib'] >= 15, 'Below the required 15 GiB disk reserve'
@@ -199,13 +218,15 @@ def proof(mode):
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('mode',choices=['preflight','watch-runtime','picker','photo','all','menu'])
+    parser.add_argument('mode',choices=['preflight','watch-runtime','picker','photo','all','menu','cleanup'])
     parser.add_argument('--simulator', action='store_true', help='Explicit simulator run; makes the Mac runner apply its heavy-job resource gate')
     args=parser.parse_args()
     mode=args.mode
-    assert mode == 'preflight' or args.simulator, 'UI runs require explicit --simulator'
+    assert mode in ('preflight', 'cleanup') or args.simulator, 'UI runs require explicit --simulator'
     if mode == 'preflight':
         preflight()
+    elif mode == 'cleanup':
+        cleanup_owned_simulators()
     elif mode == 'watch-runtime':
         prepare_watch_runtime()
     else:

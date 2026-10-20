@@ -1,6 +1,6 @@
 # Note overflow menu proof
 
-Status: **picker presentation passed; actual photo attachment is blocked by simulator Photos launch. Remaining menu tests are in progress.**
+Status: **picker presentation passed; actual photo attachment is blocked by simulator Photos launch. Remaining menu tests were interrupted before UI execution.**
 
 Owner report (October20,2026): Add Photo from the note menu never opens Photos. The actual note was found through the connected EEON MCP. Its private contents and identifier are deliberately absent from the test fixtures and this public repository.
 
@@ -55,3 +55,5 @@ Shawn authorized automatic resumption after the cooldown. Work resumed directly 
 ## October20 continuation
 
 Picker presentation passed on5d6e0b9 ([receipt](picker-green.json)). Independent visual review shows the system loading sheet, not a loaded photo library; cancellation needs a disappearance/hittability assertion. The subsequent attachment run timed out launching Photos before any EEON build/test ([receipt](photos-launch-blocker.json)). No photo retry. `mac-run 'voice notes' e2e_note_menu_remaining` runs the12 other menu journeys and explicitly records the excluded Add Photo test. It cannot report full-menu success.
+
+The independent menu batch was terminated with SIGTERM during build setup before UI execution ([receipt](menu-interrupted.json)). Sender unknown; no retry and no passing menu claim. Use `mac-run 'voice notes' cleanup_note_menu` to remove only recorded disposable proof simulators after an interrupted process.

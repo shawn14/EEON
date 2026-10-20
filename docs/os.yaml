@@ -2,6 +2,7 @@
 name: EEON
 profile: ios-native
 canonical_scripts:
+  cleanup_note_menu: python3 scripts/prove-note-menu.py cleanup
   note_menu_diagnostics: python3 scripts/prove-note-menu.py preflight
   prepare_note_menu_runtime: python3 scripts/prove-note-menu.py watch-runtime --simulator
   e2e_note_menu_picker: python3 scripts/prove-note-menu.py picker --simulator
