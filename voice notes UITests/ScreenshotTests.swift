@@ -475,6 +475,12 @@ final class ScreenshotTests: XCTestCase {
         XCTAssertTrue(cancel.waitForExistence(timeout: 8),
                       "Add Photo must present the real system Photos picker. " + app.debugDescription)
         keep("NoteMenu-PhotosPicker")
+        cancel.tap()
+        XCTAssertTrue(cancel.waitForNonExistence(timeout: 5), "Picker remained after Cancel")
+        XCTAssertTrue(options.waitForExistence(timeout: 5) && options.isHittable,
+                      "Note menu is not usable after cancelling the picker")
+        selectNoteAction("Add Photo")
+        XCTAssertTrue(cancel.waitForExistence(timeout: 8), "Picker did not reopen")
         let photos = app.images.matching(NSPredicate(format: "label BEGINSWITH[c] 'Photo'"))
         let thumbnail = photos.firstMatch
         XCTAssertTrue(thumbnail.waitForExistence(timeout: 5),

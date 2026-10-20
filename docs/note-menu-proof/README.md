@@ -50,6 +50,6 @@ The suite uses real UI, SwiftData, Photos, files and API services, without mocke
 
 ## Resume
 
-The current Air runner blocks heavy jobs (`heavy_max_load=0`); no new native proof is authorized through that gate yet. A scoped owner approval is pending to run EEON after the other app releases the single runner slot, then restore the block. The harness now preserves launch-failure runtime logs before cleanup.
+The current Air runner blocks heavy jobs (`heavy_max_load=0`); Shawn has explicitly approved a temporary normal load limit of8 for EEON after the other app releases the single runner slot, followed by restoring the block. Do not start a second simultaneous simulator or alter other guards. The harness now preserves launch-failure runtime logs before cleanup.
 
 First resolve the observed Photos launch failure and unexplained native build termination; do not blindly retry or bypass runner guards. Keep the existing cached build for this unfinished task. Then run the strengthened picker check, actual photo attachment proof, and remaining menu journeys, fixing only observed failures. Preserve receipts and obtain independent runtime review before claiming complete. Physical iPhone behavior and signed-in CloudKit sharing are separate proof requirements. Main pushes, TestFlight and App Store release remain unapproved for this change.
