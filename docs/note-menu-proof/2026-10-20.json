@@ -24,7 +24,6 @@
     "xcresult_count": 0,
     "app_implementation_unchanged": true,
     "disposable_simulator_removed": true,
-    "owned_native_processes_remaining": 0,
-    "observed_at": "2026-10-20T15:35:00Z"
+    "owned_native_processes_remaining": 0
   }
 }
