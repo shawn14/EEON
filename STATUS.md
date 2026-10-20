@@ -368,3 +368,5 @@
 - Independent runtime/receipt inspection confirms zero .xcresult/test logs/build output, unchanged app implementation, and disposable simulator absent from disk/registry with no owned native processes. Test draft preserved on codex/eeon-note-menu-proof; canonical main remains the verified rename checkpoint bb814e0341888f6a5e93a4d17b8a3d9642940a50. No App Store/TestFlight changes.
 
 - Shawn explicitly approved diagnosing the simulator failure and resuming the full menu tests. Added a focused picker-presentation action independent of fixture import, to reproduce the reported no-open symptom first; attachment proof remains separate. DraftPR3 preserves the checkpoint.
+
+- Focused picker job reached the real Xcode build, which failed at the embedded EEONWatch asset catalog: no watchOS simulator runtime installed. No app UI test ran. The previously verified release used watchOS26.2; preparing that pinned prerequisite via the Mac runner under Shawn's approved diagnosis/resume. Native proof now preflights both runtime families and guards against source changes during a run.

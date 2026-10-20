@@ -38,9 +38,23 @@ def preflight():
     return inventory, result
 
 
+def prepare_watch_runtime():
+    inventory, state = preflight()
+    if any(r.get('isAvailable') and '.watchOS-' in r['identifier'] for r in inventory['runtimes']):
+        print('watchOS simulator runtime is already available', flush=True)
+        return
+    assert state['free_gib'] >= 25, 'Need 25 GiB before installing the required watchOS runtime'
+    # Same pinned runtime used by the verified EEON 3.11 Watch screenshot build.
+    subprocess.run(['xcodebuild', '-downloadPlatform', 'watchOS', '-buildVersion', '26.2', '-architectureVariant', 'arm64'], check=True, timeout=900)
+    inventory, state = preflight()
+    assert any(r.get('isAvailable') and '.watchOS-' in r['identifier'] for r in inventory['runtimes']), 'watchOS runtime is still unavailable'
+    assert state['free_gib'] >= 15, 'Post-install disk reserve is below 15 GiB'
+
+
 def proof(mode):
     inventory, state = preflight()
     assert state['free_gib'] >= 15, 'Below the required 15 GiB disk reserve'
+    assert any(r.get('isAvailable') and '.watchOS-' in r['identifier'] for r in inventory['runtimes']), 'Embedded Watch target requires a watchOS simulator runtime'
     assert not state['booted'], 'An existing simulator is running; do not touch another session'
     runtimes = [r for r in inventory['runtimes'] if r.get('isAvailable') and r['identifier'].startswith('com.apple.CoreSimulator.SimRuntime.iOS-')]
     assert runtimes, 'No available iOS simulator runtime'
@@ -76,14 +90,18 @@ def proof(mode):
         ]
         command += ['-only-testing:voice notes UITests/ScreenshotTests/'+name for name in tests]
         command += ['test']
+        assert not run('git', '-C', str(ROOT), 'status', '--porcelain', '--untracked-files=no'), 'Commit source before native proof'
+        build_sha = run('git', '-C', str(ROOT), 'rev-parse', 'HEAD')
         with (result_dir/'test.log').open('w') as log:
             print('Running '+', '.join(tests)+' on disposable '+phone['name'], flush=True)
             code = subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, timeout=1200).returncode
+        assert run('git', '-C', str(ROOT), 'rev-parse', 'HEAD') == build_sha, 'Source changed during native proof; rerun after code settles'
+        assert not run('git', '-C', str(ROOT), 'status', '--porcelain', '--untracked-files=no'), 'Source changed during native proof'
         file_proof = None
         if mode == 'all' and code == 0:
             container = run('xcrun', 'simctl', 'get_app_container', target, BUNDLE, 'data')
             file_proof = json.loads(run('xcrun', 'swift', str(ROOT/'scripts/verify-note-menu-files.swift'), container, str(ROOT/'voice notes UITests/Fixtures/two-speakers.m4a'), timeout=120))
-        report = {'file_proof': file_proof, 'passed': code == 0, 'exit_code': code, 'tests': tests, 'source_sha': state['head'], 'result': str(result_dir), 'unproven': ['Successful CloudKit share requires a real Apple test account', 'Physical-device Photos and playback behavior require device proof']}
+        report = {'file_proof': file_proof, 'passed': code == 0, 'exit_code': code, 'tests': tests, 'source_sha': build_sha, 'result': str(result_dir), 'unproven': ['Successful CloudKit share requires a real Apple test account', 'Physical-device Photos and playback behavior require device proof']}
         (result_dir/'summary.json').write_text(json.dumps(report, indent=2)+'\n')
         print(json.dumps(report, indent=2), flush=True)
         if code:
@@ -96,12 +114,14 @@ def proof(mode):
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('mode',choices=['preflight','picker','photo','all'])
+    parser.add_argument('mode',choices=['preflight','watch-runtime','picker','photo','all'])
     parser.add_argument('--simulator', action='store_true', help='Explicit simulator run; makes the Mac runner apply its heavy-job resource gate')
     args=parser.parse_args()
     mode=args.mode
     assert mode == 'preflight' or args.simulator, 'UI runs require explicit --simulator'
     if mode == 'preflight':
         preflight()
+    elif mode == 'watch-runtime':
+        prepare_watch_runtime()
     else:
         proof(mode)
