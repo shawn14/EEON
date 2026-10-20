@@ -28,7 +28,7 @@ mac-run 'voice notes' e2e_note_menu_organize
 mac-run 'voice notes' cleanup_note_menu
 ```
 
-`e2e_note_menu_remaining` explicitly excludes Add Photo and does not import a fixture into Photos. Its result cannot be called full-menu proof. `e2e_note_menu_organize` is the focused two-journey subset for project/tags and delete/restore; it explicitly lists all excluded tests. The currently prepared run requires fresh authorization because the approved three attempts are exhausted. `cleanup_note_menu` removes only recorded disposable device IDs whose names carry this proof's prefix.
+`e2e_note_menu_remaining` explicitly excludes Add Photo and does not import a fixture into Photos. Its result cannot be called full-menu proof. `e2e_note_menu_organize` is the focused two-journey subset for project/tags and delete/restore; it explicitly lists all excluded tests. Subsequent bounded approvals were used; the latest attempt stopped at simulator boot readiness before either test ran. No further native attempt is authorized. `cleanup_note_menu` removes only recorded disposable device IDs whose names carry this proof's prefix.
 
 The suite uses real UI, SwiftData, Photos, files and API services, without mocked services. Real AI calls may incur their normal API cost. It refuses another booted simulator or less than15GiB free, verifies actual built CloudKit/app-group entitlements, preserves the cached build, freezes source during a run, rejects missing test cases, and deletes its own simulator in `finally`. Interrupted processes need the scoped cleanup action. Never use screenshot fixtures against a personal device/account.
 
@@ -49,14 +49,18 @@ The suite uses real UI, SwiftData, Photos, files and API services, without mocke
 | Playback Speed | Passed all six choices against actual playback-clock timing |
 | Delete Note | Cancellation and deletion passed. Test missed the compound Recently Deleted button label; lookup corrected, restore completion not yet exercised |
 
-## Resume
+## Current stop — 15:57 Chicago
 
-All three explicitly approved extra native verification attempts are consumed. The failure-cap setting is back to its normal default3; a fresh idle runner heartbeat followed completion. Preserve load8/idle0 from the separately authorized removal of the blanket heavy-job restriction. The disposable simulator was cleaned up.
+Shawn approved **“Restore the runtime and run once.”** The guarded `prepare_note_menu_runtime` action restored watchOS 26.2 successfully at 15:51:52 (264.1 seconds). Actual post-restoration inventory contained available iOS 26.3.1 and watchOS 26.2, with 35.5 GiB free and zero booted simulators.
 
-The concrete next verification is one `e2e_note_menu_organize` run with the two observed label corrections. It uses the same build cache, real UI/database and resource safeguards, and does not repeat the ten passing service/export journeys. Do not run it under the exhausted allowance or silently use it to bypass a cap; obtain a new bounded approval first. Physical iPhone behavior and successful signed-in CloudKit sharing remain separate proof requirements. Main pushes, TestFlight and App Store release remain unapproved for this change.
+The one approved `e2e_note_menu_organize` attempt then failed before building or testing: `simctl bootstatus` for its disposable iPhone 17e timed out after 120 seconds. Job `voice_notes-e2e_note_menu_organize-20261020-155208-qqht` ended at 15:57:07 with exit 1 after 294.8 seconds including cleanup. **Zero native builds and zero UI tests ran.** Independent inspection confirmed no built app, test log, UI attachments or database observations. The disposable simulator directory is gone and no owned native test processes remain. [Restoration/failure receipt](organize-runtime-recovery.json) · [Independent inspection](organize-boot-independent.json).
 
-## Latest infrastructure stop — 15:00 Chicago
+The boot timeout's root cause is unverified. The subprocess wrapper did not retain partial bootstatus stdout/stderr. Do not infer an app failure, lengthen timeouts or retry from this receipt. The bounded approval is consumed and Rule 3 stops further native attempts. The next work is simulator startup diagnosis before any separately authorized focused test.
 
-Shawn authorized one focused run after the three-run allowance. Job145923-agan failed in2.7seconds before creating a device, building or executing UI tests: the required watchOS runtime was no longer installed. Actual inventory contained only iOS26.3.1; the cached app/DerivedData and previous ignored result directories were also absent. Removal actor is unknown. Committed sanitized evidence remains. [Failure receipt](organize-preflight-blocker.json) · [Independent inspection](organize-preflight-independent.json).
+The earlier 15:00 focused attempt had stopped because watchOS and the previous build cache were absent; the removal actor remains unknown. That missing-runtime prerequisite is now resolved. Earlier receipts remain historical evidence: [preflight failure](organize-preflight-blocker.json) · [independent inspection](organize-preflight-independent.json). This current section supersedes pending-restoration and retained-build-cache instructions from earlier checkpoints.
 
-This supersedes the earlier cache-retained/pending-focused-approval checkpoint. No native retry or download occurred; normal safeguards remain. The concrete recovery is the committed `prepare_note_menu_runtime` action (watchOS26.2,25GiB minimum;44.8GiB observed), then one `e2e_note_menu_organize` run after a new bounded authorization. Tag removal and restore completion remain unverified.
+## Remaining proof and safeguards
+
+Tag removal and restore completion remain unverified; their observed label corrections are in `9fdf351`. Photo attachment and the ten other passing menu journeys retain their earlier evidence. Successful signed-in CloudKit sharing and physical iPhone behavior need separate proof.
+
+Normal runner settings remain unchanged: default failure cap 3, load 8, idle 0, normal resource gates and one-job lock. Preserve load 8 from the separately authorized removal of the blanket heavy-job restriction. Do not reuse exhausted approvals, rename actions or clear counters to obtain another attempt. Main pushes, TestFlight and App Store release remain unapproved for this change.
