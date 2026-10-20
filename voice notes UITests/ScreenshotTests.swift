@@ -659,8 +659,14 @@ final class ScreenshotTests: XCTestCase {
         app.buttons["Cancel"].tap()
         selectNoteAction("Clean Up Recording…")
         app.buttons["Use Excerpt"].tap()
-        XCTAssertTrue(app.buttons["Note options"].waitForExistence(timeout: 90), "Real excerpt cleanup did not finish")
+        XCTAssertTrue(app.navigationBars["Select Excerpt"].waitForNonExistence(timeout: 90), "Real excerpt cleanup did not finish. " + app.debugDescription)
+        XCTAssertTrue(app.buttons["Note options"].waitForExistence(timeout: 5))
         XCTAssertTrue(anyElement(labelContaining: "Thursday").waitForExistence(timeout: 10), "Cleanup lost the screenshot deadline")
+        reopenProofNote()
+        selectNoteAction("Copy Note")
+        let cleaned = UIPasteboard.general.string ?? ""
+        XCTAssertTrue(cleaned.contains("Thursday"), "Cleaned note did not persist")
+        XCTAssertFalse(cleaned.hasPrefix("Hi Mark, thanks for joining,"), "The original transcript was copied instead of a cleaned note")
         keep("NoteMenu-CleanedExcerpt")
     }
 

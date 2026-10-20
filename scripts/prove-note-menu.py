@@ -5,6 +5,7 @@ actual SwiftData store and real files. Never touches an existing simulator.
 """
 import argparse
 import json
+import plistlib
 import shutil
 import subprocess
 import time
@@ -77,8 +78,20 @@ def proof(mode):
         run('xcrun', 'simctl', 'boot', target)
         run('xcrun', 'simctl', 'bootstatus', target, '-b', timeout=120)
         if mode != 'picker':
-            print('Importing real photo fixture', flush=True)
-            run('xcrun', 'simctl', 'addmedia', target, str(ROOT / 'voice notes UITests' / 'Fixtures' / 'whiteboard.png'))
+            print('Initializing the real Photos app before fixture import', flush=True)
+            photos_info = Path(runtime['runtimeRoot'])/'Applications/Photos.app/Info.plist'
+            photos_bundle = plistlib.loads(photos_info.read_bytes())['CFBundleIdentifier']
+            run('xcrun', 'simctl', 'launch', target, photos_bundle)
+            print('Importing real photo fixture (one attempt, 180s limit)', flush=True)
+            try:
+                run('xcrun', 'simctl', 'addmedia', target, str(ROOT / 'voice notes UITests' / 'Fixtures' / 'whiteboard.png'), timeout=180)
+            except Exception:
+                try:
+                    diagnostic = run('xcrun', 'simctl', 'spawn', target, 'log', 'show', '--last', '3m', '--style', 'compact', '--predicate', 'process == "photolibraryd" OR process == "assetsd" OR process == "MobileSlideShow"', timeout=30)
+                    (result_dir/'photos-system.log').write_text(diagnostic)
+                except Exception as diagnostic_error:
+                    print('Photos log collection failed: '+str(diagnostic_error), flush=True)
+                raise
         command = ['xcodebuild', '-project', str(ROOT/'voice notes.xcodeproj'), '-scheme', 'voice notes UITests', '-destination', 'id='+target, '-derivedDataPath', str(OUT/'DerivedData'), '-parallel-testing-enabled', 'NO', 'CODE_SIGNING_ALLOWED=NO', '-resultBundlePath', str(result_dir/'test.xcresult')]
         tests = ['testAddPhotoPresentsPicker'] if mode == 'picker' else ['testAddPhotoFromNoteMenu'] if mode == 'photo' else [
             'testAddPhotoFromNoteMenu', 'testNoteMenuCopyAndAgentBrief',
@@ -95,6 +108,10 @@ def proof(mode):
         with (result_dir/'test.log').open('w') as log:
             print('Running '+', '.join(tests)+' on disposable '+phone['name'], flush=True)
             code = subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, timeout=1200).returncode
+        try:
+            run('xcrun', 'xcresulttool', 'export', 'attachments', '--path', str(result_dir/'test.xcresult'), '--output-path', str(result_dir/'attachments'), timeout=60)
+        except Exception as attachment_error:
+            print('Result attachments unavailable: '+str(attachment_error), flush=True)
         assert run('git', '-C', str(ROOT), 'rev-parse', 'HEAD') == build_sha, 'Source changed during native proof; rerun after code settles'
         assert not run('git', '-C', str(ROOT), 'status', '--porcelain', '--untracked-files=no'), 'Source changed during native proof'
         file_proof = None
