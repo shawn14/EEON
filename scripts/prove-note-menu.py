@@ -58,13 +58,20 @@ def proof(mode):
         run('xcrun', 'simctl', 'bootstatus', target, '-b', timeout=120)
         run('xcrun', 'simctl', 'addmedia', target, str(ROOT / 'voice notes UITests' / 'Fixtures' / 'whiteboard.png'))
         command = ['xcodebuild', '-project', str(ROOT/'voice notes.xcodeproj'), '-scheme', 'voice notes UITests', '-destination', 'id='+target, '-derivedDataPath', str(OUT/'DerivedData'), '-parallel-testing-enabled', 'NO', 'CODE_SIGNING_ALLOWED=NO', '-resultBundlePath', str(result_dir/'test.xcresult')]
-        tests = ['testAddPhotoFromNoteMenu'] if mode == 'photo' else ['testAddPhotoFromNoteMenu']
+        tests = ['testAddPhotoFromNoteMenu'] if mode == 'photo' else [
+            'testAddPhotoFromNoteMenu', 'testNoteMenuCopyAndAgentBrief',
+            'testNoteMenuProjectAndTags', 'testNoteMenuFavoritePersists',
+            'testNoteMenuArchiveRoundTrip', 'testNoteMenuDeleteCancelAndRestore',
+            'testNoteMenuPlaybackSpeeds', 'testNoteMenuCleanUpRecording',
+            'testNoteMenuAskAboutThisNote', 'testNoteMenuShareLinkRequiresRealICloud',
+            'testPasteAndExport', 'testNoteMindMap', 'testIdentifySpeakers',
+        ]
         command += ['-only-testing:voice notes UITests/ScreenshotTests/'+name for name in tests]
         command += ['test']
         with (result_dir/'test.log').open('w') as log:
             print('Running '+', '.join(tests)+' on disposable '+phone['name'], flush=True)
             code = subprocess.run(command, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, timeout=1200).returncode
-        report = {'passed': code == 0, 'exit_code': code, 'tests': tests, 'source_sha': state['head'], 'result': str(result_dir)}
+        report = {'passed': code == 0, 'exit_code': code, 'tests': tests, 'source_sha': state['head'], 'result': str(result_dir), 'unproven': ['Successful CloudKit share requires a real Apple test account', 'Physical-device Photos and playback behavior require device proof']}
         (result_dir/'summary.json').write_text(json.dumps(report, indent=2)+'\n')
         print(json.dumps(report, indent=2), flush=True)
         if code:

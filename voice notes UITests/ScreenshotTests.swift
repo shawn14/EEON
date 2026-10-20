@@ -477,6 +477,186 @@ final class ScreenshotTests: XCTestCase {
                       "Photo attachment did not persist across relaunch")
     }
 
+    private func selectNoteAction(_ label: String) {
+        let options = app.buttons["Note options"]
+        XCTAssertTrue(options.waitForExistence(timeout: 5), app.debugDescription)
+        options.tap()
+        let item = app.buttons[label]
+        XCTAssertTrue(item.waitForExistence(timeout: 5), "Missing note action: " + label + "\n" + app.debugDescription)
+        item.tap()
+    }
+
+    private func reopenProofNote() {
+        app.terminate()
+        launchApp(extraArguments: ["-UITestPro"])
+        dismissGatesIfNeeded()
+        let row = app.buttons.matching(NSPredicate(format: "label BEGINSWITH[c] 'Paywall launch call'")).firstMatch
+        XCTAssertTrue(row.waitForExistence(timeout: 10), app.debugDescription)
+        row.tap()
+    }
+
+    func testNoteMenuCopyAndAgentBrief() throws {
+        continueAfterFailure = false
+        openSeededAudioNote()
+        UIPasteboard.general.string = "EEON test sentinel"
+        selectNoteAction("Copy Note")
+        XCTAssertTrue((UIPasteboard.general.string ?? "").contains("thanks for joining"), "Copy must place the actual note text on the clipboard")
+        selectNoteAction("Send to an Agent")
+        let prompt = UIPasteboard.general.string ?? ""
+        XCTAssertTrue(prompt.contains("get_note"))
+        XCTAssertTrue(prompt.contains("Paywall launch call"))
+        XCTAssertNotNil(prompt.range(of: "[A-Fa-f0-9]{8}-[A-Fa-f0-9-]{27,}", options: .regularExpression), "Agent brief must identify the actual note")
+    }
+
+    func testNoteMenuProjectAndTags() throws {
+        continueAfterFailure = false
+        openSeededAudioNote()
+        selectNoteAction("Assign Project")
+        XCTAssertTrue(app.navigationBars["Select Project"].waitForExistence(timeout: 5))
+        let noProject = app.buttons["No Project"]
+        XCTAssertTrue(noProject.exists)
+        noProject.tap()
+        XCTAssertTrue(app.buttons["Note options"].waitForExistence(timeout: 5))
+        selectNoteAction("Manage Tags")
+        let nav = app.navigationBars["Tags"]
+        XCTAssertTrue(nav.waitForExistence(timeout: 5))
+        nav.buttons.element(boundBy: 0).tap()
+        let alert = app.alerts["New Tag"]
+        XCTAssertTrue(alert.waitForExistence(timeout: 5))
+        alert.textFields.firstMatch.tap()
+        alert.textFields.firstMatch.typeText("Menu proof tag")
+        alert.buttons["Add"].tap()
+        XCTAssertTrue(app.staticTexts["CURRENT TAGS"].waitForExistence(timeout: 5))
+        app.buttons["Done"].tap()
+        reopenProofNote()
+        selectNoteAction("Manage Tags")
+        XCTAssertTrue(app.staticTexts["CURRENT TAGS"].waitForExistence(timeout: 5), "Assigned tag did not persist")
+        XCTAssertTrue(app.staticTexts["Menu proof tag"].firstMatch.exists)
+        let tag = app.buttons["Menu proof tag"]
+        XCTAssertTrue(tag.waitForExistence(timeout: 5))
+        tag.tap()
+        XCTAssertFalse(app.staticTexts["CURRENT TAGS"].exists, "Removing the assigned tag did not update the note")
+        app.buttons["Done"].tap()
+    }
+
+    func testNoteMenuFavoritePersists() throws {
+        continueAfterFailure = false
+        openSeededAudioNote()
+        selectNoteAction("Favorite")
+        reopenProofNote()
+        selectNoteAction("Unfavorite")
+        reopenProofNote()
+        app.buttons["Note options"].tap()
+        XCTAssertTrue(app.buttons["Favorite"].waitForExistence(timeout: 5), "Unfavorite did not persist")
+        keep("NoteMenu-FavoriteRoundTrip")
+    }
+
+    func testNoteMenuArchiveRoundTrip() throws {
+        continueAfterFailure = false
+        openSeededAudioNote()
+        selectNoteAction("Archive")
+        let more = app.buttons.matching(NSPredicate(format: "label BEGINSWITH 'More'")).firstMatch
+        for _ in 0..<4 where !more.isHittable { app.swipeUp() }
+        XCTAssertTrue(more.waitForExistence(timeout: 5), app.debugDescription)
+        more.tap()
+        let filter = app.buttons["Filter notes"]
+        XCTAssertTrue(filter.waitForExistence(timeout: 5))
+        filter.tap()
+        app.buttons["Archived"].tap()
+        let archived = app.buttons.matching(NSPredicate(format: "label BEGINSWITH[c] 'Paywall launch call'")).firstMatch
+        XCTAssertTrue(archived.waitForExistence(timeout: 5), "Archived note is not accessible in Archived")
+        archived.tap()
+        selectNoteAction("Unarchive")
+        reopenProofNote()
+        XCTAssertTrue(app.buttons["Note options"].waitForExistence(timeout: 5), "Unarchived note did not return to Home")
+    }
+
+    func testNoteMenuDeleteCancelAndRestore() throws {
+        continueAfterFailure = false
+        openSeededAudioNote()
+        selectNoteAction("Delete Note")
+        XCTAssertTrue(app.buttons["Cancel"].waitForExistence(timeout: 5))
+        app.buttons["Cancel"].tap()
+        XCTAssertTrue(app.buttons["Note options"].waitForExistence(timeout: 5))
+        selectNoteAction("Delete Note")
+        app.buttons["Delete"].tap()
+        let row = app.buttons.matching(NSPredicate(format: "label BEGINSWITH[c] 'Paywall launch call'")).firstMatch
+        XCTAssertFalse(row.waitForExistence(timeout: 2), "Deleted note remains on Home")
+        let settings = app.buttons["Settings"]
+        XCTAssertTrue(settings.waitForExistence(timeout: 5))
+        settings.tap()
+        let trash = app.buttons["Recently Deleted"]
+        for _ in 0..<8 where !trash.isHittable { app.swipeUp() }
+        XCTAssertTrue(trash.waitForExistence(timeout: 5), app.debugDescription)
+        trash.tap()
+        XCTAssertTrue(app.staticTexts["Paywall launch call"].waitForExistence(timeout: 5))
+        app.buttons["Restore"].firstMatch.tap()
+        reopenProofNote()
+        XCTAssertTrue(app.buttons["Note options"].waitForExistence(timeout: 5), "Restored note is missing")
+    }
+
+    func testNoteMenuPlaybackSpeeds() throws {
+        continueAfterFailure = false
+        openSeededAudioNote()
+        for rate in ["0.5x", "0.75x", "1x", "1.2x", "1.5x", "2x"] {
+            selectNoteAction("Playback Speed")
+            let speed = app.buttons[rate]
+            XCTAssertTrue(speed.waitForExistence(timeout: 5), "Missing playback rate " + rate + "\n" + app.debugDescription)
+            speed.tap()
+            XCTAssertTrue(app.buttons["Note options"].waitForExistence(timeout: 5))
+        }
+        keep("NoteMenu-PlaybackSpeeds")
+    }
+
+    func testNoteMenuCleanUpRecording() throws {
+        continueAfterFailure = false
+        openSeededAudioNote()
+        selectNoteAction("Clean Up Recording…")
+        let editor = app.textViews.firstMatch
+        XCTAssertTrue(editor.waitForExistence(timeout: 5))
+        XCTAssertTrue((editor.value as? String ?? "").contains("thanks for joining"))
+        app.buttons["Cancel"].tap()
+        selectNoteAction("Clean Up Recording…")
+        app.buttons["Use Excerpt"].tap()
+        XCTAssertTrue(app.buttons["Note options"].waitForExistence(timeout: 90), "Real excerpt cleanup did not finish")
+        XCTAssertTrue(anyElement(labelContaining: "Thursday").waitForExistence(timeout: 10), "Cleanup lost the screenshot deadline")
+        keep("NoteMenu-CleanedExcerpt")
+    }
+
+    func testNoteMenuAskAboutThisNote() throws {
+        continueAfterFailure = false
+        openSeededAudioNote()
+        selectNoteAction("Ask About This Note")
+        XCTAssertTrue(app.navigationBars["Ask This Note"].waitForExistence(timeout: 5))
+        let input = app.textFields["Ask about this note"]
+        XCTAssertTrue(input.waitForExistence(timeout: 5))
+        input.tap()
+        input.typeText("When will the new screenshots be done? Answer from this note only.")
+        app.buttons["Send question"].tap()
+        XCTAssertTrue(app.buttons["Save as note"].waitForExistence(timeout: 90), "Actual note-scoped AI answer did not complete")
+        XCTAssertTrue(anyElement(labelContaining: "Thursday").exists, "Answer did not preserve the note's deadline")
+        keep("NoteMenu-ScopedAnswer")
+        app.buttons["Done"].tap()
+    }
+
+    func testNoteMenuShareLinkRequiresRealICloud() throws {
+        continueAfterFailure = false
+        openSeededAudioNote()
+        selectNoteAction("Share as Link")
+        XCTAssertTrue(app.navigationBars["Share Note"].waitForExistence(timeout: 5))
+        // No synthetic CloudKit response: the signed-out disposable simulator must
+        // report its actual account limitation. Successful sharing has a separate
+        // real-Apple-account gate; this check must never be reported as that proof.
+        let share = app.buttons["Create Share Link"]
+        XCTAssertTrue(share.waitForExistence(timeout: 5), app.debugDescription)
+        share.tap()
+        XCTAssertTrue(app.alerts["Error"].waitForExistence(timeout: 30))
+        XCTAssertTrue(anyElement(labelContaining: "iCloud is not available").exists)
+        keep("NoteMenu-ShareICloudGate")
+        app.alerts.buttons["OK"].tap()
+        app.buttons["Cancel"].tap()
+    }
+
     /// Text inside a SwiftUI Button surfaces as the button's label, not as a
     /// static text, so look for the label on any kind of element.
     private func anyElement(labelContaining text: String) -> XCUIElement {
