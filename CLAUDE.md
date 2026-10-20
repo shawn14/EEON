@@ -6,6 +6,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 EEON is a voice-first AI memory app (SwiftUI + SwiftData) for iOS. Users talk into a single button — the AI classifies whether it's a note or a question, transcribes via OpenAI Whisper, extracts structured intelligence (decisions, actions, commitments, people, topics, emotional tone), generates an enhanced version of what the user said, embeds the note for vector search, and lets users query their entire memory via natural language. Features CloudKit sync, Sign in with Apple, StoreKit 2 subscriptions, a Home Screen / Lock Screen widget, and a Share Extension for ingesting URLs and text from other apps.
 
+## Repository identity (2026-10-20)
+
+The active iOS app is [shawn14/EEON](https://github.com/shawn14/EEON), GitHub repository ID `1141490592`, formerly `shawn14/voice-notes-ios`. The unrelated January starter is preserved at [shawn14/EEON-starter-archived](https://github.com/shawn14/EEON-starter-archived), ID `1141381451`, private and archived. Never use the starter as the app source.
+
+Keep the local folder `~/projects/voice notes`, Xcode project/scheme `voice notes`, Apple bundle identifiers, and Fastlane key `voice-notes`: existing build and connector paths use them. Only the GitHub repository name changed. Active-app clones on either Mac should use `git remote set-url origin https://github.com/shawn14/EEON.git`; an old starter clone must instead use the archived URL because the `EEON` name now belongs to the active app. GitHub redirects the old `voice-notes-ios` URL to the active repo. Rename evidence: [repository IDs and all preserved refs](docs/repository-rename-2026-10-20.json).
+
 ## Founder audience (Shawn, 2026-10-16)
 
 EEON is for founders building with AI. Focus messaging on capturing ideas, tasks and decisions, then letting an explicitly connected coding agent read the context. Current Send to an Agent copies a prompt; it does not launch, manage or prove completion of coding jobs. Why: the founder handoff fits existing capture/memory/MCP behavior; an AI coding management claim implies execution features not shipped. Market evidence and metadata candidate: [founder ASO pass](docs/aso/2026-10-16-founders/README.md). No price/category change.

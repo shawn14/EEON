@@ -1,0 +1,60 @@
+{
+  "before": {
+    "starter": {
+      "id": 1141381451,
+      "full_name": "shawn14/EEON",
+      "archived": false,
+      "private": true,
+      "default_branch": "main",
+      "main_sha": "8e0dd5155b25c2709290179ed92c8f96a08c804f",
+      "refs_count": 6,
+      "refs_sha256": "3733b6126a404255f350966cfd79677f1811968f209020c5a606eefb5dd22cec"
+    },
+    "active": {
+      "id": 1141490592,
+      "full_name": "shawn14/voice-notes-ios",
+      "archived": false,
+      "private": false,
+      "default_branch": "main",
+      "main_sha": "5bc416062ac14a74ef2c44951f6b8e5a0b0add89",
+      "refs_count": 14,
+      "refs_sha256": "3267694a9d44cb5549e185c112eace3008bd7d5a63b3990326643d8f15c288f0"
+    }
+  },
+  "after_starter": {
+    "id": 1141381451,
+    "full_name": "shawn14/EEON-starter-archived",
+    "archived": true,
+    "private": true,
+    "default_branch": "main",
+    "main_sha": "8e0dd5155b25c2709290179ed92c8f96a08c804f",
+    "refs_count": 6,
+    "refs_sha256": "3733b6126a404255f350966cfd79677f1811968f209020c5a606eefb5dd22cec"
+  },
+  "after_active": {
+    "id": 1141490592,
+    "full_name": "shawn14/EEON",
+    "archived": false,
+    "private": false,
+    "default_branch": "main",
+    "main_sha": "5bc416062ac14a74ef2c44951f6b8e5a0b0add89",
+    "refs_count": 14,
+    "refs_sha256": "3267694a9d44cb5549e185c112eace3008bd7d5a63b3990326643d8f15c288f0"
+  },
+  "scope": "GitHub rename only; snapshots taken before documentation update. All refs preserved at rename.",
+  "local": {
+    "path": "/Users/shawncarpenter/projects/voice notes",
+    "origin": "https://github.com/shawn14/EEON.git",
+    "folder_renamed": false
+  },
+  "independent_verification": {
+    "result": "passed",
+    "checks": [
+      "live repository IDs and archive/privacy states",
+      "all 14 active and 6 starter refs preserved",
+      "old active URL resolves to active ID",
+      "actual Xcode project, audio recorder and transcription source",
+      "local canonical origin"
+    ]
+  }
+}

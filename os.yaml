@@ -1,5 +1,5 @@
 project: eeon
-source: https://github.com/shawn14/voice-notes-ios
+source: https://github.com/shawn14/EEON
 surfaces:
   app: iOS voice capture, daily tasks and project memory
   connector: https://www.eeon.com/api/mcp

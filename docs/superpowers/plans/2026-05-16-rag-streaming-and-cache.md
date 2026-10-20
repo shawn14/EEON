@@ -6,7 +6,7 @@
 
 ## What's already shipped (don't redo)
 
-Reference commits live on `origin/main` of `shawn14/voice-notes-ios` after the Phase 1 ship. Specifically:
+Reference commits live on `origin/main` of `shawn14/EEON` after the Phase 1 ship. Specifically:
 
 - `IntentClassifier.swift` has `QuestionRoute` enum + `classifyQuestionRoute(query:articleNames:)` with deterministic fast-paths (time-range regex, top-N regex, entity-name match, trends keywords) and an LLM fallback (`gpt-4o-mini`, 4-token output, ~$0.00003/query).
 - `RAGService.swift` has 5 route handlers (`answerRanking`, `answerTrends`, `answerTimeRange`, `answerEntity`, `answerSemantic`) called by a dispatcher in `answerQuestion(...)`. Shared helpers `callLLM(...)` and `parseAnswerAndFollowUps(...)`.
