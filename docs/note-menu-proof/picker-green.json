@@ -1,0 +1,17 @@
+{
+  "test_results": {
+    "testAddPhotoPresentsPicker": "passed"
+  },
+  "file_proof": null,
+  "passed": true,
+  "exit_code": 0,
+  "tests": [
+    "testAddPhotoPresentsPicker"
+  ],
+  "source_sha": "5d6e0b94b8c8753494a451c2c3d4ef8d64ccaf23",
+  "result": "/Users/shawncarpenter/projects/voice notes/build/note-menu/picker-1792516688",
+  "unproven": [
+    "Successful CloudKit share requires a real Apple test account",
+    "Physical-device Photos and playback behavior require device proof"
+  ]
+}
