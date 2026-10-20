@@ -45,9 +45,14 @@ def proof(mode):
     runtimes = [r for r in inventory['runtimes'] if r.get('isAvailable') and r['identifier'].startswith('com.apple.CoreSimulator.SimRuntime.iOS-')]
     assert runtimes, 'No available iOS simulator runtime'
     runtime = max(runtimes, key=lambda r: tuple(int(n) for n in r['version'].split('.')))
-    phones = [d for d in inventory['devicetypes'] if d.get('productFamily') == 'iPhone']
+    # simctl calls iPod touch an iPhone productFamily too; use the actual model name.
+    version = tuple(int(n) for n in runtime['version'].split('.'))
+    runtime_number = sum(n << shift for n, shift in zip(version + (0, 0), (16, 8, 0)))
+    phones = [d for d in inventory['devicetypes']
+              if d['name'].startswith('iPhone')
+              and d.get('minRuntimeVersion', 0) <= runtime_number <= d.get('maxRuntimeVersion', 2**32-1)]
     assert phones, 'No iPhone simulator device type'
-    phone = next((d for d in reversed(phones) if 'Pro' not in d['name']), phones[-1])
+    phone = next((d for d in phones if 'Pro' not in d['name']), phones[0])
     stamp = str(int(time.time()))
     target = run('xcrun', 'simctl', 'create', 'EEON-menu-proof-'+stamp, phone['identifier'], runtime['identifier'])
     result_dir = OUT / ('photo-'+stamp if mode == 'photo' else 'all-'+stamp)
