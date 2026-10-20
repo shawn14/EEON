@@ -34,7 +34,7 @@ The Xcode project has these targets, some with spaces or capitals in the scheme 
 | Widget extension | `VoiceNotesWidgetExtension` | Home Screen + Lock Screen widgets, App Intent for one-tap recording |
 | Share extension | `EEONShareExtension` | Receive URLs/text from other apps; queue them for ingestion |
 | Watch app | `EEONWatch` | watchOS app (`voice.notes.voice-notes.watchkitapp`): one Record button; sends the audio to the iPhone. Embedded in the iOS app (`Embed Watch Content`, iOS only) |
-| UI tests | `voice notes UITests` | Fastlane screenshot automation only — no unit tests |
+| UI tests | `voice notes UITests` | Native UI regression tests and screenshot automation |
 
 The widget and share extension share state with the main app via the App Group `group.com.eeon.voicenotes` (see `SharedDefaults.swift`, which is duplicated into each target by file reference).
 
@@ -379,4 +379,6 @@ Shawn explicitly authorized3.11/build172 AppStore review after the ASO pass; thi
 
 ## Real note-menu regression suite (2026-10-20)
 
-Canonical entrypoints are `mac-run 'voice notes' e2e_note_menu_photo` and `mac-run 'voice notes' e2e_note_menu`, committed in `docs/os.yaml`. Use the disposable simulator proof script; do not run screenshot fixtures against a personal device/account. Current suite is unexecuted after a real Photos-import timeout before app launch, not passing coverage or a fixed bug. See [proof status, gaps and resume](docs/note-menu-proof/README.md). Keep a red real-app reproduction before changing Add Photo; signed-out iCloud error handling never proves successful sharing.
+Canonical entrypoints in `docs/os.yaml`: `e2e_note_menu_picker` (presentation), `e2e_note_menu_photo` (attachment/persistence), and `e2e_note_menu` (whole menu), all through `mac-run 'voice notes' <action>`. Use the disposable simulator; never run screenshot fixtures against a personal device/account. Exact Add Photo no-op reproduced on signed source efdec38; candidate presenter fix is awaiting a green run after the runner cooldown. [Current proof and resume](docs/note-menu-proof/README.md). Signed-out iCloud error handling never proves successful sharing.
+
+The real CloudKit app requires simulator signing: **do not use `CODE_SIGNING_ALLOWED=NO`** for its UI proof. Actual unsigned-artifact inspection found no entitlements, and the app trapped twice in PFCloudKitContainerProvider. Ad-hoc signing restored the CloudKit/app-group prerequisites and the next run reached the note/menu. On Simulator, `codesign -d` alone can return an empty dictionary even when entitlements exist: inspect the executable's `__TEXT,__entitlements` section too. The script verifies both against the repo entitlement file before `test-without-building`, keeps cached compilation, and rejects missing test cases rather than trusting exit0 alone. Both iOS and watchOS runtimes are required because the iPhone target embeds EEONWatch. Preserve failure receipts and honor Mac runner caps; never bypass a cooldown by renaming actions or clearing history.
