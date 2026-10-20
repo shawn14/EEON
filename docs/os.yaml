@@ -7,6 +7,7 @@ canonical_scripts:
   e2e_note_menu_picker: python3 scripts/prove-note-menu.py picker --simulator
   e2e_note_menu_photo: python3 scripts/prove-note-menu.py photo --simulator
   e2e_note_menu: python3 scripts/prove-note-menu.py all --simulator
+  e2e_note_menu_remaining: python3 scripts/prove-note-menu.py menu --simulator
   build_voice_notes: xcodebuild -project 'voice notes.xcodeproj' -scheme 'voice notes' -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO -quiet build
   beta: cd ../fastlane-configs && fastlane beta app:voice-notes
   release: cd ../fastlane-configs && fastlane release app:voice-notes

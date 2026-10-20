@@ -1,6 +1,6 @@
 # Note overflow menu proof
 
-Status: **photo-picker failure reproduced; minimal fix applied, verification pending the Mac runner cooldown.**
+Status: **picker presentation passed; actual photo attachment is blocked by simulator Photos launch. Remaining menu tests are in progress.**
 
 Owner report (October20,2026): Add Photo from the note menu never opens Photos. The actual note was found through the connected EEON MCP. Its private contents and identifier are deliberately absent from the test fixtures and this public repository.
 
@@ -51,3 +51,7 @@ All menu paths below remain **unverified drafts**, not passing coverage. The foc
 Honor the runner cooldown: do not reset its counters, rename the action to bypass it, or weaken its limits. After approximately12:16PM Chicago on October20, run `mac-run 'voice notes' e2e_note_menu_picker` against the committed candidate. Keep the source unchanged until it finishes. If green, run attachment persistence with `e2e_note_menu_photo`, then every menu journey with `e2e_note_menu`. The next Photos import initializes the real Photos app and records system logs on failure. Fix only observed failures, preserve all receipts, and obtain independent runtime verification before claiming the owner bug fixed. Successful CloudKit sharing and physical iPhone behavior cannot be claimed from a signed-out simulator. Nothing here ships a build or changes App Store state.
 
 Shawn authorized automatic resumption after the cooldown. Work resumed directly in this chat at12:11PM America/Chicago after Shawn said "fix it"; the redundant12:20PM follow-up was removed. The runner cooldown still applies until12:15:08PM. Independent checkpoint review confirmed the failing runtime trace and cleanup; the candidate remains unverified until the scheduled tests pass.
+
+## October20 continuation
+
+Picker presentation passed on5d6e0b9 ([receipt](picker-green.json)). Independent visual review shows the system loading sheet, not a loaded photo library; cancellation needs a disappearance/hittability assertion. The subsequent attachment run timed out launching Photos before any EEON build/test ([receipt](photos-launch-blocker.json)). No photo retry. `mac-run 'voice notes' e2e_note_menu_remaining` runs the12 other menu journeys and explicitly records the excluded Add Photo test. It cannot report full-menu success.

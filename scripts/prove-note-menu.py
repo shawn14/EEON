@@ -127,7 +127,7 @@ def proof(mode):
         print('Booting disposable '+phone['name'], flush=True)
         run('xcrun', 'simctl', 'boot', target)
         run('xcrun', 'simctl', 'bootstatus', target, '-b', timeout=120)
-        if mode != 'picker':
+        if mode in ('photo', 'all'):
             print('Initializing the real Photos app before fixture import', flush=True)
             photos_info = Path(runtime['runtimeRoot'])/'Applications/Photos.app/Info.plist'
             photos_bundle = plistlib.loads(photos_info.read_bytes())['CFBundleIdentifier']
@@ -151,6 +151,8 @@ def proof(mode):
             'testNoteMenuAskAboutThisNote', 'testNoteMenuShareLinkRequiresRealICloud',
             'testPasteAndExport', 'testNoteMindMap', 'testIdentifySpeakers',
         ]
+        if mode == 'menu':
+            tests.remove('testAddPhotoFromNoteMenu')
         command += ['-only-testing:voice notes UITests/ScreenshotTests/'+name for name in tests]
         assert not run('git', '-C', str(ROOT), 'status', '--porcelain', '--untracked-files=no'), 'Commit source before native proof'
         build_sha = run('git', '-C', str(ROOT), 'rev-parse', 'HEAD')
@@ -181,10 +183,10 @@ def proof(mode):
         assert run('git', '-C', str(ROOT), 'rev-parse', 'HEAD') == build_sha, 'Source changed during native proof; rerun after code settles'
         assert not run('git', '-C', str(ROOT), 'status', '--porcelain', '--untracked-files=no'), 'Source changed during native proof'
         file_proof = verify_saved_photo(target) if mode == 'photo' and code == 0 else None
-        if mode == 'all' and code == 0:
+        if mode in ('all', 'menu') and code == 0:
             container = run('xcrun', 'simctl', 'get_app_container', target, BUNDLE, 'data')
             file_proof = json.loads(run('xcrun', 'swift', str(ROOT/'scripts/verify-note-menu-files.swift'), container, str(ROOT/'voice notes UITests/Fixtures/two-speakers.m4a'), timeout=120))
-        report = {'test_results': test_results, 'file_proof': file_proof, 'passed': code == 0, 'exit_code': code, 'tests': tests, 'source_sha': build_sha, 'result': str(result_dir), 'unproven': ['Successful CloudKit share requires a real Apple test account', 'Physical-device Photos and playback behavior require device proof']}
+        report = {'test_results': test_results, 'file_proof': file_proof, 'passed': code == 0, 'exit_code': code, 'tests': tests, 'source_sha': build_sha, 'result': str(result_dir), 'excluded_tests': ['testAddPhotoFromNoteMenu'] if mode == 'menu' else [], 'unproven': ['Successful CloudKit share requires a real Apple test account', 'Physical-device Photos and playback behavior require device proof']}
         (result_dir/'summary.json').write_text(json.dumps(report, indent=2)+'\n')
         print(json.dumps(report, indent=2), flush=True)
         if code:
@@ -197,7 +199,7 @@ def proof(mode):
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('mode',choices=['preflight','watch-runtime','picker','photo','all'])
+    parser.add_argument('mode',choices=['preflight','watch-runtime','picker','photo','all','menu'])
     parser.add_argument('--simulator', action='store_true', help='Explicit simulator run; makes the Mac runner apply its heavy-job resource gate')
     args=parser.parse_args()
     mode=args.mode
