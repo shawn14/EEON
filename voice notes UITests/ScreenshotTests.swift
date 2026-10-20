@@ -485,7 +485,13 @@ final class ScreenshotTests: XCTestCase {
         let thumbnail = photos.firstMatch
         XCTAssertTrue(thumbnail.waitForExistence(timeout: 5),
                       "Imported proof photo missing from system picker. " + app.debugDescription)
-        thumbnail.tap()
+        // iOS 26 Photos exposes a visible PXGGridLayout image with no AX hit
+        // point. Tap its observed on-screen center through the real system UI.
+        let frame = thumbnail.frame
+        XCTAssertGreaterThan(frame.width, 0)
+        XCTAssertGreaterThan(frame.height, 0)
+        XCTAssertTrue(app.frame.contains(frame), "Photo thumbnail is outside the visible picker")
+        thumbnail.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5)).tap()
         let add = app.buttons["Add"]
         if add.waitForExistence(timeout: 1) { add.tap() }
         let attachment = anyElement(labelContaining: "1 image")

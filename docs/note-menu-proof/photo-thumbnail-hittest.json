@@ -1,0 +1,13 @@
+{
+  "job": "voice_notes-e2e_note_menu_photo-20261020-134822-ayth",
+  "source_sha": "01b3dfc4f8b674f1dfe3a23d0420d00fa2483de6",
+  "observed": [
+    "Photos app launched and real fixture import completed",
+    "Signed native build passed",
+    "Picker opened, cancelled and reopened",
+    "Visible imported thumbnail has AX frame but XCTest hit point -1,-1"
+  ],
+  "failure": "XCTest thumbnail tap not hittable",
+  "photo_selection_and_persistence_proven": false,
+  "artifact_directory": "build/note-menu/photo-1792522107"
+}
