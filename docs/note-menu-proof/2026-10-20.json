@@ -1,0 +1,86 @@
+{
+  "status": "blocked-at-test-app-cloudkit-startup",
+  "source_sha": "99852b7ae08a4ebd6af5189d8f12a64709b4bda1",
+  "runs": [
+    {
+      "job": "voice_notes-e2e_note_menu_photo-20261020-102334-xhne",
+      "stage": "simulator creation",
+      "observed_failure": "Harness selected iPod touch because simctl groups it in iPhone productFamily; incompatible with iOS26.3. Corrected before next run.",
+      "log_sha256": "caf7ff60b130e323a82445b3da86e6fdc13acf93b046d2dc1936198dd0ae6601",
+      "app_tests_executed": 0
+    },
+    {
+      "job": "voice_notes-e2e_note_menu_photo-20261020-103055-nqux",
+      "stage": "Photos fixture import",
+      "observed_failure": "Simulator booted, but simctl addmedia of whiteboard.png timed out after60seconds before xcodebuild/app launch. Native execution stopped; no retry.",
+      "log_sha256": "4c191f4947cd5fa501f090f2dad770b2d5e91c29beb935418908eb66f6235f50",
+      "app_tests_executed": 0
+    },
+    {
+      "job": "voice_notes-e2e_note_menu_picker-20261020-104757-zvwi",
+      "source_sha": "ea79110dfd3068eb8d43106082c0c60365bb4422",
+      "stage": "test app startup",
+      "app_tests_executed": 1,
+      "app_tests_passed": 0,
+      "menu_actions_reached": 0,
+      "observed_failure": "Seeded audio note not found after two app startup crashes in CloudKit initialization."
+    }
+  ],
+  "app_implementation_changed": false,
+  "real_user_note_modified": false,
+  "independent_verification": {
+    "app_ui_tests_ran": 0,
+    "xcresult_count": 0,
+    "app_implementation_unchanged": true,
+    "disposable_simulator_removed": true,
+    "owned_native_processes_remaining": 0
+  },
+  "crash_reports": [
+    {
+      "sha256": "ca404a874953aef23088675c35fde5bd12cc1b07a5cb55be08c35fdf0b0b9235",
+      "capture_time": "2026-10-20 10:56:56.5126 -0500",
+      "exception": {
+        "codes": "0x0000000000000001, 0x000000018836b5e8",
+        "rawCodes": [
+          1,
+          6580254184
+        ],
+        "type": "EXC_BREAKPOINT",
+        "signal": "SIGTRAP"
+      },
+      "symbolized_frames": [
+        "-[PFCloudKitContainerProvider containerWithIdentifier:options:]",
+        "-[PFCloudKitSetupAssistant _initializeCloudKitForObservedStore:andNoteMetadataInitialization:]",
+        "__52-[NSCloudKitMirroringDelegate _performSetupRequest:]_block_invoke",
+        "__92-[NSCloudKitMirroringDelegate _openTransactionWithLabel:assertionLabel:andExecuteWorkBlock:]_block_invoke",
+        "_dispatch_call_block_and_release",
+        "_dispatch_client_callout",
+        "_dispatch_lane_serial_drain",
+        "_dispatch_lane_invoke"
+      ]
+    },
+    {
+      "sha256": "03bfde2e52de287ca380dcd5fe05e6ee7dc6eed8f6aed5580eff7f97222bae12",
+      "capture_time": "2026-10-20 10:56:59.5116 -0500",
+      "exception": {
+        "codes": "0x0000000000000001, 0x000000018836b5e8",
+        "rawCodes": [
+          1,
+          6580254184
+        ],
+        "type": "EXC_BREAKPOINT",
+        "signal": "SIGTRAP"
+      },
+      "symbolized_frames": [
+        "-[PFCloudKitContainerProvider containerWithIdentifier:options:]",
+        "-[PFCloudKitSetupAssistant _initializeCloudKitForObservedStore:andNoteMetadataInitialization:]",
+        "__52-[NSCloudKitMirroringDelegate _performSetupRequest:]_block_invoke",
+        "__92-[NSCloudKitMirroringDelegate _openTransactionWithLabel:assertionLabel:andExecuteWorkBlock:]_block_invoke",
+        "_dispatch_call_block_and_release",
+        "_dispatch_client_callout",
+        "_dispatch_lane_serial_drain",
+        "_dispatch_lane_invoke"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "approval": "Restore the runtime and run once",
+  "source_sha": "d8ea25c76c5c2a7cc709ca735a0de0fc6b4a318a",
+  "restoration": {
+    "id": "voice_notes-prepare_note_menu_runtime-20261020-154726-iudz",
+    "status": "passed",
+    "started_at": "2026-10-20T15:47:28-05:00",
+    "finished_at": "2026-10-20T15:51:52-05:00",
+    "exit_code": 0,
+    "seconds": 264.1
+  },
+  "restored_prerequisites": {
+    "free_gib": 35.5,
+    "booted": [],
+    "runtimes": [
+      {
+        "name": "iOS 26.3",
+        "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-3",
+        "version": "26.3.1",
+        "isAvailable": true,
+        "availabilityError": null
+      },
+      {
+        "name": "watchOS 26.2",
+        "identifier": "com.apple.CoreSimulator.SimRuntime.watchOS-26-2",
+        "version": "26.2",
+        "isAvailable": true,
+        "availabilityError": null
+      }
+    ]
+  },
+  "verification": {
+    "id": "voice_notes-e2e_note_menu_organize-20261020-155208-qqht",
+    "status": "failed",
+    "started_at": "2026-10-20T15:52:12-05:00",
+    "finished_at": "2026-10-20T15:57:07-05:00",
+    "exit_code": 1,
+    "seconds": 294.8
+  },
+  "verification_preflight": {
+    "free_gib": 31.0,
+    "booted": [],
+    "available_runtimes": [
+      "iOS 26.3.1",
+      "watchOS 26.2"
+    ],
+    "built_app_exists": false
+  },
+  "failure": {
+    "stage": "simulator boot readiness",
+    "command": [
+      "xcrun",
+      "simctl",
+      "bootstatus",
+      "BA1EC08A-B1BA-4CA2-B9AB-27078D7AF160",
+      "-b"
+    ],
+    "exception": "subprocess.TimeoutExpired",
+    "timeout_seconds": 120,
+    "root_cause": "unverified",
+    "partial_stdout_stderr_retained": false
+  },
+  "native_builds_executed": 0,
+  "ui_tests_executed": 0,
+  "requested_tests": [
+    "testNoteMenuProjectAndTags",
+    "testNoteMenuDeleteCancelAndRestore"
+  ],
+  "approval_consumed": true,
+  "additional_attempts_authorized": 0,
+  "settings_changed": false,
+  "cleanup": {
+    "owned_device_directory_absent": true,
+    "owned_proof_or_native_processes_remaining": false,
+    "independent_observer_exited": true
+  },
+  "raw_logs": {
+    "voice_notes-prepare_note_menu_runtime-20261020-154726-iudz": "703b8870a379b22c0c03abb71eac9c9a4a2cb1f28e67982d51b6f883b29f95bc",
+    "voice_notes-e2e_note_menu_organize-20261020-155208-qqht": "819d2444f74810539bb26b2335292055bdcc1c9ce3110e1d8092282d1d31ecc8"
+  },
+  "independent_receipt": "organize-boot-independent.json",
+  "limits": [
+    "Neither remaining test ran.",
+    "Earlier photo pass and 10/12 remaining-menu result are unchanged.",
+    "Physical iPhone and successful signed-in CloudKit sharing remain unverified.",
+    "No retry after this infrastructure failure."
+  ]
+}

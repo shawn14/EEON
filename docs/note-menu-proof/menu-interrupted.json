@@ -1,0 +1,11 @@
+{
+  "job": "voice_notes-e2e_note_menu_remaining-20261020-123805-ptpn",
+  "source_sha": "879fc33",
+  "finished_at": "2026-10-20T12:43:16-05:00",
+  "exit_code": -15,
+  "signal": "SIGTERM",
+  "terminated_during": "build-for-testing setup",
+  "ui_tests_run": 0,
+  "sender_unknown": true,
+  "retry": false
+}

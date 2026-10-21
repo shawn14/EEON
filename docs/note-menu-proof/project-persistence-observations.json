@@ -1,0 +1,323 @@
+{
+  "inspector": "independent-refuter",
+  "scope": "disposable fixture only; SQLite mode=ro/query_only",
+  "device": "8A34B34B-CBF2-429F-9922-AF90F1DBFA99",
+  "watch_started_at": "2026-10-20T14:25:41.257541",
+  "observations": [
+    {
+      "at": "2026-10-20T14:33:11.514457",
+      "latest_event": "t =     0.05s             Terminate voice.notes.voice-notes:33575",
+      "note_rows": [
+        [
+          19,
+          "FF74915CA2DB4D30A6DC54EAF78D4124",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:33:14.553070",
+      "latest_event": "t =     3.50s Terminate voice.notes.voice-notes:33854",
+      "note_rows": [
+        [
+          19,
+          "FF74915CA2DB4D30A6DC54EAF78D4124",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:33:16.069763",
+      "latest_event": "t =     4.57s     Launch voice.notes.voice-notes",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:33:25.192060",
+      "latest_event": "t =     4.57s     Launch voice.notes.voice-notes",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:33:26.715374",
+      "latest_event": "t =    15.25s Tap Button (First Match)",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:33:28.240258",
+      "latest_event": "t =    16.85s Tap \"Note options\" Button",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:33:29.762456",
+      "latest_event": "t =    19.29s Tap \"Assign Project\" Button",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:33:34.328155",
+      "latest_event": "t =    23.85s Terminate voice.notes.voice-notes:33866",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "3F82C6E741DE499B9489515B15FECA19",
+          "Menu proof project"
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:33:35.860817",
+      "latest_event": "t =    24.93s     Launch voice.notes.voice-notes",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "3F82C6E741DE499B9489515B15FECA19",
+          "Menu proof project"
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:33:43.460567",
+      "latest_event": "t =    32.74s Tap Button (First Match)",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "3F82C6E741DE499B9489515B15FECA19",
+          "Menu proof project"
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:33:44.976491",
+      "latest_event": "t =    34.25s Tap \"Note options\" Button",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "3F82C6E741DE499B9489515B15FECA19",
+          "Menu proof project"
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:33:48.024469",
+      "latest_event": "t =    36.75s Tap \"Assign Project\" Button",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "3F82C6E741DE499B9489515B15FECA19",
+          "Menu proof project"
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:33:51.063526",
+      "latest_event": "t =    39.76s Tap \"No Project\" Button",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:33:54.108683",
+      "latest_event": "t =    42.73s Tap \"Note options\" Button",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:33:55.625130",
+      "latest_event": "t =    45.11s Tap \"Manage Tags\" Button",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:33:58.662542",
+      "latest_event": "t =    47.72s Tap Button (Element at index 0)",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:34:01.705349",
+      "latest_event": "t =    50.06s Tap TextField (First Match)",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:34:03.226552",
+      "latest_event": "t =    51.92s Tap \"Add\" Button",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:34:04.742250",
+      "latest_event": "t =    53.83s Tap \"Done\" Button",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:34:06.261120",
+      "latest_event": "t =    56.00s     Launch voice.notes.voice-notes",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:34:15.407852",
+      "latest_event": "t =    63.78s Tap Button (First Match)",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:34:16.929171",
+      "latest_event": "t =    65.36s Tap \"Note options\" Button",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:34:18.447746",
+      "latest_event": "t =    67.82s Tap \"Manage Tags\" Button",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    },
+    {
+      "at": "2026-10-20T14:34:21.497084",
+      "latest_event": "t =     0.04s             Terminate voice.notes.voice-notes:34071",
+      "note_rows": [
+        [
+          20,
+          "069C93CEC2B6447D859C3F24D7A9EE7D",
+          "Paywall launch call",
+          "",
+          null
+        ]
+      ]
+    }
+  ],
+  "project_test_detected_at": "2026-10-20T14:33:11.514292",
+  "stop_reason": "project test ended",
+  "finished_at": "2026-10-20T14:34:21.516347"
+}

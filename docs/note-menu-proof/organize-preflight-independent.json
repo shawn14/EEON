@@ -1,0 +1,39 @@
+{
+  "inspector": "independent runtime refuter",
+  "observed_at": "2026-10-20T15:01:50.516040",
+  "job": "voice_notes-e2e_note_menu_organize-20261020-145923-agan",
+  "source_sha": "52b8dda2c8e621ef9667df70154bce604809fbbd",
+  "status": "failed",
+  "exit_code": 1,
+  "started_at": "2026-10-20T15:00:31-05:00",
+  "finished_at": "2026-10-20T15:00:34-05:00",
+  "preflight": {
+    "runtimes": [
+      {
+        "name": "iOS 26.3",
+        "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-3",
+        "version": "26.3.1",
+        "isAvailable": true,
+        "availabilityError": null
+      }
+    ],
+    "booted": [],
+    "built_artifact": {
+      "app_exists": false
+    }
+  },
+  "independent_filesystem_observations": {
+    "derived_data_exists": false,
+    "app_exists": false,
+    "core_simulator_volumes": [
+      "iOS_23D8133"
+    ],
+    "organize_result_directories": []
+  },
+  "conclusion": "Focused verification stopped at missing watchOS runtime preflight; no build/UI test/disposable device was created. Tag removal and restore completion remain unproven.",
+  "limits": [
+    "The observation does not identify who or what removed the runtime/cache.",
+    "Earlier photo and10/12menu runtime evidence remains historical evidence for its recorded source."
+  ],
+  "cleanup": "Independent observer exited when job completion was detected. No native commands, UI interactions, DB reads, settings/source mutations, temporary frames, or retries were performed."
+}

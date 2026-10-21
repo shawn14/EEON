@@ -1,0 +1,71 @@
+{
+  "inspector": "independent runtime refuter",
+  "observed_at": "2026-10-20T15:57:51.756560-05:00",
+  "job": "voice_notes-e2e_note_menu_organize-20261020-155208-qqht",
+  "source_sha": "d8ea25c76c5c2a7cc709ca735a0de0fc6b4a318a",
+  "evidence": {
+    "raw_job_log": "~/projects/.mac-jobs/logs/voice_notes-e2e_note_menu_organize-20261020-155208-qqht.log",
+    "raw_job_log_sha256": "819d2444f74810539bb26b2335292055bdcc1c9ce3110e1d8092282d1d31ecc8",
+    "runner_receipt": "~/projects/.mac-jobs/done/voice_notes-e2e_note_menu_organize-20261020-155208-qqht.json",
+    "observer_receipt": "independent-focused-db.json"
+  },
+  "preflight_observed": {
+    "free_gib": 31.0,
+    "booted": [],
+    "available_runtimes": [
+      "iOS 26.3.1",
+      "watchOS 26.2"
+    ],
+    "built_app_exists": false
+  },
+  "result": {
+    "status": "failed",
+    "exit_code": 1,
+    "started_at": "2026-10-20T15:52:12-05:00",
+    "finished_at": "2026-10-20T15:57:07-05:00",
+    "seconds": 294.8,
+    "failure": "simctl bootstatus for the disposable iPhone 17e timed out after 120 seconds; raw traceback at prove-note-menu.py:151"
+  },
+  "independent_filesystem_observed": {
+    "test_log_exists": false,
+    "summary_exists": false,
+    "attachment_manifest_exists": false,
+    "built_app_exists": false,
+    "disposable_device_directory_exists": false
+  },
+  "observer": {
+    "finished_at": "2026-10-20T15:57:10.730219",
+    "snapshots": 0,
+    "stop_reason": "job ended before UI test log",
+    "process_exited": true,
+    "temporary_frames_created": 0
+  },
+  "claims": {
+    "tag_removal": "not exercised",
+    "delete_restore": "not exercised",
+    "relaunch_persistence": "not exercised",
+    "built_entitlements": "no built app available in this attempt"
+  },
+  "cleanup_evidence": [
+    "simctl shutdown all -> 0",
+    "quit Simulator -> 0"
+  ],
+  "limits": [
+    "No UI test ran or produced evidence in this attempt.",
+    "The missing prior watchOS runtime was resolved in preflight; this attempt failed at simulator boot readiness.",
+    "Root cause of simulator boot timeout is unverified.",
+    "Physical iPhone and signed-in CloudKit behavior remain unverified."
+  ],
+  "scope": "No source or settings edits, native commands, UI input, additional job, or original-user database access by this refuter.",
+  "observer_receipt": {
+    "inspector": "independent runtime refuter",
+    "job": "voice_notes-e2e_note_menu_organize-20261020-155208-qqht",
+    "source_sha": "d8ea25c76c5c2a7cc709ca735a0de0fc6b4a318a",
+    "device": "BA1EC08A-B1BA-4CA2-B9AB-27078D7AF160",
+    "scope": "Read-only disposable fixture SQLite, mode=ro/query_only; no native commands or UI input",
+    "started_at": "2026-10-20T15:53:09.892332",
+    "snapshots": [],
+    "stop_reason": "job ended before UI test log",
+    "finished_at": "2026-10-20T15:57:10.730219"
+  }
+}

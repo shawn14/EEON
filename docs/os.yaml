@@ -1,0 +1,20 @@
+# Mac runner actions. Project identity and data sources remain in ../os.yaml.
+name: EEON
+profile: ios-native
+canonical_scripts:
+  apple_preflight: node scripts/apple-preflight.mjs
+  cleanup_note_menu: python3 scripts/prove-note-menu.py cleanup
+  note_menu_diagnostics: python3 scripts/prove-note-menu.py preflight
+  prepare_note_menu_runtime: python3 scripts/prove-note-menu.py watch-runtime --simulator
+  e2e_note_menu_picker: python3 scripts/prove-note-menu.py picker --simulator
+  e2e_note_menu_photo: python3 scripts/prove-note-menu.py photo --simulator
+  e2e_note_menu: python3 scripts/prove-note-menu.py all --simulator
+  e2e_note_menu_organize: python3 scripts/prove-note-menu.py organize --simulator
+  e2e_note_menu_remaining: python3 scripts/prove-note-menu.py menu --simulator
+  build_voice_notes: xcodebuild -project 'voice notes.xcodeproj' -scheme 'voice notes' -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO -quiet build
+  beta: python3 scripts/apple-release.py beta
+  apple_metadata: python3 scripts/apple-release.py metadata
+  release: python3 scripts/apple-release.py submit
+mac_runner:
+  ask_first: [beta, apple_metadata, release]
+  timeout_minutes: 30

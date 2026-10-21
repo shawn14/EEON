@@ -1,0 +1,25 @@
+{
+  "test_results": {
+    "testAddPhotoFromNoteMenu": "passed"
+  },
+  "file_proof": {
+    "persisted_note_attachments": 1,
+    "saved_image_bytes": 66940,
+    "height": 800,
+    "saved_image_decodes": true,
+    "width": 1800
+  },
+  "passed": true,
+  "exit_code": 0,
+  "tests": [
+    "testAddPhotoFromNoteMenu"
+  ],
+  "source_sha": "c20b45cb291044b36f659e72baf343239ae0bdaf",
+  "result": "build/note-menu/photo-1792523119",
+  "excluded_tests": [],
+  "unproven": [
+    "Successful CloudKit share requires a real Apple test account",
+    "Physical-device Photos and playback behavior require device proof"
+  ],
+  "job": "voice_notes-e2e_note_menu_photo-20261020-140512-sgmr"
+}

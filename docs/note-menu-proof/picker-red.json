@@ -1,0 +1,33 @@
+{
+  "job": "voice_notes-e2e_note_menu_picker-20261020-111018-pbpc",
+  "source_sha": "efdec38ba9e97e4bd388b184d9bd71a8eae523fd",
+  "test": "testAddPhotoPresentsPicker",
+  "result": "failed",
+  "tests_executed": 1,
+  "observed": "At26.42seconds XCTest tapped Add Photo. After8seconds the accessibility tree still showed the note and no system picker/Cancel control.",
+  "entitlements_verified": {
+    "application-identifier": "BYRK5RUS4U.voice.notes.voice-notes",
+    "aps-environment": "development",
+    "com.apple.developer.applesignin": [
+      "Default"
+    ],
+    "com.apple.developer.associated-domains": [
+      "applinks:eeon.com",
+      "applinks:www.eeon.com"
+    ],
+    "com.apple.developer.icloud-container-identifiers": [
+      "iCloud.aivoiceeeon"
+    ],
+    "com.apple.developer.icloud-services": [
+      "CloudDocuments",
+      "CloudKit"
+    ],
+    "com.apple.developer.ubiquity-container-identifiers": [
+      "iCloud.aivoiceeeon"
+    ],
+    "com.apple.security.application-groups": [
+      "group.com.eeon.voicenotes"
+    ]
+  },
+  "test_log_sha256": "7fd141396663161417fd52dcf4806f7e08b0a4ab749c3fba0cdce7df396b0c52"
+}

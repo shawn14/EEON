@@ -1,0 +1,49 @@
+{
+  "test_results": {
+    "testNoteMenuCopyAndAgentBrief": "failed",
+    "testNoteMenuProjectAndTags": "failed",
+    "testNoteMenuFavoritePersists": "passed",
+    "testNoteMenuArchiveRoundTrip": "passed",
+    "testNoteMenuDeleteCancelAndRestore": "failed",
+    "testNoteMenuPlaybackSpeeds": "passed",
+    "testNoteMenuCleanUpRecording": "failed",
+    "testNoteMenuAskAboutThisNote": "passed",
+    "testNoteMenuShareLinkRequiresRealICloud": "passed",
+    "testPasteAndExport": "passed",
+    "testNoteMindMap": "passed",
+    "testIdentifySpeakers": "passed"
+  },
+  "file_proof": null,
+  "passed": false,
+  "exit_code": 65,
+  "tests": [
+    "testNoteMenuCopyAndAgentBrief",
+    "testNoteMenuProjectAndTags",
+    "testNoteMenuFavoritePersists",
+    "testNoteMenuArchiveRoundTrip",
+    "testNoteMenuDeleteCancelAndRestore",
+    "testNoteMenuPlaybackSpeeds",
+    "testNoteMenuCleanUpRecording",
+    "testNoteMenuAskAboutThisNote",
+    "testNoteMenuShareLinkRequiresRealICloud",
+    "testPasteAndExport",
+    "testNoteMindMap",
+    "testIdentifySpeakers"
+  ],
+  "source_sha": "0a7d98828fa4b1dcdc5e10b1a39fcdca89c50515",
+  "excluded_tests": [
+    "testAddPhotoFromNoteMenu"
+  ],
+  "unproven": [
+    "Successful CloudKit share requires a real Apple test account",
+    "Physical-device Photos and playback behavior require device proof"
+  ],
+  "job": "voice_notes-e2e_note_menu_remaining-20261020-132328-wtud",
+  "finished_at": "2026-10-20T13:39:48-05:00",
+  "observations": {
+    "clipboard": "Actual Paste populated the question field; placeholder-based lookup then failed.",
+    "project": "After selecting Menu proof project and relaunching immediately, the actual picker showed No Project selected.",
+    "delete": "Actual hierarchy showed Delete Note? confirmation with Delete and PopoverDismissRegion; no Cancel button.",
+    "exports": "All three real files preserved locally for independent inspection; native file verifier was skipped because other UI checks failed."
+  }
+}

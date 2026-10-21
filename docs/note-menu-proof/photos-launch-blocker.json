@@ -1,0 +1,12 @@
+{
+  "job": "voice_notes-e2e_note_menu_photo-20261020-122537-aedn",
+  "source_sha": "4a8a8bc",
+  "status": "failed_before_app_build_or_test",
+  "failed_operation": "simctl launch com.apple.mobileslideshow",
+  "timeout_seconds": 60,
+  "finished_at": "2026-10-20T12:36:05-05:00",
+  "device": "7F6C72FE-710C-4526-A9AD-D73152339FD9",
+  "device_removed": true,
+  "retry": false,
+  "remaining_menu_action_excludes_photo": true
+}

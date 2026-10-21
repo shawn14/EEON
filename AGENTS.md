@@ -34,7 +34,7 @@ The Xcode project has these targets, some with spaces or capitals in the scheme 
 | Widget extension | `VoiceNotesWidgetExtension` | Home Screen + Lock Screen widgets, App Intent for one-tap recording |
 | Share extension | `EEONShareExtension` | Receive URLs/text from other apps; queue them for ingestion |
 | Watch app | `EEONWatch` | watchOS app (`voice.notes.voice-notes.watchkitapp`): one Record button; sends the audio to the iPhone. Embedded in the iOS app (`Embed Watch Content`, iOS only) |
-| UI tests | `voice notes UITests` | Fastlane screenshot automation only — no unit tests |
+| UI tests | `voice notes UITests` | Native UI regression tests and screenshot automation |
 
 The widget and share extension share state with the main app via the App Group `group.com.eeon.voicenotes` (see `SharedDefaults.swift`, which is duplicated into each target by file reference).
 
@@ -376,3 +376,16 @@ Prepared central beta lane requires committed version/build for EEON on clean pu
 
 ### October16 App Review submission
 Shawn explicitly authorized3.11/build172 AppStore review after the ASO pass; this supersedes earlier no-submission status for this release. Actual state WAITING_FOR_REVIEW, releaseMANUAL; proof `docs/aso/2026-10-16-founders/submission-311/README.md`. Any embeddedWatch release needs a realWatch screenshot before submit; use an unchanged release-sourceWatch target and verify COMPLETE/checksum. Capturing idle simulatorUI does not prove physicalrecording/transfer. Do not rerun submit against an active review; legacy recovery cancels active submissions.
+
+## Real note-menu regression suite (2026-10-20)
+
+Canonical entrypoints in `docs/os.yaml`: `e2e_note_menu_picker` (presentation), `e2e_note_menu_photo` (attachment/persistence), and `e2e_note_menu` (whole menu), all through `mac-run 'voice notes' <action>`. Use the disposable simulator; never run screenshot fixtures against a personal device/account. Exact Add Photo no-op reproduced on signed source efdec38. Stable-view presentation fix passed actual picker/cancel/reopen/selection/relaunch and persisted SwiftData/JPEG inspection on c20b45c. The latest remaining-menu run passed10/12; project assignment/removal now persists across relaunch, independently read from actual SQLite. Tag removal and restore completion remain unverified after correcting the observed labels. A newly approved restoration restored watchOS26.2, but the one focused attempt timed out at simulator boot readiness before any build/UI test; all bounded approvals are consumed. Diagnose simulator startup before another separately authorized native attempt; no automatic retry. [Current proof and resume](docs/note-menu-proof/README.md). Signed-out iCloud error handling never proves successful sharing.
+
+The real CloudKit app requires simulator signing: **do not use `CODE_SIGNING_ALLOWED=NO`** for its UI proof. Actual unsigned-artifact inspection found no entitlements, and the app trapped twice in PFCloudKitContainerProvider. Ad-hoc signing restored the CloudKit/app-group prerequisites and the next run reached the note/menu. On Simulator, `codesign -d` alone can return an empty dictionary even when entitlements exist: inspect the executable's `__TEXT,__entitlements` section too. The script verifies both against the repo entitlement file before `test-without-building`, keeps cached compilation, and rejects missing test cases rather than trusting exit0 alone. Both iOS and watchOS runtimes are required because the iPhone target embeds EEONWatch. Preserve failure receipts and honor Mac runner caps; never bypass a cooldown by renaming actions or clearing history.
+
+If simulator Photos itself cannot launch, stop that path and preserve the receipt. `e2e_note_menu_remaining` can prove the12 independent menu journeys without importing a photo; its report must retain the excluded Add Photo test. This is partial menu coverage, never full-photo proof.
+
+For iOS26Photos UI tests, inspect the actual grid before selecting: PXGGridLayout-Info can expose a visible thumbnail frame but return hit point(-1,-1) to XCTest. Tapping its measured on-screen center exercised the real selection path and passed attachment persistence. Clipboard proof uses foreground UI Paste, then a field lookup independent of its disappearing placeholder; never infer clipboard contents from a button tap.
+
+## EEON Apple push through Mac runner (2026-10-21)
+Use `docs/note-menu-release-3.11.1/README.md` and committed `scripts/apple-release.py`: beta reads committed version/build and uses the guarded central lane; release submits that already uploaded exact VALID iOS build without rebuilding. Both require clean current main and build171/172 ancestry. The old bare beta/release examples above omit required version arguments or increment during build and are superseded. Active reviews stop the wrapper; it never implicitly cancels one.
