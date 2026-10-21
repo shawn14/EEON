@@ -45,7 +45,25 @@ export default async function preflight(api) {
     const build = (await read(`/v1/appStoreVersions/${v.id}/build`)).data;
     active.push({id:v.id,version:v.attributes.versionString,state:v.attributes.appStoreState,releaseType:v.attributes.releaseType,build:build ? {id:build.id,number:build.attributes.version}:null});
   }
-  return {observedAt:new Date().toISOString(),readOnly:true,appId,bundle,source:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),fastlaneSource:execFileSync('git',['rev-parse','HEAD'],{cwd:fastlaneRoot,encoding:'utf8'}).trim(),versions:versions.map(v=>({id:v.id,version:v.attributes.versionString,state:v.attributes.appStoreState,releaseType:v.attributes.releaseType})),active,builds:builds.data.map(b=>({id:b.id,...b.attributes,relationships:b.relationships})),included:builds.included,reviews:reviews.map(r=>({id:r.id,...r.attributes})),subscriptions,downloadPrices,sources};
+  // Preserve the exact existing phone/tablet/Watch assets on this bug-fix release.
+  const project=fs.readFileSync(path.join(root,'voice notes.xcodeproj/project.pbxproj'),'utf8');
+  const targetVersion=project.match(/MARKETING_VERSION = ([^;]+);/)[1];
+  const live=versions.filter(v=>['READY_FOR_SALE','READY_FOR_DISTRIBUTION'].includes(v.attributes.appStoreState))
+    .sort((a,b)=>b.attributes.versionString.localeCompare(a.attributes.versionString,undefined,{numeric:true}))[0];
+  const listingAssets=[];
+  for(const v of versions.filter(v=>v.attributes.versionString===targetVersion || v.id===live?.id)) {
+    const locales=(await read(`/v1/appStoreVersions/${v.id}/appStoreVersionLocalizations?limit=50`)).data;
+    for(const locale of locales) {
+      const sets=(await read(`/v1/appStoreVersionLocalizations/${locale.id}/appScreenshotSets?limit=50`)).data;
+      const screenshots=[];
+      for(const set of sets) {
+        const images=(await read(`/v1/appScreenshotSets/${set.id}/appScreenshots?limit=50`)).data;
+        for(const image of images) screenshots.push({displayType:set.attributes.screenshotDisplayType,fileName:image.attributes.fileName,checksum:image.attributes.sourceFileChecksum,state:image.attributes.assetDeliveryState?.state});
+      }
+      listingAssets.push({version:v.attributes.versionString,locale:locale.attributes.locale,whatsNew:locale.attributes.whatsNew,screenshots});
+    }
+  }
+  return {observedAt:new Date().toISOString(),readOnly:true,appId,bundle,source:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),fastlaneSource:execFileSync('git',['rev-parse','HEAD'],{cwd:fastlaneRoot,encoding:'utf8'}).trim(),versions:versions.map(v=>({id:v.id,version:v.attributes.versionString,state:v.attributes.appStoreState,releaseType:v.attributes.releaseType})),active,builds:builds.data.map(b=>({id:b.id,...b.attributes,relationships:b.relationships})),included:builds.included,reviews:reviews.map(r=>({id:r.id,...r.attributes})),subscriptions,downloadPrices,listingAssets,sources};
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === file) {
   const client = path.resolve(root,'../milepost/scripts/asc/asc.mjs');

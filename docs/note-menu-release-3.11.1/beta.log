@@ -1,0 +1,3104 @@
+== 2026-10-21T08:57:15-05:00 voice notes beta: python3 scripts/apple-release.py beta
+== priority: taskpolicy -b nice -n 15 /bin/zsh -lc <command>
+ASC JOB OK
+{
+  "observedAt": "2026-10-21T13:57:24.559Z",
+  "readOnly": true,
+  "appId": "6758273499",
+  "bundle": "voice.notes.voice-notes",
+  "source": "91b751531d3ae8a5e2eeb5789f91f392cfa0c6ab",
+  "fastlaneSource": "4f49c5c0288d79b989273457fa4ae626674ed7f2",
+  "versions": [
+    {
+      "id": "ea1a455a-be29-43e3-a2f5-1b56b4ebef00",
+      "version": "3.11.0",
+      "state": "READY_FOR_SALE",
+      "releaseType": "MANUAL"
+    },
+    {
+      "id": "739e0eb1-fbce-43c1-996c-4d86b8d7125b",
+      "version": "3.10.0",
+      "state": "READY_FOR_SALE",
+      "releaseType": "MANUAL"
+    },
+    {
+      "id": "e4df3de6-7524-48f0-b224-4cc7274ecfe4",
+      "version": "3.9.0",
+      "state": "READY_FOR_SALE",
+      "releaseType": "MANUAL"
+    },
+    {
+      "id": "9f3f240c-9eb6-4672-b891-fce171274e4a",
+      "version": "3.8.3",
+      "state": "READY_FOR_SALE",
+      "releaseType": "MANUAL"
+    },
+    {
+      "id": "d34988ac-124e-4bb3-bff0-41752da625f0",
+      "version": "3.8.2",
+      "state": "READY_FOR_SALE",
+      "releaseType": "MANUAL"
+    },
+    {
+      "id": "fbae8af6-3531-46d0-9fba-0c479d14585b",
+      "version": "3.8.0",
+      "state": "READY_FOR_SALE",
+      "releaseType": "MANUAL"
+    },
+    {
+      "id": "ca311f38-894f-4bca-89f8-dbc09c71ab5c",
+      "version": "1.5.2",
+      "state": "READY_FOR_SALE",
+      "releaseType": "AFTER_APPROVAL"
+    },
+    {
+      "id": "65485d7f-a570-4611-8359-158d297e0054",
+      "version": "1.5.1",
+      "state": "READY_FOR_SALE",
+      "releaseType": "AFTER_APPROVAL"
+    },
+    {
+      "id": "874670e0-01bb-4e5d-8393-4fb931d9db31",
+      "version": "1.5.0",
+      "state": "READY_FOR_SALE",
+      "releaseType": "AFTER_APPROVAL"
+    },
+    {
+      "id": "a6a1066b-17f7-4b70-9fa5-4bee73dfa3ff",
+      "version": "1.4.9",
+      "state": "READY_FOR_SALE",
+      "releaseType": "AFTER_APPROVAL"
+    },
+    {
+      "id": "aa15d3c0-b364-4fca-9af5-d77ee34d779b",
+      "version": "1.4.8",
+      "state": "READY_FOR_SALE",
+      "releaseType": "AFTER_APPROVAL"
+    },
+    {
+      "id": "c336216c-df55-4975-b97d-801e94eab42c",
+      "version": "1.4.7",
+      "state": "READY_FOR_SALE",
+      "releaseType": "AFTER_APPROVAL"
+    },
+    {
+      "id": "453ad239-8265-4685-b915-a9754a31d896",
+      "version": "1.4.6",
+      "state": "READY_FOR_SALE",
+      "releaseType": "AFTER_APPROVAL"
+    },
+    {
+      "id": "4bccccec-dd9f-4ac5-95bf-486f8adcceeb",
+      "version": "1.4.5",
+      "state": "READY_FOR_SALE",
+      "releaseType": "AFTER_APPROVAL"
+    },
+    {
+      "id": "f04b4278-1566-41b7-8cd1-0e066d94a70d",
+      "version": "1.4.4",
+      "state": "READY_FOR_SALE",
+      "releaseType": "AFTER_APPROVAL"
+    },
+    {
+      "id": "5deff474-55b1-4c1f-a985-7f25bab6da98",
+      "version": "1.4.3",
+      "state": "READY_FOR_SALE",
+      "releaseType": "AFTER_APPROVAL"
+    },
+    {
+      "id": "4c6aebb0-8922-410c-928f-6d37f5059c55",
+      "version": "1.4.2",
+      "state": "READY_FOR_SALE",
+      "releaseType": "AFTER_APPROVAL"
+    },
+    {
+      "id": "b46c71d1-f753-4457-9344-c4bf2fb5df1a",
+      "version": "1.4.1",
+      "state": "READY_FOR_SALE",
+      "releaseType": "AFTER_APPROVAL"
+    },
+    {
+      "id": "7b797c01-9ab7-409a-a265-585dbda87d20",
+      "version": "1.4",
+      "state": "READY_FOR_SALE",
+      "releaseType": "AFTER_APPROVAL"
+    },
+    {
+      "id": "ecea63c3-d086-4b78-b8fc-3c86818268a7",
+      "version": "1.3",
+      "state": "READY_FOR_SALE",
+      "releaseType": "AFTER_APPROVAL"
+    },
+    {
+      "id": "e1e60aca-f6aa-40ed-a816-24a7897b5f9e",
+      "version": "1.2",
+      "state": "READY_FOR_SALE",
+      "releaseType": "AFTER_APPROVAL"
+    },
+    {
+      "id": "701c08c2-b8a3-499e-9d83-57fd4f24d019",
+      "version": "1.1",
+      "state": "READY_FOR_SALE",
+      "releaseType": "AFTER_APPROVAL"
+    },
+    {
+      "id": "7bce8756-aecc-4d3d-b6b5-a9e6867ec96d",
+      "version": "1.0",
+      "state": "READY_FOR_SALE",
+      "releaseType": "AFTER_APPROVAL"
+    }
+  ],
+  "active": [
+    {
+      "id": "ea1a455a-be29-43e3-a2f5-1b56b4ebef00",
+      "version": "3.11.0",
+      "state": "READY_FOR_SALE",
+      "releaseType": "MANUAL",
+      "build": {
+        "id": "26f26007-ba7a-49db-b7cd-51c8d83822f9",
+        "number": "172"
+      }
+    },
+    {
+      "id": "739e0eb1-fbce-43c1-996c-4d86b8d7125b",
+      "version": "3.10.0",
+      "state": "READY_FOR_SALE",
+      "releaseType": "MANUAL",
+      "build": {
+        "id": "fb183b0e-cb47-49bc-8481-b7bd6429a74d",
+        "number": "171"
+      }
+    },
+    {
+      "id": "e4df3de6-7524-48f0-b224-4cc7274ecfe4",
+      "version": "3.9.0",
+      "state": "READY_FOR_SALE",
+      "releaseType": "MANUAL",
+      "build": {
+        "id": "1ce35892-72a5-4e5b-85a3-8edc39955541",
+        "number": "169"
+      }
+    },
+    {
+      "id": "9f3f240c-9eb6-4672-b891-fce171274e4a",
+      "version": "3.8.3",
+      "state": "READY_FOR_SALE",
+      "releaseType": "MANUAL",
+      "build": {
+        "id": "cd30a00b-ac9f-4829-bc27-018db18159bc",
+        "number": "168"
+      }
+    }
+  ],
+  "builds": [
+    {
+      "id": "26f26007-ba7a-49db-b7cd-51c8d83822f9",
+      "version": "172",
+      "uploadedDate": "2026-10-16T09:31:44-07:00",
+      "expirationDate": "2027-01-14T08:31:44-08:00",
+      "expired": false,
+      "minOsVersion": "26.2",
+      "lsMinimumSystemVersion": null,
+      "computedMinMacOsVersion": "26.2",
+      "computedMinVisionOsVersion": "26.2",
+      "iconAssetToken": {
+        "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/23/37/56/233756b4-17f2-1451-57d9-78cd0f8db656/AppIcon76x76@2x_U007eipad.png/{w}x{h}bb.{f}",
+        "width": 152,
+        "height": 152
+      },
+      "processingState": "VALID",
+      "buildAudienceType": "APP_STORE_ELIGIBLE",
+      "usesNonExemptEncryption": false,
+      "relationships": {
+        "preReleaseVersion": {
+          "data": {
+            "type": "preReleaseVersions",
+            "id": "1b2f3eea-42e0-41de-b300-aafade323eff"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/preReleaseVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/preReleaseVersion"
+          }
+        },
+        "individualTesters": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/individualTesters",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/individualTesters"
+          }
+        },
+        "betaGroups": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/betaGroups"
+          }
+        },
+        "betaBuildLocalizations": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/betaBuildLocalizations",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/betaBuildLocalizations"
+          }
+        },
+        "appEncryptionDeclaration": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/appEncryptionDeclaration",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/appEncryptionDeclaration"
+          }
+        },
+        "betaAppReviewSubmission": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/betaAppReviewSubmission",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/betaAppReviewSubmission"
+          }
+        },
+        "app": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/app",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/app"
+          }
+        },
+        "buildBetaDetail": {
+          "data": {
+            "type": "buildBetaDetails",
+            "id": "26f26007-ba7a-49db-b7cd-51c8d83822f9"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/buildBetaDetail",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/buildBetaDetail"
+          }
+        },
+        "appStoreVersion": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/appStoreVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/appStoreVersion"
+          }
+        },
+        "icons": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/icons",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/icons"
+          }
+        },
+        "perfPowerMetrics": {
+          "links": {
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/perfPowerMetrics"
+          }
+        },
+        "diagnosticSignatures": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/diagnosticSignatures",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/26f26007-ba7a-49db-b7cd-51c8d83822f9/diagnosticSignatures"
+          }
+        }
+      }
+    },
+    {
+      "id": "fb183b0e-cb47-49bc-8481-b7bd6429a74d",
+      "version": "171",
+      "uploadedDate": "2026-10-08T07:16:19-07:00",
+      "expirationDate": "2027-01-06T06:16:19-08:00",
+      "expired": false,
+      "minOsVersion": "26.2",
+      "lsMinimumSystemVersion": null,
+      "computedMinMacOsVersion": "26.2",
+      "computedMinVisionOsVersion": "26.2",
+      "iconAssetToken": {
+        "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e2/e3/83/e2e383bf-fd4e-5a14-9bdf-8b8553c4cf62/AppIcon76x76@2x_U007eipad.png/{w}x{h}bb.{f}",
+        "width": 152,
+        "height": 152
+      },
+      "processingState": "VALID",
+      "buildAudienceType": "APP_STORE_ELIGIBLE",
+      "usesNonExemptEncryption": false,
+      "relationships": {
+        "preReleaseVersion": {
+          "data": {
+            "type": "preReleaseVersions",
+            "id": "87733e4b-a717-4691-859f-f40af0c35c34"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/preReleaseVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/preReleaseVersion"
+          }
+        },
+        "individualTesters": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/individualTesters",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/individualTesters"
+          }
+        },
+        "betaGroups": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/betaGroups"
+          }
+        },
+        "betaBuildLocalizations": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/betaBuildLocalizations",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/betaBuildLocalizations"
+          }
+        },
+        "appEncryptionDeclaration": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/appEncryptionDeclaration",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/appEncryptionDeclaration"
+          }
+        },
+        "betaAppReviewSubmission": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/betaAppReviewSubmission",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/betaAppReviewSubmission"
+          }
+        },
+        "app": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/app",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/app"
+          }
+        },
+        "buildBetaDetail": {
+          "data": {
+            "type": "buildBetaDetails",
+            "id": "fb183b0e-cb47-49bc-8481-b7bd6429a74d"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/buildBetaDetail",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/buildBetaDetail"
+          }
+        },
+        "appStoreVersion": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/appStoreVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/appStoreVersion"
+          }
+        },
+        "icons": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/icons",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/icons"
+          }
+        },
+        "perfPowerMetrics": {
+          "links": {
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/perfPowerMetrics"
+          }
+        },
+        "diagnosticSignatures": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/diagnosticSignatures",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/fb183b0e-cb47-49bc-8481-b7bd6429a74d/diagnosticSignatures"
+          }
+        }
+      }
+    },
+    {
+      "id": "51f65cc6-6830-4849-9ee0-04d25d5b5d21",
+      "version": "170",
+      "uploadedDate": "2026-09-30T06:52:54-07:00",
+      "expirationDate": "2026-12-29T05:52:54-08:00",
+      "expired": false,
+      "minOsVersion": "26.2",
+      "lsMinimumSystemVersion": null,
+      "computedMinMacOsVersion": "26.2",
+      "computedMinVisionOsVersion": "26.2",
+      "iconAssetToken": {
+        "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/59/a3/2a/59a32a6f-673f-5e2c-1b8c-0ab3ff64bcca/AppIcon76x76@2x_U007eipad.png/{w}x{h}bb.{f}",
+        "width": 152,
+        "height": 152
+      },
+      "processingState": "VALID",
+      "buildAudienceType": "APP_STORE_ELIGIBLE",
+      "usesNonExemptEncryption": false,
+      "relationships": {
+        "preReleaseVersion": {
+          "data": {
+            "type": "preReleaseVersions",
+            "id": "87733e4b-a717-4691-859f-f40af0c35c34"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/relationships/preReleaseVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/preReleaseVersion"
+          }
+        },
+        "individualTesters": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/relationships/individualTesters",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/individualTesters"
+          }
+        },
+        "betaGroups": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/relationships/betaGroups"
+          }
+        },
+        "betaBuildLocalizations": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/relationships/betaBuildLocalizations",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/betaBuildLocalizations"
+          }
+        },
+        "appEncryptionDeclaration": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/relationships/appEncryptionDeclaration",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/appEncryptionDeclaration"
+          }
+        },
+        "betaAppReviewSubmission": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/relationships/betaAppReviewSubmission",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/betaAppReviewSubmission"
+          }
+        },
+        "app": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/relationships/app",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/app"
+          }
+        },
+        "buildBetaDetail": {
+          "data": {
+            "type": "buildBetaDetails",
+            "id": "51f65cc6-6830-4849-9ee0-04d25d5b5d21"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/relationships/buildBetaDetail",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/buildBetaDetail"
+          }
+        },
+        "appStoreVersion": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/relationships/appStoreVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/appStoreVersion"
+          }
+        },
+        "icons": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/relationships/icons",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/icons"
+          }
+        },
+        "perfPowerMetrics": {
+          "links": {
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/perfPowerMetrics"
+          }
+        },
+        "diagnosticSignatures": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/relationships/diagnosticSignatures",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/51f65cc6-6830-4849-9ee0-04d25d5b5d21/diagnosticSignatures"
+          }
+        }
+      }
+    },
+    {
+      "id": "1ce35892-72a5-4e5b-85a3-8edc39955541",
+      "version": "169",
+      "uploadedDate": "2026-09-13T07:50:00-07:00",
+      "expirationDate": "2026-12-12T06:50:00-08:00",
+      "expired": false,
+      "minOsVersion": "26.2",
+      "lsMinimumSystemVersion": null,
+      "computedMinMacOsVersion": "26.2",
+      "computedMinVisionOsVersion": "26.2",
+      "iconAssetToken": {
+        "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/30/db/56/30db56bd-b847-e741-f9e3-fd1f4ca51047/AppIcon76x76@2x_U007eipad.png/{w}x{h}bb.{f}",
+        "width": 152,
+        "height": 152
+      },
+      "processingState": "VALID",
+      "buildAudienceType": "APP_STORE_ELIGIBLE",
+      "usesNonExemptEncryption": false,
+      "relationships": {
+        "preReleaseVersion": {
+          "data": {
+            "type": "preReleaseVersions",
+            "id": "ea3c1773-d083-42d1-bbb5-45759ee246db"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/relationships/preReleaseVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/preReleaseVersion"
+          }
+        },
+        "individualTesters": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/relationships/individualTesters",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/individualTesters"
+          }
+        },
+        "betaGroups": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/relationships/betaGroups"
+          }
+        },
+        "betaBuildLocalizations": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/relationships/betaBuildLocalizations",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/betaBuildLocalizations"
+          }
+        },
+        "appEncryptionDeclaration": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/relationships/appEncryptionDeclaration",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/appEncryptionDeclaration"
+          }
+        },
+        "betaAppReviewSubmission": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/relationships/betaAppReviewSubmission",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/betaAppReviewSubmission"
+          }
+        },
+        "app": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/relationships/app",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/app"
+          }
+        },
+        "buildBetaDetail": {
+          "data": {
+            "type": "buildBetaDetails",
+            "id": "1ce35892-72a5-4e5b-85a3-8edc39955541"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/relationships/buildBetaDetail",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/buildBetaDetail"
+          }
+        },
+        "appStoreVersion": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/relationships/appStoreVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/appStoreVersion"
+          }
+        },
+        "icons": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/relationships/icons",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/icons"
+          }
+        },
+        "perfPowerMetrics": {
+          "links": {
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/perfPowerMetrics"
+          }
+        },
+        "diagnosticSignatures": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/relationships/diagnosticSignatures",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/1ce35892-72a5-4e5b-85a3-8edc39955541/diagnosticSignatures"
+          }
+        }
+      }
+    },
+    {
+      "id": "cd30a00b-ac9f-4829-bc27-018db18159bc",
+      "version": "168",
+      "uploadedDate": "2026-09-08T14:11:57-07:00",
+      "expirationDate": "2026-12-07T13:11:57-08:00",
+      "expired": false,
+      "minOsVersion": "26.2",
+      "lsMinimumSystemVersion": null,
+      "computedMinMacOsVersion": "26.2",
+      "computedMinVisionOsVersion": "26.2",
+      "iconAssetToken": {
+        "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ff/1e/24/ff1e24f7-ceee-a6c2-f1de-9c4e4c50523f/AppIcon76x76@2x_U007eipad.png/{w}x{h}bb.{f}",
+        "width": 152,
+        "height": 152
+      },
+      "processingState": "VALID",
+      "buildAudienceType": "APP_STORE_ELIGIBLE",
+      "usesNonExemptEncryption": false,
+      "relationships": {
+        "preReleaseVersion": {
+          "data": {
+            "type": "preReleaseVersions",
+            "id": "fc1a51f1-8a73-4739-92b6-6f6ba6865836"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/relationships/preReleaseVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/preReleaseVersion"
+          }
+        },
+        "individualTesters": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/relationships/individualTesters",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/individualTesters"
+          }
+        },
+        "betaGroups": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/relationships/betaGroups"
+          }
+        },
+        "betaBuildLocalizations": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/relationships/betaBuildLocalizations",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/betaBuildLocalizations"
+          }
+        },
+        "appEncryptionDeclaration": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/relationships/appEncryptionDeclaration",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/appEncryptionDeclaration"
+          }
+        },
+        "betaAppReviewSubmission": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/relationships/betaAppReviewSubmission",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/betaAppReviewSubmission"
+          }
+        },
+        "app": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/relationships/app",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/app"
+          }
+        },
+        "buildBetaDetail": {
+          "data": {
+            "type": "buildBetaDetails",
+            "id": "cd30a00b-ac9f-4829-bc27-018db18159bc"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/relationships/buildBetaDetail",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/buildBetaDetail"
+          }
+        },
+        "appStoreVersion": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/relationships/appStoreVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/appStoreVersion"
+          }
+        },
+        "icons": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/relationships/icons",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/icons"
+          }
+        },
+        "perfPowerMetrics": {
+          "links": {
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/perfPowerMetrics"
+          }
+        },
+        "diagnosticSignatures": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/relationships/diagnosticSignatures",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/cd30a00b-ac9f-4829-bc27-018db18159bc/diagnosticSignatures"
+          }
+        }
+      }
+    },
+    {
+      "id": "c4c5c332-9004-4b3d-b5ad-6e7638738554",
+      "version": "167",
+      "uploadedDate": "2026-09-08T14:08:44-07:00",
+      "expirationDate": "2026-12-07T13:08:44-08:00",
+      "expired": false,
+      "minOsVersion": "26.2",
+      "lsMinimumSystemVersion": null,
+      "computedMinMacOsVersion": "26.2",
+      "computedMinVisionOsVersion": "26.2",
+      "iconAssetToken": {
+        "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/9e/82/71/9e82711d-b582-1959-f128-2015cb8a099b/AppIcon76x76@2x_U007eipad.png/{w}x{h}bb.{f}",
+        "width": 152,
+        "height": 152
+      },
+      "processingState": "VALID",
+      "buildAudienceType": "APP_STORE_ELIGIBLE",
+      "usesNonExemptEncryption": false,
+      "relationships": {
+        "preReleaseVersion": {
+          "data": {
+            "type": "preReleaseVersions",
+            "id": "fc1a51f1-8a73-4739-92b6-6f6ba6865836"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/relationships/preReleaseVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/preReleaseVersion"
+          }
+        },
+        "individualTesters": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/relationships/individualTesters",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/individualTesters"
+          }
+        },
+        "betaGroups": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/relationships/betaGroups"
+          }
+        },
+        "betaBuildLocalizations": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/relationships/betaBuildLocalizations",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/betaBuildLocalizations"
+          }
+        },
+        "appEncryptionDeclaration": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/relationships/appEncryptionDeclaration",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/appEncryptionDeclaration"
+          }
+        },
+        "betaAppReviewSubmission": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/relationships/betaAppReviewSubmission",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/betaAppReviewSubmission"
+          }
+        },
+        "app": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/relationships/app",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/app"
+          }
+        },
+        "buildBetaDetail": {
+          "data": {
+            "type": "buildBetaDetails",
+            "id": "c4c5c332-9004-4b3d-b5ad-6e7638738554"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/relationships/buildBetaDetail",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/buildBetaDetail"
+          }
+        },
+        "appStoreVersion": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/relationships/appStoreVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/appStoreVersion"
+          }
+        },
+        "icons": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/relationships/icons",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/icons"
+          }
+        },
+        "perfPowerMetrics": {
+          "links": {
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/perfPowerMetrics"
+          }
+        },
+        "diagnosticSignatures": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/relationships/diagnosticSignatures",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/c4c5c332-9004-4b3d-b5ad-6e7638738554/diagnosticSignatures"
+          }
+        }
+      }
+    },
+    {
+      "id": "76431db7-e9a9-4b0e-a61f-9a2912c94e39",
+      "version": "166",
+      "uploadedDate": "2026-09-04T10:56:52-07:00",
+      "expirationDate": "2026-12-03T09:56:52-08:00",
+      "expired": false,
+      "minOsVersion": "26.2",
+      "lsMinimumSystemVersion": null,
+      "computedMinMacOsVersion": "26.2",
+      "computedMinVisionOsVersion": "26.2",
+      "iconAssetToken": {
+        "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/79/99/77/7999778e-94cd-67ea-3b2b-08f439498803/AppIcon76x76@2x_U007eipad.png/{w}x{h}bb.{f}",
+        "width": 152,
+        "height": 152
+      },
+      "processingState": "VALID",
+      "buildAudienceType": "APP_STORE_ELIGIBLE",
+      "usesNonExemptEncryption": false,
+      "relationships": {
+        "preReleaseVersion": {
+          "data": {
+            "type": "preReleaseVersions",
+            "id": "e6048bc6-37fc-4760-be77-6c5d72240346"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/relationships/preReleaseVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/preReleaseVersion"
+          }
+        },
+        "individualTesters": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/relationships/individualTesters",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/individualTesters"
+          }
+        },
+        "betaGroups": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/relationships/betaGroups"
+          }
+        },
+        "betaBuildLocalizations": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/relationships/betaBuildLocalizations",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/betaBuildLocalizations"
+          }
+        },
+        "appEncryptionDeclaration": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/relationships/appEncryptionDeclaration",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/appEncryptionDeclaration"
+          }
+        },
+        "betaAppReviewSubmission": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/relationships/betaAppReviewSubmission",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/betaAppReviewSubmission"
+          }
+        },
+        "app": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/relationships/app",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/app"
+          }
+        },
+        "buildBetaDetail": {
+          "data": {
+            "type": "buildBetaDetails",
+            "id": "76431db7-e9a9-4b0e-a61f-9a2912c94e39"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/relationships/buildBetaDetail",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/buildBetaDetail"
+          }
+        },
+        "appStoreVersion": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/relationships/appStoreVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/appStoreVersion"
+          }
+        },
+        "icons": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/relationships/icons",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/icons"
+          }
+        },
+        "perfPowerMetrics": {
+          "links": {
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/perfPowerMetrics"
+          }
+        },
+        "diagnosticSignatures": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/relationships/diagnosticSignatures",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/76431db7-e9a9-4b0e-a61f-9a2912c94e39/diagnosticSignatures"
+          }
+        }
+      }
+    },
+    {
+      "id": "0fa7fc59-d167-4069-bdf2-bda98c259cd6",
+      "version": "165",
+      "uploadedDate": "2026-09-03T09:28:34-07:00",
+      "expirationDate": "2026-12-02T08:28:34-08:00",
+      "expired": false,
+      "minOsVersion": "26.2",
+      "lsMinimumSystemVersion": null,
+      "computedMinMacOsVersion": "26.2",
+      "computedMinVisionOsVersion": "26.2",
+      "iconAssetToken": {
+        "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6b/1d/35/6b1d3589-afa8-8256-82d8-77b39fe55be8/AppIcon76x76@2x_U007eipad.png/{w}x{h}bb.{f}",
+        "width": 152,
+        "height": 152
+      },
+      "processingState": "VALID",
+      "buildAudienceType": "APP_STORE_ELIGIBLE",
+      "usesNonExemptEncryption": false,
+      "relationships": {
+        "preReleaseVersion": {
+          "data": {
+            "type": "preReleaseVersions",
+            "id": "e6048bc6-37fc-4760-be77-6c5d72240346"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/relationships/preReleaseVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/preReleaseVersion"
+          }
+        },
+        "individualTesters": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/relationships/individualTesters",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/individualTesters"
+          }
+        },
+        "betaGroups": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/relationships/betaGroups"
+          }
+        },
+        "betaBuildLocalizations": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/relationships/betaBuildLocalizations",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/betaBuildLocalizations"
+          }
+        },
+        "appEncryptionDeclaration": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/relationships/appEncryptionDeclaration",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/appEncryptionDeclaration"
+          }
+        },
+        "betaAppReviewSubmission": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/relationships/betaAppReviewSubmission",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/betaAppReviewSubmission"
+          }
+        },
+        "app": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/relationships/app",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/app"
+          }
+        },
+        "buildBetaDetail": {
+          "data": {
+            "type": "buildBetaDetails",
+            "id": "0fa7fc59-d167-4069-bdf2-bda98c259cd6"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/relationships/buildBetaDetail",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/buildBetaDetail"
+          }
+        },
+        "appStoreVersion": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/relationships/appStoreVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/appStoreVersion"
+          }
+        },
+        "icons": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/relationships/icons",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/icons"
+          }
+        },
+        "perfPowerMetrics": {
+          "links": {
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/perfPowerMetrics"
+          }
+        },
+        "diagnosticSignatures": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/relationships/diagnosticSignatures",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0fa7fc59-d167-4069-bdf2-bda98c259cd6/diagnosticSignatures"
+          }
+        }
+      }
+    },
+    {
+      "id": "96a90844-dcda-424d-b643-e0270d12cbbd",
+      "version": "164",
+      "uploadedDate": "2026-09-03T06:23:35-07:00",
+      "expirationDate": "2026-12-02T05:23:35-08:00",
+      "expired": false,
+      "minOsVersion": "26.2",
+      "lsMinimumSystemVersion": null,
+      "computedMinMacOsVersion": "26.2",
+      "computedMinVisionOsVersion": "26.2",
+      "iconAssetToken": {
+        "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ea/da/6d/eada6d72-d4c2-6d63-492e-84f23f621e54/AppIcon76x76@2x_U007eipad.png/{w}x{h}bb.{f}",
+        "width": 152,
+        "height": 152
+      },
+      "processingState": "VALID",
+      "buildAudienceType": "APP_STORE_ELIGIBLE",
+      "usesNonExemptEncryption": false,
+      "relationships": {
+        "preReleaseVersion": {
+          "data": {
+            "type": "preReleaseVersions",
+            "id": "e6048bc6-37fc-4760-be77-6c5d72240346"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/relationships/preReleaseVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/preReleaseVersion"
+          }
+        },
+        "individualTesters": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/relationships/individualTesters",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/individualTesters"
+          }
+        },
+        "betaGroups": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/relationships/betaGroups"
+          }
+        },
+        "betaBuildLocalizations": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/relationships/betaBuildLocalizations",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/betaBuildLocalizations"
+          }
+        },
+        "appEncryptionDeclaration": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/relationships/appEncryptionDeclaration",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/appEncryptionDeclaration"
+          }
+        },
+        "betaAppReviewSubmission": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/relationships/betaAppReviewSubmission",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/betaAppReviewSubmission"
+          }
+        },
+        "app": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/relationships/app",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/app"
+          }
+        },
+        "buildBetaDetail": {
+          "data": {
+            "type": "buildBetaDetails",
+            "id": "96a90844-dcda-424d-b643-e0270d12cbbd"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/relationships/buildBetaDetail",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/buildBetaDetail"
+          }
+        },
+        "appStoreVersion": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/relationships/appStoreVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/appStoreVersion"
+          }
+        },
+        "icons": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/relationships/icons",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/icons"
+          }
+        },
+        "perfPowerMetrics": {
+          "links": {
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/perfPowerMetrics"
+          }
+        },
+        "diagnosticSignatures": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/relationships/diagnosticSignatures",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/96a90844-dcda-424d-b643-e0270d12cbbd/diagnosticSignatures"
+          }
+        }
+      }
+    },
+    {
+      "id": "0927ca59-688b-4473-a407-76d377068358",
+      "version": "163",
+      "uploadedDate": "2026-09-02T23:11:16-07:00",
+      "expirationDate": "2026-12-01T22:11:16-08:00",
+      "expired": false,
+      "minOsVersion": "26.2",
+      "lsMinimumSystemVersion": null,
+      "computedMinMacOsVersion": "26.2",
+      "computedMinVisionOsVersion": "26.2",
+      "iconAssetToken": {
+        "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/b5/aa/a7/b5aaa78a-59d9-c2e7-ef4c-5af1b3923ff8/AppIcon76x76@2x_U007eipad.png/{w}x{h}bb.{f}",
+        "width": 152,
+        "height": 152
+      },
+      "processingState": "VALID",
+      "buildAudienceType": "APP_STORE_ELIGIBLE",
+      "usesNonExemptEncryption": false,
+      "relationships": {
+        "preReleaseVersion": {
+          "data": {
+            "type": "preReleaseVersions",
+            "id": "e6048bc6-37fc-4760-be77-6c5d72240346"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/relationships/preReleaseVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/preReleaseVersion"
+          }
+        },
+        "individualTesters": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/relationships/individualTesters",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/individualTesters"
+          }
+        },
+        "betaGroups": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/relationships/betaGroups"
+          }
+        },
+        "betaBuildLocalizations": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/relationships/betaBuildLocalizations",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/betaBuildLocalizations"
+          }
+        },
+        "appEncryptionDeclaration": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/relationships/appEncryptionDeclaration",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/appEncryptionDeclaration"
+          }
+        },
+        "betaAppReviewSubmission": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/relationships/betaAppReviewSubmission",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/betaAppReviewSubmission"
+          }
+        },
+        "app": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/relationships/app",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/app"
+          }
+        },
+        "buildBetaDetail": {
+          "data": {
+            "type": "buildBetaDetails",
+            "id": "0927ca59-688b-4473-a407-76d377068358"
+          },
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/relationships/buildBetaDetail",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/buildBetaDetail"
+          }
+        },
+        "appStoreVersion": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/relationships/appStoreVersion",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/appStoreVersion"
+          }
+        },
+        "icons": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/relationships/icons",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/icons"
+          }
+        },
+        "perfPowerMetrics": {
+          "links": {
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/perfPowerMetrics"
+          }
+        },
+        "diagnosticSignatures": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/relationships/diagnosticSignatures",
+            "related": "https://api.appstoreconnect.apple.com/v1/builds/0927ca59-688b-4473-a407-76d377068358/diagnosticSignatures"
+          }
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "type": "preReleaseVersions",
+      "id": "1b2f3eea-42e0-41de-b300-aafade323eff",
+      "attributes": {
+        "version": "3.11.0",
+        "platform": "IOS"
+      },
+      "relationships": {
+        "builds": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/1b2f3eea-42e0-41de-b300-aafade323eff/relationships/builds",
+            "related": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/1b2f3eea-42e0-41de-b300-aafade323eff/builds"
+          }
+        },
+        "app": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/1b2f3eea-42e0-41de-b300-aafade323eff/relationships/app",
+            "related": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/1b2f3eea-42e0-41de-b300-aafade323eff/app"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/1b2f3eea-42e0-41de-b300-aafade323eff"
+      }
+    },
+    {
+      "type": "buildBetaDetails",
+      "id": "26f26007-ba7a-49db-b7cd-51c8d83822f9",
+      "attributes": {
+        "autoNotifyEnabled": true,
+        "internalBuildState": "IN_BETA_TESTING",
+        "externalBuildState": "READY_FOR_BETA_SUBMISSION"
+      },
+      "relationships": {
+        "build": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/26f26007-ba7a-49db-b7cd-51c8d83822f9/relationships/build",
+            "related": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/26f26007-ba7a-49db-b7cd-51c8d83822f9/build"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/26f26007-ba7a-49db-b7cd-51c8d83822f9"
+      }
+    },
+    {
+      "type": "preReleaseVersions",
+      "id": "87733e4b-a717-4691-859f-f40af0c35c34",
+      "attributes": {
+        "version": "3.10.0",
+        "platform": "IOS"
+      },
+      "relationships": {
+        "builds": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/87733e4b-a717-4691-859f-f40af0c35c34/relationships/builds",
+            "related": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/87733e4b-a717-4691-859f-f40af0c35c34/builds"
+          }
+        },
+        "app": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/87733e4b-a717-4691-859f-f40af0c35c34/relationships/app",
+            "related": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/87733e4b-a717-4691-859f-f40af0c35c34/app"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/87733e4b-a717-4691-859f-f40af0c35c34"
+      }
+    },
+    {
+      "type": "buildBetaDetails",
+      "id": "fb183b0e-cb47-49bc-8481-b7bd6429a74d",
+      "attributes": {
+        "autoNotifyEnabled": true,
+        "internalBuildState": "IN_BETA_TESTING",
+        "externalBuildState": "READY_FOR_BETA_SUBMISSION"
+      },
+      "relationships": {
+        "build": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/fb183b0e-cb47-49bc-8481-b7bd6429a74d/relationships/build",
+            "related": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/fb183b0e-cb47-49bc-8481-b7bd6429a74d/build"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/fb183b0e-cb47-49bc-8481-b7bd6429a74d"
+      }
+    },
+    {
+      "type": "buildBetaDetails",
+      "id": "51f65cc6-6830-4849-9ee0-04d25d5b5d21",
+      "attributes": {
+        "autoNotifyEnabled": true,
+        "internalBuildState": "IN_BETA_TESTING",
+        "externalBuildState": "READY_FOR_BETA_SUBMISSION"
+      },
+      "relationships": {
+        "build": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/51f65cc6-6830-4849-9ee0-04d25d5b5d21/relationships/build",
+            "related": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/51f65cc6-6830-4849-9ee0-04d25d5b5d21/build"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/51f65cc6-6830-4849-9ee0-04d25d5b5d21"
+      }
+    },
+    {
+      "type": "preReleaseVersions",
+      "id": "ea3c1773-d083-42d1-bbb5-45759ee246db",
+      "attributes": {
+        "version": "3.9.0",
+        "platform": "IOS"
+      },
+      "relationships": {
+        "builds": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/ea3c1773-d083-42d1-bbb5-45759ee246db/relationships/builds",
+            "related": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/ea3c1773-d083-42d1-bbb5-45759ee246db/builds"
+          }
+        },
+        "app": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/ea3c1773-d083-42d1-bbb5-45759ee246db/relationships/app",
+            "related": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/ea3c1773-d083-42d1-bbb5-45759ee246db/app"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/ea3c1773-d083-42d1-bbb5-45759ee246db"
+      }
+    },
+    {
+      "type": "buildBetaDetails",
+      "id": "1ce35892-72a5-4e5b-85a3-8edc39955541",
+      "attributes": {
+        "autoNotifyEnabled": true,
+        "internalBuildState": "IN_BETA_TESTING",
+        "externalBuildState": "READY_FOR_BETA_SUBMISSION"
+      },
+      "relationships": {
+        "build": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/1ce35892-72a5-4e5b-85a3-8edc39955541/relationships/build",
+            "related": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/1ce35892-72a5-4e5b-85a3-8edc39955541/build"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/1ce35892-72a5-4e5b-85a3-8edc39955541"
+      }
+    },
+    {
+      "type": "preReleaseVersions",
+      "id": "fc1a51f1-8a73-4739-92b6-6f6ba6865836",
+      "attributes": {
+        "version": "3.8.3",
+        "platform": "IOS"
+      },
+      "relationships": {
+        "builds": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/fc1a51f1-8a73-4739-92b6-6f6ba6865836/relationships/builds",
+            "related": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/fc1a51f1-8a73-4739-92b6-6f6ba6865836/builds"
+          }
+        },
+        "app": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/fc1a51f1-8a73-4739-92b6-6f6ba6865836/relationships/app",
+            "related": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/fc1a51f1-8a73-4739-92b6-6f6ba6865836/app"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/fc1a51f1-8a73-4739-92b6-6f6ba6865836"
+      }
+    },
+    {
+      "type": "buildBetaDetails",
+      "id": "cd30a00b-ac9f-4829-bc27-018db18159bc",
+      "attributes": {
+        "autoNotifyEnabled": true,
+        "internalBuildState": "IN_BETA_TESTING",
+        "externalBuildState": "READY_FOR_BETA_SUBMISSION"
+      },
+      "relationships": {
+        "build": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/cd30a00b-ac9f-4829-bc27-018db18159bc/relationships/build",
+            "related": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/cd30a00b-ac9f-4829-bc27-018db18159bc/build"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/cd30a00b-ac9f-4829-bc27-018db18159bc"
+      }
+    },
+    {
+      "type": "buildBetaDetails",
+      "id": "c4c5c332-9004-4b3d-b5ad-6e7638738554",
+      "attributes": {
+        "autoNotifyEnabled": true,
+        "internalBuildState": "IN_BETA_TESTING",
+        "externalBuildState": "READY_FOR_BETA_SUBMISSION"
+      },
+      "relationships": {
+        "build": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/c4c5c332-9004-4b3d-b5ad-6e7638738554/relationships/build",
+            "related": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/c4c5c332-9004-4b3d-b5ad-6e7638738554/build"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/c4c5c332-9004-4b3d-b5ad-6e7638738554"
+      }
+    },
+    {
+      "type": "preReleaseVersions",
+      "id": "e6048bc6-37fc-4760-be77-6c5d72240346",
+      "attributes": {
+        "version": "3.8.2",
+        "platform": "IOS"
+      },
+      "relationships": {
+        "builds": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/e6048bc6-37fc-4760-be77-6c5d72240346/relationships/builds",
+            "related": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/e6048bc6-37fc-4760-be77-6c5d72240346/builds"
+          }
+        },
+        "app": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/e6048bc6-37fc-4760-be77-6c5d72240346/relationships/app",
+            "related": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/e6048bc6-37fc-4760-be77-6c5d72240346/app"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/preReleaseVersions/e6048bc6-37fc-4760-be77-6c5d72240346"
+      }
+    },
+    {
+      "type": "buildBetaDetails",
+      "id": "76431db7-e9a9-4b0e-a61f-9a2912c94e39",
+      "attributes": {
+        "autoNotifyEnabled": true,
+        "internalBuildState": "IN_BETA_TESTING",
+        "externalBuildState": "READY_FOR_BETA_SUBMISSION"
+      },
+      "relationships": {
+        "build": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/76431db7-e9a9-4b0e-a61f-9a2912c94e39/relationships/build",
+            "related": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/76431db7-e9a9-4b0e-a61f-9a2912c94e39/build"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/76431db7-e9a9-4b0e-a61f-9a2912c94e39"
+      }
+    },
+    {
+      "type": "buildBetaDetails",
+      "id": "0fa7fc59-d167-4069-bdf2-bda98c259cd6",
+      "attributes": {
+        "autoNotifyEnabled": true,
+        "internalBuildState": "IN_BETA_TESTING",
+        "externalBuildState": "READY_FOR_BETA_SUBMISSION"
+      },
+      "relationships": {
+        "build": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/0fa7fc59-d167-4069-bdf2-bda98c259cd6/relationships/build",
+            "related": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/0fa7fc59-d167-4069-bdf2-bda98c259cd6/build"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/0fa7fc59-d167-4069-bdf2-bda98c259cd6"
+      }
+    },
+    {
+      "type": "buildBetaDetails",
+      "id": "96a90844-dcda-424d-b643-e0270d12cbbd",
+      "attributes": {
+        "autoNotifyEnabled": true,
+        "internalBuildState": "IN_BETA_TESTING",
+        "externalBuildState": "READY_FOR_BETA_SUBMISSION"
+      },
+      "relationships": {
+        "build": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/96a90844-dcda-424d-b643-e0270d12cbbd/relationships/build",
+            "related": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/96a90844-dcda-424d-b643-e0270d12cbbd/build"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/96a90844-dcda-424d-b643-e0270d12cbbd"
+      }
+    },
+    {
+      "type": "buildBetaDetails",
+      "id": "0927ca59-688b-4473-a407-76d377068358",
+      "attributes": {
+        "autoNotifyEnabled": true,
+        "internalBuildState": "IN_BETA_TESTING",
+        "externalBuildState": "READY_FOR_BETA_SUBMISSION"
+      },
+      "relationships": {
+        "build": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/0927ca59-688b-4473-a407-76d377068358/relationships/build",
+            "related": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/0927ca59-688b-4473-a407-76d377068358/build"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/buildBetaDetails/0927ca59-688b-4473-a407-76d377068358"
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "id": "4bcb6217-7749-4caf-9209-e6f4479cbc4d",
+      "platform": "IOS",
+      "submittedDate": "2026-10-16T17:37:02.685Z",
+      "state": "COMPLETE"
+    },
+    {
+      "id": "9c65b55a-0c8d-4222-b9ab-b4e1f91ed38c",
+      "platform": "IOS",
+      "submittedDate": "2026-10-08T14:21:31.601Z",
+      "state": "COMPLETE"
+    },
+    {
+      "id": "be240327-3bd6-46f9-8f5f-f479adefa264",
+      "platform": "IOS",
+      "submittedDate": "2026-10-07T14:17:03.844Z",
+      "state": "COMPLETE"
+    },
+    {
+      "id": "e8b22567-a39f-4f93-bb42-821771f413b8",
+      "platform": "IOS",
+      "submittedDate": "2026-09-30T13:54:51.805Z",
+      "state": "COMPLETE"
+    },
+    {
+      "id": "2aab459f-51eb-4855-9699-ff0cad5ebc1a",
+      "platform": "IOS",
+      "submittedDate": "2026-09-13T14:51:56.541Z",
+      "state": "COMPLETE"
+    },
+    {
+      "id": "6f8bfbd1-085b-426e-80ff-df770f243f1d",
+      "platform": "IOS",
+      "submittedDate": "2026-09-08T21:28:08.803Z",
+      "state": "COMPLETE"
+    },
+    {
+      "id": "dff47f27-66e3-4c2a-8efe-e20722eeb7c7",
+      "platform": "IOS",
+      "submittedDate": "2026-09-04T18:26:08.805Z",
+      "state": "COMPLETE"
+    },
+    {
+      "id": "94d684f3-7aa4-4182-bf9b-a443b91e77fd",
+      "platform": "IOS",
+      "submittedDate": "2026-09-01T23:08:30.653Z",
+      "state": "COMPLETE"
+    },
+    {
+      "id": "074702c2-ef1d-40e0-a09a-fe00fd16936e",
+      "platform": "IOS",
+      "submittedDate": "2026-08-31T14:42:27.914Z",
+      "state": "COMPLETE"
+    },
+    {
+      "id": "ca0e299d-d5c9-405c-9083-3eb3418b6ab1",
+      "platform": "IOS",
+      "submittedDate": "2026-08-26T16:12:10.958Z",
+      "state": "COMPLETE"
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": "6758279451",
+      "productId": "pro_annual",
+      "state": "APPROVED"
+    },
+    {
+      "id": "6758279481",
+      "productId": "pro_monthly",
+      "state": "APPROVED"
+    }
+  ],
+  "downloadPrices": [
+    {
+      "territory": "USA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "AFG",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "AGO",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "AIA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "ALB",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "ARE",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "ARG",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "ARM",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "ATG",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "AUS",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "AUT",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "AZE",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "BEL",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "BEN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "BFA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "BGR",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "BHR",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "BHS",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "BIH",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "BLR",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "BLZ",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "BMU",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "BOL",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "BRA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "BRB",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "BRN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "BTN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "BWA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "CAN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "CHE",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "CHL",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "CHN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "CIV",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "CMR",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "COD",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "COG",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "COL",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "CPV",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "CRI",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "CYM",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "CYP",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "CZE",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "DEU",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "DMA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "DNK",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "DOM",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "DZA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "ECU",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "EGY",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "ESP",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "EST",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "FIN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "FJI",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "FRA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "FSM",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "GAB",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "GBR",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "GEO",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "GHA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "GMB",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "GNB",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "GRC",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "GRD",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "GTM",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "GUY",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "HKG",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "HND",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "HRV",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "HUN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "IDN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "IND",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "IRL",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "IRQ",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "ISL",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "ISR",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "ITA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "JAM",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "JOR",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "JPN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "KAZ",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "KEN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "KGZ",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "KHM",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "KNA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "KOR",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "KWT",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "LAO",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "LBN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "LBR",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "LBY",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "LCA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "LKA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "LTU",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "LUX",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "LVA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MAC",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MAR",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MDA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MDG",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MDV",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MEX",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MKD",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MLI",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MLT",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MMR",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MNE",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MNG",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MOZ",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MRT",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MSR",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MUS",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MWI",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "MYS",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "NAM",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "NER",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "NGA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "NIC",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "NLD",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "NOR",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "NPL",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "NRU",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "NZL",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "OMN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "PAK",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "PAN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "PER",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "PHL",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "PLW",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "PNG",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "POL",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "PRT",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "PRY",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "QAT",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "ROU",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "RUS",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "RWA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "SAU",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "SEN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "SGP",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "SLB",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "SLE",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "SLV",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "SRB",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "STP",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "SUR",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "SVK",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "SVN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "SWE",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "SWZ",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "SYC",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "TCA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "TCD",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "THA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "TJK",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "TKM",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "TON",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "TTO",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "TUN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "TUR",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "TWN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "TZA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "UGA",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "UKR",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "URY",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "UZB",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "VCT",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "VEN",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "VGB",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "VNM",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "VUT",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "XKS",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "YEM",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "ZAF",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "ZMB",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    },
+    {
+      "territory": "ZWE",
+      "price": 0,
+      "startDate": null,
+      "endDate": null
+    }
+  ],
+  "sources": [
+    "/v1/apps/6758273499",
+    "/v1/apps/6758273499/appStoreVersions?filter[platform]=IOS&limit=50",
+    "/v1/builds?filter[app]=6758273499&sort=-uploadedDate&limit=10&include=preReleaseVersion,buildBetaDetail",
+    "/v1/apps/6758273499/reviewSubmissions?limit=50",
+    "/v1/apps/6758273499/subscriptionGroups?limit=50",
+    "/v1/subscriptionGroups/21905778/subscriptions?limit=50",
+    "/v1/apps/6758273499/appPriceSchedule",
+    "/v1/appPriceSchedules/6758273499/manualPrices?include=appPricePoint,territory&limit=200",
+    "/v1/appPriceSchedules/6758273499/automaticPrices?include=appPricePoint,territory&limit=200",
+    "/v1/appStoreVersions/ea1a455a-be29-43e3-a2f5-1b56b4ebef00/build",
+    "/v1/appStoreVersions/739e0eb1-fbce-43c1-996c-4d86b8d7125b/build",
+    "/v1/appStoreVersions/e4df3de6-7524-48f0-b224-4cc7274ecfe4/build",
+    "/v1/appStoreVersions/9f3f240c-9eb6-4672-b891-fce171274e4a/build"
+  ]
+}
+Receipt: /Users/shawncarpenter/projects/voice notes/build/apple-release/apple-1792591044660.json
+Vercel CLI 50.1.3
+Retrieving project…
+> Downloading `production` Environment Variables for shawn14s-projects/v0-eeon-app-design
+Downloading
+Created /var/folders/dd/2mfn814j6wl2pywnhmn3rphm0000gn/T/eeon-release-env-5ayqlv5y/.env.production file  [152ms]
+[08:57:29]: fastlane detected a Gemfile in the current directory
+[08:57:29]: However, it seems like you didn't use `bundle exec`
+[08:57:29]: To launch fastlane faster, please use
+[08:57:29]: 
+[08:57:29]: $ bundle exec fastlane beta app:voice-notes version:3.11.1 build:173
+[08:57:29]: 
+[08:57:29]: Get started using a Gemfile for fastlane https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile
+[08:57:29]: fastlane 2.241.1 (Ruby 4.0.7, homebrew)
+[08:57:31]: ------------------------------
+[08:57:31]: --- Step: default_platform ---
+[08:57:31]: ------------------------------
+[08:57:31]: Driving the lane 'ios beta' 🚀
+[08:57:32]: -----------------------------------------------------
+[08:57:32]: --- Step: Switch to ios cloudkit_schema_gate lane ---
+[08:57:32]: -----------------------------------------------------
+[08:57:32]: Cruising over to lane 'ios cloudkit_schema_gate' 🚖
+[08:57:32]: CloudKit schema gate: iCloud.aivoiceeeon (production)
+[08:57:40]: CloudKit schema gate passed — production carries every stored model field.
+[08:57:40]: Cruising back to lane 'ios beta' 🚘
+[08:57:40]: ---------------------------------------
+[08:57:40]: --- Step: app_store_connect_api_key ---
+[08:57:40]: ---------------------------------------
+[08:57:40]: ------------------------------
+[08:57:40]: --- Step: get_certificates ---
+[08:57:40]: ------------------------------
+
++----------------------------------------------------------------+
+|                    Summary for cert 2.241.1                    |
++-------------------------+--------------------------------------+
+| api_key                 | API_KEY_REDACTED                     |
+| development             | false                                |
+| force                   | false                                |
+| generate_apple_certs    | true                                 |
+| username                | shawncarpenter@mac.com               |
+| team_id                 | BYRK5RUS4U                           |
+| keychain_path           | /Users/shawncarpenter/Library/Keych  |
+|                         | ains/login.keychain-db               |
+| skip_set_partition_list | false                                |
+| platform                | ios                                  |
++-------------------------+--------------------------------------+
+
+[08:57:40]: Creating authorization token for App Store Connect API
+[08:57:43]: Found the certificate 8LKSRNZ8A4 (Stock Alarm, LLC) which is installed on the local machine. Using this one.
+[08:57:43]: Verifying the certificate is properly installed locally...
+[08:57:43]: Successfully installed certificate 8LKSRNZ8A4
+[08:57:43]: Use signing certificate '8LKSRNZ8A4' from now on!
+[08:57:43]: --------------------------------------
+[08:57:43]: --- Step: get_provisioning_profile ---
+[08:57:43]: --------------------------------------
+
++---------------------------------------------------------------+
+|                   Summary for sigh 2.241.1                    |
++-------------------------------------+-------------------------+
+| api_key                             | API_KEY_REDACTED        |
+| app_identifier                      | voice.notes.voice-notes |
+| adhoc                               | false                   |
+| developer_id                        | false                   |
+| development                         | false                   |
+| skip_install                        | false                   |
+| force                               | false                   |
+| include_mac_in_profiles             | false                   |
+| offline_profile                     | false                   |
+| username                            | shawncarpenter@mac.com  |
+| team_id                             | BYRK5RUS4U              |
+| ignore_profiles_with_different_name | false                   |
+| cert_id                             | 8LKSRNZ8A4              |
+| skip_fetch_profiles                 | false                   |
+| include_all_certificates            | false                   |
+| skip_certificate_verification       | false                   |
+| platform                            | ios                     |
+| readonly                            | false                   |
+| fail_on_name_taken                  | false                   |
++-------------------------------------+-------------------------+
+
+[08:57:43]: Creating authorization token for App Store Connect API
+[08:57:43]: Fetching profiles...
+[08:57:45]: Verifying certificates...
+[08:57:45]: Found 1 matching profile(s)
+[08:57:45]: Downloading provisioning profile...
+[08:57:45]: Successfully downloaded provisioning profile...
+[08:57:45]: Installing provisioning profile...
+/Users/shawncarpenter/projects/fastlane-configs/AppStore_voice.notes.voice-notes.mobileprovision
+[08:57:45]: Setting Provisioning Profile type to 'app-store'
+[08:57:45]: --------------------------------------
+[08:57:45]: --- Step: get_provisioning_profile ---
+[08:57:45]: --------------------------------------
+
++----------------------------------------------------------------------+
+|                       Summary for sigh 2.241.1                       |
++-------------------------------------+--------------------------------+
+| api_key                             | API_KEY_REDACTED               |
+| app_identifier                      | voice.notes.voice-notes.widget |
+| adhoc                               | false                          |
+| developer_id                        | false                          |
+| development                         | false                          |
+| skip_install                        | false                          |
+| force                               | false                          |
+| include_mac_in_profiles             | false                          |
+| offline_profile                     | false                          |
+| username                            | shawncarpenter@mac.com         |
+| team_id                             | BYRK5RUS4U                     |
+| ignore_profiles_with_different_name | false                          |
+| cert_id                             | 8LKSRNZ8A4                     |
+| skip_fetch_profiles                 | false                          |
+| include_all_certificates            | false                          |
+| skip_certificate_verification       | false                          |
+| platform                            | ios                            |
+| readonly                            | false                          |
+| fail_on_name_taken                  | false                          |
++-------------------------------------+--------------------------------+
+
+[08:57:45]: Creating authorization token for App Store Connect API
+[08:57:45]: Fetching profiles...
+[08:57:46]: Verifying certificates...
+[08:57:46]: Found 1 matching profile(s)
+[08:57:46]: Downloading provisioning profile...
+[08:57:46]: Successfully downloaded provisioning profile...
+[08:57:46]: Installing provisioning profile...
+/Users/shawncarpenter/projects/fastlane-configs/AppStore_voice.notes.voice-notes.widget.mobileprovision
+[08:57:46]: Setting Provisioning Profile type to 'app-store'
+[08:57:46]: --------------------------------------
+[08:57:46]: --- Step: get_provisioning_profile ---
+[08:57:46]: --------------------------------------
+
++----------------------------------------------------------------------------+
+|                          Summary for sigh 2.241.1                          |
++-------------------------------------+--------------------------------------+
+| api_key                             | API_KEY_REDACTED                     |
+| app_identifier                      | voice.notes.voice-notes.EEONShareEx  |
+|                                     | tension                              |
+| adhoc                               | false                                |
+| developer_id                        | false                                |
+| development                         | false                                |
+| skip_install                        | false                                |
+| force                               | false                                |
+| include_mac_in_profiles             | false                                |
+| offline_profile                     | false                                |
+| username                            | shawncarpenter@mac.com               |
+| team_id                             | BYRK5RUS4U                           |
+| ignore_profiles_with_different_name | false                                |
+| cert_id                             | 8LKSRNZ8A4                           |
+| skip_fetch_profiles                 | false                                |
+| include_all_certificates            | false                                |
+| skip_certificate_verification       | false                                |
+| platform                            | ios                                  |
+| readonly                            | false                                |
+| fail_on_name_taken                  | false                                |
++-------------------------------------+--------------------------------------+
+
+[08:57:46]: Creating authorization token for App Store Connect API
+[08:57:46]: Fetching profiles...
+[08:57:47]: Verifying certificates...
+[08:57:48]: Found 1 matching profile(s)
+[08:57:48]: Downloading provisioning profile...
+[08:57:48]: Successfully downloaded provisioning profile...
+[08:57:48]: Installing provisioning profile...
+/Users/shawncarpenter/projects/fastlane-configs/AppStore_voice.notes.voice-notes.EEONShareExtension.mobileprovision
+[08:57:48]: Setting Provisioning Profile type to 'app-store'
+[08:57:48]: --------------------------------------
+[08:57:48]: --- Step: get_provisioning_profile ---
+[08:57:48]: --------------------------------------
+
++---------------------------------------------------------------------------+
+|                         Summary for sigh 2.241.1                          |
++-------------------------------------+-------------------------------------+
+| api_key                             | API_KEY_REDACTED                    |
+| app_identifier                      | voice.notes.voice-notes.watchkitapp |
+| adhoc                               | false                               |
+| developer_id                        | false                               |
+| development                         | false                               |
+| skip_install                        | false                               |
+| force                               | false                               |
+| include_mac_in_profiles             | false                               |
+| offline_profile                     | false                               |
+| username                            | shawncarpenter@mac.com              |
+| team_id                             | BYRK5RUS4U                          |
+| ignore_profiles_with_different_name | false                               |
+| cert_id                             | 8LKSRNZ8A4                          |
+| skip_fetch_profiles                 | false                               |
+| include_all_certificates            | false                               |
+| skip_certificate_verification       | false                               |
+| platform                            | ios                                 |
+| readonly                            | false                               |
+| fail_on_name_taken                  | false                               |
++-------------------------------------+-------------------------------------+
+
+[08:57:48]: Creating authorization token for App Store Connect API
+[08:57:48]: Fetching profiles...
+[08:57:49]: Verifying certificates...
+[08:57:49]: Found 1 matching profile(s)
+[08:57:49]: Downloading provisioning profile...
+[08:57:49]: Successfully downloaded provisioning profile...
+[08:57:49]: Installing provisioning profile...
+/Users/shawncarpenter/projects/fastlane-configs/AppStore_voice.notes.voice-notes.watchkitapp.mobileprovision
+[08:57:49]: Setting Provisioning Profile type to 'app-store'
+[08:57:49]: -----------------------
+[08:57:49]: --- Step: build_app ---
+[08:57:49]: -----------------------
+[08:57:49]: Resolving Swift Package Manager dependencies...
+[08:57:49]: $ xcodebuild -resolvePackageDependencies -scheme voice\ notes -project /Users/shawncarpenter/projects/voice\ notes/voice\ notes.xcodeproj
+[08:57:53]: ▸ Command line invocation:
+[08:57:53]: ▸     /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -resolvePackageDependencies -scheme "voice notes" -project "/Users/shawncarpenter/projects/voice notes/voice notes.xcodeproj"
+[08:57:55]: ▸ 2026-10-21 08:57:55.003 xcodebuild[17217:13252789] not able to deal with ivar '_storeKitConfigurationFileReference' of type '@"_TtC13IDEFoundation24IDESchemeOptionReference"' at offset 520
+[08:57:56]: ▸ resolved source packages: 
+[08:57:56]: $ xcodebuild -showBuildSettings -scheme voice\ notes -project /Users/shawncarpenter/projects/voice\ notes/voice\ notes.xcodeproj 2>&1
+[08:57:59]: Command timed out after 3 seconds on try 1 of 4, trying again with a 6 second timeout...
+[08:58:02]: Detected provisioning profile mapping: {"voice.notes.voice-notes": "voice.notes.voice-notes AppStore", "voice.notes.voice-notes.widget": "voice.notes.voice-notes.widget AppStore", "voice.notes.voice-notes.EEONShareExtension": "voice.notes.voice-notes.EEONShareExtension AppStore", "voice.notes.voice-notes.watchkitapp": "voice.notes.voice-notes.watchkitapp AppStore"}
+
++-----------------------------------------------------------------------------+
+|                           Summary for gym 2.241.1                           |
++--------------------------------------+--------------------------------------+
+| scheme                               | voice notes                          |
+| project                              | /Users/shawncarpenter/projects/voic  |
+|                                      | e notes/voice notes.xcodeproj        |
+| export_method                        | app-store                            |
+| export_options.signingStyle          | manual                               |
+| export_options.teamID                | BYRK5RUS4U                           |
+| export_options.provisioningProfiles  | voice.notes.voice-notes AppStore     |
+| .voice.notes.voice-notes             |                                      |
+| export_options.provisioningProfiles  | voice.notes.voice-notes.widget       |
+| .voice.notes.voice-notes.widget      | AppStore                             |
+| export_options.provisioningProfiles  | voice.notes.voice-notes.EEONShareEx  |
+| .voice.notes.voice-notes.EEONShareE  | tension AppStore                     |
+| xtension                             |                                      |
+| export_options.provisioningProfiles  | voice.notes.voice-notes.watchkitapp  |
+| .voice.notes.voice-notes.watchkitap  | AppStore                             |
+| p                                    |                                      |
+| xcargs                               | CURRENT_PROJECT_VERSION=173          |
+|                                      | -xcconfig                            |
+|                                      | /var/folders/dd/2mfn814j6wl2pywnhmn  |
+|                                      | 3rphm0000gn/T/eeon-cloudkit-16948.x  |
+|                                      | cconfig                              |
+| clean                                | false                                |
+| output_directory                     | /Users/shawncarpenter/projects/voic  |
+|                                      | e                                    |
+|                                      | notes/build/apple-release/artifact   |
+| output_name                          | voice notes                          |
+| silent                               | false                                |
+| skip_package_ipa                     | false                                |
+| skip_package_pkg                     | false                                |
+| installer_cert_name                  | 3rd Party Mac Developer Installer:   |
+|                                      | Stock Alarm, LLC (BYRK5RUS4U)        |
+| build_path                           | /Users/shawncarpenter/Library/Devel  |
+|                                      | oper/Xcode/Archives/2026-10-21       |
+| archive_path                         | /Users/shawncarpenter/projects/voic  |
+|                                      | e                                    |
+|                                      | notes/build/apple-release/EEON.xcar  |
+|                                      | chive                                |
+| result_bundle                        | false                                |
+| buildlog_path                        | /Users/shawncarpenter/projects/voic  |
+|                                      | e notes/build/apple-release/logs     |
+| destination                          | generic/platform=iOS                 |
+| xcodebuild_formatter                 | xcpretty                             |
+| build_timing_summary                 | false                                |
+| skip_profile_detection               | false                                |
+| xcodebuild_command                   | xcodebuild                           |
+| skip_package_dependencies_resolutio  | false                                |
+| n                                    |                                      |
+| disallow_xcodebuild_settings_lookup  | false                                |
+| disable_package_automatic_updates    | false                                |
+| skip_package_repository_fetches      | false                                |
+| use_system_scm                       | false                                |
+| generate_appstore_info               | false                                |
+| xcode_path                           | /Applications/Xcode.app              |
++--------------------------------------+--------------------------------------+
+
+[08:58:03]: Using xcpretty can result in missing some build errors and is slower than the preferred xcbeautify. See https://docs.fastlane.tools/best-practices/xcodebuild-formatters/ for more information.
+[08:58:03]: $ set -o pipefail && xcodebuild -scheme voice\ notes -project /Users/shawncarpenter/projects/voice\ notes/voice\ notes.xcodeproj -destination generic/platform\=iOS -archivePath /Users/shawncarpenter/projects/voice\ notes/build/apple-release/EEON.xcarchive CURRENT_PROJECT_VERSION=173 -xcconfig /var/folders/dd/2mfn814j6wl2pywnhmn3rphm0000gn/T/eeon-cloudkit-16948.xcconfig archive | tee /Users/shawncarpenter/projects/voice\ notes/build/apple-release/logs/voice\ notes-voice\ notes.log | xcpretty
+[08:58:05]: ▸ 2026-10-21 08:58:05.765 xcodebuild[17306:13253663] not able to deal with ivar '_storeKitConfigurationFileReference' of type '@"_TtC13IDEFoundation24IDESchemeOptionReference"' at offset 520
+[09:01:20]: ▸ Processing Info.plist
+[09:01:20]: ▸ Processing Info.plist
+[09:02:21]: ▸ Processing Info.plist
+[09:02:26]: ▸ ⚠️  /Users/shawncarpenter/projects/voice notes/VoiceNotesWidget/CaptureIntents.swift:32:43: main actor-isolated static property 'toggleHandler' cannot be accessed from outside of the actor; this is an error in the Swift 6 language mode
+[09:02:26]: ▸         guard let handler = CaptureBridge.toggleHandler else {
+[09:02:26]: ▸                             ~~~~~~~~~~~~~~^~~~~~~~~~~~~
+[09:02:26]: ▸ ⚠️  /Users/shawncarpenter/projects/voice notes/VoiceNotesWidget/CaptureIntents.swift:48:43: main actor-isolated static property 'stopHandler' cannot be accessed from outside of the actor; this is an error in the Swift 6 language mode
+[09:02:26]: ▸         guard let handler = CaptureBridge.stopHandler else {
+[09:02:26]: ▸                             ~~~~~~~~~~~~~~^~~~~~~~~~~
+[09:02:26]: ▸ Linking VoiceNotesWidgetExtension
+[09:02:29]: ▸ Linking EEONWatch
+[09:02:29]: ▸ Linking EEONWatch
+[09:02:29]: ▸ Linking EEONShareExtension
+[09:03:01]: ▸ Generating 'VoiceNotesWidgetExtension.appex.dSYM'
+[09:03:01]: ▸ Generating 'EEONShareExtension.appex.dSYM'
+[09:03:01]: ▸ Generating 'EEONWatch.app.dSYM'
+[09:03:01]: ▸ Touching EEONShareExtension.appex (in target 'EEONShareExtension' from project 'voice notes')
+[09:03:01]: ▸ Touching EEONWatch.app (in target 'EEONWatch' from project 'voice notes')
+[09:03:01]: ▸ Touching VoiceNotesWidgetExtension.appex (in target 'VoiceNotesWidgetExtension' from project 'voice notes')
+[09:03:01]: ▸ Copying /Users/shawncarpenter/Library/Developer/Xcode/DerivedData/voice_notes-drgatmhhsuekchcujcaymdsaenvz/Build/Intermediates.noindex/ArchiveIntermediates/voice\ notes/InstallationBuildProductsLocation/Applications/voice\ notes.app/Products.storekit
+[09:03:01]: ▸ Copying /Users/shawncarpenter/Library/Developer/Xcode/DerivedData/voice_notes-drgatmhhsuekchcujcaymdsaenvz/Build/Intermediates.noindex/ArchiveIntermediates/voice\ notes/InstallationBuildProductsLocation/Applications/voice\ notes.app/PrivacyInfo.xcprivacy
+[09:03:01]: ▸ Copying /Users/shawncarpenter/Library/Developer/Xcode/DerivedData/voice_notes-drgatmhhsuekchcujcaymdsaenvz/Build/Intermediates.noindex/ArchiveIntermediates/voice\ notes/InstallationBuildProductsLocation/Applications/voice\ notes.app/APIKeys.template
+[09:09:15]: ▸ ⚠️  /Users/shawncarpenter/projects/voice notes/voice notes/AIHomeView.swift:899:9: result of call to 'withAnimation' is unused
+[09:09:15]: ▸         withAnimation(.easeInOut(duration: 0.2)) {
+[09:09:15]: ▸         ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[09:09:15]: ▸ ⚠️  /Users/shawncarpenter/projects/voice notes/voice notes/CaptureIntents.swift:32:43: main actor-isolated static property 'toggleHandler' cannot be accessed from outside of the actor; this is an error in the Swift 6 language mode
+[09:09:16]: ▸         guard let handler = CaptureBridge.toggleHandler else {
+[09:09:16]: ▸                             ~~~~~~~~~~~~~~^~~~~~~~~~~~~
+[09:09:16]: ▸ ⚠️  /Users/shawncarpenter/projects/voice notes/voice notes/CaptureIntents.swift:48:43: main actor-isolated static property 'stopHandler' cannot be accessed from outside of the actor; this is an error in the Swift 6 language mode
+[09:09:16]: ▸         guard let handler = CaptureBridge.stopHandler else {
+[09:09:16]: ▸                             ~~~~~~~~~~~~~~^~~~~~~~~~~
+[09:09:16]: ▸ ⚠️  /Users/shawncarpenter/projects/voice notes/voice notes/HomeLayout.swift:124:17: variable 'valid' was never mutated; consider changing to 'let' constant
+[09:09:16]: ▸             var valid = decoded.sections.filter { $0.kind != nil }
+[09:09:16]: ▸             ~~~ ^
+[09:09:16]: ▸ ⚠️  /Users/shawncarpenter/projects/voice notes/voice notes/HomeView.swift:1442:17: '+' was deprecated in iOS 26.0: Use string interpolation on `Text` instead: `Text("Hello \(name)")`
+[09:09:16]: ▸                 + Text(active).foregroundColor(accentRed).fontWeight(.bold)
+[09:09:16]: ▸                 ^
+[09:09:16]: ▸ ⚠️  /Users/shawncarpenter/projects/voice notes/voice notes/HomeView.swift:1441:17: '+' was deprecated in iOS 26.0: Use string interpolation on `Text` instead: `Text("Hello \(name)")`
+[09:09:16]: ▸                 + Text(separator).foregroundColor(.white)
+[09:09:16]: ▸                 ^
+[09:09:16]: ▸ ⚠️  /Users/shawncarpenter/projects/voice notes/voice notes/KnowledgeArticle.swift:242:39: main actor-isolated conformance of 'PersonaExtractionSchema' to 'Decodable' cannot be used in nonisolated context; this is an error in the Swift 6 language mode
+[09:09:16]: ▸             return try? JSONDecoder().decode(PersonaExtractionSchema.self, from: data)
+[09:09:16]: ▸                                       ^
+[09:09:16]: ▸ ⚠️  /Users/shawncarpenter/projects/voice notes/voice notes/KnowledgeArticle.swift:246:49: main actor-isolated conformance of 'PersonaExtractionSchema' to 'Encodable' cannot be used in nonisolated context; this is an error in the Swift 6 language mode
+[09:09:16]: ▸                   let data = try? JSONEncoder().encode(value),
+[09:09:16]: ▸                                                 ^
+[09:09:16]: ▸ ⚠️  /Users/shawncarpenter/projects/voice notes/voice notes/LibraryView.swift:589:9: result of call to 'withAnimation' is unused
+[09:09:16]: ▸         withAnimation(.easeInOut(duration: 0.2)) {
+[09:09:16]: ▸         ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[09:09:16]: ▸ Linking voice\
+[09:09:18]: ▸ Processing voice-notes-Info.plist
+[09:09:19]: ▸ Generating 'voice\ notes.app.dSYM'
+[09:09:24]: ▸ Touching voice\ notes.app (in target 'voice notes' from project 'voice notes')
+[09:09:25]: ▸ Archive Succeeded
+[09:09:25]: Successfully stored the archive. You can find it in the Xcode Organizer.
+[09:09:25]: Generated plist file with the following values:
+[09:09:25]: ▸ -----------------------------------------
+[09:09:25]: ▸ {
+[09:09:25]: ▸   "signingStyle": "manual",
+[09:09:25]: ▸   "teamID": "BYRK5RUS4U",
+[09:09:25]: ▸   "provisioningProfiles": {
+[09:09:25]: ▸     "voice.notes.voice-notes": "voice.notes.voice-notes AppStore",
+[09:09:25]: ▸     "voice.notes.voice-notes.widget": "voice.notes.voice-notes.widget AppStore",
+[09:09:25]: ▸     "voice.notes.voice-notes.EEONShareExtension": "voice.notes.voice-notes.EEONShareExtension AppStore",
+[09:09:25]: ▸     "voice.notes.voice-notes.watchkitapp": "voice.notes.voice-notes.watchkitapp AppStore"
+[09:09:25]: ▸   },
+[09:09:25]: ▸   "method": "app-store",
+[09:09:25]: ▸   "installerSigningCertificate": "3rd Party Mac Developer Installer: Stock Alarm, LLC (BYRK5RUS4U)"
+[09:09:25]: ▸ }
+[09:09:25]: ▸ -----------------------------------------
+[09:09:25]: $ /usr/bin/xcrun /opt/homebrew/Cellar/fastlane/2.241.1/libexec/gems/fastlane-2.241.1/gym/lib/assets/wrap_xcodebuild/xcbuild-safe.sh -exportArchive -exportOptionsPlist /var/folders/dd/2mfn814j6wl2pywnhmn3rphm0000gn/T/gym_config20261021-16948-qub1pn.plist -archivePath /Users/shawncarpenter/projects/voice\ notes/build/apple-release/EEON.xcarchive -exportPath /var/folders/dd/2mfn814j6wl2pywnhmn3rphm0000gn/T/gym_output20261021-16948-c3o03j CURRENT_PROJECT_VERSION=173 -xcconfig /var/folders/dd/2mfn814j6wl2pywnhmn3rphm0000gn/T/eeon-cloudkit-16948.xcconfig 
+[09:10:06]: Compressing 4 dSYM(s)
+[09:10:06]: $ cd /Users/shawncarpenter/projects/voice\ notes/build/apple-release/EEON.xcarchive/dSYMs && zip -r /Users/shawncarpenter/projects/voice\ notes/build/apple-release/artifact/voice\ notes.app.dSYM.zip *.dSYM
+[09:10:08]: ▸   adding: EEONShareExtension.appex.dSYM/ (stored 0%)
+[09:10:08]: ▸   adding: EEONShareExtension.appex.dSYM/Contents/ (stored 0%)
+[09:10:08]: ▸   adding: EEONShareExtension.appex.dSYM/Contents/Resources/ (stored 0%)
+[09:10:08]: ▸   adding: EEONShareExtension.appex.dSYM/Contents/Resources/Relocations/ (stored 0%)
+[09:10:08]: ▸   adding: EEONShareExtension.appex.dSYM/Contents/Resources/Relocations/aarch64/ (stored 0%)
+[09:10:08]: ▸   adding: EEONShareExtension.appex.dSYM/Contents/Resources/Relocations/aarch64/EEONShareExtension.yml (deflated 33%)
+[09:10:08]: ▸   adding: EEONShareExtension.appex.dSYM/Contents/Resources/DWARF/ (stored 0%)
+[09:10:08]: ▸   adding: EEONShareExtension.appex.dSYM/Contents/Resources/DWARF/EEONShareExtension (deflated 60%)
+[09:10:08]: ▸   adding: EEONShareExtension.appex.dSYM/Contents/Info.plist (deflated 51%)
+[09:10:08]: ▸   adding: EEONWatch.app.dSYM/ (stored 0%)
+[09:10:08]: ▸   adding: EEONWatch.app.dSYM/Contents/ (stored 0%)
+[09:10:08]: ▸   adding: EEONWatch.app.dSYM/Contents/Resources/ (stored 0%)
+[09:10:08]: ▸   adding: EEONWatch.app.dSYM/Contents/Resources/Relocations/ (stored 0%)
+[09:10:08]: ▸   adding: EEONWatch.app.dSYM/Contents/Resources/Relocations/aarch64_32/ (stored 0%)
+[09:10:08]: ▸   adding: EEONWatch.app.dSYM/Contents/Resources/Relocations/aarch64_32/EEONWatch.yml (deflated 31%)
+[09:10:08]: ▸   adding: EEONWatch.app.dSYM/Contents/Resources/Relocations/aarch64/ (stored 0%)
+[09:10:08]: ▸   adding: EEONWatch.app.dSYM/Contents/Resources/Relocations/aarch64/EEONWatch.yml (deflated 31%)
+[09:10:08]: ▸   adding: EEONWatch.app.dSYM/Contents/Resources/DWARF/ (stored 0%)
+[09:10:08]: ▸   adding: EEONWatch.app.dSYM/Contents/Resources/DWARF/EEONWatch (deflated 59%)
+[09:10:08]: ▸   adding: EEONWatch.app.dSYM/Contents/Info.plist (deflated 52%)
+[09:10:08]: ▸   adding: VoiceNotesWidgetExtension.appex.dSYM/ (stored 0%)
+[09:10:08]: ▸   adding: VoiceNotesWidgetExtension.appex.dSYM/Contents/ (stored 0%)
+[09:10:08]: ▸   adding: VoiceNotesWidgetExtension.appex.dSYM/Contents/Resources/ (stored 0%)
+[09:10:08]: ▸   adding: VoiceNotesWidgetExtension.appex.dSYM/Contents/Resources/Relocations/ (stored 0%)
+[09:10:08]: ▸   adding: VoiceNotesWidgetExtension.appex.dSYM/Contents/Resources/Relocations/aarch64/ (stored 0%)
+[09:10:08]: ▸   adding: VoiceNotesWidgetExtension.appex.dSYM/Contents/Resources/Relocations/aarch64/VoiceNotesWidgetExtension.yml (deflated 35%)
+[09:10:08]: ▸   adding: VoiceNotesWidgetExtension.appex.dSYM/Contents/Resources/DWARF/ (stored 0%)
+[09:10:08]: ▸   adding: VoiceNotesWidgetExtension.appex.dSYM/Contents/Resources/DWARF/VoiceNotesWidgetExtension (deflated 63%)
+[09:10:08]: ▸   adding: VoiceNotesWidgetExtension.appex.dSYM/Contents/Info.plist (deflated 52%)
+[09:10:08]: ▸   adding: voice notes.app.dSYM/ (stored 0%)
+[09:10:08]: ▸   adding: voice notes.app.dSYM/Contents/ (stored 0%)
+[09:10:08]: ▸   adding: voice notes.app.dSYM/Contents/Resources/ (stored 0%)
+[09:10:08]: ▸   adding: voice notes.app.dSYM/Contents/Resources/Relocations/ (stored 0%)
+[09:10:08]: ▸   adding: voice notes.app.dSYM/Contents/Resources/Relocations/aarch64/ (stored 0%)
+[09:10:08]: ▸   adding: voice notes.app.dSYM/Contents/Resources/Relocations/aarch64/voice notes.yml (deflated 34%)
+[09:10:08]: ▸   adding: voice notes.app.dSYM/Contents/Resources/DWARF/ (stored 0%)
+[09:10:08]: ▸   adding: voice notes.app.dSYM/Contents/Resources/DWARF/voice notes (deflated 76%)
+[09:10:08]: ▸   adding: voice notes.app.dSYM/Contents/Info.plist (deflated 52%)
+
+[09:10:08]: Successfully exported and compressed dSYM file
+[09:10:08]: Successfully exported and signed the ipa file:
+[09:10:08]: /Users/shawncarpenter/projects/voice notes/build/apple-release/artifact/voice notes.ipa
+[09:10:09]: --------------------------------------------------------------------
+[09:10:09]: Step: ruby /Users/shawncarpenter/projects/fastlane-configs/scripts/verify_ipa.rb --ipa /Users/shawncarpenter/projects/voice\ notes/build/apple-release/artifact/voice\ notes.ipa --spec-json \[\{\"bundle\":\"app\",\"plist_key\":\"CFBundleIdentifier\",\"contains\":\"voice.notes.voice-notes\"\},\{\"bundle\":\"watch\",\"plist_key\":\"UIBackgroundModes\",\"contains\":\"audio\"\},\{\"bundle\":\"watch\",\"plist_key\":\"WKCompanionAppBundleIdentifier\",\"contains\":\"voice.notes.voice-notes\"\},\{\"bundle\":\"app\",\"plist_key\":\"ITSAppUsesNonExemptEncryption\",\"contains\":false\},\{\"bundle\":\"app\",\"plist_key\":\"CFBundleShortVersionString\",\"contains\":\"3.11.1\"\},\{\"bundle\":\"app\",\"plist_key\":\"CFBundleVersion\",\"contains\":\"173\"\},\{\"bundle\":\"watch\",\"plist_key\":\"CFBundleShortVersionString\",\"contains\":\"3.11.1\"\},\{\"bundle\":\"watch\",\"plist_key\":\"CFBundleVersion\",\"contains\":\"173\"\},\{\"bundle\":\"extension:VoiceNotesWidgetExtension\",\"plist_key\":\"CFBundleShortVersionString\",\"contains\":\"3.11.1\"\},\{\"bundle\":\"extension:VoiceNotesWidgetExtension\",\"plist_key\":\"CFBundleVersion\",\"contains\":\"173\"\},\{\"bundle\":\"extension:EEONShareExtension\",\"plist_key\":\"CFBundleShortVersionString\",\"contains\":\"3.11.1\"\},\{\"bundle\":\"extension:EEONShareExtension\",\"plist_key\":\"CFBundleVersion\",\"contains\":\"173\"\}\]
+[09:10:09]: --------------------------------------------------------------------
+[09:10:09]: $ ruby /Users/shawncarpenter/projects/fastlane-configs/scripts/verify_ipa.rb --ipa /Users/shawncarpenter/projects/voice\ notes/build/apple-release/artifact/voice\ notes.ipa --spec-json \[\{\"bundle\":\"app\",\"plist_key\":\"CFBundleIdentifier\",\"contains\":\"voice.notes.voice-notes\"\},\{\"bundle\":\"watch\",\"plist_key\":\"UIBackgroundModes\",\"contains\":\"audio\"\},\{\"bundle\":\"watch\",\"plist_key\":\"WKCompanionAppBundleIdentifier\",\"contains\":\"voice.notes.voice-notes\"\},\{\"bundle\":\"app\",\"plist_key\":\"ITSAppUsesNonExemptEncryption\",\"contains\":false\},\{\"bundle\":\"app\",\"plist_key\":\"CFBundleShortVersionString\",\"contains\":\"3.11.1\"\},\{\"bundle\":\"app\",\"plist_key\":\"CFBundleVersion\",\"contains\":\"173\"\},\{\"bundle\":\"watch\",\"plist_key\":\"CFBundleShortVersionString\",\"contains\":\"3.11.1\"\},\{\"bundle\":\"watch\",\"plist_key\":\"CFBundleVersion\",\"contains\":\"173\"\},\{\"bundle\":\"extension:VoiceNotesWidgetExtension\",\"plist_key\":\"CFBundleShortVersionString\",\"contains\":\"3.11.1\"\},\{\"bundle\":\"extension:VoiceNotesWidgetExtension\",\"plist_key\":\"CFBundleVersion\",\"contains\":\"173\"\},\{\"bundle\":\"extension:EEONShareExtension\",\"plist_key\":\"CFBundleShortVersionString\",\"contains\":\"3.11.1\"\},\{\"bundle\":\"extension:EEONShareExtension\",\"plist_key\":\"CFBundleVersion\",\"contains\":\"173\"\}\]
+[09:10:09]: ▸ ✓ app bundle Info.plist CFBundleIdentifier contains "voice.notes.voice-notes" (= "voice.notes.voice-notes")
+[09:10:10]: ▸ ✓ watch bundle Info.plist UIBackgroundModes contains "audio" (= ["audio"])
+[09:10:10]: ▸ ✓ watch bundle Info.plist WKCompanionAppBundleIdentifier contains "voice.notes.voice-notes" (= "voice.notes.voice-notes")
+[09:10:10]: ▸ ✓ app bundle Info.plist ITSAppUsesNonExemptEncryption contains false (= false)
+[09:10:10]: ▸ ✓ app bundle Info.plist CFBundleShortVersionString contains "3.11.1" (= "3.11.1")
+[09:10:10]: ▸ ✓ app bundle Info.plist CFBundleVersion contains "173" (= "173")
+[09:10:10]: ▸ ✓ watch bundle Info.plist CFBundleShortVersionString contains "3.11.1" (= "3.11.1")
+[09:10:10]: ▸ ✓ watch bundle Info.plist CFBundleVersion contains "173" (= "173")
+[09:10:10]: ▸ ✓ extension:VoiceNotesWidgetExtension bundle Info.plist CFBundleShortVersionString contains "3.11.1" (= "3.11.1")
+[09:10:10]: ▸ ✓ extension:VoiceNotesWidgetExtension bundle Info.plist CFBundleVersion contains "173" (= "173")
+[09:10:10]: ▸ ✓ extension:EEONShareExtension bundle Info.plist CFBundleShortVersionString contains "3.11.1" (= "3.11.1")
+[09:10:10]: ▸ ✓ extension:EEONShareExtension bundle Info.plist CFBundleVersion contains "173" (= "173")
+[09:10:10]: ▸ verify_ipa: all artifact requirements proven in the built binary.
+[09:10:10]: ----------------------------------
+[09:10:10]: --- Step: upload_to_testflight ---
+[09:10:10]: ----------------------------------
+[09:10:10]: Creating authorization token for App Store Connect API
+[09:10:10]: WARNING: Both `ipa` and `pkg` options are defined either explicitly or with default_value (build found in directory)
+[09:10:10]: Uploading `ipa` is preferred by default. Set `app_platform` to `osx` to force uploading `pkg`
+[09:10:12]: Ready to upload new build to TestFlight (App: 6758273499)...
+[09:10:12]: Going to upload updated app to App Store Connect
+[09:10:12]: This might take a few minutes. Please don't interrupt the script.
+[09:11:28]: --------------------------------------------------------------------
+[09:11:28]: Successfully uploaded package to App Store Connect. It might take a few minutes until it's visible online.
+[09:11:28]: --------------------------------------------------------------------
+[09:11:28]: Successfully uploaded the new binary to App Store Connect
+[09:11:28]: `skip_waiting_for_build_processing` used and no `changelog` supplied - skipping waiting for build processing
+
++---------------------------------------------+
+|              fastlane summary               |
++------+------------------------+-------------+
+| Step | Action                 | Time (in s) |
++------+------------------------+-------------+
+| 1    | default_platform       | 0           |
+| 2    | Switch to ios          | 0           |
+|      | cloudkit_schema_gate   |             |
+|      | lane                   |             |
+| 3    | app_store_connect_api  | 0           |
+|      | _key                   |             |
+| 4    | get_certificates       | 2           |
+| 5    | get_provisioning_prof  | 1           |
+|      | ile                    |             |
+| 6    | get_provisioning_prof  | 1           |
+|      | ile                    |             |
+| 7    | get_provisioning_prof  | 1           |
+|      | ile                    |             |
+| 8    | get_provisioning_prof  | 1           |
+|      | ile                    |             |
+| 9    | build_app              | 739         |
+| 10   | ruby                   | 0           |
+|      | /Users/shawncarpenter  |             |
+|      | /projects/fastlane-co  |             |
+|      | nfigs/scripts/         |             |
+| 11   | upload_to_testflight   | 78          |
++------+------------------------+-------------+
+
+[09:11:28]: fastlane.tools just saved you 14 minutes! 🎉

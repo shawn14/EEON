@@ -428,3 +428,9 @@
 
 - Shawn requested another Apple push and selected App Store review. Apple preflight13:49UTC confirms live3.11.0/172, VALID build, no active review and both subscriptions APPROVED.
 - Preparing the verified photo/project fixes for3.11.1/173. Two remaining menu-flow checks stay unverified; no new simulator retry. Added a committed read-only ASC action and guarded wrapper correcting the old runner commands' missing version/build arguments. Existing beta and submit pipelines are reused, with clean-main, prior-release ancestry and exact-build guards. No upload/submission yet; docs/note-menu-release-3.11.1/README.md tracks the release.
+
+## 2026-10-21 — Approved main merges; build 173 uploaded
+
+- Shawn explicitly approved EEON PR3 and fastlane-configs PR2 main merges and App Store submission. Both merged; archive source91b7515 includes both prior live-store source ancestors. Central Fastlane source4f49c5c contains3.11.1 release notes.
+- Guarded beta job voice_notes-beta-20261021-085707-swgb PASSED in853.6s: exactIPA archived, signed, checked and uploaded09:11CDT. Apple processing, listing preservation and review submission remain pending. Preflight verified175download-price rows allFree. No native UI rerun.
+- Read-only preflight now inventories current/live screenshot filenames, checksums and processing states before submission. Otter documentation/source comparison saved in docs/aso/2026-10-21-otter-benchmark.md; recommends source-linked outputs, Buildbrief handoff and on-demand preparation. No product features added. AppleCharts miner unavailable(tsx absent); no fresh review-frequency claims.
