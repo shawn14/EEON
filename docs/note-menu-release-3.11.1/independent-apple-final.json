@@ -1,0 +1,206 @@
+{
+  "inspector": "independent release refuter",
+  "inspected_at": "2026-10-21T14:19:48.073906+00:00",
+  "method": "Independent read of actual canonical runner Apple response and submission log; no additional network/native job",
+  "apple_response": {
+    "path": "/Users/shawncarpenter/projects/voice notes/build/apple-release/apple-1792592285701.json",
+    "sha256": "1ab630e56ccbd79fcc7e3f8fcff88ec8d633385ec6772713b1e317188cf9404c",
+    "observed_at": "2026-10-21T14:18:03.946Z"
+  },
+  "checks": {
+    "receipt_ok": true,
+    "identity_exact": true,
+    "version_waiting_manual": true,
+    "exact_build_attached": true,
+    "build_valid_ios_train": true,
+    "build_unexpired": true,
+    "encryption_false": true,
+    "review_waiting_with_timestamp": true,
+    "only_one_active_review": true,
+    "prior_3110_172_still_live": true,
+    "all16screenshots_complete": true,
+    "screenshots_order_equal_live_per_display": true,
+    "screenshots_order_unchanged_from_presubmit": true,
+    "release_notes_exact": true,
+    "all175_unique_prices_free": true,
+    "both_subscriptions_approved": true
+  },
+  "checks_passed": 16,
+  "target_version": {
+    "id": "0bc64fb0-c99c-442d-a987-eaac978c5e96",
+    "version": "3.11.1",
+    "state": "WAITING_FOR_REVIEW",
+    "releaseType": "MANUAL",
+    "build": {
+      "id": "fb4fa88d-b7e3-471d-a983-bb62ca3f5a51",
+      "number": "173"
+    }
+  },
+  "review_submission": {
+    "id": "03326f9e-8660-4dcb-b967-3bc07c2c2253",
+    "platform": "IOS",
+    "submittedDate": "2026-10-21T14:16:33.666Z",
+    "state": "WAITING_FOR_REVIEW"
+  },
+  "prior_live_version": {
+    "id": "ea1a455a-be29-43e3-a2f5-1b56b4ebef00",
+    "version": "3.11.0",
+    "state": "READY_FOR_SALE",
+    "releaseType": "MANUAL",
+    "build": {
+      "id": "26f26007-ba7a-49db-b7cd-51c8d83822f9",
+      "number": "172"
+    }
+  },
+  "exact_build": {
+    "id": "fb4fa88d-b7e3-471d-a983-bb62ca3f5a51",
+    "version": "173",
+    "processingState": "VALID",
+    "expired": false,
+    "expirationDate": "2027-01-19T06:12:27-08:00",
+    "usesNonExemptEncryption": false
+  },
+  "build_train": {
+    "version": "3.11.1",
+    "platform": "IOS"
+  },
+  "screenshots_in_apple_returned_order_by_display": {
+    "APP_IPHONE_67": [
+      {
+        "fileName": "iPhone67-01-Home.png",
+        "checksum": "244a2ca09c08ecbef4aa21457ebc5152",
+        "state": "COMPLETE"
+      },
+      {
+        "fileName": "iPhone67-02-Calendar.png",
+        "checksum": "677301e10a51343c92cb085283e7c41e",
+        "state": "COMPLETE"
+      },
+      {
+        "fileName": "iPhone67-03-AskEEON.png",
+        "checksum": "b702a46f2f28506148fb9b127043a4dc",
+        "state": "COMPLETE"
+      },
+      {
+        "fileName": "iPhone67-04-NoteDetail.png",
+        "checksum": "dec88d1920c9537873d6a86cbcfc0726",
+        "state": "COMPLETE"
+      },
+      {
+        "fileName": "iPhone67-05-Tasks.png",
+        "checksum": "5ae9d54ddc89d3f91756dc350dd7f96f",
+        "state": "COMPLETE"
+      }
+    ],
+    "APP_WATCH_SERIES_4": [
+      {
+        "fileName": "Watch44-01-Record.png",
+        "checksum": "ff511ecc371735ea98d74e5d920d607e",
+        "state": "COMPLETE"
+      }
+    ],
+    "APP_IPHONE_65": [
+      {
+        "fileName": "iPhone65-01-Home.png",
+        "checksum": "de6b1e20091998df88346fdd1238c5d2",
+        "state": "COMPLETE"
+      },
+      {
+        "fileName": "iPhone65-02-Calendar.png",
+        "checksum": "d5b12fb3bdb64cd23a8a6972730ff7aa",
+        "state": "COMPLETE"
+      },
+      {
+        "fileName": "iPhone65-03-AskEEON.png",
+        "checksum": "663af4a24eca44611a08094834540826",
+        "state": "COMPLETE"
+      },
+      {
+        "fileName": "iPhone65-04-NoteDetail.png",
+        "checksum": "15835ebc0a0aca6b16cb47a81fb98069",
+        "state": "COMPLETE"
+      },
+      {
+        "fileName": "iPhone65-05-Tasks.png",
+        "checksum": "d1209ef4fa00c8641c1bc83d378b5eeb",
+        "state": "COMPLETE"
+      }
+    ],
+    "APP_IPAD_PRO_3GEN_129": [
+      {
+        "fileName": "iPad129-01-Home.png",
+        "checksum": "ad9901dd524786384758787d5955e555",
+        "state": "COMPLETE"
+      },
+      {
+        "fileName": "iPad129-02-Calendar.png",
+        "checksum": "4549852d6bdd3eb30f2116b196b3d2bb",
+        "state": "COMPLETE"
+      },
+      {
+        "fileName": "iPad129-03-AskEEON.png",
+        "checksum": "f3bdfd41adc05cdc6a8e5f6f160f2a49",
+        "state": "COMPLETE"
+      },
+      {
+        "fileName": "iPad129-04-NoteDetail.png",
+        "checksum": "174c1f9bcf7969d73c48e00f50ac8ad1",
+        "state": "COMPLETE"
+      },
+      {
+        "fileName": "iPad129-05-Tasks.png",
+        "checksum": "485e203f3e2a03e06c75c1e34921000a",
+        "state": "COMPLETE"
+      }
+    ]
+  },
+  "release_notes": "3.11.1 \u2014 Photo and project fixes\n\n- Fixed Add Photo in the note menu so you can open your photo library and attach an image.\n- Project assignments are saved immediately when you move a note, including when you close EEON right afterward.",
+  "download_prices": {
+    "count": 175,
+    "unique_territories": 175,
+    "all_free": true
+  },
+  "subscriptions": [
+    {
+      "id": "6758279451",
+      "productId": "pro_annual",
+      "state": "APPROVED"
+    },
+    {
+      "id": "6758279481",
+      "productId": "pro_monthly",
+      "state": "APPROVED"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "voice_notes-release-20261021-091544-iglk",
+      "status": "passed",
+      "exit_code": 0,
+      "started_at": "2026-10-21T09:15:56-05:00",
+      "finished_at": "2026-10-21T09:16:37-05:00"
+    },
+    {
+      "id": "voice_notes-apple_preflight-20261021-091739-vprg",
+      "status": "passed",
+      "exit_code": 0,
+      "started_at": "2026-10-21T09:17:47-05:00",
+      "finished_at": "2026-10-21T09:18:06-05:00"
+    }
+  ],
+  "submission_log": {
+    "path": "/Users/shawncarpenter/projects/.mac-jobs/logs/voice_notes-release-20261021-091544-iglk.log",
+    "sha256": "dcdab60a1cb0a2802bf0f99febb44fe982a2ee18b07518d8059de5724e943e2e",
+    "canceled_active_review_lines": [
+      "canceled active review submissions: ",
+      "canceled active review submissions: "
+    ],
+    "note": "Approved subscriptions returned no pending version for submission; final response still has both APPROVED."
+  },
+  "conclusion": "Apple reports3.11.1(173) submitted and WAITING_FOR_REVIEW, with manual release.3.11.0(172) remains live.",
+  "limits": [
+    "No independent second API authentication/query was made; inspection uses the fresh canonical response.",
+    "Waiting for review is not approval or public release of3.11.1.",
+    "Tag removal, restore completion, physical iPhone/Watch behavior and signed-in CloudKit sharing remain unverified."
+  ]
+}

@@ -4,5 +4,11 @@
   "sha256": "dca7e45223e10f0ed35c34245fabc229d40b988cc29ce445cdb17fad7aa20cd4",
   "bytes": 11950908,
   "job": "voice_notes-beta-20261021-085707-swgb",
-  "status": "uploaded; Apple processing/readback pending"
+  "status": "WAITING_FOR_REVIEW",
+  "appleObservedAt": "2026-10-21T14:18:03.946Z",
+  "archiveSource": "91b751531d3ae8a5e2eeb5789f91f392cfa0c6ab",
+  "fastlaneSource": "4f49c5c0288d79b989273457fa4ae626674ed7f2",
+  "reviewSubmission": "03326f9e-8660-4dcb-b967-3bc07c2c2253",
+  "submittedDate": "2026-10-21T14:16:33.666Z",
+  "releaseType": "MANUAL"
 }

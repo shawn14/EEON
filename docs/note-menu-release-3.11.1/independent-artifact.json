@@ -1,0 +1,319 @@
+{
+  "observed_at": "2026-10-21T14:14:04.673978+00:00",
+  "inspector": "independent release refuter",
+  "method": "Portable ZIP/plist/Mach-O CodeDirectory parsing; no native tool or Apple request",
+  "ipa": {
+    "path": "/Users/shawncarpenter/projects/voice notes/build/apple-release/artifact/voice notes.ipa",
+    "bytes": 11950908,
+    "sha256": "dca7e45223e10f0ed35c34245fabc229d40b988cc29ce445cdb17fad7aa20cd4",
+    "zip_integrity": "all members CRC passed"
+  },
+  "bundles": [
+    {
+      "plist": "Payload/voice notes.app/Info.plist",
+      "info": {
+        "CFBundleIdentifier": "voice.notes.voice-notes",
+        "CFBundleDisplayName": "EEON",
+        "CFBundleShortVersionString": "3.11.1",
+        "CFBundleVersion": "173",
+        "CFBundleSupportedPlatforms": [
+          "iPhoneOS"
+        ],
+        "MinimumOSVersion": "26.2",
+        "UIBackgroundModes": [
+          "audio",
+          "remote-notification",
+          "fetch"
+        ],
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSMicrophoneUsageDescription": "Voice Notes needs microphone access to record audio notes."
+      },
+      "cloudkit_api_token_nonempty": true,
+      "binary_sha256": "709ad6e9092e226294ee5c4dc0941a58a0ee1e30673c684c046ed759309d1f2a",
+      "slices": [
+        {
+          "cpu_type": 16777228,
+          "sha256": "709ad6e9092e226294ee5c4dc0941a58a0ee1e30673c684c046ed759309d1f2a",
+          "signature_slots": [
+            0,
+            2,
+            5,
+            7,
+            65536
+          ],
+          "actual_signature_entitlements": {
+            "application-identifier": "BYRK5RUS4U.voice.notes.voice-notes",
+            "aps-environment": "production",
+            "beta-reports-active": true,
+            "com.apple.developer.applesignin": [
+              "Default"
+            ],
+            "com.apple.developer.associated-domains": [
+              "applinks:eeon.com",
+              "applinks:www.eeon.com"
+            ],
+            "com.apple.developer.icloud-container-environment": "Production",
+            "com.apple.developer.icloud-container-identifiers": [
+              "iCloud.aivoiceeeon"
+            ],
+            "com.apple.developer.icloud-services": [
+              "CloudDocuments",
+              "CloudKit"
+            ],
+            "com.apple.developer.team-identifier": "BYRK5RUS4U",
+            "com.apple.developer.ubiquity-container-identifiers": [
+              "iCloud.aivoiceeeon"
+            ],
+            "com.apple.security.application-groups": [
+              "group.com.eeon.voicenotes"
+            ],
+            "get-task-allow": false
+          },
+          "code_directory_identifier": "voice.notes.voice-notes",
+          "code_pages_checked": 1402,
+          "code_page_mismatches": [],
+          "xml_entitlement_hash_matches": true,
+          "der_entitlement_hash_matches": true,
+          "cms_blob_present": true
+        }
+      ],
+      "provisioning": {
+        "name": "voice.notes.voice-notes AppStore",
+        "team": [
+          "BYRK5RUS4U"
+        ],
+        "expiration": "2027-05-05T19:35:33",
+        "application_identifier": "BYRK5RUS4U.voice.notes.voice-notes",
+        "get_task_allow": false,
+        "profile_sha256": "629ca3a3895d4112033e4cc2dabde3f326a559ff49eb7d3ecfbe5c0e4007dfcf"
+      },
+      "code_resources_present": true
+    },
+    {
+      "plist": "Payload/voice notes.app/Watch/EEONWatch.app/Info.plist",
+      "info": {
+        "CFBundleIdentifier": "voice.notes.voice-notes.watchkitapp",
+        "CFBundleDisplayName": "EEON",
+        "CFBundleShortVersionString": "3.11.1",
+        "CFBundleVersion": "173",
+        "CFBundleSupportedPlatforms": [
+          "WatchOS"
+        ],
+        "MinimumOSVersion": "11.0",
+        "UIBackgroundModes": [
+          "audio"
+        ],
+        "WKCompanionAppBundleIdentifier": "voice.notes.voice-notes",
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSMicrophoneUsageDescription": "EEON records your voice notes and sends them to your iPhone."
+      },
+      "cloudkit_api_token_nonempty": false,
+      "binary_sha256": "ffee33dd6632385bfca092e4d5c0a44f618e3809d492841ce383fde1a1ae9541",
+      "slices": [
+        {
+          "cpu_type": 33554444,
+          "sha256": "94eb6df11c945c47f676fc2e74e5b2b489b6c22b61cb596d3dbee2d6d76b17d6",
+          "signature_slots": [
+            0,
+            2,
+            5,
+            7,
+            4096,
+            65536
+          ],
+          "actual_signature_entitlements": {
+            "application-identifier": "BYRK5RUS4U.voice.notes.voice-notes.watchkitapp",
+            "beta-reports-active": true,
+            "com.apple.developer.team-identifier": "BYRK5RUS4U",
+            "get-task-allow": false
+          },
+          "code_directory_identifier": "voice.notes.voice-notes.watchkitapp",
+          "code_pages_checked": 41,
+          "code_page_mismatches": [],
+          "xml_entitlement_hash_matches": true,
+          "der_entitlement_hash_matches": true,
+          "cms_blob_present": true
+        },
+        {
+          "cpu_type": 16777228,
+          "sha256": "d3f2630a4a57a30a711c56ed613ac4a4e7330cfca8ef5334598eb1c4206ab0e4",
+          "signature_slots": [
+            0,
+            2,
+            5,
+            7,
+            4096,
+            65536
+          ],
+          "actual_signature_entitlements": {
+            "application-identifier": "BYRK5RUS4U.voice.notes.voice-notes.watchkitapp",
+            "beta-reports-active": true,
+            "com.apple.developer.team-identifier": "BYRK5RUS4U",
+            "get-task-allow": false
+          },
+          "code_directory_identifier": "voice.notes.voice-notes.watchkitapp",
+          "code_pages_checked": 42,
+          "code_page_mismatches": [],
+          "xml_entitlement_hash_matches": true,
+          "der_entitlement_hash_matches": true,
+          "cms_blob_present": true
+        }
+      ],
+      "provisioning": {
+        "name": "voice.notes.voice-notes.watchkitapp AppStore",
+        "team": [
+          "BYRK5RUS4U"
+        ],
+        "expiration": "2027-05-05T19:35:33",
+        "application_identifier": "BYRK5RUS4U.voice.notes.voice-notes.watchkitapp",
+        "get_task_allow": false,
+        "profile_sha256": "f883446c336e555c8247b0d74ad21364de3e57faefdf7686eed5b8963c6b8823"
+      },
+      "code_resources_present": true
+    },
+    {
+      "plist": "Payload/voice notes.app/PlugIns/VoiceNotesWidgetExtension.appex/Info.plist",
+      "info": {
+        "CFBundleIdentifier": "voice.notes.voice-notes.widget",
+        "CFBundleDisplayName": "Voice Notes Widget",
+        "CFBundleShortVersionString": "3.11.1",
+        "CFBundleVersion": "173",
+        "CFBundleSupportedPlatforms": [
+          "iPhoneOS"
+        ],
+        "MinimumOSVersion": "26.2",
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "cloudkit_api_token_nonempty": false,
+      "binary_sha256": "136bc5cb97838ed587a7ed450b582b68b2553fc6c3bd2954ab316f8f8cf9bcdf",
+      "slices": [
+        {
+          "cpu_type": 16777228,
+          "sha256": "136bc5cb97838ed587a7ed450b582b68b2553fc6c3bd2954ab316f8f8cf9bcdf",
+          "signature_slots": [
+            0,
+            2,
+            5,
+            7,
+            65536
+          ],
+          "actual_signature_entitlements": {
+            "application-identifier": "BYRK5RUS4U.voice.notes.voice-notes.widget",
+            "beta-reports-active": true,
+            "com.apple.developer.team-identifier": "BYRK5RUS4U",
+            "com.apple.security.application-groups": [
+              "group.com.eeon.voicenotes"
+            ],
+            "get-task-allow": false
+          },
+          "code_directory_identifier": "voice.notes.voice-notes.widget",
+          "code_pages_checked": 39,
+          "code_page_mismatches": [],
+          "xml_entitlement_hash_matches": true,
+          "der_entitlement_hash_matches": true,
+          "cms_blob_present": true
+        }
+      ],
+      "provisioning": {
+        "name": "voice.notes.voice-notes.widget AppStore",
+        "team": [
+          "BYRK5RUS4U"
+        ],
+        "expiration": "2027-05-05T19:35:33",
+        "application_identifier": "BYRK5RUS4U.voice.notes.voice-notes.widget",
+        "get_task_allow": false,
+        "profile_sha256": "6e002f3b009c639522701b474d9d6f7ba62c209d56e952227e5786c98ef68d03"
+      },
+      "code_resources_present": true
+    },
+    {
+      "plist": "Payload/voice notes.app/PlugIns/EEONShareExtension.appex/Info.plist",
+      "info": {
+        "CFBundleIdentifier": "voice.notes.voice-notes.EEONShareExtension",
+        "CFBundleDisplayName": "EEON",
+        "CFBundleShortVersionString": "3.11.1",
+        "CFBundleVersion": "173",
+        "CFBundleSupportedPlatforms": [
+          "iPhoneOS"
+        ],
+        "MinimumOSVersion": "26.2",
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "cloudkit_api_token_nonempty": false,
+      "binary_sha256": "76bb11d59745c19334da40dfad075e8bc232dfe94e8e7365b6f8052692e1fd22",
+      "slices": [
+        {
+          "cpu_type": 16777228,
+          "sha256": "76bb11d59745c19334da40dfad075e8bc232dfe94e8e7365b6f8052692e1fd22",
+          "signature_slots": [
+            0,
+            2,
+            5,
+            7,
+            65536
+          ],
+          "actual_signature_entitlements": {
+            "application-identifier": "BYRK5RUS4U.voice.notes.voice-notes.EEONShareExtension",
+            "beta-reports-active": true,
+            "com.apple.developer.team-identifier": "BYRK5RUS4U",
+            "com.apple.security.application-groups": [
+              "group.com.eeon.voicenotes"
+            ],
+            "get-task-allow": false
+          },
+          "code_directory_identifier": "voice.notes.voice-notes.EEONShareExtension",
+          "code_pages_checked": 33,
+          "code_page_mismatches": [],
+          "xml_entitlement_hash_matches": true,
+          "der_entitlement_hash_matches": true,
+          "cms_blob_present": true
+        }
+      ],
+      "provisioning": {
+        "name": "voice.notes.voice-notes.EEONShareExtension AppStore",
+        "team": [
+          "BYRK5RUS4U"
+        ],
+        "expiration": "2027-05-05T19:35:33",
+        "application_identifier": "BYRK5RUS4U.voice.notes.voice-notes.EEONShareExtension",
+        "get_task_allow": false,
+        "profile_sha256": "61a32a2e54ace9c88f744a2dfcad7168349916bf92885f0cc6d286450a1e570b"
+      },
+      "code_resources_present": true
+    }
+  ],
+  "source_evidence": {
+    "preflight_source": "91b751531d3ae8a5e2eeb5789f91f392cfa0c6ab",
+    "preflight_fastlane_source": "4f49c5c0288d79b989273457fa4ae626674ed7f2",
+    "current_head": "7e2de1a0f1411f728e79d34c306a2e0a7b672690",
+    "local_origin_main": "7e2de1a0f1411f728e79d34c306a2e0a7b672690",
+    "working_tree_clean": true,
+    "release_ancestry": {
+      "appstore/voice-notes/3.10.0-build171": true,
+      "abfdd41a425acf668ef6c3417a472bd1a625a69e": true,
+      "c20b45cb291044b36f659e72baf343239ae0bdaf": true
+    },
+    "limitation": "Source attribution is pipeline/preflight evidence; source SHA is not embedded in IPA and no reproducible-build claim is made."
+  },
+  "runner": {
+    "id": "voice_notes-beta-20261021-085707-swgb",
+    "status": "passed",
+    "exit_code": 0,
+    "started_at": "2026-10-21T08:57:15-05:00",
+    "finished_at": "2026-10-21T09:11:29-05:00",
+    "seconds": 853.6
+  },
+  "log": {
+    "path": "/Users/shawncarpenter/projects/.mac-jobs/logs/voice_notes-beta-20261021-085707-swgb.log",
+    "sha256": "1df5ab170764a362817131020b3988960296d1eb563675c5272661f01831ce6d",
+    "schema_gate": "raw log reports production carries every stored model field at08:57:40",
+    "artifact_gate": "raw log verifies the exact IPA at09:10:10",
+    "upload": "raw log records successful App Store Connect upload at09:11:28; processing wait skipped"
+  },
+  "limits": [
+    "CMS cryptographic trust and codesign --verify were not independently run; code-page and entitlement hashes were checked against embedded CodeDirectory.",
+    "Provisioning profile fields are separate from actual code-signature entitlements.",
+    "Upload is not App Review submission or successful Apple processing; await fresh live Apple receipt.",
+    "Tag removal, restore completion, physical iPhone behavior and Watch wrist-down behavior remain unverified."
+  ]
+}
