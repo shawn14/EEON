@@ -17,3 +17,11 @@ At18:18CDT Shawn instructed: “just push to apple and i'll test on test flight.
 ## Historical resume instruction
 
 Rule3 requires authorization to diagnose/repair startup and resume after this infrastructure failure; requested in the chat. Do not confuse the new feature proof with the exhausted older menu-test allowances. Once startup is repaired, run this test against the missing feature and observe the real expected failure before implementation. Then implement using the existing template compiler/RewriteService and note storage, run green with a real model response, independently inspect the actual SwiftData store and clipboard receipt, and request a fresh refuter before claiming it works. Preserve physical-device/CloudKit limits honestly.
+
+## TestFlight attempt — stopped before compilation
+
+PR4 merged; clean pushed GitHub main/archive candidate `de9abd962cc41f5175f17208943a0b7a083981e4` includes both prior live-store sources171/172 and submitted173 source91b7515. App3.11.2/build174 code is implemented, with runtime proof waived by Shawn, but it has not compiled yet.
+
+Mac runner beta job182248-ongp was explicitly allowed on the Mac, then failed18:24:58CDT in116.3s. CloudKit schema preflight and signing profiles passed; Fastlane's `xcodebuild -showBuildSettings` failed its internal3/6/12/24s timeouts. No archive, IPA or upload174 exists. The underlying reason for Xcode's delay is not established. Temporary credentials were removed; no EEON native build process remained. App Review173 is still WAITING_FOR_REVIEW in the23:23:12UTC preflight.
+
+Prepared recovery on `codex/eeon-build-settings-wait`: set `FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT=120` and `FASTLANE_XCODEBUILD_SETTINGS_RETRIES=0` in EEON's existing beta wrapper. Installed Fastlane2.241.1 source confirms retries0 means one attempt. Syntax parsed, but this change is not a proven fix. Requires Rule3 authorization for one new guarded release attempt; no rerun performed.

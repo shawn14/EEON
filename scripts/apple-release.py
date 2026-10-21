@@ -35,6 +35,9 @@ def main():
         assert shutil.disk_usage(ROOT).free >= 15 * 1024**3, 'Need 15 GiB free before archive'
         assert not any(b['version'] == build for b in apple['builds']), 'Build already uploaded; do not rebuild'
         env.update(GYM_OUTPUT_DIRECTORY=str(OUTPUT / 'artifact'), GYM_ARCHIVE_PATH=str(OUTPUT / 'EEON.xcarchive'), GYM_BUILDLOG_PATH=str(OUTPUT / 'logs'))
+        # Fastlane defaults to four short 3/6/12/24s attempts. Use one bounded
+        # settings read instead; never restart the build after an infra failure.
+        env.update(FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT='120', FASTLANE_XCODEBUILD_SETTINGS_RETRIES='0')
         # Reuse the October16 Vercel credential path; never commit or print the environment.
         website = ROOT.parent / 'v0-eeon-app-design'
         link = json.loads((website / '.vercel/project.json').read_text())

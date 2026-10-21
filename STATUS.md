@@ -454,3 +454,9 @@
 - Shawn: “just push to apple and i'll test on test flight.” Simulator baseline/runtime proof waived for this candidate; no simulator retry. TestFlight only, no new App Store submission.
 - Added Pro Build brief preset, source-grounded generation, editable full-height preview, exact source viewer, Save/Cancel, Copy for agent with note UUID/get_note reference, cached reopen and source-change save guard. Original note/summary retained; no schema changes or autonomous execution. Existing Send to an Agent opens the reviewed saved brief when available.
 - Preparing3.11.2/174. Live preflight23:19UTC:3.11.1/173 WAITING_FOR_REVIEW, latest173 VALID and IN_BETA_TESTING,3.11.0/172 still live;175download pricesFree. Existing submission preserved. Static review only so far; archive/upload and independent artifact/Apple proof pending. Device flow awaits Shawn.
+
+## 2026-10-21 — Build brief TestFlight upload blocked by Xcode settings timeout
+
+- Authorized PR4 merged into GitHub main `de9abd962cc41f5175f17208943a0b7a083981e4`; ancestry includes live171/172 and submitted173 source91b7515. Build brief code3.11.2/174 is implemented, not compiled or E2E-proven.
+- Approved beta job182248-ongp failed18:24:58CDT before compilation: Fastlane internal build-settings reads timed out3/6/12/24s. No archive/IPA/upload174. Existing App Review173 preserved. Credential scratch removed, no EEON native processes left, generated watch profile cleaned from shared Fastlane checkout.
+- Recovery candidate: one120s build-settings read, zero internal retries, through the same guarded beta action; no runner resource/cap changes. Candidate syntax parsed, underlying Xcode slowness unverified. Await Rule3 approval for a new attempt. Receipts: docs/build-brief-proof/testflight-attempt-174.json and apple-before-174.json.
