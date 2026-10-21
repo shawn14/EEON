@@ -189,7 +189,8 @@ def proof(mode):
             'testNoteMenuAskAboutThisNote', 'testNoteMenuShareLinkRequiresRealICloud',
             'testPasteAndExport', 'testNoteMindMap', 'testIdentifySpeakers',
         ]
-        tests = (['testAddPhotoPresentsPicker'] if mode == 'picker' else
+        tests = (['testBuildBriefPreviewAndHandoff', 'testBuildBriefRequiresProForGeneration'] if mode == 'build-brief' else
+                 ['testAddPhotoPresentsPicker'] if mode == 'picker' else
                  ['testAddPhotoFromNoteMenu'] if mode == 'photo' else
                  ['testNoteMenuProjectAndTags', 'testNoteMenuDeleteCancelAndRestore'] if mode == 'organize' else
                  list(menu_tests))
@@ -248,7 +249,7 @@ def proof(mode):
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('mode',choices=['preflight','watch-runtime','picker','photo','all','menu','organize','cleanup'])
+    parser.add_argument('mode',choices=['preflight','watch-runtime','picker','photo','all','menu','organize','build-brief','cleanup'])
     parser.add_argument('--simulator', action='store_true', help='Explicit simulator run; makes the Mac runner apply its heavy-job resource gate')
     args=parser.parse_args()
     mode=args.mode

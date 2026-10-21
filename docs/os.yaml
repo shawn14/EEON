@@ -11,6 +11,7 @@ canonical_scripts:
   e2e_note_menu: python3 scripts/prove-note-menu.py all --simulator
   e2e_note_menu_organize: python3 scripts/prove-note-menu.py organize --simulator
   e2e_note_menu_remaining: python3 scripts/prove-note-menu.py menu --simulator
+  e2e_build_brief: python3 scripts/prove-note-menu.py build-brief --simulator
   build_voice_notes: xcodebuild -project 'voice notes.xcodeproj' -scheme 'voice notes' -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO -quiet build
   beta: python3 scripts/apple-release.py beta
   apple_metadata: python3 scripts/apple-release.py metadata
