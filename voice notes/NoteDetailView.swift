@@ -106,6 +106,8 @@ struct NoteDetailView: View {
 
     // Rewrite sheet state
     @State private var showingRewriteSheet = false
+    @State private var pendingRewriteTemplate: RewriteTemplate?
+    @State private var buildBriefSource: BuildBriefSource?
     @State private var showingQuiz = false
     @State private var isGeneratingQuiz = false
     @State private var quizError: String?
@@ -618,10 +620,18 @@ struct NoteDetailView: View {
                 }
             )
         }
-        .sheet(isPresented: $showingRewriteSheet) {
+        .sheet(isPresented: $showingRewriteSheet, onDismiss: {
+            // Present the next sheet only after the catalog has dismissed.
+            guard let template = pendingRewriteTemplate else { return }
+            pendingRewriteTemplate = nil
+            handleRewriteTemplate(template)
+        }) {
             RewriteTemplatePickerSheet { template in
-                handleRewriteTemplate(template)
+                pendingRewriteTemplate = template
             }
+        }
+        .sheet(item: $buildBriefSource) { source in
+            BuildBriefPreview(note: note, source: source)
         }
         .sheet(isPresented: $showingPaywall) {
             PaywallView(onDismiss: { showingPaywall = false })
@@ -1209,6 +1219,11 @@ struct NoteDetailView: View {
                         }
                     }
                     Button {
+                        handleRewriteTemplate(RewriteTemplateCatalog.buildBrief)
+                    } label: {
+                        Label("Build brief", systemImage: "doc.text")
+                    }
+                    Button {
                         showingRewriteSheet = true
                     } label: {
                         Label("More formats…", systemImage: "ellipsis.circle")
@@ -1561,6 +1576,11 @@ struct NoteDetailView: View {
     /// Copies a prompt that makes Claude Code / Codex / Cursor read this exact
     /// note through the EEON connector and act on it.
     private func sendToAgent() {
+        let source = BuildBriefSource(note: note)
+        if source.savedBrief(in: note) != nil {
+            buildBriefSource = source
+            return
+        }
         let title = note.title.isEmpty ? "Untitled note" : note.title
         UIPasteboard.general.string = "Use the EEON connector: call get_note with id \(note.id.uuidString) (\"\(title)\"), read it, and do what the note says."
         agentCopyMessage = AIAccessService.shared.isConnected
@@ -1641,6 +1661,16 @@ struct NoteDetailView: View {
     // MARK: - Rewrite Handling
 
     private func handleRewriteTemplate(_ template: RewriteTemplate) {
+        if template.id == RewriteTemplateCatalog.buildBrief.id {
+            let source = BuildBriefSource(note: note)
+            // Saved work remains readable even if the subscription later lapses.
+            guard source.savedBrief(in: note) != nil || SubscriptionManager.shared.isSubscribed else {
+                showingPaywall = true
+                return
+            }
+            buildBriefSource = source
+            return
+        }
         // Check PRO gating
         if template.isPro && !SubscriptionManager.shared.isSubscribed {
             showingPaywall = true

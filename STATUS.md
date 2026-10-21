@@ -442,3 +442,15 @@
 - Otter deep dive: docs/aso/2026-10-21-otter-benchmark.md. Recommend a Build brief preview first, then precise source/audio links and on-demand project/meeting preparation. Existing native templates/RAG/MCP are reused; preserve Apple-only task sync and simplified Home. No features implemented. AppleCharts miner lacked dependencies; no fresh review-frequency claims.
 - Temporary credential file removed by pipeline. Retain signed IPA/dSYM as release artifacts under ignored build/releases/3.11.1-173; temporary archive, logs and compilation intermediates are cleaned after retaining compact proof. The two unfinished menu checks and physical-iPhone behavior remain unverified.
 - Next: await Apple decision; public release remains manual. Private brain pointer isolated in documentation-only PR22 because its primary checkout contains unrelated unpushed work.
+
+## 2026-10-21 — Build brief requested; E2E baseline blocked before implementation
+
+- Shawn approved Build brief preset and editable preview with end-to-end testing. Branch `codex/eeon-build-brief` from current main9e3ba51; tests/runner action committed1ae0d81. No feature source changed yet.
+- First real native baseline job103104-umnh failed at simulator boot readiness after120s (188.7s including cleanup). Zero builds, UI tests or model calls. Runtimes present,27.4GiB free, no other booted device. Disposable device removed; no retry/cap bypass.
+- Approval requested under Rule3 to diagnose/repair simulator startup and resume. Next: obtain actual missing-preset failure, implement source-grounded editable preview without overwriting original/enhanced note, then prove real API/save/relaunch/clipboard and independent actual-store readback. Existing Pro gate retained. Feature not implemented or tested; prior Apple submission unchanged. Evidence/resume: docs/build-brief-proof/README.md.
+
+## 2026-10-21 — Build brief implemented; TestFlight authorized
+
+- Shawn: “just push to apple and i'll test on test flight.” Simulator baseline/runtime proof waived for this candidate; no simulator retry. TestFlight only, no new App Store submission.
+- Added Pro Build brief preset, source-grounded generation, editable full-height preview, exact source viewer, Save/Cancel, Copy for agent with note UUID/get_note reference, cached reopen and source-change save guard. Original note/summary retained; no schema changes or autonomous execution. Existing Send to an Agent opens the reviewed saved brief when available.
+- Preparing3.11.2/174. Live preflight23:19UTC:3.11.1/173 WAITING_FOR_REVIEW, latest173 VALID and IN_BETA_TESTING,3.11.0/172 still live;175download pricesFree. Existing submission preserved. Static review only so far; archive/upload and independent artifact/Apple proof pending. Device flow awaits Shawn.

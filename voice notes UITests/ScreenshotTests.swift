@@ -547,6 +547,88 @@ final class ScreenshotTests: XCTestCase {
         return copied
     }
 
+    private func openBuildBrief() {
+        app.buttons["formatMenu"].tap()
+        let preset = app.buttons["Build brief"]
+        XCTAssertTrue(preset.waitForExistence(timeout: 5), "Build brief preset missing. " + app.debugDescription)
+        preset.tap()
+    }
+
+    /// Real model response -> editable native preview -> SwiftData -> relaunch -> OS clipboard.
+    func testBuildBriefPreviewAndHandoff() throws {
+        continueAfterFailure = false
+        openSeededAudioNote()
+        openBuildBrief()
+        let editor = app.textViews["buildBriefEditor"]
+        XCTAssertTrue(editor.waitForExistence(timeout: 90), "No generated brief. " + app.debugDescription)
+        let generated = editor.value as? String ?? ""
+        for heading in ["Problem", "Desired behavior", "Constraints", "Acceptance checks", "Open questions"] {
+            XCTAssertTrue(generated.contains(heading), "Missing section: " + heading)
+        }
+        XCTAssertTrue(generated.contains("15th"), "Lost the proposed launch date")
+        XCTAssertTrue(generated.contains("Thursday"), "Lost the screenshot delivery commitment")
+        XCTAssertFalse(generated.contains("Lena") || generated.contains("StockAlarm"), "Unrelated memory leaked into the brief")
+        keep("BuildBrief-GeneratedPreview")
+        app.buttons["View source"].tap()
+        let source = app.staticTexts["buildBriefSourceText"]
+        XCTAssertTrue(source.waitForExistence(timeout: 5))
+        XCTAssertEqual(source.label, "Hi Mark, thanks for joining, I wanted to talk about the paywall launch next week. Sure, I think we should push it to the 15th so the onboarding copy is ready. That works for me, can you send the new screenshots by Friday? Yes, I will have them done Thursday night.")
+        app.navigationBars.buttons.element(boundBy: 0).tap()
+        editor.tap()
+        editor.typeText("\nReviewed before handoff.")
+        let reviewed = editor.value as? String ?? ""
+        XCTAssertTrue(reviewed.contains("Reviewed before handoff."))
+        app.buttons["Done editing"].tap()
+        app.buttons["Save brief"].tap()
+        XCTAssertTrue(editor.waitForNonExistence(timeout: 8), "Save did not dismiss preview")
+        reopenProofNote()
+        // The catalog path must present after dismissing the format picker.
+        app.buttons["formatMenu"].tap()
+        app.buttons["More formats…"].tap()
+        let catalogPreset = app.buttons.matching(NSPredicate(format: "label CONTAINS %@", "Build brief")).firstMatch
+        XCTAssertTrue(catalogPreset.waitForExistence(timeout: 5))
+        catalogPreset.tap()
+        XCTAssertTrue(editor.waitForExistence(timeout: 8), "Saved brief did not reopen")
+        XCTAssertEqual(editor.value as? String, reviewed, "Edited brief did not persist")
+        editor.tap()
+        editor.typeText("\nDiscard this edit.")
+        app.buttons["Done editing"].tap()
+        app.buttons["Cancel"].tap()
+        XCTAssertTrue(editor.waitForNonExistence(timeout: 5))
+        openBuildBrief()
+        XCTAssertTrue(editor.waitForExistence(timeout: 8))
+        XCTAssertEqual(editor.value as? String, reviewed, "Cancel saved an unreviewed edit")
+        app.buttons["Copy for agent"].tap()
+        XCTAssertTrue(editor.waitForNonExistence(timeout: 8))
+        let copied = pasteCopiedTextIntoQuestion()
+        XCTAssertTrue(copied.contains(reviewed), "Clipboard lost the reviewed brief")
+        XCTAssertTrue(copied.contains("get_note") && copied.contains("Paywall launch call"))
+        XCTAssertNotNil(copied.range(of: "[A-Fa-f0-9]{8}-[A-Fa-f0-9-]{27,}", options: .regularExpression))
+        let receipt = XCTAttachment(string: copied)
+        receipt.name = "BuildBrief-ActualClipboard"
+        receipt.lifetime = .keepAlways
+        add(receipt)
+        // Original Copy Note must still copy the transcript, not the new brief.
+        selectNoteAction("Copy Note")
+        let original = pasteCopiedTextIntoQuestion()
+        XCTAssertTrue(original.contains("Hi Mark, thanks for joining"))
+        XCTAssertFalse(original.contains("Reviewed before handoff."))
+    }
+
+    func testBuildBriefRequiresProForGeneration() throws {
+        continueAfterFailure = false
+        app.terminate()
+        launchApp()
+        dismissGatesIfNeeded()
+        let row = app.buttons.matching(NSPredicate(format: "label BEGINSWITH[c] 'Standup with Lena'")).firstMatch
+        XCTAssertTrue(row.waitForExistence(timeout: 10))
+        row.tap()
+        openBuildBrief()
+        XCTAssertTrue(app.buttons["Restore Purchases"].waitForExistence(timeout: 8), "New advanced preset bypassed the existing Pro gate")
+        XCTAssertFalse(app.textViews["buildBriefEditor"].exists)
+        keep("BuildBrief-ProGate")
+    }
+
     func testNoteMenuCopyAndAgentBrief() throws {
         continueAfterFailure = false
         openSeededAudioNote()

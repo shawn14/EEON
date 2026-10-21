@@ -1,0 +1,45 @@
+== 2026-10-21T10:31:07-05:00 voice notes e2e_build_brief: python3 scripts/prove-note-menu.py build-brief --simulator
+== priority: taskpolicy -b nice -n 15 /bin/zsh -lc <command>
+{
+  "xcode": "Xcode 26.2\nBuild version 17C52",
+  "free_gib": 27.4,
+  "booted": [],
+  "runtimes": [
+    {
+      "name": "iOS 26.3",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-3",
+      "version": "26.3.1",
+      "isAvailable": true,
+      "availabilityError": null
+    },
+    {
+      "name": "watchOS 26.2",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.watchOS-26-2",
+      "version": "26.2",
+      "isAvailable": true,
+      "availabilityError": null
+    }
+  ],
+  "api_key_file_present": true,
+  "head": "1ae0d81465a52102d0a7e93a235be20e1fd31a7d",
+  "built_artifact": {
+    "app_exists": false
+  }
+}
+Booting disposable iPhone 17e
+Traceback (most recent call last):
+  File "/Users/shawncarpenter/projects/voice notes/scripts/prove-note-menu.py", line 264, in <module>
+    proof(mode)
+  File "/Users/shawncarpenter/projects/voice notes/scripts/prove-note-menu.py", line 151, in proof
+    run('xcrun', 'simctl', 'bootstatus', target, '-b', timeout=120)
+  File "/Users/shawncarpenter/projects/voice notes/scripts/prove-note-menu.py", line 23, in run
+    result = subprocess.run(args, text=True, capture_output=True, timeout=timeout)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 507, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1134, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1980, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1178, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '('xcrun', 'simctl', 'bootstatus', 'EEAF1607-D3F4-43DD-826E-46A4F76056CA', '-b')' timed out after 120 seconds

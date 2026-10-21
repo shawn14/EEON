@@ -1,0 +1,26 @@
+{
+  "xcode": "Xcode 26.2\nBuild version 17C52",
+  "free_gib": 27.4,
+  "booted": [],
+  "runtimes": [
+    {
+      "name": "iOS 26.3",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-3",
+      "version": "26.3.1",
+      "isAvailable": true,
+      "availabilityError": null
+    },
+    {
+      "name": "watchOS 26.2",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.watchOS-26-2",
+      "version": "26.2",
+      "isAvailable": true,
+      "availabilityError": null
+    }
+  ],
+  "api_key_file_present": true,
+  "head": "1ae0d81465a52102d0a7e93a235be20e1fd31a7d",
+  "built_artifact": {
+    "app_exists": false
+  }
+}
