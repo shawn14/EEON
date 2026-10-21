@@ -386,3 +386,6 @@ The real CloudKit app requires simulator signing: **do not use `CODE_SIGNING_ALL
 If simulator Photos itself cannot launch, stop that path and preserve the receipt. `e2e_note_menu_remaining` can prove the12 independent menu journeys without importing a photo; its report must retain the excluded Add Photo test. This is partial menu coverage, never full-photo proof.
 
 For iOS26Photos UI tests, inspect the actual grid before selecting: PXGGridLayout-Info can expose a visible thumbnail frame but return hit point(-1,-1) to XCTest. Tapping its measured on-screen center exercised the real selection path and passed attachment persistence. Clipboard proof uses foreground UI Paste, then a field lookup independent of its disappearing placeholder; never infer clipboard contents from a button tap.
+
+## EEON Apple push through Mac runner (2026-10-21)
+Use `docs/note-menu-release-3.11.1/README.md` and committed `scripts/apple-release.py`: beta reads committed version/build and uses the guarded central lane; release submits that already uploaded exact VALID iOS build without rebuilding. Both require clean current main and build171/172 ancestry. The old bare beta/release examples above omit required version arguments or increment during build and are superseded. Active reviews stop the wrapper; it never implicitly cancels one.

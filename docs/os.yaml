@@ -12,8 +12,9 @@ canonical_scripts:
   e2e_note_menu_organize: python3 scripts/prove-note-menu.py organize --simulator
   e2e_note_menu_remaining: python3 scripts/prove-note-menu.py menu --simulator
   build_voice_notes: xcodebuild -project 'voice notes.xcodeproj' -scheme 'voice notes' -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO -quiet build
-  beta: cd ../fastlane-configs && fastlane beta app:voice-notes
-  release: cd ../fastlane-configs && fastlane release app:voice-notes
+  beta: python3 scripts/apple-release.py beta
+  apple_metadata: python3 scripts/apple-release.py metadata
+  release: python3 scripts/apple-release.py submit
 mac_runner:
-  ask_first: [beta, release]
+  ask_first: [beta, apple_metadata, release]
   timeout_minutes: 30

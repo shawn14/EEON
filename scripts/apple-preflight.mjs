@@ -25,12 +25,27 @@ export default async function preflight(api) {
       subscriptions.push({id:sub.id,productId:sub.attributes.productId,state:sub.attributes.state});
     }
   }
+  const schedule = (await read(`/v1/apps/${appId}/appPriceSchedule`)).data;
+  const downloadPrices = [];
+  for (const kind of ['manualPrices','automaticPrices']) {
+    let url=`/v1/appPriceSchedules/${schedule.id}/${kind}?include=appPricePoint,territory&limit=200`;
+    while (url) {
+      const page=await read(url);
+      for (const price of page.data) {
+        const point=page.included.find(p=>p.type==='appPricePoints' && p.id===price.relationships.appPricePoint.data.id);
+        if (!point || !Number.isFinite(Number(point.attributes.customerPrice))) throw new Error('Missing actual app download price');
+        downloadPrices.push({territory:price.relationships.territory.data.id,price:Number(point.attributes.customerPrice),startDate:price.attributes.startDate,endDate:price.attributes.endDate});
+      }
+      url=page.links?.next;
+    }
+  }
+  if (!downloadPrices.length || downloadPrices.some(p=>p.price!==0)) throw new Error('Download is not verified Free');
   const active = [];
   for (const v of versions.filter(v => ['PREPARE_FOR_SUBMISSION','WAITING_FOR_REVIEW','IN_REVIEW','PENDING_DEVELOPER_RELEASE','READY_FOR_SALE','READY_FOR_DISTRIBUTION','DEVELOPER_REJECTED','REJECTED'].includes(v.attributes.appStoreState)).slice(0,4)) {
     const build = (await read(`/v1/appStoreVersions/${v.id}/build`)).data;
     active.push({id:v.id,version:v.attributes.versionString,state:v.attributes.appStoreState,releaseType:v.attributes.releaseType,build:build ? {id:build.id,number:build.attributes.version}:null});
   }
-  return {observedAt:new Date().toISOString(),readOnly:true,appId,bundle,source:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),fastlaneSource:execFileSync('git',['rev-parse','HEAD'],{cwd:fastlaneRoot,encoding:'utf8'}).trim(),versions:versions.map(v=>({id:v.id,version:v.attributes.versionString,state:v.attributes.appStoreState,releaseType:v.attributes.releaseType})),active,builds:builds.data.map(b=>({id:b.id,...b.attributes,relationships:b.relationships})),included:builds.included,reviews:reviews.map(r=>({id:r.id,...r.attributes})),subscriptions,sources};
+  return {observedAt:new Date().toISOString(),readOnly:true,appId,bundle,source:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),fastlaneSource:execFileSync('git',['rev-parse','HEAD'],{cwd:fastlaneRoot,encoding:'utf8'}).trim(),versions:versions.map(v=>({id:v.id,version:v.attributes.versionString,state:v.attributes.appStoreState,releaseType:v.attributes.releaseType})),active,builds:builds.data.map(b=>({id:b.id,...b.attributes,relationships:b.relationships})),included:builds.included,reviews:reviews.map(r=>({id:r.id,...r.attributes})),subscriptions,downloadPrices,sources};
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === file) {
   const client = path.resolve(root,'../milepost/scripts/asc/asc.mjs');
